@@ -2347,3 +2347,43 @@ h1, h2, h3, h4, h5, h6 {
 .details-body-section {
     background-color: transparent !important;
 }
+
+/* Skeleton Loader System */
+@keyframes skeleton-loading {
+    0% {
+        background-color: #f3f4f6;
+    }
+    50% {
+        background-color: #e5e7eb;
+    }
+    100% {
+        background-color: #f3f4f6;
+    }
+}
+
+.skeleton {
+    position: relative;
+    overflow: hidden;
+    background-color: #f3f4f6;
+    animation: skeleton-loading 1.5s infinite ease-in-out;
+}
+
+/* Specific styling for card image skeleton loading */
+.trek-card-img-wrapper.skeleton {
+    background-color: #f3f4f6;
+}
+
+.trek-card-img {
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trek-card-img.loaded {
+    opacity: 1;
+}
+
+.details-hero-bg.skeleton {
+    background-color: #f3f4f6;
+    animation: skeleton-loading 1.5s infinite ease-in-out;
+}
+

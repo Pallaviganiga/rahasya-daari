@@ -13,13 +13,13 @@ const TREKS_DATA = [
         altitude: "1,050 m",
         price: 4200,
         pickup: "Majestic, Navarang Circle, Yeshwanthpur, Goraguntepalya",
-        image: "images/bandaje.jpg",
+        image: "images/bandaje.webp",
         slides: [
-            "images/bandaje.jpg",
-            "images/bandaje_falls.jpg",
-            "images/band1.jpg",
-            "images/rani_jhari.jpg",
-            "images/kelaguru_tea.jpg",
+            "images/bandaje.webp",
+            "images/bandaje_falls.webp",
+            "images/band1.webp",
+            "images/rani_jhari.webp",
+            "images/kelaguru_tea.webp",
 
         ],
         description: "Hike through lush grasslands and deep shola forests of Charmadi Ghats to reach the drop point of Bandaje Falls, which plunges from a height of 200 feet. Camp on the edge of the cliffs under a star-filled sky.",
@@ -74,13 +74,13 @@ const TREKS_DATA = [
         altitude: "1,520 m",
         price: 4200,
         pickup: "Majestic, Navarang Circle, Yeshwanthpur, Goraguntepalya",
-        image: "images/netravati.jpg",
+        image: "images/netravati.webp",
         slides: [
-            "images/netravati.jpg",
-            "images/netravati_valley.jpg",
-            "images/netra1.jpg",
-            "images/netra2.jpg",
-            "images/netra3.jpg"
+            "images/netravati.webp",
+            "images/netravati_valley.webp",
+            "images/netra1.webp",
+            "images/netra2.webp",
+            "images/netra3.webp"
         ],
         description: "An incredibly scenic and peaceful valley hike inside the Kudremukh National Park. Walk past floating clouds, small streams, and wildflower meadows to reach the Netravathi summit.",
         highlights: [
@@ -134,13 +134,13 @@ const TREKS_DATA = [
         altitude: "1,894 m",
         price: 4200,
         pickup: "Majestic, Navarang Circle, Yeshwanthpur, Goraguntepalya",
-        image: "images/kudremukh.jpg",
+        image: "images/kudremukh.webp",
         slides: [
-            "images/kudremukh.jpg",
-            "images/kudremukh_peak.jpg",
-            "images/kudre1.jpg",
-            "images/kudre2.jpg",
-            "images/kudre3.jpg"
+            "images/kudremukh.webp",
+            "images/kudremukh_peak.webp",
+            "images/kudre1.webp",
+            "images/kudre2.webp",
+            "images/kudre3.webp"
         ],
         description: "The iconic horse-faced ridge trek inside the Kudremukh National Park. Scale the rolling hills, navigate the steep shola forest canopies, and stand atop the second-highest peak in Karnataka.",
         highlights: [
@@ -193,13 +193,13 @@ const TREKS_DATA = [
         altitude: "1,300 m",
         price: 3099,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/ethina_bhuja.jpg",
+        image: "images/ethina_bhuja.webp",
         slides: [
-            "images/ethina_bhuja.jpg",
-            "images/ethina_bhuja_summit.jpg",
-            "images/ethina1.jpg",
-            "images/ethina2.jpg",
-            "images/ethina3.jpg"
+            "images/ethina_bhuja.webp",
+            "images/ethina_bhuja_summit.webp",
+            "images/ethina1.webp",
+            "images/ethina2.webp",
+            "images/ethina3.webp"
         ],
         description: "Known as the Ox's Shoulder due to its unique hump shape, Etthina Bhuja is a short, dramatic climb that offers spectacular panoramic views of the surrounding Charmadi forest ranges.",
         itinerary: [
@@ -219,14 +219,14 @@ const TREKS_DATA = [
         altitude: "1,159 m",
         price: 4200,
         pickup: "Majestic, Navarang Circle, Yeshwanthpur, Goraguntepalya",
-        image: "images/kurinjal.jpg",
+        image: "images/kurinjal.webp",
         slides: [
-            "images/kurinjal.jpg",
-            "images/kurinjal_peak.jpg",
-            "images/kur1.jpg",
-            "images/kur2.jpg",
-            "images/kur3.jpg",
-            "images/kelaguru_tea.jpg"
+            "images/kurinjal.webp",
+            "images/kurinjal_peak.webp",
+            "images/kur1.webp",
+            "images/kur2.webp",
+            "images/kur3.webp",
+            "images/kelaguru_tea.webp"
         ],
         description: "An offbeat trail that takes you deep into the heart of the shola woods. Spot unique flora, trek past ruins of an old tower, and stand at the windy peak overlooking Kudremukh forest region.",
         highlights: [
@@ -279,14 +279,14 @@ const TREKS_DATA = [
         altitude: "1,455 m",
         price: 4200,
         pickup: "Majestic, Navarang Circle, Yeshwanthpur, Goraguntepalya",
-        image: "images/gangadikallu.jpg",
+        image: "images/gangadikallu.webp",
         slides: [
-            "images/gangadikallu.jpg",
-            "images/gangadikallu_peak.jpg",
-            "images/ganga1.jpg",
-            "images/ganga2.jpg",
-            "images/ganga3.jpg",
-            "images/kelaguru_tea.jpg"
+            "images/gangadikallu.webp",
+            "images/gangadikallu_peak.webp",
+            "images/ganga1.webp",
+            "images/ganga2.webp",
+            "images/ganga3.webp",
+            "images/kelaguru_tea.webp"
         ],
         description: "Trek to the pristine peak of Gangadikallu, where misty winds blow across vast meadows. A lesser-known trail perfect for travelers searching for pure wilderness and solitude.",
         highlights: [
@@ -340,13 +340,13 @@ const TREKS_DATA = [
         altitude: "1,343 m",
         price: 4200,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/kodachadri.jpg",
+        image: "images/kodachadri.webp",
         slides: [
-            "images/kodachadri.jpg",
-            "images/kodachadri_summit.jpg",
-            "images/koda1.jpg",
-            "images/koda2.jpg",
-            "images/koda3.jpg"
+            "images/kodachadri.webp",
+            "images/kodachadri_summit.webp",
+            "images/koda1.webp",
+            "images/koda2.webp",
+            "images/koda3.webp"
         ],
         description: "Scale the legendary Kodachadri Peak, a heritage site. Walk past Hidlumane Falls, climb steep mud tracks, and take an adventurous Jeep ride back down from the clouds.",
         itinerary: [
@@ -367,13 +367,13 @@ const TREKS_DATA = [
         altitude: "1,748 m",
         price: 3399,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/tadiandamol.jpg",
+        image: "images/tadiandamol.webp",
         slides: [
-            "images/tadiandamol.jpg",
-            "images/tadiandamol_view.jpg",
-            "images/tadi1.jpg",
-            "images/tadi2.jpg",
-            "images/tadi3.jpg"
+            "images/tadiandamol.webp",
+            "images/tadiandamol_view.webp",
+            "images/tadi1.webp",
+            "images/tadi2.webp",
+            "images/tadi3.webp"
         ],
         description: "Scale the highest peak of Coorg. Walk through aromatic coffee plantations and cross high-altitude grasslands to reach a scenic vantage point overlooking the hills of Kerala.",
         itinerary: [
@@ -395,13 +395,13 @@ const TREKS_DATA = [
         altitude: "310 m",
         price: 3999,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/dudhsagar.jpg",
+        image: "images/dudhsagar.webp",
         slides: [
-            "images/dudhsagar.jpg",
-            "images/dudhsagar_railway.jpg",
-            "images/dudh1.jpg",
-            "images/dudh2.jpg",
-            "images/dudh3.jpg"
+            "images/dudhsagar.webp",
+            "images/dudhsagar_railway.webp",
+            "images/dudh1.webp",
+            "images/dudh2.webp",
+            "images/dudh3.webp"
         ],
         description: "Walk along the historic railway track of Braganza Ghats to witness the mighty four-tiered Dudhsagar Falls. Stand right in front of the spray as trains cross the bridge.",
         itinerary: [
@@ -422,13 +422,13 @@ const TREKS_DATA = [
         altitude: "1,150 m",
         price: 3799,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/narasimha_parvatha.jpg",
+        image: "images/narasimha_parvatha.webp",
         slides: [
-            "images/narasimha_parvatha.jpg",
-            "images/nara1.jpg",
-            "images/nara2.jpg",
-            "images/nara3.jpg",
-            "images/nara4.jpg"
+            "images/narasimha_parvatha.webp",
+            "images/nara1.webp",
+            "images/nara2.webp",
+            "images/nara3.webp",
+            "images/nara4.webp"
         ],
         description: "Challenge yourself with the Agumbe to Sringeri forest trail, scaling Narasimha Parvatha peak. Agumbe is the rainiest region in South India, offering thick, mystical rainforest covers.",
         itinerary: [
@@ -449,12 +449,12 @@ const TREKS_DATA = [
         altitude: "1,930 m",
         price: 3800,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/chikmagalur.jpg",
+        image: "images/chikmagalur.webp",
         slides: [
-            "images/chikmagalur.jpg",
-            "images/chikmagalur1.jpg",
-            "images/chikmagalur2.jpg",
-            "images/kelaguru_tea.jpg"
+            "images/chikmagalur.webp",
+            "images/chikmagalur1.webp",
+            "images/chikmagalur2.webp",
+            "images/kelaguru_tea.webp"
         ],
         description: "Explore the coffee capital of Karnataka. Visit the famous Mullayanagiri Peak (highest in KA), historical Baba Budangiri hills, and beautiful waterfalls like Hebbe Falls.",
         itinerary: [
@@ -475,11 +475,11 @@ const TREKS_DATA = [
         altitude: "10 m",
         price: 4000,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/mangalore.jpg",
+        image: "images/mangalore.webp",
         slides: [
-            "images/mangalore.jpg",
-            "images/mangalore1.jpg",
-            "images/mangalore2.jpg"
+            "images/mangalore.webp",
+            "images/mangalore1.webp",
+            "images/mangalore2.webp"
         ],
         description: "Discover the beautiful coastal vibes of Mangalore. Explore historic temples, relax at pristine beaches like Panambur and Tannirbhavi, and enjoy authentic sea-food delicacies.",
         itinerary: [
@@ -500,12 +500,12 @@ const TREKS_DATA = [
         altitude: "1,150 m",
         price: 3700,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/coorg.jpg",
+        image: "images/coorg.webp",
         slides: [
-            "images/coorg.jpg",
-            "images/coorg1.jpg",
-            "images/coorg2.jpg",
-            "images/coorg3.jpg"
+            "images/coorg.webp",
+            "images/coorg1.webp",
+            "images/coorg2.webp",
+            "images/coorg3.webp"
         ],
         description: "Visit the Scotland of India. Explore majestic Abbey Falls, sit in the beautiful gardens of Raja's Seat, visit the Golden Temple Buddhist monastery, and see Dubare Elephant Camp.",
         itinerary: [
@@ -526,11 +526,11 @@ const TREKS_DATA = [
         altitude: "2,100 m",
         price: 4300,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/wayanad1.jpg",
+        image: "images/wayanad1.webp",
         slides: [
-            "images/wayanad1.jpg",
-            "images/wayanad2.jpg",
-            "images/wayanad3.jpg"
+            "images/wayanad1.webp",
+            "images/wayanad2.webp",
+            "images/wayanad3.webp"
         ],
         description: "Cross into Kerala's Wayanad hills. Hike to the famous heart-shaped Chembra Lake, explore ancient Edakkal Caves, and walk through massive bamboo forests in Kuruvadweep.",
         itinerary: [
@@ -551,11 +551,11 @@ const TREKS_DATA = [
         altitude: "2,240 m",
         price: 3900,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/ooty1.jpg",
+        image: "images/ooty1.webp",
         slides: [
-            "images/ooty1.jpg",
-            "images/ooty2.jpg",
-            "images/ooty3.jpg"
+            "images/ooty1.webp",
+            "images/ooty2.webp",
+            "images/ooty3.webp"
         ],
         description: "Explore the Queen of Hill Stations. Settle in the misty Nilgiri hills, take a ride on the UNESCO Toy Train, stroll through botanical gardens, and boat around Pykara Lake.",
         itinerary: [
@@ -576,12 +576,12 @@ const TREKS_DATA = [
         altitude: "2,133 m",
         price: 4200,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/koda1.jpg",
+        image: "images/koda1.webp",
         slides: [
-            "images/koda1.jpg",
-            "images/koda2.jpg",
-            "images/koda3.jpg",
-            "images/koda4.jpg"
+            "images/koda1.webp",
+            "images/koda2.webp",
+            "images/koda3.webp",
+            "images/koda4.webp"
         ],
         description: "Enjoy Kodaikanal's forest lakes. Cycle around star-shaped Kodai Lake, visit Coaker's Walk edge, see Guna Caves, and witness panoramic views from Pillar Rocks.",
         itinerary: [
@@ -602,11 +602,11 @@ const TREKS_DATA = [
         altitude: "2,170 m",
         price: 5500,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/munnar2.jpg",
+        image: "images/munnar2.webp",
         slides: [
-            "images/munnar2.jpg",
-            "images/munnar1.jpg",
-            "images/munnar3.jpg"
+            "images/munnar2.webp",
+            "images/munnar1.webp",
+            "images/munnar3.webp"
         ],
         description: "Experience the world's highest tea plantation at Kolukkumalai. Take a pre-dawn 4x4 Jeep safari through rugged trails to watch one of India's most famous cloud-ocean sunrises.",
         itinerary: [
@@ -628,11 +628,11 @@ const TREKS_DATA = [
         altitude: "340 m",
         price: 3600,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/hampi1.jpg",
+        image: "images/hampi1.webp",
         slides: [
-            "images/hampi1.jpg",
-            "images/hampi2.jpg",
-            "images/hampi3.jpg"
+            "images/hampi1.webp",
+            "images/hampi2.webp",
+            "images/hampi3.webp"
         ],
         description: "Travel back in time to the capital of Vijayanagara Empire. Cycle past temple ruins, catch a spectacular sunset at Hemakuta Hill, and cross the Tungabhadra river on coracles.",
         itinerary: [
@@ -654,13 +654,13 @@ const TREKS_DATA = [
         altitude: "120 m",
         price: 3499,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/gokarna2.jpg",
+        image: "images/gokarna2.webp",
         slides: [
-            "images/gokarna1.jpg",
-            "images/gokarna2.jpg",
-            "images/gokarna3.jpg",
-            "images/gokarna4.jpg",
-            "images/gokarna5.jpg"
+            "images/gokarna1.webp",
+            "images/gokarna2.webp",
+            "images/gokarna3.webp",
+            "images/gokarna4.webp",
+            "images/gokarna5.webp"
         ],
         description: "Hike along the beach cliffs connecting Gokarna's five famous beaches: Kudle, Om, Half Moon, Paradise, and Belekan. Camp in oceanfront dome tents with a beach bonfire.",
         itinerary: [
@@ -755,6 +755,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const dd = String(today.getDate()).padStart(2, '0');
     document.getElementById("wizardDate").min = `${yyyy}-${mm}-${dd}`;
 
+    // Preload homepage hero image to disable skeleton
+    const homeHeroSlider = document.getElementById("homepageHeroSlider");
+    if (homeHeroSlider) {
+        const homeHeroImg = new Image();
+        homeHeroImg.src = "images/raha.webp";
+        homeHeroImg.onload = () => homeHeroSlider.classList.remove("skeleton");
+        homeHeroImg.onerror = () => homeHeroSlider.classList.remove("skeleton");
+    }
+
     // Start Hero background slideshow
     startHeroSlideshow();
 
@@ -768,7 +777,7 @@ document.addEventListener("DOMContentLoaded", () => {
     handleRouting();
 });
 
-// Setup Carousel Scroll functionality
+// Setup Carousel Scroll functionality with auto-scroll and manual controls
 function setupCarouselControls(trackId, prevBtnId, nextBtnId) {
     const track = document.getElementById(trackId);
     const nextBtn = document.getElementById(nextBtnId);
@@ -776,11 +785,52 @@ function setupCarouselControls(trackId, prevBtnId, nextBtnId) {
 
     if (!track || !nextBtn || !prevBtn) return;
 
+    let autoScrollInterval = null;
+    let interactionTimeout = null;
+
+    function startAutoScroll() {
+        if (autoScrollInterval) return;
+        autoScrollInterval = setInterval(() => {
+            const card = track.querySelector(".trek-card");
+            if (card) {
+                const cardWidth = card.offsetWidth + 32; // card width + grid gap
+                const container = track.parentElement;
+                const maxScrollLeft = container.scrollWidth - container.clientWidth;
+                
+                // If we've reached the end (with 15px buffer for subpixel layout), scroll back to start
+                if (container.scrollLeft >= maxScrollLeft - 15) {
+                    container.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                }
+            }
+        }, 3500); // Scroll every 3.5 seconds
+    }
+
+    function stopAutoScroll() {
+        if (autoScrollInterval) {
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = null;
+        }
+    }
+
+    function handleInteraction() {
+        stopAutoScroll();
+        if (interactionTimeout) {
+            clearTimeout(interactionTimeout);
+        }
+        // Resume auto-scroll after 5 seconds of no manual clicks
+        interactionTimeout = setTimeout(() => {
+            startAutoScroll();
+        }, 5000);
+    }
+
     nextBtn.addEventListener("click", () => {
         const card = track.querySelector(".trek-card");
         if (card) {
-            const cardWidth = card.offsetWidth + 32; // card width + grid gap
+            const cardWidth = card.offsetWidth + 32;
             track.parentElement.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            handleInteraction();
         }
     });
 
@@ -789,8 +839,21 @@ function setupCarouselControls(trackId, prevBtnId, nextBtnId) {
         if (card) {
             const cardWidth = card.offsetWidth + 32;
             track.parentElement.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            handleInteraction();
         }
     });
+
+    // Pause auto-scroll on hover, resume on leave
+    track.parentElement.addEventListener("mouseenter", stopAutoScroll);
+    track.parentElement.addEventListener("mouseleave", () => {
+        // Only resume if we are not in the middle of a manual interaction timeout
+        if (!interactionTimeout) {
+            startAutoScroll();
+        }
+    });
+
+    // Start auto-scroll initially
+    startAutoScroll();
 }
 
 // Render Weekend Trips (Treks category)
@@ -821,8 +884,8 @@ function renderWeekendTreks() {
         card.className = "trek-card";
         card.setAttribute("onclick", `navigateToTrek('${trek.id}')`);
         card.innerHTML = `
-            <div class="trek-card-img-wrapper">
-                <img src="${trek.image}" alt="${trek.title}" class="trek-card-img" onerror="this.src='images/hero_bg.png';">
+            <div class="trek-card-img-wrapper skeleton">
+                <img src="${trek.image}" alt="${trek.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src='images/hero_bg.webp'; this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
             </div>
             <div class="trek-card-content">
                 <h3 class="trek-card-title">${trek.title}</h3>
@@ -871,8 +934,8 @@ function renderSightseeingTrips() {
         card.className = "trek-card";
         card.setAttribute("onclick", `navigateToTrek('${trip.id}')`);
         card.innerHTML = `
-            <div class="trek-card-img-wrapper">
-                <img src="${trip.image}" alt="${trip.title}" class="trek-card-img" onerror="this.src='images/hero_bg.png';">
+            <div class="trek-card-img-wrapper skeleton">
+                <img src="${trip.image}" alt="${trip.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src='images/hero_bg.webp'; this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
             </div>
             <div class="trek-card-content">
                 <h3 class="trek-card-title">${trip.title}</h3>
@@ -916,8 +979,8 @@ function renderPopularTreks() {
         card.className = "trek-card";
         card.setAttribute("onclick", `navigateToTrek('${trek.id}')`);
         card.innerHTML = `
-            <div class="trek-card-img-wrapper">
-                <img src="${trek.image}" alt="${trek.title}" class="trek-card-img" onerror="this.src='images/hero_bg.png';">
+            <div class="trek-card-img-wrapper skeleton">
+                <img src="${trek.image}" alt="${trek.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src='images/hero_bg.webp'; this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
             </div>
             <div class="trek-card-content">
                 <h3 class="trek-card-title">${trek.title}</h3>
@@ -1169,11 +1232,22 @@ function handleRouting() {
                     trek.heroImage || trek.image,
                     "images/hero_bg.png",
                     trek.image !== "images/netravati.png" ? "images/netravati.png" : "images/kodachadri.png",
-                    trek.image !== "images/kudremukh.jpg" ? "images/kudremukh.jpg" : "images/kumara_parvatha.png"
+                    trek.image !== "images/kudremukh.webp" ? "images/kudremukh.webp" : "images/kumara_parvatha.png"
                 ].filter(Boolean);
 
                 // Populate slides dynamically inside heroBg
                 heroBg.innerHTML = "";
+                heroBg.classList.add("skeleton");
+                
+                const firstImg = new Image();
+                firstImg.src = slides[0];
+                firstImg.onload = () => {
+                    heroBg.classList.remove("skeleton");
+                };
+                firstImg.onerror = () => {
+                    heroBg.classList.remove("skeleton");
+                };
+
                 slides.forEach((imgSrc, idx) => {
                     const slideDiv = document.createElement("div");
                     slideDiv.className = `details-hero-bg-slide ${idx === 0 ? 'active' : ''}`;
