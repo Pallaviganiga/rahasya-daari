@@ -755,22 +755,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const dd = String(today.getDate()).padStart(2, '0');
     document.getElementById("wizardDate").min = `${yyyy}-${mm}-${dd}`;
 
-    // Preload homepage hero image to disable skeleton and fade in first slide
-    const homeHeroSlider = document.getElementById("homepageHeroSlider");
-    if (homeHeroSlider) {
-        const homeHeroImg = new Image();
-        homeHeroImg.src = "images/raha.webp";
-        homeHeroImg.onload = () => {
-            homeHeroSlider.classList.remove("skeleton");
-            const firstSlide = homeHeroSlider.querySelector(".hero-bg-slide");
-            if (firstSlide) firstSlide.classList.add("active");
-        };
-        homeHeroImg.onerror = () => {
-            homeHeroSlider.classList.remove("skeleton");
-            const firstSlide = homeHeroSlider.querySelector(".hero-bg-slide");
-            if (firstSlide) firstSlide.classList.add("active");
-        };
-    }
 
     // Start Hero background slideshow
     startHeroSlideshow();
