@@ -110,7 +110,7 @@
         </section>
 
         <section class="filter-section" id="sightseeing"
-            style="background-color: var(--light-neutral); padding: 15px 0 15px 0;">
+            style="background-color: var(--light-neutral);">
             <div class="container">
                 <div class="section-header text-center">
                     <h2 class="section-title brand-section-title">SIGHTSEEING TRIPS</h2>
@@ -618,6 +618,46 @@
             </div>
             <div class="wizard-body" id="infoModalBody" style="padding: 24px; max-height: 60vh; overflow-y: auto; color: var(--text-primary);">
                 <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Quick Inquiry Button -->
+    <button class="floating-inquiry-btn" id="floatingInquiryBtn" onclick="openModal('quickInquiryModal')">
+        <i class="fa-solid fa-circle-question"></i> <span>Enquire Now</span>
+    </button>
+
+    <!-- Quick Inquiry Modal -->
+    <div class="modal" id="quickInquiryModal">
+        <div class="modal-overlay" onclick="closeModal('quickInquiryModal')"></div>
+        <div class="modal-content modal-md">
+            <button class="modal-close" onclick="closeModal('quickInquiryModal')"><i
+                    class="fa-solid fa-xmark"></i></button>
+
+            <div class="wizard-header" style="padding: 24px; border-bottom: 1px solid var(--border-color); text-align: left;">
+                <h3 style="margin: 0; color: var(--primary-green); display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-circle-question"></i> Quick Inquiry
+                </h3>
+            </div>
+
+            <div class="wizard-body" style="padding: 24px;">
+                <form class="contact-form" id="quickInquiryForm" onsubmit="handleQuickInquirySubmit(event)">
+                    <div class="form-group">
+                        <label for="inquiryName">Your Name</label>
+                        <input type="text" id="inquiryName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiryEmail">Email Address</label>
+                        <input type="email" id="inquiryEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiryMessage">Your Message</label>
+                        <textarea id="inquiryMessage" rows="4" placeholder="Ask us anything about our treks, customization, or corporate tours..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" style="margin-top: 10px;">
+                        SEND INQUIRY <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </div>

@@ -767,6 +767,41 @@ document.addEventListener("DOMContentLoaded", () => {
     // Setup routing handler
     window.addEventListener("hashchange", handleRouting);
     handleRouting();
+
+    // Show/Hide Floating Inquiry Button based on scroll depth (visible after scrolling 300px, hidden at Contact section)
+    window.addEventListener("scroll", () => {
+        const floatBtn = document.getElementById("floatingInquiryBtn");
+        const contactSection = document.getElementById("contact");
+        
+        // Hide button if the user has already contacted us
+        if (sessionStorage.getItem("hasContactedUs") === "true") {
+            if (floatBtn) floatBtn.classList.remove("show");
+            return;
+        }
+
+        if (floatBtn) {
+            let showBtn = false;
+
+            // Show button after scrolling down 300px
+            if (window.scrollY > 300) {
+                showBtn = true;
+            }
+
+            // Hide button if the Contact section is visible in the viewport
+            if (contactSection) {
+                const contactRect = contactSection.getBoundingClientRect();
+                if (contactRect.top < window.innerHeight) {
+                    showBtn = false;
+                }
+            }
+
+            if (showBtn) {
+                floatBtn.classList.add("show");
+            } else {
+                floatBtn.classList.remove("show");
+            }
+        }
+    });
 });
 
 // Setup Carousel Scroll functionality with auto-scroll and manual controls
@@ -843,6 +878,9 @@ function setupCarouselControls(trackId, prevBtnId, nextBtnId) {
             startAutoScroll();
         }
     });
+
+    // Pause auto-scroll on mobile touch interaction
+    track.parentElement.addEventListener("touchstart", handleInteraction, { passive: true });
 
     // Start auto-scroll initially
     startAutoScroll();
@@ -1635,6 +1673,13 @@ function handleContactSubmit(event) {
         form.style.pointerEvents = "none";
         successMsg.classList.add("active");
     }
+
+    // Set flag and hide the floating button permanently
+    sessionStorage.setItem("hasContactedUs", "true");
+    const floatBtn = document.getElementById("floatingInquiryBtn");
+    if (floatBtn) {
+        floatBtn.classList.remove("show");
+    }
 }
 
 // Hero background slideshow animator
@@ -1756,4 +1801,36 @@ function openInfoModal(type) {
     titleEl.innerHTML = title;
     bodyEl.innerHTML = content;
     openModal("infoModal");
+}
+
+// Quick Inquiry submit logic via WhatsApp
+function handleQuickInquirySubmit(event) {
+    event.preventDefault();
+
+    const nameVal = document.getElementById("inquiryName").value;
+    const emailVal = document.getElementById("inquiryEmail").value;
+    const messageVal = document.getElementById("inquiryMessage").value;
+
+    const message = `*Quick Inquiry - Rahasya Daari*\n` +
+        `------------------------------------\n` +
+        `*Name:* ${nameVal}\n` +
+        `*Email:* ${emailVal}\n\n` +
+        `*Message:*\n${messageVal}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const waUrl = `https://wa.me/919632961606?text=${encodedMessage}`;
+
+    window.open(waUrl, '_blank');
+
+    closeModal("quickInquiryModal");
+    
+    // Clear the form fields
+    document.getElementById("quickInquiryForm").reset();
+
+    // Set flag and hide the floating button permanently
+    sessionStorage.setItem("hasContactedUs", "true");
+    const floatBtn = document.getElementById("floatingInquiryBtn");
+    if (floatBtn) {
+        floatBtn.classList.remove("show");
+    }
 }
