@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahasyadaari - Get Into Nature's Soul</title>
+    <meta name="description"
+        content="Explore offbeat, mysterious paths and beautiful secret treks of the Western Ghats and beyond with Rahasyadaari.">
+    <!-- Google Fonts: Nunito for rounded friendly sans-serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="styles.css?v=2">
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo-wrapper">
+                <img src="images/logo.png" alt="Rahasyadaari Logo" class="logo-img"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="logo-fallback" style="display:none;">RD</div>
+                <span class="logo-text"><span class="logo-text-full">Rahasya Daari</span><span
+                        class="logo-text-short">Rahasya</span></span>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#" class="nav-link active">Home</a>
+                <div class="nav-dropdown" id="tripsDropdown">
+                    <a href="#trips" class="nav-link dropdown-toggle" id="dropdownToggleBtn">
+                        Our Trips <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#trips" class="dropdown-item">Weekend Trips</a>
+                        <a href="#sightseeing" class="dropdown-item">Sightseeing Trips</a>
+                        <a href="#popular" class="dropdown-item">Popular Trips</a>
+                    </div>
+                </div>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-primary btn-book-top" onclick="openBookingWizard()">BOOK TOUR <i
+                        class="fa-solid fa-arrow-right"></i></button>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content" id="homePage">
+
+        <!-- Hero Section (Inset Card) -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-bg-slider">
+                    <div class="hero-bg-slide active" style="background-image: url('images/raha.png');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/hero_bg1.jpg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/hero_bg2.jpg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/hero_bg3.jpg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/hero_bg5.jpg');"></div>
+                </div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">GET INTO NATURE'S SOUL</h1>
+                    <p class="hero-subtitle">Through our eyes</p>
+                    <a href="#trips" class="btn btn-primary btn-hero-cta">VIEW TRIPS <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weekend Trips (Treks) Section -->
+        <section class="filter-section" id="trips">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title brand-section-title">WEEKEND TRIPS</h2>
+                </div>
+
+                <!-- Active Filter Banner (hidden by default) -->
+                <div id="filterBanner" class="filter-banner" style="display: none;">
+                    <span>Showing treks and tours in <strong id="filterStateName">Karnataka</strong></span>
+                    <button class="btn-clear-filter" onclick="clearStateFilter()">Show All <i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+
+                <!-- Carousel Container for Treks -->
+                <div class="carousel-container">
+                    <button class="carousel-nav prev-btn" id="weekendPrevBtn" aria-label="Previous trip"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <div class="carousel-viewport">
+                        <div class="trek-grid" id="weekendGrid">
+                            <!-- Cards will be populated by JS dynamically -->
+                        </div>
+                    </div>
+                    <button class="carousel-nav next-btn" id="weekendNextBtn" aria-label="Next trip"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="filter-section" id="sightseeing"
+            style="background-color: var(--light-neutral); padding: 15px 0 15px 0;">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title brand-section-title">SIGHTSEEING TRIPS</h2>
+                </div>
+
+                <!-- Carousel Container for Sightseeing Trips -->
+                <div class="carousel-container">
+                    <button class="carousel-nav prev-btn" id="sightseeingPrevBtn" aria-label="Previous trip"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <div class="carousel-viewport">
+                        <div class="trek-grid" id="sightseeingGrid">
+                            <!-- Cards will be populated by JS dynamically -->
+                        </div>
+                    </div>
+                    <button class="carousel-nav next-btn" id="sightseeingNextBtn" aria-label="Next trip"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Treks Section -->
+        <section class="filter-section" id="popular">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title brand-section-title">POPULAR TREKS</h2>
+                </div>
+
+                <!-- Carousel Container for Popular Treks -->
+                <div class="carousel-container">
+                    <button class="carousel-nav prev-btn" id="popularPrevBtn" aria-label="Previous popular trek"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <div class="carousel-viewport">
+                        <div class="trek-grid" id="popularGrid">
+                            <!-- Cards will be populated by JS dynamically -->
+                        </div>
+                    </div>
+                    <button class="carousel-nav next-btn" id="popularNextBtn" aria-label="Next popular trek"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="about-section" id="about">
+            <div class="container about-stacked-container">
+
+                <!-- Container 1: About Us (Logo + Details) -->
+                <div class="about-card about-us-card">
+                    <div class="about-card-grid">
+                        <div class="about-card-logo-wrapper">
+                            <img src="images/logo.png" alt="Rahasya Daari Logo" class="about-card-logo"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="about-logo-fallback" style="display:none;">RD</div>
+                        </div>
+                        <div class="about-card-info">
+                            <h3 class="about-card-title"><i class="fa-solid fa-users"></i> About Us</h3>
+                            <p class="about-paragraph">We are dedicated in organizing trips, treks, excursions,
+                                corporate packages, family trips, student trip packages across India.</p>
+                            <p class="about-paragraph">We also customize the trips, treks as per your requirements.</p>
+                            <div class="about-highlight-box">
+                                <i class="fa-solid fa-heart-pulse about-highlight-icon"></i>
+                                <p class="about-highlight-text">If you are solo, couple, family or friends, join our
+                                    weekend treks and tours from Bengaluru which are organized every weekend to
+                                    experience the best weekend of your life and be a part of the <strong>Rahasya
+                                        Daari</strong> family.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Container 2: Vision -->
+                <div class="about-card vision-card">
+                    <h3 class="about-card-title"><i class="fa-solid fa-eye"></i> Vision</h3>
+                    <ul class="about-purpose-list">
+                        <li>
+                            <div class="about-purpose-icon"><i class="fa-solid fa-seedling"></i></div>
+                            <p class="about-purpose-text">To reaffirm the bond between the Nature and mankind by
+                                unravelling the knots of materialistic routine.</p>
+                        </li>
+                        <li>
+                            <div class="about-purpose-icon"><i class="fa-solid fa-compass"></i></div>
+                            <p class="about-purpose-text">Let us be your guide to help you embrace the serenity of
+                                mother Nature.</p>
+                        </li>
+                        <li>
+                            <div class="about-purpose-icon"><i class="fa-solid fa-globe"></i></div>
+                            <p class="about-purpose-text">To be able to connect the beautiful nature from different part
+                                of the world to you.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Container 3: Mission -->
+                <div class="about-card mission-card">
+                    <h3 class="about-card-title"><i class="fa-solid fa-bullseye"></i> Mission</h3>
+                    <ul class="about-purpose-list">
+                        <li>
+                            <div class="about-purpose-icon"><i class="fa-solid fa-heart"></i></div>
+                            <p class="about-purpose-text">To make all possible ways to make Nature close to people's
+                                heart and present memories for a lifetime.</p>
+                        </li>
+                        <li>
+                            <div class="about-purpose-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                            <p class="about-purpose-text">To lead community in protecting and promoting the divinity of
+                                Nature and Bio-diversity.</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container grid grid-2-col">
+                <div class="contact-info-panel">
+                    <span class="section-tag">Get in Touch</span>
+                    <h2 class="section-title">Have Questions? Ask Our Experts</h2>
+                    <p class="contact-desc">Ready to plan your next mystery trail, or need custom package
+                        configurations? Drop us a line, and our lead pathfinders will get back to you within 24 hours.
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <i class="fa-solid fa-phone contact-icon"></i>
+                            <div>
+                                <h5>Call / WhatsApp</h5>
+                                <p><a href="https://wa.me/919632961606" target="_blank" rel="noopener noreferrer"
+                                        style="color: inherit; text-decoration: none;">+91 96329 61606</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <i class="fa-solid fa-envelope contact-icon"></i>
+                            <div>
+                                <h5>Email Support</h5>
+                                <p>info@rahasyadaari.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <i class="fa-solid fa-location-dot contact-icon"></i>
+                            <div>
+                                <h5>Basecamp Office</h5>
+                                <p>12, Forest Ridge Road, Jayanagar, Bengaluru, KA - 560041</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-panel">
+                    <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Your Message</label>
+                            <textarea id="contactMessage" rows="5"
+                                placeholder="Which trek are you interested in? Any special requests?"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">SEND MESSAGE <i
+                                class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                    <div class="success-message" id="contactSuccess">
+                        <i class="fa-solid fa-circle-check success-icon"></i>
+                        <h4>Message Sent Successfully!</h4>
+                        <p>Thank you for reaching out. A pathfinder will contact you shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Details Page Container -->
+    <main class="details-page-content" id="detailsPage" style="display: none;">
+        <!-- Details Hero Section -->
+        <section class="details-hero">
+            <div class="details-hero-container">
+                <div class="details-hero-bg" id="detailsHeroBg"></div>
+                <div class="details-hero-overlay"></div>
+                <div class="details-hero-content-wrapper">
+                    <button class="btn-back-home" id="btnBackHome" onclick="goHome()" aria-label="Go back to home page">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Trips
+                    </button>
+                    <div class="details-hero-content">
+                        <span class="badge" id="detailsCategoryBadge">Trek</span>
+                        <h1 class="details-trek-title" id="detailsTitle">Kumara Parvatha Peak</h1>
+                        <p class="details-trek-location" id="detailsSubtitle"><i class="fa-solid fa-location-dot"></i>
+                            Coorg, Karnataka</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Details Body Section -->
+        <section class="details-body-section">
+            <div class="container grid grid-2-col-details">
+                <div class="details-main-info">
+                    <!-- Highlights Container -->
+                    <div id="detailsHighlightsContainer" style="display: none; margin-bottom: 32px;">
+                        <h3 class="info-heading">Highlights</h3>
+                        <div class="highlights-grid" id="detailsHighlights">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <h3 class="info-heading">Trek Overview</h3>
+                    <p class="details-trek-description" id="detailsDescription">Detailed description goes here...</p>
+
+                    <h3 class="info-heading">Complete Itinerary</h3>
+                    <div class="itinerary-timeline" id="detailsItinerary">
+                        <!-- Itinerary items will be populated by JS -->
+                    </div>
+                </div>
+
+                <div class="details-sidebar-info">
+                    <!-- Quick stats box -->
+                    <div class="quick-stats-card">
+                        <div class="stat-row">
+                            <span><i class="fa-regular fa-clock"></i> Duration:</span>
+                            <strong id="detailsDuration">2 Days</strong>
+                        </div>
+                        <div class="stat-row">
+                            <span><i class="fa-solid fa-mountain"></i> Max Altitude:</span>
+                            <strong id="detailsAltitude">1,712 m</strong>
+                        </div>
+                        <div class="stat-row">
+                            <span><i class="fa-solid fa-route"></i> Distance:</span>
+                            <strong id="detailsDistance">22 km</strong>
+                        </div>
+                        <div class="stat-row">
+                            <span><i class="fa-solid fa-indian-rupee-sign"></i> Price:</span>
+                            <strong id="detailsPrice">₹3,499 /person</strong>
+                        </div>
+                        <div class="stat-row" id="rowOwnTransport" style="display: none;">
+                            <span><i class="fa-solid fa-car"></i> Own Transport:</span>
+                            <strong id="detailsOwnTransport">₹3,200 /person</strong>
+                        </div>
+                        <div class="stat-row" id="rowAdvance" style="display: none;">
+                            <span><i class="fa-solid fa-wallet"></i> Booking Advance:</span>
+                            <strong id="detailsAdvance">₹1,500 /person</strong>
+                        </div>
+                    </div>
+
+                    <!-- Inclusions and exclusions -->
+                    <div class="includes-card">
+                        <h4 class="sidebar-heading">Charges Include</h4>
+                        <ul class="includes-list" id="detailsInclusions">
+                            <!-- Inclusions populated by JS -->
+                        </ul>
+                    </div>
+
+                    <!-- Pickup Card -->
+                    <div class="includes-card" id="detailsPickupCard" style="display: none;">
+                        <h4 class="sidebar-heading"><i class="fa-solid fa-bus"></i> Pickup Location</h4>
+                        <ul class="pickup-list" id="detailsPickupLocations">
+                            <!-- Populated dynamically -->
+                        </ul>
+                    </div>
+
+                    <!-- Cancellation Policy Card -->
+                    <div class="includes-card" id="detailsCancellationCard"
+                        style="display: none; border-color: rgba(224, 62, 62, 0.25); background-color: rgba(224, 62, 62, 0.03);">
+                        <h4 class="sidebar-heading" style="color: #E03E3E;"><i class="fa-solid fa-shield-halved"></i>
+                            Cancellation Policy</h4>
+                        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;"
+                            id="detailsCancellationPolicy">
+                            Advance amount is non refundable, if trip gets cancelled from our side then complete amount
+                            will be refunded.
+                        </p>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="sidebar-actions">
+                        <button class="btn btn-primary btn-block btn-book-now" id="detailsBookBtn">BOOK THIS TREK <i
+                                class="fa-solid fa-calendar-check"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo-wrapper">
+                    <img src="images/logo.png" alt="Rahasyadaari Logo" class="logo-img"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="logo-fallback" style="display:none;">RD</div>
+                    <span class="logo-text"><span class="logo-text-full">Rahasya Daari</span><span
+                            class="logo-text-short">Rahasya</span></span>
+                </a>
+                <p class="footer-tagline">Exploring the mystery trails, preserving the nature's soul.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/rahasya_daari/" onclick="openInstagram(event)" target="_blank"
+                        rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/919632961606" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#trips">Trips</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Popular Treks</h4>
+                <ul class="footer-links">
+                    <li><a href="#trips" onclick="selectTrekSearch('Kudremukh')">Kudremukha Trek</a></li>
+                    <li><a href="#trips" onclick="selectTrekSearch('Kumara Parvatha')">Kumara Parvatha Peak</a></li>
+                    <li><a href="#trips" onclick="selectTrekSearch('Netravathi')">Netravathi Trek</a></li>
+                    <li><a href="#trips" onclick="selectTrekSearch('Gokarna')">Gokarna Golden Coast Trek</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Safety & Terms</h4>
+                <ul class="footer-links">
+                    <li><a href="javascript:void(0)" onclick="openInfoModal('safety')">Safety Guidelines</a></li>
+                    <li><a href="javascript:void(0)" onclick="openInfoModal('gear')">Gear Checklist</a></li>
+                    <li><a href="javascript:void(0)" onclick="openInfoModal('refund')">Refund Policy</a></li>
+                    <li><a href="javascript:void(0)" onclick="openInfoModal('terms')">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Rahasyadaari. All rights reserved. Made with love for the mountains.</p>
+        </div>
+    </footer>
+
+
+
+    <!-- Booking Wizard Modal -->
+    <div class="modal" id="bookingWizardModal">
+        <div class="modal-overlay" onclick="closeModal('bookingWizardModal')"></div>
+        <div class="modal-content modal-md">
+            <button class="modal-close" onclick="closeModal('bookingWizardModal')"><i
+                    class="fa-solid fa-xmark"></i></button>
+
+            <div class="wizard-header">
+                <h3>Book Your Mystery Trail</h3>
+                <div class="wizard-progress">
+                    <div class="progress-step active" id="stepIndicator1">1</div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" id="stepIndicator2">2</div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" id="stepIndicator3">3</div>
+                </div>
+            </div>
+
+            <div class="wizard-body">
+                <!-- STEP 1: Select Trek & Date -->
+                <div class="wizard-step active" id="wizardStep1">
+                    <h4 class="step-title">Select Trek & Date</h4>
+                    <div class="form-group">
+                        <label for="wizardTrekSelect">Choose Trekking Destination</label>
+                        <select id="wizardTrekSelect" class="form-select" onchange="updateBookingSummary()">
+                            <!-- Trek options will be populated dynamically -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="wizardDate">Select Batch Date</label>
+                        <input type="date" id="wizardDate" class="form-input" required>
+                    </div>
+                    <div class="wizard-actions">
+                        <div></div> <!-- empty div for spacing -->
+                        <button class="btn btn-primary" onclick="goToStep(2)">Continue <i
+                                class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Trekkers & Details -->
+                <div class="wizard-step" id="wizardStep2">
+                    <h4 class="step-title">Trekkers Info</h4>
+                    <div class="form-group grid grid-2-col-narrow">
+                        <div>
+                            <label for="wizardTrekkersCount">Number of Trekkers</label>
+                            <input type="number" id="wizardTrekkersCount" class="form-input" min="1" max="20" value="1"
+                                oninput="updateBookingSummary()" required>
+                        </div>
+                        <div>
+                            <label for="wizardPhone">WhatsApp Number</label>
+                            <input type="tel" id="wizardPhone" class="form-input" placeholder="e.g. +91 9999999999"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="wizardName">Primary Trekker Name</label>
+                        <input type="text" id="wizardName" class="form-input" placeholder="Enter your full name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wizardEmail">Primary Email</label>
+                        <input type="email" id="wizardEmail" class="form-input" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group" id="wizardTransportGroup" style="display: none;">
+                        <label style="display: block; margin-bottom: 8px;">Do you have own transportation?</label>
+                        <div style="display: flex; gap: 24px; align-items: center; padding: 4px 0;">
+                            <label
+                                style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal;">
+                                <input type="radio" name="wizardTransport" value="yes"
+                                    onchange="updateBookingSummary()"> Yes (Save ₹1,000/head)
+                            </label>
+                            <label
+                                style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal;">
+                                <input type="radio" name="wizardTransport" value="no" checked
+                                    onchange="updateBookingSummary()"> No (Includes Transport)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="wizard-actions">
+                        <button class="btn btn-secondary" onclick="goToStep(1)"><i class="fa-solid fa-chevron-left"></i>
+                            Back</button>
+                        <button class="btn btn-primary" onclick="goToStep(3)">Confirm Details <i
+                                class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Summary & Request Submission -->
+                <div class="wizard-step" id="wizardStep3">
+                    <h4 class="step-title">Inquiry Summary</h4>
+
+                    <div class="booking-summary-box">
+                        <div class="summary-row">
+                            <span>Trek:</span>
+                            <strong id="summaryTrekName">-</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Date:</span>
+                            <strong id="summaryDate">-</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Trekkers:</span>
+                            <strong id="summaryTrekkers">-</strong>
+                        </div>
+                        <div class="summary-row" id="rowSummaryTransport" style="display: none;">
+                            <span>Transport:</span>
+                            <strong id="summaryTransport">-</strong>
+                        </div>
+                        <div class="summary-row" id="rowSummaryAdvance" style="display: none;">
+                            <span>Confirmation Advance:</span>
+                            <strong id="summaryAdvance" style="color: #e28743;">-</strong>
+                        </div>
+                        <div class="summary-row border-top">
+                            <span>Estimated Total:</span>
+                            <strong class="summary-price" id="summaryTotal">-</strong>
+                        </div>
+                    </div>
+
+                    <p class="summary-note"><i class="fa-solid fa-circle-info"></i> Standard guides, meals, stays and
+                        permits are included in this estimate. No payment is required right now. We will call you on
+                        WhatsApp to confirm details.</p>
+
+                    <div class="wizard-actions">
+                        <button class="btn btn-secondary" onclick="goToStep(2)"><i class="fa-solid fa-chevron-left"></i>
+                            Back</button>
+                        <button class="btn btn-primary" onclick="submitBookingInquiry()">SUBMIT BOOKING REQUEST <i
+                                class="fa-solid fa-circle-check"></i></button>
+                    </div>
+                </div>
+
+                <!-- SUCCESS STATE -->
+                <div class="wizard-step success-state-wrapper" id="wizardSuccess">
+                    <div class="success-animation-container">
+                        <div class="success-icon-badge">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                    <h3>Booking Request Compiled!</h3>
+                    <p>Your adventure request details are ready. Click the button below to send your booking request
+                        directly to our WhatsApp number **+91 96329 61606** and finalize details!</p>
+                    <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 20px;">
+                        <button class="btn btn-primary" id="wizardSuccessWhatsAppBtn"
+                            style="background-color: #25D366; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3); border: none;">
+                            SEND ON WHATSAPP <i class="fa-brands fa-whatsapp"></i>
+                        </button>
+                        <button class="btn btn-secondary" onclick="closeModal('bookingWizardModal')">Close
+                            Window</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Information Modal (Safety, Terms, Gear, Refund) -->
+    <div class="modal" id="infoModal">
+        <div class="modal-overlay" onclick="closeModal('infoModal')"></div>
+        <div class="modal-content modal-md">
+            <button class="modal-close" onclick="closeModal('infoModal')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="wizard-header" style="padding: 24px; border-bottom: 1px solid var(--border-color); text-align: left;">
+                <h3 id="infoModalTitle" style="margin: 0; color: var(--primary-green); display: flex; align-items: center; gap: 10px;">Information</h3>
+            </div>
+            <div class="wizard-body" id="infoModalBody" style="padding: 24px; max-height: 60vh; overflow-y: auto; color: var(--text-primary);">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Script connection -->
+    <script src="script.js"></script>
+</body>
+
+</html>
