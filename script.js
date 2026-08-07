@@ -13,14 +13,13 @@ const TREKS_DATA = [
         altitude: "1,050 m",
         price: 4200,
         pickup: "Majestic, Navarang Circle, Yeshwanthpur, Goraguntepalya",
-        image: "images/bandaje.webp",
+        image: "images/band1.png",
         slides: [
-            "images/bandaje.webp",
+            "images/bandaje.png",
             "images/bandaje_falls.webp",
-            "images/band1.webp",
+            "images/band1.png",
             "images/rani_jhari.webp",
-            "images/kelaguru_tea.webp",
-
+            "images/kelaguru_tea.webp"
         ],
         description: "Hike through lush grasslands and deep shola forests of Charmadi Ghats to reach the drop point of Bandaje Falls, which plunges from a height of 200 feet. Camp on the edge of the cliffs under a star-filled sky.",
         highlights: [
@@ -77,10 +76,8 @@ const TREKS_DATA = [
         image: "images/netravati.webp",
         slides: [
             "images/netravati.webp",
-            "images/netravati_valley.webp",
-            "images/netra1.webp",
-            "images/netra2.webp",
-            "images/netra3.webp"
+            "images/netra1.png",
+            "images/netra2.png"
         ],
         description: "An incredibly scenic and peaceful valley hike inside the Kudremukh National Park. Walk past floating clouds, small streams, and wildflower meadows to reach the Netravathi summit.",
         highlights: [
@@ -139,8 +136,7 @@ const TREKS_DATA = [
             "images/kudremukh.webp",
             "images/kudremukh_peak.webp",
             "images/kudre1.webp",
-            "images/kudre2.webp",
-            "images/kudre3.webp"
+            "images/kudre2.png"
         ],
         description: "The iconic horse-faced ridge trek inside the Kudremukh National Park. Scale the rolling hills, navigate the steep shola forest canopies, and stand atop the second-highest peak in Karnataka.",
         highlights: [
@@ -399,9 +395,8 @@ const TREKS_DATA = [
         slides: [
             "images/dudhsagar.webp",
             "images/dudhsagar_railway.webp",
-            "images/dudh1.webp",
-            "images/dudh2.webp",
-            "images/dudh3.webp"
+            "images/dudh1.png",
+            "images/dudh2.png"
         ],
         description: "Walk along the historic railway track of Braganza Ghats to witness the mighty four-tiered Dudhsagar Falls. Stand right in front of the spray as trains cross the bridge.",
         itinerary: [
@@ -449,12 +444,10 @@ const TREKS_DATA = [
         altitude: "1,930 m",
         price: 3800,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/chikmagalur.webp",
+        image: "images/chikkamnglr.png",
         slides: [
-            "images/chikmagalur.webp",
-            "images/chikmagalur1.webp",
-            "images/chikmagalur2.webp",
-            "images/kelaguru_tea.webp"
+            "images/chikkamnglr.png",
+            "images/chikkamnglr1.png"
         ],
         description: "Explore the coffee capital of Karnataka. Visit the famous Mullayanagiri Peak (highest in KA), historical Baba Budangiri hills, and beautiful waterfalls like Hebbe Falls.",
         itinerary: [
@@ -475,11 +468,10 @@ const TREKS_DATA = [
         altitude: "10 m",
         price: 4000,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/mangalore.webp",
+        image: "images/coastal.png",
         slides: [
-            "images/mangalore.webp",
-            "images/mangalore1.webp",
-            "images/mangalore2.webp"
+            "images/coastal.png",
+            "images/coastal1.png"
         ],
         description: "Discover the beautiful coastal vibes of Mangalore. Explore historic temples, relax at pristine beaches like Panambur and Tannirbhavi, and enjoy authentic sea-food delicacies.",
         itinerary: [
@@ -500,12 +492,10 @@ const TREKS_DATA = [
         altitude: "1,150 m",
         price: 3700,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/coorg.webp",
+        image: "images/coorg.png",
         slides: [
-            "images/coorg.webp",
-            "images/coorg1.webp",
-            "images/coorg2.webp",
-            "images/coorg3.webp"
+            "images/coorg.png",
+            "images/coorg1.png"
         ],
         description: "Visit the Scotland of India. Explore majestic Abbey Falls, sit in the beautiful gardens of Raja's Seat, visit the Golden Temple Buddhist monastery, and see Dubare Elephant Camp.",
         itinerary: [
@@ -654,13 +644,10 @@ const TREKS_DATA = [
         altitude: "120 m",
         price: 3499,
         pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/gokarna2.webp",
+        image: "images/gokarna1.png",
         slides: [
-            "images/gokarna1.webp",
-            "images/gokarna2.webp",
-            "images/gokarna3.webp",
-            "images/gokarna4.webp",
-            "images/gokarna5.webp"
+            "images/gokarna1.png",
+            "images/gokarna.png"
         ],
         description: "Hike along the beach cliffs connecting Gokarna's five famous beaches: Kudle, Om, Half Moon, Paradise, and Belekan. Camp in oceanfront dome tents with a beach bonfire.",
         itinerary: [
