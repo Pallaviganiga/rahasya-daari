@@ -84,10 +84,10 @@ const IMAGES = {
             ]
         },
         "etthina-bhuja": {
-            cover: "images/Hero/hero-bg-landscape.jpg",
+            cover: "images/Etthina Bhuja/ethina1-landscape.jpg",
             slides: [
-                "images/Hero/hero-bg-landscape.jpg",
-                "images/Kudremukha/kudremukha-ridge.png"
+                "images/Etthina Bhuja/ethina1-landscape.jpg",
+                "images/Etthina Bhuja/ethina2-landscape.jpg"
             ]
         },
         "kurinjal": {

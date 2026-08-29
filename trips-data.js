@@ -270,11 +270,10 @@ const TREKS_DATA = [
         altitude: "1,300 m",
         price: 3599,
         pickup: "Shantala Silks (Majestic), Navarang Circle, Yeshwanthpur, Goraguntepalya",
-        image: "images/Etthina Bhuja/etthina-bhuja-cover.jpg",
+        image: "images/Etthina Bhuja/ethina1-landscape.jpg",
         slides: [
-            "images/Etthina Bhuja/etthina-bhuja-cover.jpg",
-            "images/Etthina Bhuja/etthina-bhuja-peak-view.jpeg",
-            "images/Etthina Bhuja/etthina-bhuja-viewpoint.jpeg"
+            "images/Etthina Bhuja/ethina1-landscape.jpg",
+            "images/Etthina Bhuja/ethina2-landscape.jpg"
         ],
         description: "Mudigere, located about 245 km from Bangalore in the Chikmagalur district of Karnataka, is a peaceful hill station surrounded by lush coffee plantations and the scenic beauty of the Western Ghats. Known for attractions like the Etthina Bhuja Trek, an easy hike that takes you to a peak offering panoramic views of the surrounding hills, and Devaramane Hills, known for its stunning beauty and quiet ambiance.",
         highlights: [
