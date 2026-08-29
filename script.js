@@ -1,662 +1,10 @@
-// Comprehensive Trek & Sightseeing Data matching Rahasya Daari Flyers
-const TREKS_DATA = [
-    {
-        id: "bandaje-falls",
-        category: "trek",
-        popular: true,
-        title: "Bandaje Falls Trek & Camping",
-        location: "Charmadi Ghats, Karnataka",
-        difficulty: "moderate",
-        difficultyLabel: "Moderate",
-        duration: "2 Days",
-        distance: "12 km",
-        altitude: "1,050 m",
-        price: 4200,
-        pickup: "Majestic, Navarang Circle, Yeshwanthpur, Goraguntepalya",
-        image: "images/band1.png",
-        slides: [
-            "images/bandaje.png",
-            "images/bandaje_falls.webp",
-            "images/band1.png",
-            "images/rani_jhari.webp",
-            "images/kelaguru_tea.webp"
-        ],
-        description: "Hike through lush grasslands and deep shola forests of Charmadi Ghats to reach the drop point of Bandaje Falls, which plunges from a height of 200 feet. Camp on the edge of the cliffs under a star-filled sky.",
-        highlights: [
-            "Trek 6+6 kms",
-            "Bandaje waterfall",
-            "Western ghat landscape",
-            "Kodige waterfall",
-            "Jeep ride",
-            "Kelaguru tea estate",
-            "Shola grassland",
-            "Unesco heritage temple",
-            "Trip guide"
-        ],
-        pickupLocationList: [
-            "Majestic, Bangalore",
-            "Navarang Circle",
-            "Yeshwanthpur",
-            "Goraguntepalya"
-        ],
-        ownTransportPrice: 3200,
-        advanceAmount: 1500,
-        cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
-        itinerary: [
-            { day: "Day 00", title: "Overnight Journey", desc: "Overnight journey from Bangalore." },
-            { day: "Day 01", title: "Into the Heart of the Western Ghats", desc: "<ul><li>Arrive at the homestay and freshen up after your journey.</li><li>Enjoy a hearty breakfast to fuel up for the day ahead.</li><li>Pack your essentials and gear up for an adventurous day in the wild!</li><li>Hop into a jeep for a scenic ride to the base of the Bandaje Falls trail.</li><li>Begin your trek through the lush forest trail, immersing yourself in the serene surroundings.</li><li>Pause for a short break and a group photo as you emerge into the stunning Shola grasslands.</li><li>Continue your journey through the majestic Western Ghats—with panoramic views of the coastal plains unfolding on your right.</li><li>Arrive at the dramatic edge of Bandaje Falls, where the water plunges over 200 feet—a truly awe-inspiring sight.</li><li>Relax by the falls and enjoy a packed lunch amid nature's grandeur.</li><li>Trek back down to the base.</li><li>Visit the nearby Rani Jhari Viewpoint for one last sweeping view of the landscape.</li><li>Take the jeep back to the homestay and freshen up.</li><li>Sip on evening tea or coffee as the sun sets.</li><li>Wind down with a cozy campfire and music (If weather permits), followed by a delicious dinner and overnight stay.</li></ul>" },
-            { day: "Day 02", title: "Waterfalls, Heritage & Homeward Journey", desc: "<ul><li>Wake up to a refreshing morning in the hills.</li><li>Head out on a jeep ride to explore the hidden gem of Kodige Waterfalls.</li><li>Spend some quality time at the falls—soak in the serenity and snap a fun group photo!</li><li>Ride back to the homestay and freshen up.</li><li>Relish a wholesome breakfast.</li><li>Check out from the homestay.</li><li>Make a stop at the scenic Kelaguru Tea Estate—a perfect spot to learn about local tea culture and snap some Insta-worthy pictures.</li><li>Continue your journey toward Belur Town.</li><li>En route, stop for a self-sponsored lunch at a local eatery.</li><li>Visit the magnificent UNESCO World Heritage Site—the Hoysala Temple at Belur, known for its intricate carvings and historic charm.</li><li>Begin your return journey to Bangalore.</li><li>Arrive back in the city by 10:00 PM (subject to traffic conditions).</li></ul>" }
-        ],
-        inclusions: [
-            "Stay (Tents/Rooms on sharing basis)",
-            "2 Breakfasts, 1 Packed Lunch, 1 Dinner (Veg/Non-Veg)",
-            "Basic First-Aid Support",
-            "Forest Permission",
-            "Guide charges & Trek Charges",
-            "Campfire (If weather permits)",
-            "Coffee/Tea",
-            "Jeep ride charges",
-            "Waterfall entry fee",
-            "Transportation (Toll/Parking included)"
-        ]
-    },
-    {
-        id: "netravathi",
-        category: "trek",
-        popular: true,
-        title: "Netravathi Valley Trek",
-        location: "Kudremukh Range, Karnataka",
-        difficulty: "easy",
-        difficultyLabel: "Easy to Moderate",
-        duration: "2 Days",
-        distance: "12 km",
-        altitude: "1,520 m",
-        price: 4200,
-        pickup: "Majestic, Navarang Circle, Yeshwanthpur, Goraguntepalya",
-        image: "images/netravati.webp",
-        slides: [
-            "images/netravati.webp",
-            "images/netra1.png",
-            "images/netra2.png"
-        ],
-        description: "An incredibly scenic and peaceful valley hike inside the Kudremukh National Park. Walk past floating clouds, small streams, and wildflower meadows to reach the Netravathi summit.",
-        highlights: [
-            "Trek 6+6 kms",
-            "Western ghat landscape",
-            "Water streams",
-            "Kodige falls",
-            "Jeep ride",
-            "Samse tea estate",
-            "Shola grassland",
-            "Unesco heritage temple",
-            "Trip guide"
-        ],
-        pickupLocationList: [
-            "Majestic, Bangalore",
-            "Navarang Circle",
-            "Yeshwanthpur",
-            "Goraguntepalya"
-        ],
-        ownTransportPrice: 3200,
-        advanceAmount: 1500,
-        cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
-        itinerary: [
-            { day: "Day 00", title: "Overnight Journey", desc: "Overnight journey from Bangalore." },
-            { day: "Day 01", title: "Trek to the Tranquil Heights of Netravathi", desc: "<ul><li>Arrive at your charming homestay in the peaceful village of Samse, Kalasa.</li><li>Freshen up and enjoy a hearty local breakfast to kick-start your day.</li><li>Pack your essentials and gear up for an unforgettable adventure.</li><li>Set off on an exciting jeep ride through rugged terrain to the base of Netravathi Peak.</li><li>Begin your scenic trek, surrounded by lush forests, gentle streams, and cascading waterfalls.</li><li>Enjoy the trail's natural beauty, stopping to admire the sounds and sights of the wild.</li><li>Continue your ascent through the serene Western Ghats.</li><li>Reach the summit of Netravathi Peak—take in the breathtaking 360° views.</li><li>Capture the moment with a group photo at the top.</li><li>Enjoy your packed lunch amidst the clouds and greenery.</li><li>Unwind, breathe in the mountain air, and soak up the peaceful surroundings.</li><li>Begin your descent back to the base as the day cools.</li><li>Return to the homestay, freshen up, and relax.</li><li>Sip on a warm cup of tea or coffee while enjoying the evening breeze.</li><li>Gather around the campfire for fun, conversations, and music under the stars.</li><li>End the day with a delicious dinner and a restful overnight stay.</li></ul>" },
-            { day: "Day 02", title: "Tea Trails, Waterfalls & Heritage Wonders", desc: "<ul><li>Rise early, freshen up, and enjoy a fulfilling breakfast.</li><li>Check out from the homestay and head out for more exploration.</li><li>Take a leisurely walk through the picturesque Samse tea estate.</li><li>Visit the beautiful Kodige Falls—feel the mist, enjoy the view and take a refreshing splash!</li><li>Spend some quiet time relaxing by the falls.</li><li>Enjoy a self-sponsored lunch on the way at a local spot.</li><li>Proceed to the historical town of Belur.</li><li>Explore the awe-inspiring UNESCO World Heritage Hoysala Temple, a masterpiece of ancient Indian architecture.</li><li>Begin the return journey to Bangalore, filled with stories and memories.</li><li>Reach Bangalore by approximately 9:30–10:00 PM (subject to traffic).</li></ul>" }
-        ],
-        inclusions: [
-            "Stay (Tents/Rooms on sharing basis)",
-            "2 Breakfasts, 1 Packed Lunch, 1 Dinner (Veg/Non-Veg)",
-            "Basic First-Aid Support",
-            "Forest Permission",
-            "Guide charges & Trek Charges",
-            "Campfire (Subject to weather conditions)",
-            "Coffee/Tea",
-            "Jeep ride charges",
-            "Waterfall entry fee",
-            "Transportation (Toll/Parking included)"
-        ]
-    },
-    {
-        id: "kudremukh",
-        category: "trek",
-        popular: true,
-        title: "Kudremukha Trek",
-        location: "Chikkamagaluru, Karnataka",
-        difficulty: "moderate",
-        difficultyLabel: "Moderate",
-        duration: "2 Days",
-        distance: "18 km",
-        altitude: "1,894 m",
-        price: 4200,
-        pickup: "Majestic, Navarang Circle, Yeshwanthpur, Goraguntepalya",
-        image: "images/kudremukh.webp",
-        slides: [
-            "images/kudremukh.webp",
-            "images/kudremukh_peak.webp",
-            "images/kudre1.webp",
-            "images/kudre2.png"
-        ],
-        description: "The iconic horse-faced ridge trek inside the Kudremukh National Park. Scale the rolling hills, navigate the steep shola forest canopies, and stand atop the second-highest peak in Karnataka.",
-        highlights: [
-            "Trek 9+9 kms",
-            "Western ghat landscape",
-            "Water streams",
-            "Kodige falls",
-            "Jeep ride",
-            "Samse tea estate",
-            "Shola grassland",
-            "Unesco heritage temple",
-            "Trip guide"
-        ],
-        pickupLocationList: [
-            "Majestic, Bangalore",
-            "Navarang Circle",
-            "Yeshwanthpur",
-            "Goraguntepalya"
-        ],
-        ownTransportPrice: 3200,
-        advanceAmount: 1500,
-        cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
-        itinerary: [
-            { day: "Day 00", title: "Overnight Journey", desc: "Overnight Journey from Bangalore." },
-            { day: "Day 01", title: "Into the Heart of Kudremukha", desc: "<ul><li>Arrive at your cozy homestay nestled in the serene Samse village, Kalasa.</li><li>Refresh yourself and enjoy a delicious local breakfast.</li><li>Gear up for the day's adventure—pack your essentials and get ready to explore!</li><li>Hop into a rugged jeep for a thrilling ride to the base of Kudremukha Peak.</li><li>Begin your scenic trek through lush greenery and misty trails.</li><li>Pause at Onti Mara for a short break and a fun group photo session.</li><li>Continue your journey through the wild beauty of the Western Ghats.</li><li>Reach the majestic Kudremukha Peak—soak in the panoramic views and cool mountain breeze.</li><li>Enjoy packed lunch surrounded by nature's splendor.</li><li>Start the descent back to the base.</li><li>Return to the homestay, unwind, and freshen up.</li><li>Sip on some hot tea or coffee as the evening sets in.</li><li>Gather around a cozy campfire for stories and laughter. (Subjected to weather conditions)</li><li>Relish a hearty dinner and rest well for the next day's adventure.</li></ul>" },
-            { day: "Day 02", title: "Nature, Heritage & Homeward Bound", desc: "<ul><li>Wake up to a refreshing morning and get ready for the day.</li><li>Savor a wholesome breakfast before checking out from the homestay.</li><li>Take a peaceful stroll through the lush Samse tea estate.</li><li>Head to the enchanting Kodige Falls—dip your feet or enjoy a splash!</li><li>Spend some relaxed moments at the falls, surrounded by tranquil nature.</li><li>Grab a self-sponsored lunch en route at a local eatery of your choice.</li><li>Journey onward to the historic town of Belur.</li><li>Explore the architectural marvel of the UNESCO World Heritage Hoysala Temple—an artistic treasure of ancient India.</li><li>Begin your return trip to Bangalore, carrying memories of nature, adventure, and heritage.</li><li>Arrive in Bangalore by approximately 9:30–10:00 PM (depending on traffic conditions).</li></ul>" }
-        ],
-        inclusions: [
-            "Stay (Tents/Rooms on sharing basis)",
-            "2 Breakfasts, 1 Packed Lunch, 1 Dinner (Veg/Non-Veg)",
-            "Basic First-Aid Support",
-            "Forest Permission",
-            "Guide charges & Trek Charges",
-            "Campfire (Subjected to weather conditions)",
-            "Coffee/Tea",
-            "Jeep ride charges",
-            "Waterfall entry fee",
-            "Transportation (Toll/Parking included)"
-        ]
-    },
-    {
-        id: "etthina-bhuja",
-        category: "trek",
-        title: "Etthina Bhuja Peak Hike",
-        location: "Mudigere, Karnataka",
-        difficulty: "easy",
-        difficultyLabel: "Easy",
-        duration: "1 Day",
-        distance: "8 km",
-        altitude: "1,300 m",
-        price: 3099,
-        pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/ethina_bhuja.webp",
-        slides: [
-            "images/ethina_bhuja.webp",
-            "images/ethina_bhuja_summit.webp",
-            "images/ethina1.webp",
-            "images/ethina2.webp",
-            "images/ethina3.webp"
-        ],
-        description: "Known as the Ox's Shoulder due to its unique hump shape, Etthina Bhuja is a short, dramatic climb that offers spectacular panoramic views of the surrounding Charmadi forest ranges.",
-        itinerary: [
-            { day: "Day 1", title: "Short Climb & Hump Summit", desc: "Start the climb from the temple base. Navigate grassy trails to reach the steep rocky peak. Return for a local Malnad lunch." }
-        ],
-        inclusions: ["Entry Permits", "Local Lunch & Breakfast", "Experienced Pathfinders", "To and Fro Travel"]
-    },
-    {
-        id: "kurinjal",
-        category: "trek",
-        title: "Kurinjal Trek",
-        location: "Kudremukh Range, Karnataka",
-        difficulty: "moderate",
-        difficultyLabel: "Moderate",
-        duration: "2 Days",
-        distance: "14 km",
-        altitude: "1,159 m",
-        price: 4200,
-        pickup: "Majestic, Navarang Circle, Yeshwanthpur, Goraguntepalya",
-        image: "images/kurinjal.webp",
-        slides: [
-            "images/kurinjal.webp",
-            "images/kurinjal_peak.webp",
-            "images/kur1.webp",
-            "images/kur2.webp",
-            "images/kur3.webp",
-            "images/kelaguru_tea.webp"
-        ],
-        description: "An offbeat trail that takes you deep into the heart of the shola woods. Spot unique flora, trek past ruins of an old tower, and stand at the windy peak overlooking Kudremukh forest region.",
-        highlights: [
-            "Trek 7+7 kms",
-            "Western ghat landscape",
-            "Kudremukha national park",
-            "Kodige falls",
-            "Jeep ride",
-            "Samse tea estate",
-            "Shola grassland",
-            "Unesco heritage temple",
-            "Trip guide"
-        ],
-        pickupLocationList: [
-            "Majestic, Bangalore",
-            "Navarang Circle",
-            "Yeshwanthpur",
-            "Goraguntepalya"
-        ],
-        ownTransportPrice: 3200,
-        advanceAmount: 1500,
-        cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
-        itinerary: [
-            { day: "Day 00", title: "Overnight Journey", desc: "Overnight journey from Bangalore." },
-            { day: "Day 01", title: "Into the Heart of the Western Ghats", desc: "<ul><li>Arrive at the cozy homestay nestled in the serene village of Samse. Take a moment to freshen up and soak in the peaceful surroundings.</li><li>Enjoy a hearty breakfast to fuel up for the day's adventure.</li><li>Pack your essentials, lace up your trekking shoes, and get ready to dive into nature!</li><li>Drive through the enchanting Kudremukha National Park, a journey surrounded by dense forests and scenic views, on your way to the trek base.</li><li>Begin your 7 km trek to Kurinjal Peak, winding through lush green forests, vibrant flora, and the sounds of chirping birds.</li><li>Pause at a scenic viewpoint to catch your breath, click some unforgettable group pictures, and take in the magic around you.</li><li>Continue your ascent through the beautiful trails as the peak draws closer with every step.</li><li>Arrive at the Kurinjal Peak, where panoramic views of rolling hills and deep valleys await—it's time to relax, unwind, and just be in the moment.</li><li>Enjoy your packed lunch amidst nature, a meal with a view like no other.</li><li>Begin your descent back to the base, carrying memories of a thrilling climb and breathtaking views.</li><li>Return to the homestay, where you can refresh and relax after an adventurous day.</li><li>Sip on some evening tea or coffee, share stories, and unwind by the campfire under a starlit sky. (Subjected to weather conditions)</li><li>End the day with a delicious dinner and a peaceful overnight stay.</li></ul>" },
-            { day: "Day 02", title: "Tea Trails, Waterfalls & Heritage Wonders", desc: "<ul><li>Rise early, freshen up, and enjoy a fulfilling breakfast.</li><li>Check out from the homestay and head out for more exploration.</li><li>Take a leisurely walk through the picturesque Samse tea estate.</li><li>Visit the beautiful Kodige Falls—dip your feet or take a refreshing splash!</li><li>Spend some quiet time relaxing by the falls.</li><li>Enjoy a self-sponsored lunch on the way at a local spot.</li><li>Proceed to the historical town of Belur.</li><li>Explore the awe-inspiring UNESCO World Heritage Hoysala Temple, a masterpiece of ancient Indian architecture.</li><li>Begin the return journey to Bangalore, filled with stories and memories.</li><li>Reach Bangalore by approximately 9:30–10:00 PM (subject to traffic).</li></ul>" }
-        ],
-        inclusions: [
-            "Stay (Tents/Rooms on sharing basis)",
-            "2 Breakfasts, 1 Packed Lunch, 1 Dinner (Veg/Non-Veg)",
-            "Basic First-Aid Support",
-            "Forest Permission",
-            "Guide charges & Trek Charges",
-            "Campfire (Subjected to weather conditions)",
-            "Coffee/Tea",
-            "Jeep ride charges",
-            "Waterfall entry fee",
-            "Transportation (Toll/Parking included)"
-        ]
-    },
-    {
-        id: "gangadikallu",
-        category: "trek",
-        title: "Gangadikallu Trek",
-        location: "Kudremukh Range, Karnataka",
-        difficulty: "moderate",
-        difficultyLabel: "Moderate",
-        duration: "2 Days",
-        distance: "10 km",
-        altitude: "1,455 m",
-        price: 4200,
-        pickup: "Majestic, Navarang Circle, Yeshwanthpur, Goraguntepalya",
-        image: "images/gangadikallu.webp",
-        slides: [
-            "images/gangadikallu.webp",
-            "images/gangadikallu_peak.webp",
-            "images/ganga1.webp",
-            "images/ganga2.webp",
-            "images/ganga3.webp",
-            "images/kelaguru_tea.webp"
-        ],
-        description: "Trek to the pristine peak of Gangadikallu, where misty winds blow across vast meadows. A lesser-known trail perfect for travelers searching for pure wilderness and solitude.",
-        highlights: [
-            "Gangadikallu Peak Trek",
-            "Scenic forest trails",
-            "Lakya Dam backwaters view",
-            "Samse Tea Estate",
-            "Kodige Falls by jeep ride",
-            "Jeep ride experience",
-            "Homestay stay",
-            "Campfire",
-            "Belur Hoysala Temple",
-            "UNESCO Heritage Site"
-        ],
-        pickupLocationList: [
-            "Majestic, Bangalore",
-            "Navarang Circle",
-            "Yeshwanthpur",
-            "Goraguntepalya"
-        ],
-        ownTransportPrice: 3200,
-        advanceAmount: 1500,
-        cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
-        itinerary: [
-            { day: "Day 00", title: "Departure", desc: "Overnight journey from Bangalore to the beautiful Western Ghats." },
-            { day: "Day 01", title: "Gangadikallu Trek Adventure", desc: "<ul><li>Reach the homestay at Samse, Kalasa.</li><li>Freshen up and enjoy breakfast.</li><li>Pack your essentials and get ready for the adventure.</li><li>Travel to Gangamoola, the trek starting point.</li><li>Begin the Gangadikallu Trek (10 KM | 5 KM ascent + 5 KM descent).</li><li>Walk through scenic forest trails, rolling grasslands, and breathtaking landscapes.</li><li>Reach the majestic Gangadikallu Peak.</li><li>Witness stunning views of the Lakya Dam backwaters from the summit.</li><li>Relax, soak in the beauty, and capture unforgettable memories.</li><li>Enjoy a packed lunch amidst nature.</li><li>Descend back to the trek base.</li><li>Return to the homestay and unwind.</li><li>Evening tea/coffee.</li><li>Campfire (subject to weather conditions).</li><li>Dinner and overnight stay.</li></ul>" },
-            { day: "Day 02", title: "Waterfalls & Heritage Trail", desc: "<ul><li>Wake up and freshen up.</li><li>Have breakfast.</li><li>Check out from the homestay.</li><li>Visit the picturesque Samse Tea Estate.</li><li>Visit Kodige Falls via an exciting jeep ride.</li><li>Spend time relaxing and enjoying the refreshing waterfall.</li><li>Self-sponsored lunch en route.</li><li>Visit the magnificent Belur Hoysala Temple.</li><li>Explore the UNESCO World Heritage Site known for its incredible architecture and craftsmanship.</li><li>Begin the return journey to Bangalore.</li><li>Reach Bangalore by around 10:00 PM (subject to traffic conditions).</li></ul>" }
-        ],
-        inclusions: [
-            "Stay (Tents/Rooms on sharing basis)",
-            "2 Breakfasts, 1 Packed Lunch, 1 Dinner (Veg/Non-Veg)",
-            "Basic First-Aid Support",
-            "Forest Permission",
-            "Guide charges & Trek Charges",
-            "Campfire (Subject to weather conditions)",
-            "Coffee/Tea",
-            "Jeep ride charges",
-            "Waterfall entry fee",
-            "Transportation (Toll/Parking included)"
-        ]
-    },
-    {
-        id: "kodachadri",
-        category: "trek",
-        title: "Kodachadri Trek & Sightseeing",
-        location: "Shimoga, Karnataka",
-        difficulty: "moderate",
-        difficultyLabel: "Moderate",
-        duration: "2 Days",
-        distance: "14 km",
-        altitude: "1,343 m",
-        price: 4200,
-        pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/kodachadri.webp",
-        slides: [
-            "images/kodachadri.webp",
-            "images/kodachadri_summit.webp",
-            "images/koda1.webp",
-            "images/koda2.webp",
-            "images/koda3.webp"
-        ],
-        description: "Scale the legendary Kodachadri Peak, a heritage site. Walk past Hidlumane Falls, climb steep mud tracks, and take an adventurous Jeep ride back down from the clouds.",
-        itinerary: [
-            { day: "Day 1", title: "Hidlumane Falls & Peak Climb", desc: "Scale the rocks at Hidlumane Falls, climb grasslands to reach Sarvajna Peetha. Watch sunset, stay at peak/base camp." },
-            { day: "Day 2", title: "Jeep Ride & Nagara Fort Excursion", desc: "Take a bumpy Jeep ride down. Settle bills, visit historical Nagara Fort ruins, and return to Bangalore." }
-        ],
-        inclusions: ["Forest Passes", "Jeep Ride Charge", "Homestay & Meals", "Certified Guides", "To/Fro Transport"]
-    },
-    {
-        id: "tadiandamol",
-        category: "trek",
-        title: "Tadiandamol Peak Trek",
-        location: "Coorg, Karnataka",
-        difficulty: "easy",
-        difficultyLabel: "Easy to Moderate",
-        duration: "2 Days",
-        distance: "12 km",
-        altitude: "1,748 m",
-        price: 3399,
-        pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/tadiandamol.webp",
-        slides: [
-            "images/tadiandamol.webp",
-            "images/tadiandamol_view.webp",
-            "images/tadi1.webp",
-            "images/tadi2.webp",
-            "images/tadi3.webp"
-        ],
-        description: "Scale the highest peak of Coorg. Walk through aromatic coffee plantations and cross high-altitude grasslands to reach a scenic vantage point overlooking the hills of Kerala.",
-        itinerary: [
-            { day: "Day 1", title: "Nalknad Palace Walk & Camp Settle", desc: "Settle in Coorg homestay, check out Nalknad Palace ruins, walk through coffee estates." },
-            { day: "Day 2", title: "Peak Ascent & Sunset Journey", desc: "Climb past big rocks to the peak. Enjoy vistas, descend, and drive back to Bangalore." }
-        ],
-        inclusions: ["Sanctuary Permits", "Coorg Homestay", "Local Kodava Meals", "Certified Guide", "Shared Transport"]
-    },
-    {
-        id: "dudhsagar",
-        category: "trek",
-        popular: true,
-        title: "Dudhsagar Falls & Railway Trek",
-        location: "Goa-Karnataka Border",
-        difficulty: "moderate",
-        difficultyLabel: "Moderate",
-        duration: "2 Days",
-        distance: "18 km",
-        altitude: "310 m",
-        price: 3999,
-        pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/dudhsagar.webp",
-        slides: [
-            "images/dudhsagar.webp",
-            "images/dudhsagar_railway.webp",
-            "images/dudh1.png",
-            "images/dudh2.png"
-        ],
-        description: "Walk along the historic railway track of Braganza Ghats to witness the mighty four-tiered Dudhsagar Falls. Stand right in front of the spray as trains cross the bridge.",
-        itinerary: [
-            { day: "Day 1", title: "Railway Track Walk to Dudhsagar", desc: "Walk from Castle Rock / Kulem along railway trails. Pass tunnels, check out mist over the falls, settle in tents/homestay." },
-            { day: "Day 2", title: "Jeep Ride / Spice Plantation Tour", desc: "Explore local Goan spice plantations, have a traditional lunch, and return via Belagavi." }
-        ],
-        inclusions: ["Railway Permit / Entry", "Jungle Stay", "Meals", "Outdoor Guides", "Bangalore transport"]
-    },
-    {
-        id: "narasimha-parvatha",
-        category: "trek",
-        title: "Narasimha Parvatha Expedition",
-        location: "Agumbe, Karnataka",
-        difficulty: "difficult",
-        difficultyLabel: "Difficult",
-        duration: "2 Days",
-        distance: "22 km",
-        altitude: "1,150 m",
-        price: 3799,
-        pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/narasimha_parvatha.webp",
-        slides: [
-            "images/narasimha_parvatha.webp",
-            "images/nara1.webp",
-            "images/nara2.webp",
-            "images/nara3.webp",
-            "images/nara4.webp"
-        ],
-        description: "Challenge yourself with the Agumbe to Sringeri forest trail, scaling Narasimha Parvatha peak. Agumbe is the rainiest region in South India, offering thick, mystical rainforest covers.",
-        itinerary: [
-            { day: "Day 1", title: "Rainforest Descent & Camp Setup", desc: "Climb from Kigga base, cross dense canopies, prepare wilderness camp near Sitanadi river banks." },
-            { day: "Day 2", title: "Peak Ascent & Agumbe Sunset", desc: "Ascend Sringeri side peak, watch panoramic Agumbe rainforest sunset, and head back." }
-        ],
-        inclusions: ["Rainforest Entry Permit", "Tents & Sleeping Gear", "Local Agumbe Food", "Agumbe Guides", "Transport"]
-    },
-    {
-        id: "chikmagalur",
-        category: "trip",
-        title: "Chikmagalur Sightseeing & Peak Tour",
-        location: "Chikkamagaluru, Karnataka",
-        difficulty: "easy",
-        difficultyLabel: "Easy / Sightseeing",
-        duration: "2 Days",
-        distance: "N/A",
-        altitude: "1,930 m",
-        price: 3800,
-        pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/chikkamnglr.png",
-        slides: [
-            "images/chikkamnglr.png",
-            "images/chikkamnglr1.png"
-        ],
-        description: "Explore the coffee capital of Karnataka. Visit the famous Mullayanagiri Peak (highest in KA), historical Baba Budangiri hills, and beautiful waterfalls like Hebbe Falls.",
-        itinerary: [
-            { day: "Day 1", title: "Mullayanagiri & Baba Budangiri Hills", desc: "Arrive at homestay. Scale Mullayanagiri steps, explore Baba Budangiri caves, and have a cozy bonfire night." },
-            { day: "Day 2", title: "Hebbe Falls & Coffee Plantation Walk", desc: "Explore Hebbe Falls via local forest Jeeps, stroll through coffee estates, buy fresh spices, and return." }
-        ],
-        inclusions: ["Hotel / Homestay stay", "Jeep ride to Hebbe", "Breakfasts & Dinner", "Sightseeing Coordinator", "Transport"]
-    },
-    {
-        id: "mangalore-trip",
-        category: "trip",
-        title: "Mangalore Coastal Tour & Beach Camp",
-        location: "Mangaluru, Karnataka",
-        difficulty: "easy",
-        difficultyLabel: "Easy / Leisure",
-        duration: "2 Days",
-        distance: "N/A",
-        altitude: "10 m",
-        price: 4000,
-        pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/coastal.png",
-        slides: [
-            "images/coastal.png",
-            "images/coastal1.png"
-        ],
-        description: "Discover the beautiful coastal vibes of Mangalore. Explore historic temples, relax at pristine beaches like Panambur and Tannirbhavi, and enjoy authentic sea-food delicacies.",
-        itinerary: [
-            { day: "Day 1", title: "Pilikula Nisargadhama & Beach Sunset", desc: "Visit Pilikula park, enjoy water activities, and watch a glorious sunset at Tannirbhavi beach with bonfire." },
-            { day: "Day 2", title: "Mangaladevi Temple & Coastal Markets", desc: "Visit historical temples, try famous Mangalorean ice-creams at Pabbas, shop at local fish markets, and head back." }
-        ],
-        inclusions: ["Beach Tents / Hotel Stay", "Entry Tickets", "Breakfasts & Local Dinners", "Tour Captain", "Bangalore transport"]
-    },
-    {
-        id: "coorg-exploration",
-        category: "trip",
-        title: "Coorg Exploration & Sightseeing",
-        location: "Madikeri, Karnataka",
-        difficulty: "easy",
-        difficultyLabel: "Easy / Tour",
-        duration: "2 Days",
-        distance: "N/A",
-        altitude: "1,150 m",
-        price: 3700,
-        pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/coorg.png",
-        slides: [
-            "images/coorg.png",
-            "images/coorg1.png"
-        ],
-        description: "Visit the Scotland of India. Explore majestic Abbey Falls, sit in the beautiful gardens of Raja's Seat, visit the Golden Temple Buddhist monastery, and see Dubare Elephant Camp.",
-        itinerary: [
-            { day: "Day 1", title: "Golden Temple & Dubare Elephant Camp", desc: "Arrive in Coorg. Feed elephants at Dubare river base, explore Golden Temple monastery, and stay at Madikeri." },
-            { day: "Day 2", title: "Abbey Falls, Madikeri Fort & Raja's Seat", desc: "Visit scenic Abbey Falls, explore Madikeri Fort museum, and capture sunset at Raja's Seat before return." }
-        ],
-        inclusions: ["Madikeri Hotel Stay", "Dubare Entry Fee", "Meals", "Coorg Tour Captain", "Roundtrip Transport"]
-    },
-    {
-        id: "wayanad-adventure",
-        category: "trip",
-        title: "Wayanad Adventure & Chembra Peak",
-        location: "Wayanad, Kerala",
-        difficulty: "moderate",
-        difficultyLabel: "Moderate",
-        duration: "2 Days",
-        distance: "8 km",
-        altitude: "2,100 m",
-        price: 4300,
-        pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/wayanad1.webp",
-        slides: [
-            "images/wayanad1.webp",
-            "images/wayanad2.webp",
-            "images/wayanad3.webp"
-        ],
-        description: "Cross into Kerala's Wayanad hills. Hike to the famous heart-shaped Chembra Lake, explore ancient Edakkal Caves, and walk through massive bamboo forests in Kuruvadweep.",
-        itinerary: [
-            { day: "Day 1", title: "Chembra Peak & Banasura Sagar Dam", desc: "Climb to Wayanad's heart lake. Settle in resort, take speed boats around Banasura reservoir." },
-            { day: "Day 2", title: "Edakkal Caves & Soochipara Falls", desc: "Explore Neolithic rock engravings at Edakkal Caves, dive into Soochipara waterfall pools, and drive back." }
-        ],
-        inclusions: ["Kerala Border Permits", "Resort Stay", "Meals", "Trekking Guide", "Bangalore transport"]
-    },
-    {
-        id: "ooty-sightseeing",
-        category: "trip",
-        title: "Ooty Sightseeing & Toy Train",
-        location: "Ooty, Tamil Nadu",
-        difficulty: "easy",
-        difficultyLabel: "Easy / Tour",
-        duration: "2 Days",
-        distance: "N/A",
-        altitude: "2,240 m",
-        price: 3900,
-        pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/ooty1.webp",
-        slides: [
-            "images/ooty1.webp",
-            "images/ooty2.webp",
-            "images/ooty3.webp"
-        ],
-        description: "Explore the Queen of Hill Stations. Settle in the misty Nilgiri hills, take a ride on the UNESCO Toy Train, stroll through botanical gardens, and boat around Pykara Lake.",
-        itinerary: [
-            { day: "Day 1", title: "Doddabetta Peak & Toy Train Ride", desc: "Scale Doddabetta vantage point, take Toy Train from Ooty to Coonoor, explore tea gardens." },
-            { day: "Day 2", title: "Botanical Garden & Pykara Lake", desc: "Visit massive rose and botanical gardens, row boats in Pykara lake, and drive back to Bangalore." }
-        ],
-        inclusions: ["Ooty Hotel Accommodation", "Toy train tickets", "All breakfasts & Dinner", "Tour coordinator", "Transport"]
-    },
-    {
-        id: "kodaikanal-escape",
-        category: "trip",
-        title: "Kodaikanal Lake Escape",
-        location: "Kodaikanal, Tamil Nadu",
-        difficulty: "easy",
-        difficultyLabel: "Easy / Tour",
-        duration: "2 Days",
-        distance: "N/A",
-        altitude: "2,133 m",
-        price: 4200,
-        pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/koda1.webp",
-        slides: [
-            "images/koda1.webp",
-            "images/koda2.webp",
-            "images/koda3.webp",
-            "images/koda4.webp"
-        ],
-        description: "Enjoy Kodaikanal's forest lakes. Cycle around star-shaped Kodai Lake, visit Coaker's Walk edge, see Guna Caves, and witness panoramic views from Pillar Rocks.",
-        itinerary: [
-            { day: "Day 1", title: "Kodai Lake Cycling & Coaker's Walk", desc: "Arrive in Kodai. Cycle/row boats in Kodai lake, walk along Coaker's walk valley edge, campfire night." },
-            { day: "Day 2", title: "Pillar Rocks & Pine Forest walk", desc: "Visit massive Pillar Rocks, stroll through pine forests, shop local home-made chocolates, and return." }
-        ],
-        inclusions: ["Hotel stay in Kodai", "Boating & Cycle Rent", "Meals", "Tamil Nadu Permit", "Roundtrip transport"]
-    },
-    {
-        id: "munnar-trip",
-        category: "trip",
-        title: "Munnar Kolukkumalai Sunrise Tour",
-        location: "Munnar, Kerala",
-        difficulty: "moderate",
-        difficultyLabel: "Moderate / Jeep Tour",
-        duration: "3 Days",
-        distance: "N/A",
-        altitude: "2,170 m",
-        price: 5500,
-        pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/munnar2.webp",
-        slides: [
-            "images/munnar2.webp",
-            "images/munnar1.webp",
-            "images/munnar3.webp"
-        ],
-        description: "Experience the world's highest tea plantation at Kolukkumalai. Take a pre-dawn 4x4 Jeep safari through rugged trails to watch one of India's most famous cloud-ocean sunrises.",
-        itinerary: [
-            { day: "Day 1", title: "Munnar Town & Mattupetty Dam", desc: "Arrive in Munnar, take sightseeing drive around Mattupetty reservoir, Echo Point, and stay in Munnar tea valleys." },
-            { day: "Day 2", title: "Pre-Dawn Kolukkumalai Sunrise Jeep Safari", desc: "Start 4x4 safari at 4:30 AM. Capture sunrise above clouds, explore Munnar tea factories, and camp." },
-            { day: "Day 3", title: "Eravikulam National Park & Return", desc: "Spot Nilgiri Tahr mountain goats in Eravikulam, visit waterfalls, and drive back to Bangalore." }
-        ],
-        inclusions: ["3-Star Munnar Homestay/Hotel", "4x4 Jeep Safari Charge", "All Breakfasts & Dinner", "Kerala Permits", "Transport"]
-    },
-    {
-        id: "hampi-explore",
-        category: "trip",
-        title: "Explore Hampi Heritage Tour",
-        location: "Hampi, Karnataka",
-        difficulty: "easy",
-        difficultyLabel: "Easy / Heritage",
-        duration: "2 Days",
-        distance: "N/A",
-        altitude: "340 m",
-        price: 3600,
-        pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/hampi1.webp",
-        slides: [
-            "images/hampi1.webp",
-            "images/hampi2.webp",
-            "images/hampi3.webp"
-        ],
-        description: "Travel back in time to the capital of Vijayanagara Empire. Cycle past temple ruins, catch a spectacular sunset at Hemakuta Hill, and cross the Tungabhadra river on coracles.",
-        itinerary: [
-            { day: "Day 1", title: "Stone Chariot & Hemakuta Sunset", desc: "Explore Hampi ruins via bicycle, cross river in round coracles, watch sunset from Hemakuta hill temple." },
-            { day: "Day 2", title: "Lotus Mahal & Elephant Stables", desc: "Visit Vittala Temple stone chariot, Lotus Mahal palace, Elephant stables, and return late evening." }
-        ],
-        inclusions: ["Cozy Guest House Stay", "Coracle River Ride", "Bicycle Rent", "Monument Entry Tickets", "Travel"]
-    },
-    {
-        id: "gokarna",
-        category: "trip",
-        popular: true,
-        title: "Gokarna Beach Trek & Camping",
-        location: "Gokarna, Karnataka",
-        difficulty: "easy",
-        difficultyLabel: "Easy",
-        duration: "2 Days",
-        distance: "10 km",
-        altitude: "120 m",
-        price: 3499,
-        pickup: "Majestic, Bangalore Navarang circle Goraguntepalya",
-        image: "images/gokarna1.png",
-        slides: [
-            "images/gokarna1.png",
-            "images/gokarna.png"
-        ],
-        description: "Hike along the beach cliffs connecting Gokarna's five famous beaches: Kudle, Om, Half Moon, Paradise, and Belekan. Camp in oceanfront dome tents with a beach bonfire.",
-        itinerary: [
-            { day: "Day 1", title: "Ocean Cliff Hike to Paradise Beach", desc: "Cross rocky cliffs connecting beaches, swim at half-moon, and setup camps at Paradise Beach." },
-            { day: "Day 2", title: "Temple Visit & Mirjan Fort exploration", desc: "Visit Mahabaleshwar temple, explore Mirjan Fort stone walls, and drive back to Bangalore." }
-        ],
-        inclusions: ["Beach campsite stay", "Breakfasts & Dinner", "Coordinators", "Mirjan entry charges", "To/Fro Transport"]
-    }
-];
+/**
+ * ==========================================================================
+ * RAHASYA DAARI - MAIN INTERACTIVE CONTROLLER
+ * ==========================================================================
+ * Trips and Featured Trails are loaded modularly from trips-data.js.
+ * ==========================================================================
+ */
 
 // App State
 let currentBookingStep = 1;
@@ -664,34 +12,313 @@ let selectedTrekId = '';
 let selectedStateFilter = '';
 let selectedPopularFilter = false;
 
-// DOM Elements
+// Curated Gallery Data for the Landing Page Visual Showcase
+const GALLERY_DATA = [
+    {
+        id: "g1",
+        src: "images/Bandaje/bandaje-cliff-edge.png",
+        title: "Edge of the 200-ft Cascade",
+        location: "Bandaje Falls, Charmadi Ghats",
+        category: "waterfalls",
+        tag: "Waterfall",
+        tall: true
+    },
+    {
+        id: "g2",
+        src: "images/Netravathi/netravathi-cover.jpg",
+        title: "The Green Spine Ridge",
+        location: "Netravathi Peak, Kalasa",
+        category: "peaks",
+        tag: "Summit Ridge",
+        tall: false
+    },
+    {
+        id: "g3",
+        src: "images/Kudremukha/kudremukha-cover.jpg",
+        title: "Horse-Faced Mountain Wonder",
+        location: "Kudremukha National Park",
+        category: "peaks",
+        tag: "1,894m Peak",
+        tall: false
+    },
+    {
+        id: "g4",
+        src: "images/Dudhsagar Falls & Dandeli/dudhsagar-falls-view.png",
+        title: "Sea of Milk Railway Cascade",
+        location: "Dudhsagar, Goa-Karnataka Border",
+        category: "waterfalls",
+        tag: "Iconic Falls",
+        tall: true
+    },
+    {
+        id: "g5",
+        src: "images/Kodachadri/kodachadri-sunset-ridge.jpg",
+        title: "Golden Hour on Western Ridge",
+        location: "Kodachadri Peak, Shimoga",
+        category: "peaks",
+        tag: "Sunset Vista",
+        tall: false
+    },
+    {
+        id: "g6",
+        src: "images/Kurinjal/kurinjal-peak-summit.jpeg",
+        title: "Windy Shola Summit",
+        location: "Kurinjal Peak, Kudremukh",
+        category: "peaks",
+        tag: "Offbeat Trail",
+        tall: false
+    },
+    {
+        id: "g7",
+        src: "images/Netravathi/netravathi-clouds-peak.jpg",
+        title: "Ocean of Monsoon Clouds",
+        location: "Netravathi Valley",
+        category: "ghats",
+        tag: "Cloud Bed",
+        tall: false
+    },
+    {
+        id: "g8",
+        src: "images/Bandaje/bandaje-waterfall-view.jpeg",
+        title: "Hidden Jungle Droplet",
+        location: "Charmadi Rainforest",
+        category: "waterfalls",
+        tag: "Secret Falls",
+        tall: false
+    },
+    {
+        id: "g9",
+        src: "images/Ooty/ooty-hills-vista.jpg",
+        title: "Rolling Nilgiri Tea Horizons",
+        location: "Ooty Highlands, Tamil Nadu",
+        category: "valleys",
+        tag: "Tea Slopes",
+        tall: false
+    },
+    {
+        id: "g10",
+        src: "images/Wayanad/wayanad-tea-estate.jpg",
+        title: "Mist Floating Over Tea Trails",
+        location: "Chembra Foothills, Wayanad",
+        category: "valleys",
+        tag: "Plantation Walk",
+        tall: false
+    },
+    {
+        id: "g11",
+        src: "images/Dudhsagar Falls & Dandeli/dandeli-rafting-rapids.jpeg",
+        title: "Whitewater Rapids Adventure",
+        location: "Kali River, Dandeli",
+        category: "community",
+        tag: "Rafting",
+        tall: false
+    },
+    {
+        id: "g12",
+        src: "images/Netravathi/netravathi-trek-badge.jpeg",
+        title: "Summit Glory & Tribe Badge",
+        location: "Rahasya Daari Community",
+        category: "community",
+        tag: "Trail Moments",
+        tall: false
+    },
+    {
+        id: "g13",
+        src: "images/Coastal/coastal-beach-cliff.png",
+        title: "Golden Shoreline & Cliff Walk",
+        location: "Gokarna & Mangalore Coast",
+        category: "coastal",
+        tag: "Coastal Escape",
+        tall: false
+    },
+    {
+        id: "g14",
+        src: "images/Coorg/coorg-estate-hills.jpeg",
+        title: "Misty Coffee Hills Horizon",
+        location: "Tadiandamol & Coorg",
+        category: "valleys",
+        tag: "Highlands",
+        tall: false
+    },
+    {
+        id: "g15",
+        src: "images/Netravathi/netravathi-panorama-hd.jpg",
+        title: "Endless Shola Grassland Panorama",
+        location: "Kalasa Range, Western Ghats",
+        category: "ghats",
+        tag: "Landscape",
+        tall: false
+    }
+];
+
+let currentLightboxIndex = 0;
+let currentFilteredGallery = GALLERY_DATA;
+
+// Render Landing Page Featured Trails (NO PRICE TAGS, CLEAN & STREAMLINED)
+function renderLandingFeaturedTrails() {
+    const grid = document.getElementById("landingTrailsGrid");
+    if (!grid) return;
+
+    grid.innerHTML = "";
+    FEATURED_TRAILS_LANDING.forEach(trail => {
+        const card = document.createElement("div");
+        card.className = "landing-trail-card";
+        card.innerHTML = `
+            <div class="landing-card-media skeleton">
+                <img src="${trail.image}" alt="${trail.title}" onload="this.parentElement.classList.remove('skeleton');" onerror="this.src='images/Hero/hero-bg-landscape.jpg'; this.parentElement.classList.remove('skeleton');">
+            </div>
+            <div class="landing-card-body">
+                <h3 class="landing-card-title">${trail.title}</h3>
+                <p class="landing-card-location"><i class="fa-solid fa-location-dot"></i> ${trail.location}</p>
+                <div class="landing-card-stats">
+                    <span class="stat-pill"><i class="fa-regular fa-clock"></i> ${trail.duration}</span>
+                    <span class="stat-pill"><i class="fa-solid fa-mountain"></i> ${trail.altitude}</span>
+                </div>
+                <p class="landing-card-desc">${trail.desc}</p>
+                <button class="btn-explore-trail" onclick="navigateToTrek('${trail.id}')">
+                    View Trail Details <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+// Render Interactive Photo Gallery
+function renderPhotoGallery(category = 'all') {
+    const grid = document.getElementById("photoGalleryGrid");
+    if (!grid) return;
+
+    if (category === 'all') {
+        currentFilteredGallery = GALLERY_DATA;
+    } else {
+        currentFilteredGallery = GALLERY_DATA.filter(item => item.category === category);
+    }
+
+    grid.innerHTML = "";
+    currentFilteredGallery.forEach((item, index) => {
+        const card = document.createElement("div");
+        card.className = `gallery-card ${item.tall ? 'featured-tall' : ''}`;
+        card.setAttribute("onclick", `openLightboxByIndex(${index})`);
+        card.innerHTML = `
+            <img src="${item.src}" alt="${item.title}" class="gallery-card-img" loading="lazy" onerror="this.src='images/Hero/hero-bg-landscape.jpg';">
+            <div class="gallery-card-overlay">
+                <span class="gallery-tag"><i class="fa-solid fa-camera"></i> ${item.tag}</span>
+                <h4 class="gallery-card-title">${item.title}</h4>
+                <span class="gallery-card-location"><i class="fa-solid fa-location-dot"></i> ${item.location}</span>
+            </div>
+            <div class="gallery-card-view-btn"><i class="fa-solid fa-expand"></i></div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+// Filter Gallery by Category
+function filterGallery(category, btnElement) {
+    const buttons = document.querySelectorAll(".gallery-filter-btn");
+    buttons.forEach(btn => btn.classList.remove("active"));
+    if (btnElement) {
+        btnElement.classList.add("active");
+    }
+    renderPhotoGallery(category);
+}
+
+// Lightbox Handlers
+function openLightboxByIndex(index) {
+    if (index < 0 || index >= currentFilteredGallery.length) return;
+    currentLightboxIndex = index;
+    const item = currentFilteredGallery[index];
+    
+    const modal = document.getElementById("lightboxModal");
+    const img = document.getElementById("lightboxImg");
+    const title = document.getElementById("lightboxTitle");
+    const place = document.getElementById("lightboxPlace");
+
+    if (modal && img && title && place) {
+        img.src = item.src;
+        title.innerText = item.title;
+        place.innerText = item.location;
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+}
+
+function closeLightbox() {
+    const modal = document.getElementById("lightboxModal");
+    if (modal) {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+}
+
+function nextLightboxImage() {
+    currentLightboxIndex = (currentLightboxIndex + 1) % currentFilteredGallery.length;
+    openLightboxByIndex(currentLightboxIndex);
+}
+
+function prevLightboxImage() {
+    currentLightboxIndex = (currentLightboxIndex - 1 + currentFilteredGallery.length) % currentFilteredGallery.length;
+    openLightboxByIndex(currentLightboxIndex);
+}
+
+// FAQ Accordion Toggle
+function toggleFaq(el) {
+    const item = el.closest(".faq-item");
+    if (!item) return;
+    const isActive = item.classList.contains("active");
+    
+    // Close other FAQs
+    document.querySelectorAll(".faq-item").forEach(i => i.classList.remove("active"));
+    
+    if (!isActive) {
+        item.classList.add("active");
+    }
+}
+
+// DOM Elements Initialization
 document.addEventListener("DOMContentLoaded", () => {
-    // Render all sections
-    renderWeekendTreks();
-    renderSightseeingTrips();
-    renderPopularTreks();
+    // 1. Landing Page components (if present)
+    if (document.getElementById("landingTrailsGrid")) {
+        renderLandingFeaturedTrails();
+    }
+    if (document.getElementById("photoGalleryGrid")) {
+        renderPhotoGallery('all');
+    }
 
+    // 2. Trips Catalog components (if present)
+    if (document.getElementById("weekendGrid")) {
+        renderWeekdayTrips();
+        renderWeekendTreks();
+        renderSightseeingTrips();
+        renderPopularTreks();
 
+        setupCarouselControls("weekdayGrid", "weekdayPrevBtn", "weekdayNextBtn");
+        setupCarouselControls("weekendGrid", "weekendPrevBtn", "weekendNextBtn");
+        setupCarouselControls("sightseeingGrid", "sightseeingPrevBtn", "sightseeingNextBtn");
+        setupCarouselControls("popularGrid", "popularPrevBtn", "popularNextBtn");
+    }
 
-    // Mobile Navigation Drawer Toggle
+    // 3. Mobile Navigation Drawer Toggle
     const mobileNavToggle = document.getElementById("mobileNavToggle");
     const navMenu = document.getElementById("navMenu");
 
-    mobileNavToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        const isOpened = navMenu.classList.contains("active");
-        mobileNavToggle.innerHTML = isOpened ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
-    });
+    if (mobileNavToggle && navMenu) {
+        mobileNavToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+            const isOpened = navMenu.classList.contains("active");
+            mobileNavToggle.innerHTML = isOpened ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+        });
+    }
 
     // Close menu when clicking nav links on mobile
     const navLinks = document.querySelectorAll(".nav-link");
     navLinks.forEach(link => {
         if (link.id === "dropdownToggleBtn") return;
         link.addEventListener("click", () => {
-            navLinks.forEach(n => n.classList.remove("active"));
-            link.classList.add("active");
-            navMenu.classList.remove("active");
-            mobileNavToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            if (navMenu && mobileNavToggle) {
+                navMenu.classList.remove("active");
+                mobileNavToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
         });
     });
 
@@ -714,8 +341,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const dropdownItems = document.querySelectorAll(".dropdown-item");
     dropdownItems.forEach(item => {
         item.addEventListener("click", () => {
-            navMenu.classList.remove("active");
-            mobileNavToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            if (navMenu && mobileNavToggle) {
+                navMenu.classList.remove("active");
+                mobileNavToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
             if (tripsDropdown && dropdownMenu) {
                 tripsDropdown.classList.remove("active");
                 dropdownMenu.classList.remove("show");
@@ -873,6 +502,57 @@ function setupCarouselControls(trackId, prevBtnId, nextBtnId) {
     startAutoScroll();
 }
 
+// Render Weekday Trips
+function renderWeekdayTrips() {
+    const grid = document.getElementById("weekdayGrid");
+    if (!grid) return;
+    grid.innerHTML = "";
+
+    // Show the exact same trek packages as Weekend Trips
+    let treks = TREKS_DATA.filter(item => item.category === "trek");
+
+    // Apply state filter if set
+    if (selectedStateFilter) {
+        treks = treks.filter(trek => trek.location.toLowerCase().includes(selectedStateFilter.toLowerCase()));
+    }
+
+    if (treks.length === 0) {
+        grid.innerHTML = `
+            <div class="no-trips-message">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <p>No weekdays trips available in <strong>${selectedStateFilter}</strong> currently. We are exploring new trails!</p>
+            </div>
+        `;
+        return;
+    }
+
+    treks.forEach(trek => {
+        const card = document.createElement("div");
+        card.className = "trek-card";
+        card.setAttribute("onclick", `navigateToTrek('${trek.id}')`);
+        card.innerHTML = `
+            <div class="trek-card-img-wrapper skeleton">
+                <img src="${trek.image}" alt="${trek.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src=(window.IMAGES?.fallback?.cardDefault || 'images/Hero/hero-bg-landscape.jpg'); this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
+            </div>
+            <div class="trek-card-content">
+                <h3 class="trek-card-title">${trek.title}</h3>
+                <p class="trek-card-pickup">
+                    <strong>PICKUP LOCATION</strong>
+                    ${trek.pickup || 'Majestic, Bangalore'}
+                </p>
+                <hr class="card-divider">
+                <div class="trek-card-footer">
+                    <span class="trek-card-duration">
+                        <i class="fa-regular fa-clock"></i> ${trek.duration}
+                    </span>
+                    <span class="trek-card-price">₹${trek.price.toLocaleString('en-IN')}</span>
+                </div>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
 // Render Weekend Trips (Treks category)
 function renderWeekendTreks() {
     const grid = document.getElementById("weekendGrid");
@@ -902,7 +582,7 @@ function renderWeekendTreks() {
         card.setAttribute("onclick", `navigateToTrek('${trek.id}')`);
         card.innerHTML = `
             <div class="trek-card-img-wrapper skeleton">
-                <img src="${trek.image}" alt="${trek.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src='images/hero_bg.webp'; this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
+                <img src="${trek.image}" alt="${trek.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src=(window.IMAGES?.fallback?.cardDefault || 'images/Hero/hero-bg-landscape.jpg'); this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
             </div>
             <div class="trek-card-content">
                 <h3 class="trek-card-title">${trek.title}</h3>
@@ -952,7 +632,7 @@ function renderSightseeingTrips() {
         card.setAttribute("onclick", `navigateToTrek('${trip.id}')`);
         card.innerHTML = `
             <div class="trek-card-img-wrapper skeleton">
-                <img src="${trip.image}" alt="${trip.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src='images/hero_bg.webp'; this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
+                <img src="${trip.image}" alt="${trip.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src=(window.IMAGES?.fallback?.cardDefault || 'images/Hero/hero-bg-landscape.jpg'); this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
             </div>
             <div class="trek-card-content">
                 <h3 class="trek-card-title">${trip.title}</h3>
@@ -997,7 +677,7 @@ function renderPopularTreks() {
         card.setAttribute("onclick", `navigateToTrek('${trek.id}')`);
         card.innerHTML = `
             <div class="trek-card-img-wrapper skeleton">
-                <img src="${trek.image}" alt="${trek.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src='images/hero_bg.webp'; this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
+                <img src="${trek.image}" alt="${trek.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src=(window.IMAGES?.fallback?.cardDefault || 'images/Hero/hero-bg-landscape.jpg'); this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
             </div>
             <div class="trek-card-content">
                 <h3 class="trek-card-title">${trek.title}</h3>
@@ -1048,15 +728,26 @@ window.addEventListener("keydown", (e) => {
 
 // Router navigation helpers
 function navigateToTrek(trekId) {
-    if (document.getElementById("homePage").style.display !== "none") {
-        window.lastScrollY = window.scrollY;
+    if (document.getElementById("detailsPage")) {
+        const homePage = document.getElementById("homePage");
+        if (homePage && homePage.style.display !== "none") {
+            window.lastScrollY = window.scrollY;
+        }
+        location.hash = 'trek-' + trekId;
+        handleRouting();
+    } else {
+        window.location.href = `trips.html#trek-${trekId}`;
     }
-    location.hash = 'trek-' + trekId;
 }
 
 function goHome() {
-    clearStateFilter();
-    location.hash = '';
+    if (document.getElementById("detailsPage")) {
+        clearStateFilter();
+        location.hash = '';
+        handleRouting();
+    } else {
+        window.location.href = "trips.html";
+    }
 }
 
 // Filter trips/treks by selected state
@@ -1077,6 +768,7 @@ function filterByState(state) {
         location.hash = '';
     } else {
         // Just re-render categories to reflect filter
+        renderWeekdayTrips();
         renderWeekendTreks();
         renderSightseeingTrips();
     }
@@ -1089,9 +781,9 @@ function filterByState(state) {
         mobileNavToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
     }
 
-    // Scroll to #trips section
+    // Scroll to #weekday section
     setTimeout(() => {
-        const tripsSec = document.getElementById("trips");
+        const tripsSec = document.getElementById("weekday") || document.getElementById("trips");
         if (tripsSec) {
             tripsSec.scrollIntoView({ behavior: 'smooth' });
         }
@@ -1109,6 +801,7 @@ function clearStateFilter() {
     }
 
     // Re-render categories to show all
+    renderWeekdayTrips();
     renderWeekendTreks();
     renderSightseeingTrips();
     renderPopularTreks();
@@ -1208,7 +901,30 @@ function handleRouting() {
                     pickupList.innerHTML = "";
                     trek.pickupLocationList.forEach(loc => {
                         const li = document.createElement("li");
-                        li.innerHTML = `<i class="fa-solid fa-location-dot"></i> <span>${loc}</span>`;
+                        if (typeof loc === "object" && loc.name) {
+                            const mapUrl = loc.mapUrl || `https://maps.google.com/?q=${encodeURIComponent(loc.name + " Bangalore")}`;
+                            li.innerHTML = `
+                                <div class="pickup-loc-left">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>${loc.name}</span>
+                                </div>
+                                <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" class="pickup-map-link" title="Open ${loc.name} in Google Maps">
+                                    <i class="fa-solid fa-map-location-dot"></i> Maps
+                                </a>
+                            `;
+                        } else {
+                            const locName = String(loc);
+                            const mapUrl = `https://maps.google.com/?q=${encodeURIComponent(locName + " Bangalore")}`;
+                            li.innerHTML = `
+                                <div class="pickup-loc-left">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>${locName}</span>
+                                </div>
+                                <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" class="pickup-map-link" title="Open in Google Maps">
+                                    <i class="fa-solid fa-map-location-dot"></i> Maps
+                                </a>
+                            `;
+                        }
                         pickupList.appendChild(li);
                     });
                     pickupCard.style.display = "block";
@@ -1245,12 +961,14 @@ function handleRouting() {
                 }
 
                 // Determine slides to display
-                const slides = trek.slides || [
-                    trek.heroImage || trek.image,
-                    "images/hero_bg.png",
-                    trek.image !== "images/netravati.png" ? "images/netravati.png" : "images/kodachadri.png",
-                    trek.image !== "images/kudremukh.webp" ? "images/kudremukh.webp" : "images/kumara_parvatha.png"
-                ].filter(Boolean);
+                const defaultFallbackSlides = window.IMAGES ? [
+                    window.IMAGES.fallback.modalDefault,
+                    window.IMAGES.treks["netravathi"]?.cover,
+                    window.IMAGES.treks["kudremukh"]?.cover,
+                    window.IMAGES.trips["ooty-sightseeing"]?.cover
+                ].filter(Boolean) : ["images/Hero/hero-bg-landscape.jpg"];
+
+                const slides = (trek.slides && trek.slides.length > 0) ? trek.slides : [trek.image, ...defaultFallbackSlides].filter(Boolean);
 
                 // Populate slides dynamically inside heroBg
                 heroBg.innerHTML = "";
@@ -1671,6 +1389,17 @@ function handleContactSubmit(event) {
 
 // Hero background slideshow animator
 function startHeroSlideshow() {
+    const sliderContainer = document.querySelector(".hero-bg-slider");
+    if (sliderContainer && window.IMAGES && Array.isArray(window.IMAGES.heroSlides) && window.IMAGES.heroSlides.length > 0) {
+        sliderContainer.innerHTML = "";
+        window.IMAGES.heroSlides.forEach((imgUrl, idx) => {
+            const slide = document.createElement("div");
+            slide.className = `hero-bg-slide ${idx === 0 ? 'active' : ''}`;
+            slide.style.backgroundImage = `url('${imgUrl}')`;
+            sliderContainer.appendChild(slide);
+        });
+    }
+
     const slides = document.querySelectorAll(".hero-bg-slide");
     if (slides.length <= 1) return;
 
@@ -1821,3 +1550,368 @@ function handleQuickInquirySubmit(event) {
         floatBtn.classList.remove("show");
     }
 }
+
+// ==========================================================================
+// Scroll Progress & Hardware-Accelerated Reveal Engine (Design Skills)
+// ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Scroll Progress Bar Tracker
+    const progressBar = document.createElement("div");
+    progressBar.className = "scroll-progress-bar";
+    document.body.appendChild(progressBar);
+
+    const header = document.querySelector(".header");
+
+    window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        progressBar.style.width = `${progress}%`;
+
+        // Dynamic header background on scroll
+        if (header) {
+            if (scrollTop > 40) {
+                header.classList.add("header-scrolled");
+            } else {
+                header.classList.remove("header-scrolled");
+            }
+        }
+    }, { passive: true });
+
+    // 2. IntersectionObserver for Reveal Animations
+    if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-revealed");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: "0px 0px -40px 0px"
+        });
+
+        document.querySelectorAll(".reveal-fade-up, .reveal-fade-in, .landing-trail-card, .video-short-card, .google-review-card-clean, .insta-reel-card, .gear-card, .feature-box").forEach(el => {
+            if (!el.classList.contains("reveal-fade-up") && !el.classList.contains("reveal-fade-in")) {
+                el.classList.add("reveal-fade-up");
+            }
+            revealObserver.observe(el);
+        });
+    }
+});
+
+// ==========================================================================
+// Interactive Video Player Modal (Plays YouTube Shorts & Reels Inside Site)
+// ==========================================================================
+function playVideoModal(videoId) {
+    let modal = document.getElementById("videoPlayerModal");
+    if (!modal) {
+        modal = document.createElement("div");
+        modal.id = "videoPlayerModal";
+        modal.className = "video-player-modal";
+        modal.innerHTML = `
+            <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+            <div class="video-modal-container">
+                <button class="video-modal-close" onclick="closeVideoModal()" aria-label="Close video"><i class="fa-solid fa-xmark"></i></button>
+                <div class="video-iframe-wrapper">
+                    <iframe id="videoModalIframe" title="YouTube video player" src="about:blank" style="border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+    const iframe = document.getElementById("videoModalIframe");
+    if (iframe) {
+        iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1`;
+    }
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById("videoPlayerModal");
+    if (modal) {
+        modal.classList.remove("active");
+        const iframe = document.getElementById("videoModalIframe");
+        if (iframe) {
+            iframe.src = "";
+        }
+        document.body.style.overflow = "";
+    }
+}
+
+// ==========================================================================
+// YouTube Shorts & Video Cinema Integration (Config-Driven & Modal Player)
+// ==========================================================================
+function extractYouTubeVideoId(item) {
+    if (!item) return "";
+    const raw = typeof item === "string" ? item : (item.id || item.url || "");
+    const shortsMatch = raw.match(/\/shorts\/([a-zA-Z0-9_-]+)/);
+    if (shortsMatch && shortsMatch[1]) return shortsMatch[1];
+    const watchMatch = raw.match(/[?&]v=([a-zA-Z0-9_-]+)/);
+    if (watchMatch && watchMatch[1]) return watchMatch[1];
+    const shareMatch = raw.match(/youtu\.be\/([a-zA-Z0-9_-]+)/);
+    if (shareMatch && shareMatch[1]) return shareMatch[1];
+    return raw.replace(/[^a-zA-Z0-9_-]/g, "");
+}
+
+function renderDynamicYouTubeVideos() {
+    const grid = document.querySelector(".video-shorts-grid");
+    if (!grid) return;
+
+    if (typeof RAHASYA_YOUTUBE_VIDEOS !== "undefined" && Array.isArray(RAHASYA_YOUTUBE_VIDEOS) && RAHASYA_YOUTUBE_VIDEOS.length > 0) {
+        grid.innerHTML = "";
+        RAHASYA_YOUTUBE_VIDEOS.forEach((vidObj) => {
+            const vidId = extractYouTubeVideoId(vidObj);
+            if (!vidId) return;
+            const title = (typeof vidObj === "object" && vidObj.title) ? vidObj.title : "Expedition Video";
+            const author = (typeof vidObj === "object" && vidObj.author) ? vidObj.author : "Rahasya Daari";
+            const thumb = (typeof vidObj === "object" && vidObj.thumbnail) ? vidObj.thumbnail : `https://img.youtube.com/vi/${vidId}/hqdefault.jpg`;
+
+            const card = document.createElement("div");
+            card.className = "video-short-card";
+            card.title = "Play Expedition Video";
+            card.onclick = function() { playVideoModal(vidId); };
+            card.innerHTML = `
+                <img src="${thumb}" alt="${title}" class="video-short-thumb" loading="lazy">
+                <div class="video-short-overlay">
+                    <div class="video-play-btn"><i class="fa-solid fa-play"></i></div>
+                    <div class="video-short-bottom">
+                        <h3 class="video-short-title">${title}</h3>
+                        <div class="video-short-author"><i class="fa-brands fa-youtube" style="color: #FF0000;"></i> ${author} • Click to Play <i class="fa-solid fa-circle-play" style="font-size: 0.75rem; margin-left: 4px;"></i></div>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+}
+
+// ==========================================================================
+// Google Live Reviews & Infinite Marquee Loop Renderer
+// ==========================================================================
+function renderDynamicGoogleReviews() {
+    const track = document.getElementById("googleReviewsTrack");
+    if (!track) return;
+
+    if (typeof RAHASYA_GOOGLE_REVIEWS_CONFIG !== "undefined" && RAHASYA_GOOGLE_REVIEWS_CONFIG.reviews) {
+        const conf = RAHASYA_GOOGLE_REVIEWS_CONFIG;
+        
+        // Update summary metrics if elements exist
+        const scoreDigit = document.querySelector(".google-score-digit");
+        if (scoreDigit && conf.summary && conf.summary.score) {
+            scoreDigit.textContent = conf.summary.score.toFixed(1);
+        }
+        const trustSubtext = document.querySelector(".google-trust-subtext");
+        if (trustSubtext && conf.summary) {
+            trustSubtext.innerHTML = `
+                <span class="trust-badge-pill"><i class="fa-solid fa-circle-check"></i> ${conf.summary.ratingWord || "EXCELLENT"}</span>
+                <span>Based on <strong>${conf.summary.totalReviews || "650+"} verified ratings</strong> on Google Maps</span>
+            `;
+        }
+
+        const buildCardHtml = (r) => `
+            <div class="google-review-card-clean">
+                <div>
+                    <div class="google-review-user-row">
+                        <div class="reviewer-identity">
+                            <div class="reviewer-avatar" style="background: ${r.avatarBg || '#183e20'};">${r.avatarLetter || r.name.charAt(0)}</div>
+                            <div class="reviewer-details">
+                                <h4>${r.name}</h4>
+                                <p><span class="guide-tag"><svg viewBox="0 0 24 24" width="12" height="12"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.93 6.72-4.93z"/></svg> ${r.badge || "Verified Trekker"}</span></p>
+                            </div>
+                        </div>
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+                            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.93 6.72-4.93z"/>
+                        </svg>
+                    </div>
+                    <div class="google-stars-row" style="font-size: 0.9rem; margin: 10px 0 12px;">
+                        ${Array(r.stars || 5).fill('<i class="fa-solid fa-star"></i>').join('')}
+                    </div>
+                    <p class="google-review-text">"${r.text}"</p>
+                </div>
+                <div class="review-card-footer">
+                    <span class="review-trail-pill"><i class="fa-solid fa-location-dot"></i> ${r.trek || "Western Ghats"}</span>
+                    <span class="review-verified-text"><i class="fa-solid fa-shield-check"></i> ${r.timeAgo || "Verified Trekker"}</span>
+                </div>
+            </div>
+        `;
+
+        // Render double sets to enable seamless infinite marquee looping
+        const cardsHtml = conf.reviews.map(buildCardHtml).join('');
+        track.innerHTML = cardsHtml + cardsHtml;
+    }
+}
+
+// ==========================================================================
+// Interactive Stage Showcase for Phone Mockups (Desktop Hover & Scroll Stage)
+// ==========================================================================
+function extractInstagramReelId(item) {
+    if (!item) return "";
+    const raw = typeof item === "string" ? item : (item.id || item.url || "");
+    const match = raw.match(/\/(?:reel|p|tv)\/([a-zA-Z0-9_-]+)/);
+    if (match && match[1]) return match[1];
+    return raw.replace(/[^a-zA-Z0-9_-]/g, "");
+}
+
+function initPhoneMockupStage() {
+    const grid = document.querySelector(".insta-reels-grid");
+    if (!grid) return;
+
+    // If RAHASYA_INSTAGRAM_REELS array is defined in reels-data.js, render automatically
+    if (typeof RAHASYA_INSTAGRAM_REELS !== "undefined" && Array.isArray(RAHASYA_INSTAGRAM_REELS) && RAHASYA_INSTAGRAM_REELS.length > 0) {
+        grid.innerHTML = "";
+        RAHASYA_INSTAGRAM_REELS.forEach((reelObj) => {
+            const reelId = extractInstagramReelId(reelObj);
+            if (!reelId) return;
+            const title = (typeof reelObj === "object" && reelObj.title) ? reelObj.title : "Instagram Reel";
+
+            const phoneMockup = document.createElement("div");
+            phoneMockup.className = "phone-reel-mockup";
+            phoneMockup.innerHTML = `
+                <div class="phone-screen">
+                    <div class="reel-skeleton-loader">
+                        <div class="skeleton-header">
+                            <div class="skeleton-avatar skeleton-shimmer"></div>
+                            <div class="skeleton-user-meta">
+                                <div class="skeleton-line skeleton-line-title skeleton-shimmer"></div>
+                                <div class="skeleton-line skeleton-line-sub skeleton-shimmer"></div>
+                            </div>
+                        </div>
+                        <div class="skeleton-video-body skeleton-shimmer">
+                            <div class="skeleton-play-icon"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        <div class="skeleton-footer">
+                            <div class="skeleton-line skeleton-line-desc skeleton-shimmer"></div>
+                            <div class="skeleton-line skeleton-line-sub skeleton-shimmer"></div>
+                        </div>
+                    </div>
+                    <iframe src="https://www.instagram.com/reel/${reelId}/embed/" loading="lazy" title="${title}" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen style="border:0;" onload="if(this.previousElementSibling) this.previousElementSibling.classList.add('fade-out');"></iframe>
+                </div>
+            `;
+            grid.appendChild(phoneMockup);
+        });
+    }
+
+    const phones = grid.querySelectorAll(".phone-reel-mockup");
+    if (!phones.length) return;
+
+    const dotsContainer = document.getElementById("stageDots");
+
+    function setActivePhone(index) {
+        if (index < 0 || index >= phones.length) return;
+        phones.forEach((p, i) => {
+            const isTarget = i === index;
+            p.classList.toggle("is-active", isTarget);
+            if (dotsContainer && dotsContainer.children[i]) {
+                dotsContainer.children[i].classList.toggle("active", isTarget);
+            }
+        });
+    }
+
+    // Build interactive dots
+    if (dotsContainer) {
+        dotsContainer.innerHTML = "";
+        phones.forEach((_, idx) => {
+            const dot = document.createElement("div");
+            dot.className = `stage-dot ${idx === 1 ? "active" : ""}`;
+            dot.addEventListener("click", () => {
+                setActivePhone(idx);
+                phones[idx].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+            });
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+    // Set center phone (index 1) as default active
+    const defaultIdx = phones.length > 2 ? 1 : 0;
+    setActivePhone(defaultIdx);
+
+    let isThrottled = false;
+    function updateActivePhoneOnScroll() {
+        if (isThrottled) return;
+        isThrottled = true;
+        requestAnimationFrame(() => {
+            const gridRect = grid.getBoundingClientRect();
+            const gridCenter = gridRect.left + gridRect.width / 2;
+
+            let closestIdx = 0;
+            let minDistance = Infinity;
+
+            phones.forEach((phone, idx) => {
+                const phoneRect = phone.getBoundingClientRect();
+                const phoneCenter = phoneRect.left + phoneRect.width / 2;
+                const distance = Math.abs(gridCenter - phoneCenter);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestIdx = idx;
+                }
+            });
+
+            setActivePhone(closestIdx);
+            isThrottled = false;
+        });
+    }
+
+    grid.addEventListener("scroll", updateActivePhoneOnScroll, { passive: true });
+
+    phones.forEach((phone, idx) => {
+        // Desktop hover: immediately highlight hovered phone including the last one
+        phone.addEventListener("mouseenter", () => {
+            setActivePhone(idx);
+        });
+
+        // Click to focus and center
+        phone.addEventListener("click", () => {
+            setActivePhone(idx);
+            phone.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        });
+    });
+}
+
+function slideReelStage(direction) {
+    const grid = document.querySelector(".insta-reels-grid");
+    if (!grid) return;
+    const phones = grid.querySelectorAll(".phone-reel-mockup");
+    if (!phones.length) return;
+
+    let activeIdx = Array.from(phones).findIndex(p => p.classList.contains("is-active"));
+    if (activeIdx === -1) activeIdx = 0;
+
+    // Smooth continuous loop
+    let targetIdx = (activeIdx + direction + phones.length) % phones.length;
+
+    phones.forEach((p, i) => {
+        const isTarget = i === targetIdx;
+        p.classList.toggle("is-active", isTarget);
+        const dotsContainer = document.getElementById("stageDots");
+        if (dotsContainer && dotsContainer.children[i]) {
+            dotsContainer.children[i].classList.toggle("active", isTarget);
+        }
+    });
+
+    phones[targetIdx].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+}
+
+// Ensure Reviews, YouTube, Instagram Embeds, and Phone Mockup Stage initialize on DOM load
+document.addEventListener("DOMContentLoaded", function() {
+    renderDynamicGoogleReviews();
+    renderDynamicYouTubeVideos();
+    initPhoneMockupStage();
+    if (typeof fetchLiveGoogleRatings === "function") {
+        fetchLiveGoogleRatings().then(() => renderDynamicGoogleReviews());
+    }
+});
+window.addEventListener("load", function() {
+    renderDynamicGoogleReviews();
+    renderDynamicYouTubeVideos();
+    initPhoneMockupStage();
+    if (window.instgrm && window.instgrm.Embeds) {
+        window.instgrm.Embeds.process();
+    }
+});
