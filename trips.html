@@ -177,8 +177,8 @@
                 <div class="details-hero-bg" id="detailsHeroBg"></div>
                 <div class="details-hero-overlay"></div>
                 <div class="details-hero-content-wrapper">
-                    <button class="btn-back-home" id="btnBackHome" onclick="goHome()" aria-label="Go back to trips catalog">
-                        <i class="fa-solid fa-arrow-left"></i> Back to Trips Catalog
+                    <button class="btn-back-home" id="btnBackHome" onclick="goHome()" aria-label="Go back to trips">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Trips
                     </button>
                     <div class="details-hero-content">
                         <span class="badge" id="detailsCategoryBadge">Trek</span>
@@ -194,18 +194,18 @@
         <section class="details-body-section">
             <div class="container grid grid-2-col-details">
                 <div class="details-main-info">
+                    <h3 class="info-heading" style="margin-top: 0;">Trek Overview</h3>
+                    <p class="details-trek-description" id="detailsDescription">Detailed description goes here...</p>
+
                     <!-- Highlights Container -->
-                    <div id="detailsHighlightsContainer" style="display: none; margin-bottom: 32px;">
-                        <h3 class="info-heading">Highlights</h3>
+                    <div id="detailsHighlightsContainer" style="display: none; margin-top: 32px; margin-bottom: 32px;">
+                        <h3 class="info-heading">Trip Highlights</h3>
                         <div class="highlights-grid" id="detailsHighlights">
                             <!-- Populated dynamically -->
                         </div>
                     </div>
 
-                    <h3 class="info-heading">Trek Overview</h3>
-                    <p class="details-trek-description" id="detailsDescription">Detailed description goes here...</p>
-
-                    <h3 class="info-heading">Complete Itinerary</h3>
+                    <h3 class="info-heading">Detailed Itinerary</h3>
                     <div class="itinerary-timeline" id="detailsItinerary">
                         <!-- Itinerary items populated dynamically -->
                     </div>
@@ -240,9 +240,15 @@
                         </div>
                     </div>
 
+                    <!-- Book Action -->
+                    <div class="sidebar-actions" style="margin-top: -8px;">
+                        <button class="btn btn-primary btn-block btn-book-now" id="detailsBookBtn">BOOK THIS TREK <i
+                                class="fa-solid fa-calendar-check"></i></button>
+                    </div>
+
                     <!-- Inclusions -->
                     <div class="includes-card">
-                        <h4 class="sidebar-heading">Charges Include</h4>
+                        <h4 class="sidebar-heading">Inclusions</h4>
                         <ul class="includes-list" id="detailsInclusions">
                             <!-- Inclusions populated dynamically -->
                         </ul>
@@ -266,12 +272,6 @@
                             Advance amount is non refundable, if trip gets cancelled from our side then complete amount
                             will be refunded.
                         </p>
-                    </div>
-
-                    <!-- Actions -->
-                    <div class="sidebar-actions">
-                        <button class="btn btn-primary btn-block btn-book-now" id="detailsBookBtn">BOOK THIS TREK <i
-                                class="fa-solid fa-calendar-check"></i></button>
                     </div>
                 </div>
             </div>

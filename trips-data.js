@@ -74,7 +74,7 @@ const FEATURED_TRAILS_LANDING = [
         duration: "2 Days",
         distance: "14 km",
         altitude: "1,159 m",
-        image: "images/Kurinjal/kurinjal-peak-summit.jpeg",
+        image: "images/Kurinjal/kuri2.jpeg",
         desc: "An enchanting offbeat trail deep into pristine shola woods, past ancient stone towers and panoramic ridge vistas."
     },
     {
@@ -122,15 +122,16 @@ const TREKS_DATA = [
         slides: [
             "images/Bandaje/bandaje-cliff-edge.png",
             "images/Bandaje/bandaje-waterfall-view.jpeg",
-            "images/Bandaje/bandaje-fort-ruins.jpeg",
-            "images/Bandaje/bandaje-shola-trail.jpeg"
+            "images/Bandaje/bandaje.png",
+            "images/Bandaje/bandaje1.png",
+            "images/Bandaje/bandaje-valley-trek.jpeg"
         ],
         description: "The Bandaje Falls is located in the Chikmagalur district of Karnataka, about 250 km from Bangalore. This beautiful waterfall, situated in the Western Ghats, has a total height of around 200 feet (60 meters). The Bandaje Falls Trek is moderately challenging and takes about 4 to 6 hours to complete, depending on the pace and route. The trail winds through Shola grassland, forests and rolling hills, offering spectacular views of the lush landscape and a chance to experience the rich biodiversity of the region.",
         highlights: [
             "Bandaje Falls Trek (6-7 km one way)",
             "Ballalarayana Durga Fort Ruins",
             "Rani Jhari Viewpoint",
-            "Kodige Waterfall & Jeep Ride",
+            "Kodige Falls / Soormane Falls",
             "Kelaguru Tea Estate Walk",
             "Belur Hoysala UNESCO World Heritage Temple",
             "Shola Grasslands & Western Ghats Vistas"
@@ -145,15 +146,17 @@ const TREKS_DATA = [
             { day: "Day 02", title: "Kodige Waterfalls, Tea Estate & Belur UNESCO Temple", desc: "<ul><li>Wake up, freshen up, and enjoy breakfast.</li><li>Check out from the homestay.</li><li>Off-road jeep ride to explore the serene Kodige Waterfall.</li><li>Visit Kelaguru Tea Estate to walk through tea gardens and learn about tea culture.</li><li>En route to Bangalore, visit the magnificent UNESCO World Heritage Belur Hoysala Temple.</li><li>Self-sponsored lunch en route.</li><li>Begin return journey to Bangalore, arriving by ~10:00 PM.</li></ul>" }
         ],
         inclusions: [
+            "Transportation (Toll/Parking included)",
             "Stay (Tents/Rooms on sharing basis)",
             "2 Breakfasts, 1 Packed Lunch, 1 Dinner (Veg/Non-Veg)",
-            "Basic First-Aid Support",
-            "Forest Permission & Trek Permit",
-            "Guide charges & Pathfinders",
-            "Campfire (If weather permits)",
             "Coffee/Tea & Estate Walk",
-            "Jeep ride charges & Waterfall entry fee",
-            "Transportation (Toll/Parking included)"
+            "Trek Permits",
+            "Local Guide charges and trek charges",
+            "Sightseeing charges",
+            "Jeep ride charges",
+            "Waterfall entry fee",
+            "Campfire (Subject to weather conditions)",
+            "Basic First-Aid Support"
         ]
     },
     {
@@ -174,12 +177,16 @@ const TREKS_DATA = [
             "images/Netravathi/netravathi-cover.jpg",
             "images/Netravathi/netravathi-peak-view.jpeg",
             "images/Netravathi/netravathi-clouds-valley.jpeg",
-            "images/Netravathi/netravathi-shola-ridge.jpeg"
+            "images/Netravathi/netravathi-shola-ridge.jpeg",
+            "images/Netravathi/netravathi-lush-hills.jpg",
+            "images/Netravathi/netravathi-mist-meadows.jpg",
+            "images/Netravathi/netravathi-mountain-range.jpg",
+            "images/Netravathi/netravathi-panorama-hd.jpg"
         ],
         description: "The Netravathi Trek, located near Kalasa in the Chikmagalur district of Karnataka, is approximately 300 km from Bangalore. The trek is renowned for its picturesque landscapes, dense forests, and the Netravathi River, which originates in the Western Ghats. The trail offers a moderately challenging hike, taking around 6 to 8 hours to complete, depending on the pace and route. The trek is a great blend of adventure, natural beauty, and the chance to experience the rich flora and fauna of the Western Ghats.",
         highlights: [
             "Netravathi Peak Trek (6+6 km)",
-            "Soormane Waterfall Visit",
+            "Kodige Falls / Soormane Falls",
             "Historic Kalaseshwara Temple",
             "Lush Samse Tea Estate Walk",
             "Belur Hoysala UNESCO World Heritage Temple",
@@ -196,15 +203,17 @@ const TREKS_DATA = [
             { day: "Day 02", title: "Kalaseshwara Temple, Samse Tea Estate & Belur UNESCO Temple", desc: "<ul><li>Wake up early, freshen up, and enjoy breakfast.</li><li>Check out from the homestay.</li><li>Pay respects at the ancient Kalaseshwara Temple in Kalasa.</li><li>Take a pleasant walk through the lush Samse Tea Estate gardens.</li><li>En route to Bangalore, visit the magnificent UNESCO World Heritage Belur Hoysala Temple.</li><li>Self-sponsored lunch en route.</li><li>Begin return journey to Bangalore, reaching by ~10:00 PM.</li></ul>" }
         ],
         inclusions: [
+            "Transportation (Toll/Parking included)",
             "Stay (Homestay / Tents on sharing basis)",
             "2 Breakfasts, 1 Packed Lunch, 1 Dinner (Veg/Non-Veg)",
-            "Basic First-Aid Support",
-            "Forest Permission & Sanctuary Permits",
-            "Certified Trek Guide & Pathfinders",
-            "Off-road Jeep Ride charges",
-            "Campfire (Subject to weather conditions)",
             "Coffee/Tea & Estate Walk",
-            "Transportation (Toll/Parking included)"
+            "Trek Permits",
+            "Local Guide charges and trek charges",
+            "Sightseeing charges",
+            "Off-road Jeep Ride charges",
+            "Waterfall entry fee",
+            "Campfire (Subject to weather conditions)",
+            "Basic First-Aid Support"
         ]
     },
     {
@@ -223,15 +232,16 @@ const TREKS_DATA = [
         image: "images/Kudremukha/kudremukha-cover.jpg",
         slides: [
             "images/Kudremukha/kudremukha-cover.jpg",
-            "images/Kudremukha/kudremukha-peak.jpg",
-            "images/Kudremukha/kudremukha-grasslands.jpeg",
-            "images/Kudremukha/kudremukha-ridge-view.jpeg"
+            "images/Kudremukha/kudremukha-grasslands-1.jpeg",
+            "images/Kudremukha/kudremukha-valley.jpeg",
+            "images/Kudremukha/kudremukh1-onti-mara.jpeg",
+            "images/Kudremukha/kudremukh1-flora.jpeg"
         ],
         description: "The Kudremukh Trek is located in Kalasa, Chikmagalur district of Karnataka, about 300 km from Bangalore. Kudremukh, at an elevation of 1,894 meters (6,214 feet), is the 3rd highest peak in Karnataka, and the trek to its summit is both scenic and adventurous. The trail is moderately challenging, typically taking around 6 to 8 hours to complete. It winds through lush forests, rolling grasslands, and several streams, offering stunning panoramic views of the surrounding valleys and hills. The trek is situated within the Kudremukh National Park, home to a variety of wildlife, including tigers, leopards, and many species of birds.",
         highlights: [
             "Kudremukha Peak Trek (9+9 km)",
             "Vast Shola Grasslands & Valleys",
-            "Mullodi Waterfall / Soormane Waterfall",
+            "Kodige Falls / Soormane Falls",
             "Lush Samse Tea Estate Walk",
             "Belur Hoysala UNESCO World Heritage Temple",
             "Horse-Faced Ridge Summit (1,894 m)",
@@ -239,7 +249,7 @@ const TREKS_DATA = [
         ],
         pickupLocationList: DEFAULT_BANGALORE_PICKUPS,
         ownTransportPrice: 3200,
-        advanceAmount: 1500,
+        advanceAmount: 1600,
         cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
         itinerary: [
             { day: "Day 00", title: "Overnight Journey", desc: "Overnight journey from Bangalore (~300 km) to Kalasa / Samse village in Chikmagalur." },
@@ -247,15 +257,17 @@ const TREKS_DATA = [
             { day: "Day 02", title: "Samse Tea Estate & Belur UNESCO World Heritage Temple", desc: "<ul><li>Wake up, freshen up, and relish a wholesome breakfast.</li><li>Check out from the homestay.</li><li>Take a peaceful stroll through the picturesque Samse Tea Estate gardens.</li><li>En route to Bangalore, visit the magnificent UNESCO World Heritage Site — Belur Hoysala Temple.</li><li>Self-sponsored lunch en route.</li><li>Begin return journey back to Bangalore, reaching by ~10:00 PM.</li></ul>" }
         ],
         inclusions: [
+            "Transportation (Toll/Parking included)",
             "Stay (Homestay / Tents on sharing basis)",
             "2 Breakfasts, 1 Packed Lunch, 1 Dinner (Veg/Non-Veg)",
-            "Basic First-Aid Support",
-            "Forest Permit & Sanctuary Fees",
-            "Certified Trek Guide & Pathfinders",
-            "Off-road 4x4 Jeep Ride charges",
-            "Campfire (Subject to weather conditions)",
             "Coffee/Tea & Estate Walk",
-            "Transportation (Toll/Parking included)"
+            "Trek Permits",
+            "Local Guide charges and trek charges",
+            "Sightseeing charges",
+            "Off-road 4x4 Jeep Ride charges",
+            "Waterfall entry fee",
+            "Campfire (Subject to weather conditions)",
+            "Basic First-Aid Support"
         ]
     },
     {
@@ -295,13 +307,17 @@ const TREKS_DATA = [
             { day: "Day 02", title: "Mullayanagiri Peak & Belur UNESCO Heritage", desc: "<ul><li>Wake up early and enjoy breakfast.</li><li>Check out from the homestay.</li><li>Visit Mullayyanagiri Peak - the highest peak of Karnataka for sweeping mountain views.</li><li>En route back to Bangalore, visit the magnificent UNESCO World Heritage Site — Belur Hoysala Temple.</li><li>Self-sponsored lunch en route.</li><li>Begin return journey to Bangalore, reaching by ~10:00 PM.</li></ul>" }
         ],
         inclusions: [
+            "Transportation (Toll/Parking included)",
             "Stay (Homestay / Tents on sharing basis)",
             "2 Breakfasts, 1 Packed Lunch, 1 Dinner",
-            "Forest Permission & Trek Permit",
-            "Guide charges & Pathfinders",
-            "Campfire (Subject to weather conditions)",
             "Coffee/Tea & Estate Walk",
-            "Transportation (Toll/Parking included)"
+            "Trek Permits",
+            "Local Guide charges and trek charges",
+            "Sightseeing charges",
+            "Jeep ride charges",
+            "Waterfall entry fee",
+            "Campfire (Subject to weather conditions)",
+            "Basic First-Aid Support"
         ]
     },
     {
@@ -316,18 +332,19 @@ const TREKS_DATA = [
         altitude: "1,159 m",
         price: 4200,
         pickup: "Shantala Silks (Majestic), Navarang Circle, Yeshwanthpur, Goraguntepalya",
-        image: "images/Kurinjal/kurinjal-peak-summit.jpeg",
+        image: "images/Kurinjal/kuri4.jpeg",
         slides: [
-            "images/Kurinjal/kurinjal-peak-summit.jpeg",
-            "images/Kurinjal/kurinjal-shola-trail.jpeg",
-            "images/Kurinjal/kurinjal-grassland-slope.jpeg"
+            "images/Kurinjal/kuri4.jpeg",
+            "images/Kurinjal/kuri2.jpeg",
+            "images/Kurinjal/kuri1.jpeg",
+            "images/Kurinjal/kuri3.jpeg"
         ],
         description: "An offbeat trail that takes you deep into the heart of the shola woods. Spot unique flora, trek past ruins of an old tower, and stand at the windy peak overlooking Kudremukh forest region.",
         highlights: [
             "Trek 7+7 kms",
             "Western ghat landscape",
             "Kudremukha national park",
-            "Kodige falls",
+            "Kodige Falls / Soormane Falls",
             "Jeep ride",
             "Samse tea estate",
             "Shola grassland",
@@ -344,16 +361,17 @@ const TREKS_DATA = [
             { day: "Day 02", title: "Tea Trails, Waterfalls & Heritage Wonders", desc: "<ul><li>Rise early, freshen up, and enjoy breakfast.</li><li>Check out from the homestay and stroll through Samse tea estate.</li><li>Visit beautiful Kodige Falls and relax by the water.</li><li>Proceed to the historical town of Belur to explore the UNESCO World Heritage Hoysala Temple.</li><li>Return journey to Bangalore, reaching by ~10:00 PM.</li></ul>" }
         ],
         inclusions: [
+            "Transportation (Toll/Parking included)",
             "Stay (Tents/Rooms on sharing basis)",
             "2 Breakfasts, 1 Packed Lunch, 1 Dinner (Veg/Non-Veg)",
-            "Basic First-Aid Support",
-            "Forest Permission",
-            "Guide charges & Trek Charges",
-            "Campfire (Subjected to weather conditions)",
             "Coffee/Tea",
+            "Trek Permits",
+            "Local Guide charges and trek charges",
+            "Sightseeing charges",
             "Jeep ride charges",
             "Waterfall entry fee",
-            "Transportation (Toll/Parking included)"
+            "Campfire (Subject to weather conditions)",
+            "Basic First-Aid Support"
         ]
     },
     {
@@ -380,7 +398,7 @@ const TREKS_DATA = [
             "Scenic forest trails",
             "Lakya Dam backwaters view",
             "Samse Tea Estate",
-            "Kodige Falls by jeep ride",
+            "Kodige Falls / Soormane Falls",
             "Jeep ride experience",
             "Homestay stay",
             "Campfire",
@@ -397,16 +415,17 @@ const TREKS_DATA = [
             { day: "Day 02", title: "Waterfalls & Heritage Trail", desc: "<ul><li>Wake up, have breakfast, and check out from homestay.</li><li>Visit picturesque Samse Tea Estate and Kodige Falls via jeep ride.</li><li>Visit the magnificent Belur Hoysala Temple (UNESCO World Heritage Site).</li><li>Begin return journey to Bangalore, reaching by ~10:00 PM.</li></ul>" }
         ],
         inclusions: [
+            "Transportation (Toll/Parking included)",
             "Stay (Tents/Rooms on sharing basis)",
             "2 Breakfasts, 1 Packed Lunch, 1 Dinner (Veg/Non-Veg)",
-            "Basic First-Aid Support",
-            "Forest Permission",
-            "Guide charges & Trek Charges",
-            "Campfire (Subject to weather conditions)",
             "Coffee/Tea",
+            "Trek Permits",
+            "Local Guide charges and trek charges",
+            "Sightseeing charges",
             "Jeep ride charges",
             "Waterfall entry fee",
-            "Transportation (Toll/Parking included)"
+            "Campfire (Subject to weather conditions)",
+            "Basic First-Aid Support"
         ]
     },
     {
@@ -449,15 +468,17 @@ const TREKS_DATA = [
             { day: "Day 02", title: "Cultural Heritage & Return Journey", desc: "<ul><li>Wake up, breakfast, and check out.</li><li>Visit historical Nagara Fort ruins and Mookambika Temple surroundings.</li><li>Self-sponsored lunch en route and return journey to Bangalore (~10:00 PM).</li></ul>" }
         ],
         inclusions: [
+            "Transportation (Toll/Parking included)",
             "Stay (Tents/Rooms on sharing basis)",
             "2 Breakfasts, 1 Packed Lunch, 1 Dinner (Veg/Non-Veg)",
-            "Basic First-Aid Support",
-            "Forest Permission & Sanctuary Permits",
-            "Guide charges & Trek Charges",
-            "Jeep ride charges",
-            "Campfire (Subject to weather conditions)",
             "Coffee/Tea",
-            "Transportation (Toll/Parking included)"
+            "Trek Permits",
+            "Local Guide charges and trek charges",
+            "Sightseeing charges",
+            "Off-road 4x4 Jeep Ride charges",
+            "Waterfall entry fee",
+            "Campfire (Subject to weather conditions)",
+            "Basic First-Aid Support"
         ]
     },
     {
@@ -476,8 +497,9 @@ const TREKS_DATA = [
         image: "images/Dudhsagar Falls & Dandeli/dudhsagar-falls-view.png",
         slides: [
             "images/Dudhsagar Falls & Dandeli/dudhsagar-falls-view.png",
-            "images/Dudhsagar Falls & Dandeli/dandeli-river-rafting.jpeg",
-            "images/Dudhsagar Falls & Dandeli/dudhsagar-railway-bridge.jpeg"
+            "images/Dudhsagar Falls & Dandeli/dudhsagar-waterfall.png",
+            "images/Dudhsagar Falls & Dandeli/dandeli-white-water.jpeg",
+            "images/Dudhsagar Falls & Dandeli/dandeli-rafting-rapids.jpeg"
         ],
         description: "The Dudhsagar Falls, located on the Goa-Karnataka border, is one of India's tallest waterfalls, standing at 310 meters. The trek passes through dense forests, railway tracks, and picturesque landscapes with white-water rafting and water activities on the roaring Kali River in Dandeli.",
         highlights: [

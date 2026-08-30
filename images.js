@@ -28,13 +28,11 @@ const IMAGES = {
     // -------------------------------------------------------------
     heroSlides: [
         "images/Hero/hero-bg-landscape.jpg",
-        "images/Kudremukha/kudremukha-cover.jpg",
         "images/Netravathi/netravathi-cover.jpg",
-        "images/Bandaje/bandaje-cliff-edge.png",
         "images/Kodachadri/kodachadri-cover.jpg",
-        "images/Ooty/ooty-hills-vista.jpg",
-        "images/Wayanad/wayanad-tea-estate.jpg",
-        "images/Kurinjal/kurinjal-peak-summit.jpeg"
+        "images/Etthina Bhuja/ethina2-landscape.jpg",
+        "images/Bandaje/bandaje-valley-trek.jpeg",
+        "images/Dudhsagar Falls & Dandeli/dandeli-rafting-rapids.jpeg"
     ],
 
     // -------------------------------------------------------------
@@ -44,12 +42,11 @@ const IMAGES = {
         "bandaje-falls": {
             cover: "images/Bandaje/bandaje-waterfall-view.jpeg",
             slides: [
-                "images/Bandaje/bandaje-waterfall-view.jpeg",
                 "images/Bandaje/bandaje-cliff-edge.png",
-                "images/Bandaje/bandaje-valley-trek.jpeg",
-                "images/Bandaje/bandaje-stream-crossing.jpg",
-                "images/Bandaje/bandaje-mist-summit.jpg",
-                "images/Bandaje/bandaje-peak-vistas.jpg"
+                "images/Bandaje/bandaje-waterfall-view.jpeg",
+                "images/Bandaje/bandaje.png",
+                "images/Bandaje/bandaje1.png",
+                "images/Bandaje/bandaje-valley-trek.jpeg"
             ]
         },
         "netravathi": {
@@ -75,12 +72,10 @@ const IMAGES = {
             cover: "images/Kudremukha/kudremukha-cover.jpg",
             slides: [
                 "images/Kudremukha/kudremukha-cover.jpg",
-                "images/Kudremukha/kudremukha-peak.jpg",
-                "images/Kudremukha/kudremukha-ridge.png",
-                "images/Kudremukha/kudremukha-trail-1.jpg",
                 "images/Kudremukha/kudremukha-grasslands-1.jpeg",
                 "images/Kudremukha/kudremukha-valley.jpeg",
-                "images/Kudremukha/kudremukha-rolling-hills.jpeg"
+                "images/Kudremukha/kudremukh1-onti-mara.jpeg",
+                "images/Kudremukha/kudremukh1-flora.jpeg"
             ]
         },
         "etthina-bhuja": {
@@ -91,12 +86,12 @@ const IMAGES = {
             ]
         },
         "kurinjal": {
-            cover: "images/Kurinjal/kurinjal-peak-summit.jpeg",
+            cover: "images/Kurinjal/kuri4.jpeg",
             slides: [
-                "images/Kurinjal/kurinjal-peak-summit.jpeg",
-                "images/Kurinjal/kurinjal-forest-trail.jpeg",
-                "images/Kurinjal/kurinjal-rocky-ridge.jpeg",
-                "images/Kurinjal/kurinjal-valley-view.jpeg"
+                "images/Kurinjal/kuri4.jpeg",
+                "images/Kurinjal/kuri2.jpeg",
+                "images/Kurinjal/kuri1.jpeg",
+                "images/Kurinjal/kuri3.jpeg"
             ]
         },
         "gangadikallu": {
@@ -126,8 +121,8 @@ const IMAGES = {
             slides: [
                 "images/Dudhsagar Falls & Dandeli/dudhsagar-falls-view.png",
                 "images/Dudhsagar Falls & Dandeli/dudhsagar-waterfall.png",
-                "images/Dudhsagar Falls & Dandeli/dandeli-rafting-rapids.jpeg",
-                "images/Dudhsagar Falls & Dandeli/dandeli-white-water.jpeg"
+                "images/Dudhsagar Falls & Dandeli/dandeli-white-water.jpeg",
+                "images/Dudhsagar Falls & Dandeli/dandeli-rafting-rapids.jpeg"
             ]
         },
         "narasimha-parvatha": {

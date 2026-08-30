@@ -61,7 +61,7 @@ const GALLERY_DATA = [
     },
     {
         id: "g6",
-        src: "images/Kurinjal/kurinjal-peak-summit.jpeg",
+        src: "images/Kurinjal/kuri2.jpeg",
         title: "Windy Shola Summit",
         location: "Kurinjal Peak, Kudremukh",
         category: "peaks",
@@ -1389,6 +1389,9 @@ function handleContactSubmit(event) {
 
 // Hero background slideshow animator
 function startHeroSlideshow() {
+    if (window.heroSlideshowStarted) return;
+    window.heroSlideshowStarted = true;
+
     const sliderContainer = document.querySelector(".hero-bg-slider");
     if (sliderContainer && window.IMAGES && Array.isArray(window.IMAGES.heroSlides) && window.IMAGES.heroSlides.length > 0) {
         sliderContainer.innerHTML = "";
@@ -1422,7 +1425,7 @@ function startHeroSlideshow() {
             nextSlide.classList.remove("previous");
             nextSlide.classList.add("active");
         }
-    }, 2000); // Transitions background slide every 2 seconds
+    }, 4000); // Transitions background slide every 4 seconds
 }
 
 // Custom handler for Instagram to force native app deep linking on mobile devices
@@ -1898,8 +1901,9 @@ function slideReelStage(direction) {
     phones[targetIdx].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
 }
 
-// Ensure Reviews, YouTube, Instagram Embeds, and Phone Mockup Stage initialize on DOM load
+// Ensure Reviews, YouTube, Instagram Embeds, Phone Mockup, and Hero Slideshow initialize on DOM load
 document.addEventListener("DOMContentLoaded", function() {
+    startHeroSlideshow();
     renderDynamicGoogleReviews();
     renderDynamicYouTubeVideos();
     initPhoneMockupStage();
@@ -1908,6 +1912,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 window.addEventListener("load", function() {
+    startHeroSlideshow();
     renderDynamicGoogleReviews();
     renderDynamicYouTubeVideos();
     initPhoneMockupStage();
