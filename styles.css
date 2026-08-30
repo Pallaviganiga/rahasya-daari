@@ -359,6 +359,14 @@ h1, h2, h3, h4, h5, h6 {
     flex-shrink: 0;
 }
 
+.btn-contact-text-short {
+    display: none;
+}
+
+.btn-contact-text-full {
+    display: inline;
+}
+
 .btn-contact-top.active-page {
     background-color: #183e20;
     box-shadow: 0 0 0 3px rgba(24, 62, 32, 0.25);
@@ -2158,6 +2166,109 @@ h1, h2, h3, h4, h5, h6 {
     gap: 16px;
 }
 
+/* Wizard Transportation Radio Cards - Fully Responsive */
+.wizard-radio-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+}
+
+.wizard-radio-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: #ffffff;
+    border: 2px solid var(--border-color);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    min-width: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.wizard-radio-card:hover {
+    border-color: rgba(69, 139, 67, 0.4);
+    background: #fcfdfc;
+}
+
+.wizard-radio-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+.wizard-radio-indicator {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border-radius: 50%;
+    border: 2px solid #cbd5e1;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.wizard-radio-indicator::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary-green);
+    transform: scale(0);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wizard-radio-card:has(input[type="radio"]:checked) {
+    border-color: var(--primary-green);
+    background: #f0fdf4;
+    box-shadow: 0 2px 8px rgba(69, 139, 67, 0.18);
+}
+
+.wizard-radio-card:has(input[type="radio"]:checked) .wizard-radio-indicator {
+    border-color: var(--primary-green);
+}
+
+.wizard-radio-card:has(input[type="radio"]:checked) .wizard-radio-indicator::after {
+    transform: scale(1);
+}
+
+.wizard-radio-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.wizard-radio-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.wizard-radio-sub {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.wizard-radio-card:has(input[type="radio"]:checked) .wizard-radio-sub {
+    color: var(--primary-green);
+}
+
 .wizard-actions {
     display: flex;
     justify-content: space-between;
@@ -2301,7 +2412,9 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 992px) {
     /* Trigger Mobile Navigation Menu and compact layout */
     .mobile-nav-toggle {
-        display: block;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
     }
     
     .nav-menu {
@@ -2328,16 +2441,16 @@ h1, h2, h3, h4, h5, h6 {
         left: 0;
     }
     
-    /* Keep Contact Us button visible in header, scale down slightly for tablet/mobile */
     .btn-contact-top,
     .btn-book-top {
-        padding: 10px 20px;
-        font-size: 0.85rem;
+        padding: 8px 16px;
+        font-size: 0.82rem;
+        white-space: nowrap;
     }
 
     .logo-img, .logo-fallback {
-        width: 55px !important;
-        height: 55px !important;
+        width: 50px !important;
+        height: 50px !important;
     }
     
     .logo-text {
@@ -2346,7 +2459,7 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .header-container {
-        padding: 8px 24px !important;
+        padding: 8px 16px !important;
     }
 
     .hero-section {
@@ -5135,31 +5248,36 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
     /* Global Container */
     .container {
-        padding: 0 14px;
+        padding: 0 16px;
     }
     
-    /* Navigation Bar - Increased Height & Prominent Logo */
+    /* Navigation Bar - Increased Height, Visible Logo & Visible Mobile Menu Toggle */
     .header-container {
-        padding: 10px 14px !important;
-        gap: 10px !important;
+        padding: 8px 16px !important;
+        gap: 8px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .logo-wrapper {
-        gap: 10px !important;
+        gap: 8px !important;
         flex-shrink: 0 !important;
         min-width: 0 !important;
     }
 
     .logo-img {
-        width: 54px !important;
-        height: 54px !important;
+        width: 44px !important;
+        height: 44px !important;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
         flex-shrink: 0 !important;
         display: block !important;
     }
 
     .logo-text {
-        font-size: 1.25rem !important;
+        font-size: 1.1rem !important;
         white-space: nowrap !important;
         line-height: 1 !important;
     }
@@ -5173,11 +5291,12 @@ h1, h2, h3, h4, h5, h6 {
         align-items: center !important;
         gap: 8px !important;
         flex-shrink: 0 !important;
+        margin-left: auto !important;
     }
 
     .btn-contact-top {
-        padding: 8px 14px !important;
-        font-size: 0.78rem !important;
+        padding: 6px 12px !important;
+        font-size: 0.74rem !important;
         letter-spacing: 0.3px !important;
         border-radius: 50px !important;
         white-space: nowrap !important;
@@ -5186,18 +5305,38 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .btn-contact-top i {
-        font-size: 0.7rem !important;
+        font-size: 0.68rem !important;
+    }
+
+    .btn-contact-text-full {
+        display: none !important;
+    }
+
+    .btn-contact-text-short {
+        display: inline !important;
     }
 
     .mobile-nav-toggle {
-        font-size: 1.55rem !important;
-        padding: 4px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        font-size: 1.4rem !important;
+        color: var(--text-primary) !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        padding: 0 !important;
         flex-shrink: 0 !important;
+        z-index: 101 !important;
+        margin-right: 0 !important;
     }
 
     /* Hero Section on Mobile - Adjusted for Header */
     .hero-section {
-        padding: 92px 12px 16px 12px !important;
+        padding: 86px 14px 16px 14px !important;
     }
 
     .hero-container {
@@ -5224,7 +5363,7 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Page Hero Banner */
     .page-hero-banner {
-        padding: 95px 0 24px !important;
+        padding: 90px 0 24px !important;
     }
     
     .page-hero-title {
@@ -5239,7 +5378,7 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Details Hero */
     .details-page-content {
-        padding-top: 86px !important;
+        padding-top: 80px !important;
     }
     
     .details-hero-container {
@@ -5356,37 +5495,50 @@ h1, h2, h3, h4, h5, h6 {
 /* 5. Compact Mobile Screens (max-width: 480px) */
 @media (max-width: 480px) {
     .container {
-        padding: 0 12px;
+        padding: 0 10px;
     }
 
     .header-container {
-        padding: 8px 10px !important;
-        gap: 8px !important;
+        padding: 6px 10px !important;
+        gap: 6px !important;
     }
 
     .logo-wrapper {
-        gap: 8px !important;
+        gap: 6px !important;
     }
 
     .logo-img {
-        width: 48px !important;
-        height: 48px !important;
+        width: 42px !important;
+        height: 42px !important;
         display: block !important;
     }
 
     .logo-text {
-        font-size: 1.15rem !important;
+        font-size: 1.05rem !important;
         white-space: nowrap !important;
+    }
+
+    .nav-actions {
+        gap: 6px !important;
     }
 
     .btn-contact-top {
-        padding: 7px 11px !important;
-        font-size: 0.74rem !important;
+        padding: 5px 9px !important;
+        font-size: 0.7rem !important;
         white-space: nowrap !important;
+        gap: 3px !important;
+    }
+
+    .mobile-nav-toggle {
+        display: flex !important;
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px !important;
+        font-size: 1.35rem !important;
     }
 
     .hero-section {
-        padding: 86px 10px 14px 10px !important;
+        padding: 82px 10px 14px 10px !important;
     }
 
     .hero-container {
@@ -5467,7 +5619,16 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 0.9rem !important;
     }
 
-    /* Booking Wizard Steps */
+    /* Booking Wizard Steps & Transportation Radio Cards */
+    .wizard-radio-group {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    .wizard-radio-card {
+        padding: 11px 13px !important;
+    }
+
     .wizard-actions {
         flex-direction: column-reverse !important;
         gap: 10px !important;
@@ -5490,27 +5651,71 @@ h1, h2, h3, h4, h5, h6 {
 /* 6. Extra Small Screens (max-width: 360px - e.g. iPhone SE, Fold) */
 @media (max-width: 360px) {
     .container {
-        padding: 0 8px;
+        padding: 0 6px;
     }
 
     .header-container {
-        padding: 6px 8px !important;
-        gap: 6px !important;
+        padding: 5px 6px !important;
+        gap: 4px !important;
     }
 
     .logo-img {
-        width: 42px !important;
-        height: 42px !important;
+        width: 36px !important;
+        height: 36px !important;
     }
 
     .logo-text {
-        font-size: 1.02rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    .nav-actions {
+        gap: 4px !important;
     }
 
     .btn-contact-top {
-        padding: 6px 9px !important;
-        font-size: 0.7rem !important;
+        padding: 4px 7px !important;
+        font-size: 0.65rem !important;
     }
+
+    .mobile-nav-toggle {
+        display: flex !important;
+        width: 30px !important;
+        height: 30px !important;
+        min-width: 30px !important;
+        font-size: 1.2rem !important;
+    }
+    
+    .page-hero-title {
+        font-size: 1.3rem !important;
+    }
+
+    .hero-title {
+        font-size: 1.4rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem !important;
+    }
+    
+    .details-trek-title {
+        font-size: 1.35rem !important;
+    }
+    
+    .details-hero-container {
+        height: 260px !important;
+    }
+    
+    .badge {
+        font-size: 0.65rem !important;
+        padding: 4px 8px !important;
+    }
+    
+    .stat-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 2px !important;
+    }
+}
     
     .page-hero-title {
         font-size: 1.3rem !important;

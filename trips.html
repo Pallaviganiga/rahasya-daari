@@ -15,7 +15,7 @@
     <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=45">
+    <link rel="stylesheet" href="styles.css?v=48">
 </head>
 
 <body>
@@ -51,8 +51,11 @@
             </nav>
 
             <div class="nav-actions">
-                <a href="contact.html" class="btn btn-primary btn-contact-top">CONTACT US <i
-                        class="fa-solid fa-arrow-right"></i></a>
+                <a href="contact.html" class="btn btn-primary btn-contact-top">
+                    <span class="btn-contact-text-full">CONTACT US</span>
+                    <span class="btn-contact-text-short">CONTACT</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
                 <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu">
                     <i class="fa-solid fa-bars"></i>
                 </button>
@@ -469,17 +472,23 @@
                         <input type="email" id="wizardEmail" class="form-input" placeholder="Enter your email" required>
                     </div>
                     <div class="form-group" id="wizardTransportGroup" style="display: none;">
-                        <label style="display: block; margin-bottom: 8px;">Do you have own transportation?</label>
-                        <div style="display: flex; gap: 24px; align-items: center; padding: 4px 0;">
-                            <label
-                                style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal;">
-                                <input type="radio" name="wizardTransport" value="yes"
-                                    onchange="updateBookingSummary()"> Yes (Save ₹1,000/head)
+                        <label class="form-label" style="display: block; margin-bottom: 10px; font-weight: 700;">Do you have own transportation?</label>
+                        <div class="wizard-radio-group">
+                            <label class="wizard-radio-card">
+                                <input type="radio" name="wizardTransport" value="yes" onchange="updateBookingSummary()">
+                                <div class="wizard-radio-indicator"></div>
+                                <div class="wizard-radio-content">
+                                    <span class="wizard-radio-title">Yes</span>
+                                    <span class="wizard-radio-sub">(Save ₹1,000/head)</span>
+                                </div>
                             </label>
-                            <label
-                                style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-weight: normal;">
-                                <input type="radio" name="wizardTransport" value="no" checked
-                                    onchange="updateBookingSummary()"> No (Includes Transport)
+                            <label class="wizard-radio-card">
+                                <input type="radio" name="wizardTransport" value="no" checked onchange="updateBookingSummary()">
+                                <div class="wizard-radio-indicator"></div>
+                                <div class="wizard-radio-content">
+                                    <span class="wizard-radio-title">No</span>
+                                    <span class="wizard-radio-sub">(Includes Transport)</span>
+                                </div>
                             </label>
                         </div>
                     </div>
