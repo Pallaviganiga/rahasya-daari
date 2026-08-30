@@ -257,7 +257,7 @@ h1, h2, h3, h4, h5, h6 {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 6px 24px;
+    padding: 10px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -268,19 +268,21 @@ h1, h2, h3, h4, h5, h6 {
 .logo-wrapper {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
     text-decoration: none;
     color: var(--text-primary);
 }
 
 .logo-img {
-    width: 75px;
-    height: 75px;
+    width: 68px;
+    height: 68px;
     object-fit: contain;
     border-radius: 50%;
     background-color: #ffffff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 2px;
+    display: block;
+    flex-shrink: 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -4837,6 +4839,52 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================================
+   PAGE HERO TOP NAV & BACK TO HOME ARROW
+   ============================================================ */
+.page-hero-top-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.hero-back-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 7px 18px;
+    border-radius: 50px;
+    background-color: #ffffff;
+    color: var(--primary-green);
+    border: 1.5px solid rgba(69, 139, 67, 0.25);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-back-arrow i {
+    font-size: 0.95rem;
+    transition: transform 0.25s ease;
+}
+
+.hero-back-arrow:hover {
+    background-color: var(--primary-green);
+    color: #ffffff;
+    border-color: var(--primary-green);
+    transform: translateX(-4px);
+    box-shadow: 0 6px 16px rgba(69, 139, 67, 0.35);
+}
+
+.hero-back-arrow:hover i {
+    transform: translateX(-2px);
+}
+
+/* ============================================================
    TRIP CATALOG CATEGORY JUMP & BOOKING SELECTOR
    ============================================================ */
 .trip-nav-section {
@@ -5090,26 +5138,28 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0 14px;
     }
     
-    /* Navigation Bar */
+    /* Navigation Bar - Increased Height & Prominent Logo */
     .header-container {
-        padding: 6px 12px !important;
-        gap: 6px !important;
+        padding: 10px 14px !important;
+        gap: 10px !important;
     }
 
     .logo-wrapper {
-        gap: 8px !important;
+        gap: 10px !important;
         flex-shrink: 0 !important;
         min-width: 0 !important;
     }
 
     .logo-img {
-        width: 44px !important;
-        height: 44px !important;
+        width: 54px !important;
+        height: 54px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
         flex-shrink: 0 !important;
+        display: block !important;
     }
 
     .logo-text {
-        font-size: 1.18rem !important;
+        font-size: 1.25rem !important;
         white-space: nowrap !important;
         line-height: 1 !important;
     }
@@ -5121,13 +5171,13 @@ h1, h2, h3, h4, h5, h6 {
     .nav-actions {
         display: flex !important;
         align-items: center !important;
-        gap: 6px !important;
+        gap: 8px !important;
         flex-shrink: 0 !important;
     }
 
     .btn-contact-top {
-        padding: 7px 12px !important;
-        font-size: 0.76rem !important;
+        padding: 8px 14px !important;
+        font-size: 0.78rem !important;
         letter-spacing: 0.3px !important;
         border-radius: 50px !important;
         white-space: nowrap !important;
@@ -5140,18 +5190,18 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .mobile-nav-toggle {
-        font-size: 1.45rem !important;
+        font-size: 1.55rem !important;
         padding: 4px !important;
         flex-shrink: 0 !important;
     }
 
-    /* Hero Section on Mobile */
+    /* Hero Section on Mobile - Adjusted for Header */
     .hero-section {
-        padding: 75px 12px 16px 12px !important;
+        padding: 92px 12px 16px 12px !important;
     }
 
     .hero-container {
-        height: 420px !important;
+        height: 430px !important;
         border-radius: 20px !important;
     }
 
@@ -5174,7 +5224,7 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Page Hero Banner */
     .page-hero-banner {
-        padding: 85px 0 24px !important;
+        padding: 95px 0 24px !important;
     }
     
     .page-hero-title {
@@ -5189,7 +5239,7 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Details Hero */
     .details-page-content {
-        padding-top: 75px !important;
+        padding-top: 86px !important;
     }
     
     .details-hero-container {
@@ -5310,36 +5360,37 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .header-container {
-        padding: 6px 10px !important;
-        gap: 6px !important;
+        padding: 8px 10px !important;
+        gap: 8px !important;
     }
 
     .logo-wrapper {
-        gap: 6px !important;
+        gap: 8px !important;
     }
 
     .logo-img {
-        width: 38px !important;
-        height: 38px !important;
+        width: 48px !important;
+        height: 48px !important;
+        display: block !important;
     }
 
     .logo-text {
-        font-size: 1.05rem !important;
+        font-size: 1.15rem !important;
         white-space: nowrap !important;
     }
 
     .btn-contact-top {
-        padding: 6px 10px !important;
-        font-size: 0.72rem !important;
+        padding: 7px 11px !important;
+        font-size: 0.74rem !important;
         white-space: nowrap !important;
     }
 
     .hero-section {
-        padding: 72px 10px 14px 10px !important;
+        padding: 86px 10px 14px 10px !important;
     }
 
     .hero-container {
-        height: 370px !important;
+        height: 380px !important;
         border-radius: 16px !important;
     }
 
@@ -5443,22 +5494,22 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .header-container {
-        padding: 5px 6px !important;
-        gap: 4px !important;
+        padding: 6px 8px !important;
+        gap: 6px !important;
     }
 
     .logo-img {
-        width: 34px !important;
-        height: 34px !important;
+        width: 42px !important;
+        height: 42px !important;
     }
 
     .logo-text {
-        font-size: 0.95rem !important;
+        font-size: 1.02rem !important;
     }
 
     .btn-contact-top {
-        padding: 5px 8px !important;
-        font-size: 0.68rem !important;
+        padding: 6px 9px !important;
+        font-size: 0.7rem !important;
     }
     
     .page-hero-title {
