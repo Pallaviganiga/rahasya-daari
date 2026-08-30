@@ -10,6 +10,7 @@
     --text-primary: #1F2937;         /* Charcoal dark */
     --text-secondary: #4B5563;       /* Medium gray */
     --font-main: 'Nunito', sans-serif;
+    --font-handwriting: 'Bradley Hand ITC', 'Bradley Hand', 'Segoe Print', 'Comic Sans MS', cursive;
     
     /* Box Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -303,6 +304,8 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--primary-green);
+    white-space: nowrap;
+    display: inline-block;
     transition: all 0.4s ease;
 }
 
@@ -312,6 +315,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo-text-full {
     display: inline;
+    white-space: nowrap;
 }
 
 .footer .logo-text-short {
@@ -345,9 +349,12 @@ h1, h2, h3, h4, h5, h6 {
 .btn-contact-top {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     font-weight: 800;
     letter-spacing: 0.5px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .btn-contact-top.active-page {
@@ -5080,21 +5087,89 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
     /* Global Container */
     .container {
-        padding: 0 16px;
+        padding: 0 14px;
     }
     
     /* Navigation Bar */
     .header-container {
-        padding: 12px 16px;
+        padding: 6px 12px !important;
+        gap: 6px !important;
     }
-    
+
+    .logo-wrapper {
+        gap: 8px !important;
+        flex-shrink: 0 !important;
+        min-width: 0 !important;
+    }
+
     .logo-img {
-        height: 38px;
-        width: auto;
+        width: 44px !important;
+        height: 44px !important;
+        flex-shrink: 0 !important;
     }
-    
+
+    .logo-text {
+        font-size: 1.18rem !important;
+        white-space: nowrap !important;
+        line-height: 1 !important;
+    }
+
     .logo-text-full {
-        font-size: 1.15rem;
+        white-space: nowrap !important;
+    }
+
+    .nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .btn-contact-top {
+        padding: 7px 12px !important;
+        font-size: 0.76rem !important;
+        letter-spacing: 0.3px !important;
+        border-radius: 50px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        gap: 4px !important;
+    }
+
+    .btn-contact-top i {
+        font-size: 0.7rem !important;
+    }
+
+    .mobile-nav-toggle {
+        font-size: 1.45rem !important;
+        padding: 4px !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* Hero Section on Mobile */
+    .hero-section {
+        padding: 75px 12px 16px 12px !important;
+    }
+
+    .hero-container {
+        height: 420px !important;
+        border-radius: 20px !important;
+    }
+
+    .hero-content {
+        padding: 0 16px !important;
+    }
+
+    .hero-title {
+        font-size: 1.85rem !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0.5px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 16px !important;
     }
 
     /* Page Hero Banner */
@@ -5231,7 +5306,51 @@ h1, h2, h3, h4, h5, h6 {
 /* 5. Compact Mobile Screens (max-width: 480px) */
 @media (max-width: 480px) {
     .container {
-        padding: 0 14px;
+        padding: 0 12px;
+    }
+
+    .header-container {
+        padding: 6px 10px !important;
+        gap: 6px !important;
+    }
+
+    .logo-wrapper {
+        gap: 6px !important;
+    }
+
+    .logo-img {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    .logo-text {
+        font-size: 1.05rem !important;
+        white-space: nowrap !important;
+    }
+
+    .btn-contact-top {
+        padding: 6px 10px !important;
+        font-size: 0.72rem !important;
+        white-space: nowrap !important;
+    }
+
+    .hero-section {
+        padding: 72px 10px 14px 10px !important;
+    }
+
+    .hero-container {
+        height: 370px !important;
+        border-radius: 16px !important;
+    }
+
+    .hero-title {
+        font-size: 1.6rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem !important;
+        line-height: 1.2 !important;
     }
 
     /* Typography Scaling */
@@ -5320,11 +5439,38 @@ h1, h2, h3, h4, h5, h6 {
 /* 6. Extra Small Screens (max-width: 360px - e.g. iPhone SE, Fold) */
 @media (max-width: 360px) {
     .container {
-        padding: 0 10px;
+        padding: 0 8px;
+    }
+
+    .header-container {
+        padding: 5px 6px !important;
+        gap: 4px !important;
+    }
+
+    .logo-img {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .logo-text {
+        font-size: 0.95rem !important;
+    }
+
+    .btn-contact-top {
+        padding: 5px 8px !important;
+        font-size: 0.68rem !important;
     }
     
     .page-hero-title {
         font-size: 1.3rem !important;
+    }
+
+    .hero-title {
+        font-size: 1.4rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem !important;
     }
     
     .details-trek-title {
