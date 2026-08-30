@@ -15,7 +15,7 @@
     <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=40">
+    <link rel="stylesheet" href="styles.css?v=41">
 </head>
 
 <body>
@@ -69,6 +69,56 @@
                 <span class="hero-tag-badge"><i class="fa-solid fa-mountain-sun"></i> Upcoming Expeditions</span>
                 <h1 class="page-hero-title">TREKS & TOURS CATALOG</h1>
                 <p class="page-hero-subtitle">Handcrafted weekend treks, weekday getaways, and sightseeing excursions from Bengaluru with transparent pricing, certified pathfinders, and homestay hospitality.</p>
+            </div>
+        </section>
+
+        <!-- Quick Category Section Jump & Booking Selector -->
+        <section class="trip-nav-section" id="tripNavSection">
+            <div class="container">
+                <div class="trip-nav-card">
+                    <div class="trip-nav-header">
+                        <span class="trip-nav-badge"><i class="fa-solid fa-compass"></i> Quick Category Jump</span>
+                        <h3 class="trip-nav-title">Select Category to Explore & Book</h3>
+                    </div>
+
+                    <!-- Category Radio Buttons & Pills (Desktop & Tablet) -->
+                    <div class="trip-radio-group" role="radiogroup" aria-label="Trip Categories">
+                        <label class="trip-radio-pill active" data-target="weekday">
+                            <input type="radio" name="tripSection" value="weekday" checked onchange="scrollToTripSection('weekday')">
+                            <span class="pill-icon"><i class="fa-solid fa-person-hiking"></i></span>
+                            <span class="pill-text">Weekdays Trips</span>
+                        </label>
+                        <label class="trip-radio-pill" data-target="trips">
+                            <input type="radio" name="tripSection" value="trips" onchange="scrollToTripSection('trips')">
+                            <span class="pill-icon"><i class="fa-solid fa-mountain"></i></span>
+                            <span class="pill-text">Weekend Treks</span>
+                        </label>
+                        <label class="trip-radio-pill" data-target="sightseeing">
+                            <input type="radio" name="tripSection" value="sightseeing" onchange="scrollToTripSection('sightseeing')">
+                            <span class="pill-icon"><i class="fa-solid fa-camera-retro"></i></span>
+                            <span class="pill-text">Sightseeing Tours</span>
+                        </label>
+                        <label class="trip-radio-pill" data-target="popular">
+                            <input type="radio" name="tripSection" value="popular" onchange="scrollToTripSection('popular')">
+                            <span class="pill-icon"><i class="fa-solid fa-fire"></i></span>
+                            <span class="pill-text">Popular Treks</span>
+                        </label>
+                    </div>
+
+                    <!-- Dropdown for Mobile / Quick Selection -->
+                    <div class="trip-dropdown-wrapper">
+                        <div class="custom-select-container">
+                            <select id="tripCategorySelect" onchange="scrollToTripSection(this.value)" aria-label="Select trip category">
+                                <option value="" disabled selected>✨ Select category (Weekdays, Weekend, Sightseeing, Popular)...</option>
+                                <option value="weekday">🏃 Weekdays Trips</option>
+                                <option value="trips">🎒 Weekend Treks</option>
+                                <option value="sightseeing">🌄 Sightseeing Tours</option>
+                                <option value="popular">⭐ Popular Treks</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down select-chevron"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -194,6 +244,17 @@
         <section class="details-body-section">
             <div class="container grid grid-2-col-details">
                 <div class="details-main-info">
+                    <!-- Left Side Book Option -->
+                    <div class="details-left-book-card" style="margin-bottom: 28px; padding: 18px 24px; background: linear-gradient(135deg, rgba(46, 117, 89, 0.08), rgba(226, 135, 67, 0.08)); border: 1.5px solid rgba(46, 117, 89, 0.25); border-radius: 18px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+                        <div>
+                            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.6px; font-weight: 800; color: var(--primary-green);">Weekend & Weekday Slots Available</span>
+                            <h4 style="margin: 4px 0 0; font-size: 1.2rem; font-weight: 900; color: var(--text-primary);">Ready for this Adventure?</h4>
+                        </div>
+                        <button class="btn btn-primary btn-book-now" id="detailsBookBtnMain" style="padding: 13px 30px; font-size: 0.95rem; font-weight: 800; border-radius: 50px; box-shadow: 0 4px 14px rgba(46, 117, 89, 0.35);">
+                            BOOK THIS TREK <i class="fa-solid fa-calendar-check" style="margin-left: 6px;"></i>
+                        </button>
+                    </div>
+
                     <h3 class="info-heading" style="margin-top: 0;">Trek Overview</h3>
                     <p class="details-trek-description" id="detailsDescription">Detailed description goes here...</p>
 

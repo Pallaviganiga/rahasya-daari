@@ -1042,14 +1042,14 @@ function handleRouting() {
                 });
             }
 
-            // Connect Book Button inside details page
-            const bookBtn = document.getElementById("detailsBookBtn");
-            if (bookBtn) {
-                bookBtn.onclick = (e) => {
+            // Connect Book Buttons inside details page (left main card & right sidebar)
+            const bookButtons = document.querySelectorAll("#detailsBookBtn, #detailsBookBtnMain, .details-body-section .btn-book-now");
+            bookButtons.forEach(btn => {
+                btn.onclick = (e) => {
                     e.stopPropagation();
                     openBookingWizard(trek.id);
                 };
-            }
+            });
 
             // Scroll to top of details page
             window.scrollTo({ top: 0, behavior: 'instant' });
@@ -1920,3 +1920,37 @@ window.addEventListener("load", function() {
         window.instgrm.Embeds.process();
     }
 });
+
+// Smooth Scroll to Category Section from Quick Navigation & Sync State
+function scrollToTripSection(sectionId) {
+    if (!sectionId) return;
+    const targetElement = document.getElementById(sectionId);
+    if (!targetElement) return;
+
+    const headerOffset = 90;
+    const elementPosition = targetElement.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+    });
+
+    // Update active pill state
+    document.querySelectorAll('.trip-radio-pill').forEach(pill => {
+        if (pill.getAttribute('data-target') === sectionId) {
+            pill.classList.add('active');
+            const radio = pill.querySelector('input[type="radio"]');
+            if (radio) radio.checked = true;
+        } else {
+            pill.classList.remove('active');
+        }
+    });
+
+    // Sync dropdown value
+    const select = document.getElementById('tripCategorySelect');
+    if (select && select.value !== sectionId) {
+        select.value = sectionId;
+    }
+}
+window.scrollToTripSection = scrollToTripSection;

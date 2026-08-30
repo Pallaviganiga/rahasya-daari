@@ -4829,4 +4829,522 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* ============================================================
+   TRIP CATALOG CATEGORY JUMP & BOOKING SELECTOR
+   ============================================================ */
+.trip-nav-section {
+    padding: 0 0 36px 0;
+    margin-top: -15px;
+    position: relative;
+    z-index: 10;
+}
+
+.trip-nav-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 24px 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.trip-nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.trip-nav-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(46, 117, 89, 0.1);
+    color: var(--primary-green);
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 50px;
+}
+
+.trip-nav-title {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Radio Group Pills */
+.trip-radio-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.trip-radio-pill {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 18px;
+    background: var(--light-neutral);
+    border: 2px solid transparent;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    text-align: center;
+}
+
+.trip-radio-pill input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.trip-radio-pill .pill-icon {
+    font-size: 1.15rem;
+    color: var(--primary-green);
+    display: flex;
+    align-items: center;
+    transition: transform 0.25s ease;
+}
+
+.trip-radio-pill .pill-text {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    transition: color 0.25s ease;
+}
+
+.trip-radio-pill:hover {
+    background: #ffffff;
+    border-color: rgba(46, 117, 89, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46, 117, 89, 0.1);
+}
+
+.trip-radio-pill:hover .pill-icon {
+    transform: scale(1.15);
+}
+
+.trip-radio-pill.active {
+    background: var(--primary-green);
+    border-color: var(--primary-green);
+    box-shadow: 0 8px 20px rgba(46, 117, 89, 0.28);
+}
+
+.trip-radio-pill.active .pill-icon,
+.trip-radio-pill.active .pill-text {
+    color: #ffffff;
+}
+
+/* Dropdown Container */
+.trip-dropdown-wrapper {
+    display: none;
+    width: 100%;
+}
+
+.custom-select-container {
+    position: relative;
+    width: 100%;
+}
+
+.custom-select-container select {
+    width: 100%;
+    padding: 14px 44px 14px 18px;
+    font-size: 0.98rem;
+    font-weight: 700;
+    font-family: inherit;
+    color: var(--text-primary);
+    background: var(--light-neutral);
+    border: 2px solid var(--border-color);
+    border-radius: 14px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.custom-select-container select:focus {
+    border-color: var(--primary-green);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(46, 117, 89, 0.15);
+}
+
+.select-chevron {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-green);
+    pointer-events: none;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+    .trip-radio-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .trip-radio-group {
+        display: none;
+    }
+    .trip-dropdown-wrapper {
+        display: block;
+    }
+    .trip-nav-card {
+        padding: 18px 20px;
+    }
+}
+
+/* ============================================================
+   MASTER RESPONSIVE ENGINE (DESKTOP & ALL MOBILE SIZES)
+   ============================================================ */
+
+/* 1. Large Screen & Desktop Optimizations (min-width: 1200px) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+    .grid-2-col-details {
+        grid-template-columns: 1.7fr 1fr;
+        gap: 40px;
+    }
+}
+
+/* 2. Tablet & Medium Screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .grid-2-col-details {
+        grid-template-columns: 1.4fr 1fr;
+        gap: 28px;
+    }
+    
+    .details-main-info {
+        padding-right: 24px;
+    }
+    
+    .highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px 16px;
+    }
+    
+    .carousel-viewport {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+}
+
+/* 3. Small Tablets & Landscape Mobile (max-width: 992px) */
+@media (max-width: 992px) {
+    .grid-2-col-details {
+        grid-template-columns: 1fr !important;
+        gap: 36px !important;
+    }
+    
+    .details-main-info {
+        padding-right: 0 !important;
+        border-right: none !important;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 32px;
+    }
+    
+    .details-sidebar-info {
+        width: 100%;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+    
+    .details-left-book-card {
+        padding: 16px 20px !important;
+    }
+}
+
+/* 4. Standard Mobile Screens (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Global Container */
+    .container {
+        padding: 0 16px;
+    }
+    
+    /* Navigation Bar */
+    .header-container {
+        padding: 12px 16px;
+    }
+    
+    .logo-img {
+        height: 38px;
+        width: auto;
+    }
+    
+    .logo-text-full {
+        font-size: 1.15rem;
+    }
+
+    /* Page Hero Banner */
+    .page-hero-banner {
+        padding: 85px 0 24px !important;
+    }
+    
+    .page-hero-title {
+        font-size: 1.65rem !important;
+        line-height: 1.25 !important;
+    }
+    
+    .page-hero-subtitle {
+        font-size: 0.92rem !important;
+        line-height: 1.5 !important;
+    }
+
+    /* Details Hero */
+    .details-page-content {
+        padding-top: 75px !important;
+    }
+    
+    .details-hero-container {
+        border-radius: 18px !important;
+        min-height: 280px;
+        aspect-ratio: auto;
+        height: 340px !important;
+    }
+    
+    .details-hero-content-wrapper {
+        padding: 20px !important;
+    }
+    
+    .details-trek-title {
+        font-size: 1.85rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .details-trek-location {
+        font-size: 0.95rem !important;
+    }
+    
+    .btn-back-home {
+        padding: 8px 16px !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Details Main Section */
+    .details-left-book-card {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        text-align: center !important;
+        padding: 18px 16px !important;
+        gap: 14px !important;
+    }
+    
+    .details-left-book-card .btn-book-now {
+        width: 100% !important;
+    }
+
+    /* Highlights Grid */
+    .highlights-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+        padding: 16px !important;
+    }
+    
+    .highlight-item {
+        font-size: 0.9rem !important;
+    }
+
+    /* Itinerary Timeline */
+    .itinerary-timeline {
+        padding-left: 20px !important;
+    }
+    
+    .itinerary-step-title {
+        font-size: 1.05rem !important;
+        line-height: 1.35 !important;
+    }
+    
+    .itinerary-step-desc {
+        font-size: 0.9rem !important;
+        line-height: 1.55 !important;
+    }
+
+    /* Sidebar Cards */
+    .quick-stats-card,
+    .includes-card {
+        padding: 18px 16px !important;
+        border-radius: 16px !important;
+    }
+    
+    .stat-row span,
+    .stat-row strong {
+        font-size: 0.88rem !important;
+    }
+
+    /* Booking Wizard Modal */
+    .modal-content {
+        margin: 12px !important;
+        max-height: 94vh !important;
+        border-radius: 20px !important;
+    }
+    
+    .modal-body {
+        padding: 24px 18px !important;
+    }
+    
+    .wizard-header {
+        padding: 20px 18px 14px 18px !important;
+    }
+    
+    .wizard-header h3 {
+        font-size: 1.25rem !important;
+    }
+    
+    .wizard-progress {
+        gap: 6px !important;
+    }
+    
+    .progress-step {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .form-group.grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+}
+
+/* 5. Compact Mobile Screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 14px;
+    }
+
+    /* Typography Scaling */
+    h1, .page-hero-title {
+        font-size: 1.45rem !important;
+    }
+    
+    h2, .section-title {
+        font-size: 1.35rem !important;
+    }
+    
+    h3, .info-heading {
+        font-size: 1.15rem !important;
+    }
+
+    /* Details Hero for Compact Mobile */
+    .details-hero-container {
+        height: 290px !important;
+        border-radius: 14px !important;
+    }
+    
+    .details-hero-content-wrapper {
+        padding: 14px !important;
+    }
+    
+    .details-trek-title {
+        font-size: 1.55rem !important;
+    }
+    
+    .details-trek-location {
+        font-size: 0.85rem !important;
+    }
+    
+    .details-trek-description {
+        font-size: 0.92rem !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Category Nav on Compact Mobile */
+    .trip-nav-card {
+        padding: 14px 16px !important;
+        border-radius: 16px !important;
+    }
+    
+    .trip-nav-title {
+        font-size: 1.05rem !important;
+    }
+    
+    .custom-select-container select {
+        padding: 12px 38px 12px 14px !important;
+        font-size: 0.88rem !important;
+        border-radius: 12px !important;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 10px 18px !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .btn-book-now {
+        padding: 12px 20px !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Booking Wizard Steps */
+    .wizard-actions {
+        flex-direction: column-reverse !important;
+        gap: 10px !important;
+    }
+    
+    .wizard-actions button {
+        width: 100% !important;
+    }
+    
+    .upi-qr-card {
+        padding: 14px !important;
+    }
+    
+    .upi-qr-image {
+        width: 170px !important;
+        height: 170px !important;
+    }
+}
+
+/* 6. Extra Small Screens (max-width: 360px - e.g. iPhone SE, Fold) */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .page-hero-title {
+        font-size: 1.3rem !important;
+    }
+    
+    .details-trek-title {
+        font-size: 1.35rem !important;
+    }
+    
+    .details-hero-container {
+        height: 260px !important;
+    }
+    
+    .badge {
+        font-size: 0.65rem !important;
+        padding: 4px 8px !important;
+    }
+    
+    .stat-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 2px !important;
+    }
+}
+
 
