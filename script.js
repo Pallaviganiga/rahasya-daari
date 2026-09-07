@@ -154,30 +154,38 @@ const GALLERY_DATA = [
 let currentLightboxIndex = 0;
 let currentFilteredGallery = GALLERY_DATA;
 
-// Render Landing Page Featured Trails (NO PRICE TAGS, CLEAN & STREAMLINED)
+// Render Landing Page Featured Trails (Same trek-card frontend as Tours page)
 function renderLandingFeaturedTrails() {
     const grid = document.getElementById("landingTrailsGrid");
     if (!grid) return;
 
     grid.innerHTML = "";
-    FEATURED_TRAILS_LANDING.forEach(trail => {
+    
+    // 4 Featured Cards in order: Bandaje (Trek), Netravathi (Trek), Chikmagalur (Trip), Coorg (Trip)
+    const featuredIds = ["bandaje-falls", "netravathi", "chikmagalur", "coorg-exploration"];
+    const featuredItems = featuredIds.map(id => TREKS_DATA.find(t => t.id === id)).filter(Boolean);
+
+    featuredItems.forEach(trek => {
         const card = document.createElement("div");
-        card.className = "landing-trail-card";
+        card.className = "trek-card";
+        card.setAttribute("onclick", `navigateToTrek('${trek.id}')`);
         card.innerHTML = `
-            <div class="landing-card-media skeleton">
-                <img src="${trail.image}" alt="${trail.title}" onload="this.parentElement.classList.remove('skeleton');" onerror="this.src='images/Hero/hero-bg-landscape.jpg'; this.parentElement.classList.remove('skeleton');">
+            <div class="trek-card-img-wrapper skeleton">
+                <img src="${trek.image}" alt="${trek.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src=(window.IMAGES?.fallback?.cardDefault || 'images/Hero/hero-bg-landscape.jpg'); this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
             </div>
-            <div class="landing-card-body">
-                <h3 class="landing-card-title">${trail.title}</h3>
-                <p class="landing-card-location"><i class="fa-solid fa-location-dot"></i> ${trail.location}</p>
-                <div class="landing-card-stats">
-                    <span class="stat-pill"><i class="fa-regular fa-clock"></i> ${trail.duration}</span>
-                    <span class="stat-pill"><i class="fa-solid fa-mountain"></i> ${trail.altitude}</span>
+            <div class="trek-card-content">
+                <h3 class="trek-card-title">${trek.title}</h3>
+                <p class="trek-card-pickup">
+                    <strong>PICKUP LOCATION</strong>
+                    ${trek.pickup || 'Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya'}
+                </p>
+                <hr class="card-divider">
+                <div class="trek-card-footer">
+                    <span class="trek-card-duration">
+                        <i class="fa-regular fa-clock"></i> ${trek.duration}
+                    </span>
+                    <span class="trek-card-price">₹${trek.price.toLocaleString('en-IN')}</span>
                 </div>
-                <p class="landing-card-desc">${trail.desc}</p>
-                <button class="btn-explore-trail" onclick="navigateToTrek('${trail.id}')">
-                    View Trail Details <i class="fa-solid fa-arrow-right"></i>
-                </button>
             </div>
         `;
         grid.appendChild(card);
@@ -296,6 +304,15 @@ document.addEventListener("DOMContentLoaded", () => {
         setupCarouselControls("weekendGrid", "weekendPrevBtn", "weekendNextBtn");
         setupCarouselControls("sightseeingGrid", "sightseeingPrevBtn", "sightseeingNextBtn");
         setupCarouselControls("popularGrid", "popularPrevBtn", "popularNextBtn");
+    }
+
+    // 2b. Weekday Dedicated Page components (if present)
+    if (document.getElementById("weekday1DayGrid") || document.getElementById("weekday2DaysGrid")) {
+        renderWeekday1DayPackages();
+        renderWeekday2DaysPackages();
+
+        setupCarouselControls("weekday1DayGrid", "weekday1DayPrevBtn", "weekday1DayNextBtn");
+        setupCarouselControls("weekday2DaysGrid", "weekday2DaysPrevBtn", "weekday2DaysNextBtn");
     }
 
     // 3. Mobile Navigation Drawer Toggle
@@ -500,6 +517,106 @@ function setupCarouselControls(trackId, prevBtnId, nextBtnId) {
 
     // Start auto-scroll initially
     startAutoScroll();
+}
+
+// Render Weekday 1-Day Packages
+function renderWeekday1DayPackages() {
+    const grid = document.getElementById("weekday1DayGrid");
+    if (!grid) return;
+    grid.innerHTML = "";
+
+    let treks = TREKS_DATA.filter(item => item.category === "weekday-1day");
+
+    // Apply state filter if set
+    if (selectedStateFilter) {
+        treks = treks.filter(trek => trek.location.toLowerCase().includes(selectedStateFilter.toLowerCase()));
+    }
+
+    if (treks.length === 0) {
+        grid.innerHTML = `
+            <div class="no-trips-message">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <p>No 1-day packages available in <strong>${selectedStateFilter}</strong> currently.</p>
+            </div>
+        `;
+        return;
+    }
+
+    treks.forEach(trek => {
+        const card = document.createElement("div");
+        card.className = "trek-card";
+        card.setAttribute("onclick", `navigateToTrek('${trek.id}')`);
+        card.innerHTML = `
+            <div class="trek-card-img-wrapper skeleton">
+                <img src="${trek.image}" alt="${trek.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src=(window.IMAGES?.fallback?.cardDefault || 'images/Hero/hero-bg-landscape.jpg'); this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
+            </div>
+            <div class="trek-card-content">
+                <h3 class="trek-card-title">${trek.title}</h3>
+                <p class="trek-card-pickup">
+                    <strong>PICKUP LOCATION</strong>
+                    ${trek.pickup || 'Majestic, Bangalore'}
+                </p>
+                <hr class="card-divider">
+                <div class="trek-card-footer">
+                    <span class="trek-card-duration">
+                        <i class="fa-regular fa-clock"></i> ${trek.duration}
+                    </span>
+                    <span class="trek-card-price">₹${trek.price.toLocaleString('en-IN')}</span>
+                </div>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+// Render Weekday 2-Days Packages (Full treks & tours)
+function renderWeekday2DaysPackages() {
+    const grid = document.getElementById("weekday2DaysGrid");
+    if (!grid) return;
+    grid.innerHTML = "";
+
+    let treks = TREKS_DATA.filter(item => item.category === "trek" || item.category === "trip");
+
+    // Apply state filter if set
+    if (selectedStateFilter) {
+        treks = treks.filter(trek => trek.location.toLowerCase().includes(selectedStateFilter.toLowerCase()));
+    }
+
+    if (treks.length === 0) {
+        grid.innerHTML = `
+            <div class="no-trips-message">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <p>No 2-days packages available in <strong>${selectedStateFilter}</strong> currently.</p>
+            </div>
+        `;
+        return;
+    }
+
+    treks.forEach(trek => {
+        const card = document.createElement("div");
+        card.className = "trek-card";
+        card.setAttribute("onclick", `navigateToTrek('${trek.id}')`);
+        card.innerHTML = `
+            <div class="trek-card-img-wrapper skeleton">
+                <img src="${trek.image}" alt="${trek.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src=(window.IMAGES?.fallback?.cardDefault || 'images/Hero/hero-bg-landscape.jpg'); this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
+            </div>
+            <div class="trek-card-content">
+                <h3 class="trek-card-title">${trek.title}</h3>
+                <p class="trek-card-pickup">
+                    <strong>PICKUP LOCATION</strong>
+                    ${trek.pickup || 'Majestic, Bangalore'}
+                </p>
+                <hr class="card-divider">
+                <div class="trek-card-footer">
+                    <span class="trek-card-duration">
+                        <i class="fa-regular fa-clock"></i> ${trek.duration}
+                    </span>
+                    <span class="trek-card-price">₹${trek.price.toLocaleString('en-IN')}</span>
+                </div>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
 }
 
 // Render Weekday Trips
@@ -805,6 +922,8 @@ function clearStateFilter() {
     renderWeekendTreks();
     renderSightseeingTrips();
     renderPopularTreks();
+    renderWeekday1DayPackages();
+    renderWeekday2DaysPackages();
 }
 // Router handler to toggle pages client-side
 function handleRouting() {
@@ -870,19 +989,8 @@ function handleRouting() {
             }
 
             // Pricing elements
-            const rowOwnTransport = document.getElementById("rowOwnTransport");
-            const detailsOwnTransport = document.getElementById("detailsOwnTransport");
             const rowAdvance = document.getElementById("rowAdvance");
             const detailsAdvance = document.getElementById("detailsAdvance");
-
-            if (rowOwnTransport && detailsOwnTransport) {
-                if (trek.ownTransportPrice) {
-                    detailsOwnTransport.innerText = `₹${trek.ownTransportPrice.toLocaleString('en-IN')} /person`;
-                    rowOwnTransport.style.display = "flex";
-                } else {
-                    rowOwnTransport.style.display = "none";
-                }
-            }
 
             if (rowAdvance && detailsAdvance) {
                 if (trek.advanceAmount) {
@@ -1019,11 +1127,43 @@ function handleRouting() {
             const inclusionsList = document.getElementById("detailsInclusions");
             if (inclusionsList) {
                 inclusionsList.innerHTML = "";
-                const inclusions = trek.inclusions || ["Guided Tour & Sightseeing", "Cozy Accommodations", "Meals", "Transport"];
+                const inclusions = (trek.inclusions && trek.inclusions.length > 0) ? trek.inclusions : (typeof DEFAULT_INCLUSIONS !== "undefined" ? DEFAULT_INCLUSIONS : [
+                    "Stay (Tents/Rooms on sharing basis)",
+                    "2 Breakfast",
+                    "1 Lunch (packed)",
+                    "1 Dinner (Veg/non veg)",
+                    "Basic First-Aid Support",
+                    "Forest Permission",
+                    "Waterfall entry fee",
+                    "Guide charges",
+                    "Trek Charges",
+                    "Campfire",
+                    "Coffee/Tea",
+                    "Jeep ride charges",
+                    "Transportation",
+                    "Toll/Parking charges"
+                ]);
                 inclusions.forEach(inc => {
                     const li = document.createElement("li");
                     li.innerText = inc;
                     inclusionsList.appendChild(li);
+                });
+            }
+
+            // Load Exclusions list
+            const exclusionsList = document.getElementById("detailsExclusions");
+            if (exclusionsList) {
+                exclusionsList.innerHTML = "";
+                const exclusions = (trek.exclusions && trek.exclusions.length > 0) ? trek.exclusions : (typeof DEFAULT_EXCLUSIONS !== "undefined" ? DEFAULT_EXCLUSIONS : [
+                    "Anything that’s not mentioned under inclusions.",
+                    "Any kind of insurance – Medical, travel or accidental.",
+                    "Cost arising due to uncontrollable circumstances like bad weather, natural calamities, public protests etc.",
+                    "Meals outside stay."
+                ]);
+                exclusions.forEach(exc => {
+                    const li = document.createElement("li");
+                    li.innerText = exc;
+                    exclusionsList.appendChild(li);
                 });
             }
 
@@ -1127,11 +1267,6 @@ function openBookingWizard(trekId = '') {
     document.getElementById("wizardEmail").value = "";
     document.getElementById("wizardPhone").value = "";
 
-    const noRadio = document.querySelector('input[name="wizardTransport"][value="no"]');
-    if (noRadio) {
-        noRadio.checked = true;
-    }
-
     updateBookingSummary();
     openModal("bookingWizardModal");
 }
@@ -1139,26 +1274,9 @@ function openBookingWizard(trekId = '') {
 function goToStep(stepNum) {
     // Validate fields before proceeding to next steps
     if (stepNum === 2 && currentBookingStep === 1) {
-        const dateVal = document.getElementById("wizardDate").value;
+        const dateVal = document.getElementById("wizardDate") ? document.getElementById("wizardDate").value : "";
         if (!dateVal) {
             alert("Please choose a batch start date.");
-            return;
-        }
-    }
-
-    if (stepNum === 3 && currentBookingStep === 2) {
-        const nameVal = document.getElementById("wizardName").value.trim();
-        const emailVal = document.getElementById("wizardEmail").value.trim();
-        const phoneVal = document.getElementById("wizardPhone").value.trim();
-        const trekkersCount = parseInt(document.getElementById("wizardTrekkersCount").value) || 1;
-
-        if (!nameVal || !emailVal || !phoneVal) {
-            alert("Please complete name, email, and WhatsApp number fields.");
-            return;
-        }
-
-        if (trekkersCount < 1) {
-            alert("Number of trekkers must be at least 1.");
             return;
         }
     }
@@ -1202,60 +1320,32 @@ function updateBookingSummary() {
     const trek = TREKS_DATA.find(t => t.id === selectedId);
     if (!trek) return;
 
-    const date = document.getElementById("wizardDate").value || "Not selected";
-    const trekkers = parseInt(document.getElementById("wizardTrekkersCount").value) || 1;
-
-    // Handle Transport Group Visibility
-    const transportGroup = document.getElementById("wizardTransportGroup");
-    const transportRadio = document.querySelector('input[name="wizardTransport"]:checked');
-    let hasOwnTransport = trek.ownTransportPrice !== undefined;
-
-    if (transportGroup) {
-        if (hasOwnTransport) {
-            transportGroup.style.display = "block";
-        } else {
-            transportGroup.style.display = "none";
-            const noRadio = document.querySelector('input[name="wizardTransport"][value="no"]');
-            if (noRadio) noRadio.checked = true; // Default back to No
-        }
-    }
-
-    // Calculate Cost based on Transport Choice
-    let perHeadPrice = trek.price;
-    let transportText = "Includes Transportation";
-    if (hasOwnTransport && transportRadio && transportRadio.value === "yes") {
-        perHeadPrice = trek.ownTransportPrice;
-        transportText = "Own Transportation";
-    }
-
-    const totalCost = perHeadPrice * trekkers;
+    const date = document.getElementById("wizardDate") ? document.getElementById("wizardDate").value : "Not selected";
+    const trekkers = parseInt(document.getElementById("wizardTrekkersCount") ? document.getElementById("wizardTrekkersCount").value : 1) || 1;
+    const totalCost = (trek.price || 0) * trekkers;
 
     // Formatted date helper
     let formattedDate = date;
-    if (date !== "Not selected") {
+    if (date && date !== "Not selected") {
         const d = new Date(date);
         formattedDate = d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
     }
 
-    document.getElementById("summaryTrekName").innerText = trek.title;
-    document.getElementById("summaryDate").innerText = formattedDate;
-    document.getElementById("summaryTrekkers").innerText = `${trekkers} Trekker(s)`;
-    document.getElementById("summaryTotal").innerText = `₹${totalCost.toLocaleString('en-IN')}`;
+    const summaryTrekName = document.getElementById("summaryTrekName");
+    if (summaryTrekName) summaryTrekName.innerText = trek.title;
 
-    // Update summary rows for transport and advance payments
-    const rowSummaryTransport = document.getElementById("rowSummaryTransport");
-    const summaryTransport = document.getElementById("summaryTransport");
+    const summaryDate = document.getElementById("summaryDate");
+    if (summaryDate) summaryDate.innerText = formattedDate;
+
+    const summaryTrekkers = document.getElementById("summaryTrekkers");
+    if (summaryTrekkers) summaryTrekkers.innerText = `${trekkers} Participant(s)`;
+
+    const summaryTotal = document.getElementById("summaryTotal");
+    if (summaryTotal) summaryTotal.innerText = `₹${totalCost.toLocaleString('en-IN')}`;
+
+    // Update summary rows for advance payments if present
     const rowSummaryAdvance = document.getElementById("rowSummaryAdvance");
     const summaryAdvance = document.getElementById("summaryAdvance");
-
-    if (rowSummaryTransport && summaryTransport) {
-        if (hasOwnTransport) {
-            summaryTransport.innerText = transportText;
-            rowSummaryTransport.style.display = "flex";
-        } else {
-            rowSummaryTransport.style.display = "none";
-        }
-    }
 
     if (rowSummaryAdvance && summaryAdvance) {
         if (trek.advanceAmount) {
@@ -1269,18 +1359,34 @@ function updateBookingSummary() {
 }
 
 function submitBookingInquiry() {
+    // Validate inputs
+    const dateVal = document.getElementById("wizardDate") ? document.getElementById("wizardDate").value : "";
+    if (!dateVal) {
+        alert("Please choose a batch start date.");
+        goToStep(1);
+        return;
+    }
+
+    const nameVal = document.getElementById("wizardName") ? document.getElementById("wizardName").value.trim() : "";
+    const emailVal = document.getElementById("wizardEmail") ? document.getElementById("wizardEmail").value.trim() : "";
+    const phoneVal = document.getElementById("wizardPhone") ? document.getElementById("wizardPhone").value.trim() : "";
+    const trekkersVal = parseInt(document.getElementById("wizardTrekkersCount") ? document.getElementById("wizardTrekkersCount").value : 1) || 1;
+
+    if (!nameVal || !emailVal || !phoneVal) {
+        alert("Please complete name, email, and WhatsApp number fields.");
+        return;
+    }
+
+    if (trekkersVal < 1) {
+        alert("Number of participants must be at least 1.");
+        return;
+    }
+
     // Collect inquiry details
     const select = document.getElementById("wizardTrekSelect");
     const selectedId = select ? select.value : "";
     const trek = TREKS_DATA.find(t => t.id === selectedId);
-
-    const trekTitle = select ? select.options[select.selectedIndex].text : "";
-    const dateVal = document.getElementById("wizardDate").value;
-    const trekkersVal = document.getElementById("wizardTrekkersCount").value || 1;
-    const nameVal = document.getElementById("wizardName").value;
-    const emailVal = document.getElementById("wizardEmail").value;
-    const phoneVal = document.getElementById("wizardPhone").value;
-    const totalCostText = document.getElementById("summaryTotal").innerText;
+    const trekTitle = select && select.selectedIndex >= 0 ? select.options[select.selectedIndex].text : (trek ? trek.title : "");
 
     // Format date nicely
     let formattedDate = dateVal;
@@ -1289,31 +1395,12 @@ function submitBookingInquiry() {
         formattedDate = d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
     }
 
-    const transportRadio = document.querySelector('input[name="wizardTransport"]:checked');
-    const rowSummaryTransport = document.getElementById("rowSummaryTransport");
-    const summaryAdvanceText = document.getElementById("summaryAdvance") ? document.getElementById("summaryAdvance").innerText : "";
-    const rowSummaryAdvance = document.getElementById("rowSummaryAdvance");
-
-    let transportInfo = "";
-    if (rowSummaryTransport && rowSummaryTransport.style.display !== "none" && transportRadio) {
-        const selectedTransport = transportRadio.value === "yes" ? "Own Transportation" : "Includes Transportation";
-        transportInfo = `*Transport:* ${selectedTransport}\n`;
-    }
-
-    let advanceInfo = "";
-    if (rowSummaryAdvance && rowSummaryAdvance.style.display !== "none" && summaryAdvanceText) {
-        advanceInfo = `*Booking Advance:* ${summaryAdvanceText}\n`;
-    }
-
     // Construct the WhatsApp message text
-    const message = `*New Booking Inquiry - Rahasya Daari*\n` +
+    const message = `*New Availability Check & Inquiry - Rahasya Daari*\n` +
         `------------------------------------\n` +
         `*Trek/Tour:* ${trekTitle}\n` +
         `*Date:* ${formattedDate}\n` +
-        `*Trekkers:* ${trekkersVal}\n` +
-        transportInfo +
-        advanceInfo +
-        `*Estimated Total:* ${totalCostText}\n\n` +
+        `*Participants:* ${trekkersVal}\n\n` +
         `*Primary Contact Details:*\n` +
         `- Name: ${nameVal}\n` +
         `- Email: ${emailVal}\n` +
@@ -1338,8 +1425,11 @@ function submitBookingInquiry() {
     const steps = document.querySelectorAll(".wizard-step");
     steps.forEach(step => step.classList.remove("active"));
 
-    // Hide progress bar header in success state
-    document.getElementById("wizardSuccess").classList.add("active");
+    // Show success step
+    const successStep = document.getElementById("wizardSuccess");
+    if (successStep) {
+        successStep.classList.add("active");
+    }
 
     // Reset/Hide step indicators
     const indicators = document.querySelectorAll(".progress-step");
@@ -1924,8 +2014,19 @@ window.addEventListener("load", function() {
 // Smooth Scroll to Category Section from Quick Navigation & Sync State
 function scrollToTripSection(sectionId) {
     if (!sectionId) return;
+    if (sectionId.includes('.html')) {
+        window.location.href = sectionId;
+        return;
+    }
     const targetElement = document.getElementById(sectionId);
-    if (!targetElement) return;
+    if (!targetElement) {
+        if (sectionId === 'weekday' || sectionId === 'oneday' || sectionId === 'twodays') {
+            window.location.href = `weekday.html#${sectionId}`;
+        } else {
+            window.location.href = `trips.html#${sectionId}`;
+        }
+        return;
+    }
 
     const headerOffset = 90;
     const elementPosition = targetElement.getBoundingClientRect().top;

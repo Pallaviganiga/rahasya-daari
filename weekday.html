@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treks & Trips Catalog - Rahasyadaari | Weekend & Weekday Adventures</title>
+    <title>Weekday Treks & Trips - 1-Day & 2-Days Packages | RahasyaDaari</title>
     <meta name="description"
-        content="Browse our complete catalog of weekend treks, weekday adventures, and sightseeing tours from Bengaluru with Rahasyadaari. Complete prices, itineraries, and dates.">
+        content="Explore serene weekday treks and tours from Bangalore with RahasyaDaari. Choose from 1-Day getaways or 2-Days immersive mountain expeditions.">
     <!-- Google Fonts: Nunito -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,10 +40,10 @@
                         Tours <i class="fa-solid fa-chevron-down dropdown-icon"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="#weekday" class="dropdown-item">Weekday Trips</a>
-                        <a href="#trips" class="dropdown-item">Weekend Treks</a>
-                        <a href="#sightseeing" class="dropdown-item">Weekend Trips</a>
-                        <a href="#popular" class="dropdown-item">Popular Treks</a>
+                        <a href="weekday.html" class="dropdown-item active">Weekday Trips</a>
+                        <a href="trips.html#trips" class="dropdown-item">Weekend Treks</a>
+                        <a href="trips.html#sightseeing" class="dropdown-item">Weekend Trips</a>
+                        <a href="trips.html#popular" class="dropdown-item">Popular Treks</a>
                     </div>
                 </div>
                 <a href="index.html#gallery" class="nav-link">Gallery</a>
@@ -60,69 +60,56 @@
         </div>
     </header>
 
-    <!-- Main Content Container (Catalog) -->
+    <!-- Main Content Container (Weekday Catalog) -->
     <main class="main-content" id="homePage">
 
-        <!-- Hero Section for Trips Catalog (Identical size and style to Homepage Hero) -->
+        <!-- Hero Section for Weekday Page -->
         <section class="hero-section">
             <div class="hero-container">
                 <a href="index.html" class="hero-back-btn" aria-label="Back to Home" title="Back to Home">
                     <i class="fa-solid fa-arrow-left"></i> Back
                 </a>
                 <div class="hero-bg-slider">
-                    <div class="hero-bg-slide active" style="background-image: url('images/Hero/hero-bg-landscape.jpg');"></div>
+                    <div class="hero-bg-slide active" style="background-image: url('images/Bandaje/bandaje-waterfall-view.jpeg');"></div>
                     <div class="hero-bg-slide" style="background-image: url('images/Netravathi/netravathi-cover.jpg');"></div>
-                    <div class="hero-bg-slide" style="background-image: url('images/Kudremukha/kudremukha-trail-1.jpg');"></div>
-                    <div class="hero-bg-slide" style="background-image: url('images/Kodachadri/kodachadri-cover.jpg');"></div>
-                    <div class="hero-bg-slide" style="background-image: url('images/Bandaje/bandaje-waterfall-view.jpeg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Kudremukha/kudremukha-cover.jpg');"></div>
                     <div class="hero-bg-slide" style="background-image: url('images/Etthina Bhuja/ethina2-landscape.jpg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Kodachadri/kodachadri-cover.jpg');"></div>
                 </div>
                 <div class="hero-overlay"></div>
             </div>
         </section>
 
-        <!-- Quick Category Section Jump & Booking Selector -->
+        <!-- Quick Category Section Jump Selector -->
         <section class="trip-nav-section" id="tripNavSection">
             <div class="container">
                 <div class="trip-nav-card">
                     <div class="trip-nav-header">
-                        <span class="trip-nav-badge"><i class="fa-solid fa-compass"></i> Quick Category Jump</span>
-                        <h3 class="trip-nav-title">Select Category to Explore & Book</h3>
+                        <span class="trip-nav-badge"><i class="fa-solid fa-compass"></i> Weekday Packages</span>
+                        <h3 class="trip-nav-title">Choose Your Duration</h3>
                     </div>
 
-                    <!-- Category Radio Buttons & Pills (Desktop & Tablet) -->
-                    <div class="trip-radio-group" role="radiogroup" aria-label="Trip Categories">
-                        <label class="trip-radio-pill active" data-target="weekday">
-                            <input type="radio" name="tripSection" value="weekday" checked onchange="scrollToTripSection('weekday')">
-                            <span class="pill-icon"><i class="fa-solid fa-person-hiking"></i></span>
-                            <span class="pill-text">Weekday Trips</span>
+                    <!-- Category Radio Buttons & Pills -->
+                    <div class="trip-radio-group" role="radiogroup" aria-label="Weekday Packages">
+                        <label class="trip-radio-pill active" data-target="oneday">
+                            <input type="radio" name="weekdaySection" value="oneday" checked onchange="scrollToTripSection('oneday')">
+                            <span class="pill-icon"><i class="fa-solid fa-sun"></i></span>
+                            <span class="pill-text">1-Day Packages</span>
                         </label>
-                        <label class="trip-radio-pill" data-target="trips">
-                            <input type="radio" name="tripSection" value="trips" onchange="scrollToTripSection('trips')">
-                            <span class="pill-icon"><i class="fa-solid fa-mountain"></i></span>
-                            <span class="pill-text">Weekend Treks</span>
-                        </label>
-                        <label class="trip-radio-pill" data-target="sightseeing">
-                            <input type="radio" name="tripSection" value="sightseeing" onchange="scrollToTripSection('sightseeing')">
-                            <span class="pill-icon"><i class="fa-solid fa-van-shuttle"></i></span>
-                            <span class="pill-text">Weekend Trips</span>
-                        </label>
-                        <label class="trip-radio-pill" data-target="popular">
-                            <input type="radio" name="tripSection" value="popular" onchange="scrollToTripSection('popular')">
-                            <span class="pill-icon"><i class="fa-solid fa-fire"></i></span>
-                            <span class="pill-text">Popular Treks</span>
+                        <label class="trip-radio-pill" data-target="twodays">
+                            <input type="radio" name="weekdaySection" value="twodays" onchange="scrollToTripSection('twodays')">
+                            <span class="pill-icon"><i class="fa-solid fa-campground"></i></span>
+                            <span class="pill-text">2-Days Packages</span>
                         </label>
                     </div>
 
                     <!-- Dropdown for Mobile / Quick Selection -->
                     <div class="trip-dropdown-wrapper">
                         <div class="custom-select-container">
-                            <select id="tripCategorySelect" onchange="scrollToTripSection(this.value)" aria-label="Select trip category">
-                                <option value="" disabled selected>✨ Select category (Weekday Trips, Weekend Treks, Weekend Trips, Popular Treks)...</option>
-                                <option value="weekday">🏃 Weekday Trips</option>
-                                <option value="trips">🎒 Weekend Treks</option>
-                                <option value="sightseeing">🚐 Weekend Trips</option>
-                                <option value="popular">⭐ Popular Treks</option>
+                            <select id="tripCategorySelect" onchange="scrollToTripSection(this.value)" aria-label="Select package duration">
+                                <option value="" disabled selected>✨ Select package (1-Day or 2-Days)...</option>
+                                <option value="oneday">⚡ 1-Day Packages (Day 00 to Day 01)</option>
+                                <option value="twodays">🏕️ 2-Days Packages (Full Experience)</option>
                             </select>
                             <i class="fa-solid fa-chevron-down select-chevron"></i>
                         </div>
@@ -131,11 +118,11 @@
             </div>
         </section>
 
-        <!-- Weekdays Trips Section -->
-        <section class="filter-section" id="weekday" style="background-color: var(--light-neutral);">
+        <!-- Section 1: 1-DAY PACKAGES -->
+        <section class="filter-section" id="oneday" style="background-color: var(--light-neutral);">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-title brand-section-title">WEEKDAY TRIPS</h2>
+                    <h2 class="section-title brand-section-title">1-DAY PACKAGES</h2>
                 </div>
 
                 <!-- Active Filter Banner (hidden by default) -->
@@ -145,82 +132,38 @@
                             class="fa-solid fa-xmark"></i></button>
                 </div>
 
-                <!-- Carousel Container for Weekday Trips -->
+                <!-- Carousel Container for 1-Day Packages -->
                 <div class="carousel-container">
-                    <button class="carousel-nav prev-btn" id="weekdayPrevBtn" aria-label="Previous trip"><i
+                    <button class="carousel-nav prev-btn" id="weekday1DayPrevBtn" aria-label="Previous trip"><i
                             class="fa-solid fa-chevron-left"></i></button>
                     <div class="carousel-viewport">
-                        <div class="trek-grid" id="weekdayGrid">
-                            <!-- Cards populated dynamically by script.js with prices -->
+                        <div class="trek-grid" id="weekday1DayGrid">
+                            <!-- Cards populated dynamically by script.js -->
                         </div>
                     </div>
-                    <button class="carousel-nav next-btn" id="weekdayNextBtn" aria-label="Next trip"><i
+                    <button class="carousel-nav next-btn" id="weekday1DayNextBtn" aria-label="Next trip"><i
                             class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
         </section>
 
-        <!-- Weekend Trips (Treks) Section -->
-        <section class="filter-section" id="trips">
+        <!-- Section 2: 2-DAYS PACKAGES -->
+        <section class="filter-section" id="twodays">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-title brand-section-title">WEEKEND TREKS</h2>
+                    <h2 class="section-title brand-section-title">2-DAYS PACKAGES</h2>
                 </div>
 
-                <!-- Carousel Container for Treks -->
+                <!-- Carousel Container for 2-Days Packages -->
                 <div class="carousel-container">
-                    <button class="carousel-nav prev-btn" id="weekendPrevBtn" aria-label="Previous trip"><i
+                    <button class="carousel-nav prev-btn" id="weekday2DaysPrevBtn" aria-label="Previous trip"><i
                             class="fa-solid fa-chevron-left"></i></button>
                     <div class="carousel-viewport">
-                        <div class="trek-grid" id="weekendGrid">
-                            <!-- Cards populated dynamically by script.js with prices -->
+                        <div class="trek-grid" id="weekday2DaysGrid">
+                            <!-- Cards populated dynamically by script.js -->
                         </div>
                     </div>
-                    <button class="carousel-nav next-btn" id="weekendNextBtn" aria-label="Next trip"><i
-                            class="fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Weekend Trips Section (previously Sightseeing) -->
-        <section class="filter-section" id="sightseeing" style="background-color: var(--light-neutral);">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-title brand-section-title">WEEKEND TRIPS</h2>
-                </div>
-
-                <!-- Carousel Container for Sightseeing Trips -->
-                <div class="carousel-container">
-                    <button class="carousel-nav prev-btn" id="sightseeingPrevBtn" aria-label="Previous trip"><i
-                            class="fa-solid fa-chevron-left"></i></button>
-                    <div class="carousel-viewport">
-                        <div class="trek-grid" id="sightseeingGrid">
-                            <!-- Cards populated dynamically by script.js with prices -->
-                        </div>
-                    </div>
-                    <button class="carousel-nav next-btn" id="sightseeingNextBtn" aria-label="Next trip"><i
-                            class="fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Popular Treks Section -->
-        <section class="filter-section" id="popular">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-title brand-section-title">POPULAR TREKS</h2>
-                </div>
-
-                <!-- Carousel Container for Popular Treks -->
-                <div class="carousel-container">
-                    <button class="carousel-nav prev-btn" id="popularPrevBtn" aria-label="Previous popular trek"><i
-                            class="fa-solid fa-chevron-left"></i></button>
-                    <div class="carousel-viewport">
-                        <div class="trek-grid" id="popularGrid">
-                            <!-- Cards populated dynamically by script.js with prices -->
-                        </div>
-                    </div>
-                    <button class="carousel-nav next-btn" id="popularNextBtn" aria-label="Next popular trek"><i
+                    <button class="carousel-nav next-btn" id="weekday2DaysNextBtn" aria-label="Next trip"><i
                             class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
@@ -236,8 +179,8 @@
                 <div class="details-hero-bg" id="detailsHeroBg"></div>
                 <div class="details-hero-overlay"></div>
                 <div class="details-hero-content-wrapper">
-                    <button class="btn-back-home" id="btnBackHome" onclick="goHome()" aria-label="Go back to trips">
-                        <i class="fa-solid fa-arrow-left"></i> Back to Trips
+                    <button class="btn-back-home" id="btnBackHome" onclick="goHome()" aria-label="Go back to packages">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Packages
                     </button>
                     <div class="details-hero-content">
                         <span class="badge" id="detailsCategoryBadge">Trek</span>
@@ -285,7 +228,7 @@
                     <div class="quick-stats-card">
                         <div class="stat-row">
                             <span><i class="fa-regular fa-clock"></i> Duration:</span>
-                            <strong id="detailsDuration">2 Days</strong>
+                            <strong id="detailsDuration">1 Day</strong>
                         </div>
                         <div class="stat-row">
                             <span><i class="fa-solid fa-mountain"></i> Max Altitude:</span>
@@ -293,15 +236,15 @@
                         </div>
                         <div class="stat-row">
                             <span><i class="fa-solid fa-route"></i> Distance:</span>
-                            <strong id="detailsDistance">22 km</strong>
+                            <strong id="detailsDistance">14 km</strong>
                         </div>
                         <div class="stat-row">
                             <span><i class="fa-solid fa-indian-rupee-sign"></i> Price:</span>
-                            <strong id="detailsPrice" style="color: var(--primary-green);">₹4,200 /person</strong>
+                            <strong id="detailsPrice" style="color: var(--primary-green);">₹2,699 /person</strong>
                         </div>
                         <div class="stat-row" id="rowAdvance" style="display: none;">
                             <span><i class="fa-solid fa-wallet"></i> Booking Advance:</span>
-                            <strong id="detailsAdvance">₹1,500 /person</strong>
+                            <strong id="detailsAdvance">₹1,000 /person</strong>
                         </div>
                     </div>
 
@@ -350,63 +293,6 @@
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo-wrapper">
-                    <img src="images/Branding/logo.webp" alt="Rahasyadaari Logo" class="logo-img"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="logo-fallback" style="display:none;">RD</div>
-                    <span class="logo-text"><span class="logo-text-full">Rahasya Daari</span><span
-                            class="logo-text-short">Rahasya</span></span>
-                </a>
-                <p class="footer-tagline">Exploring the mystery trails, preserving the nature's soul.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/rahasya_daari" target="_blank"
-                        rel="noopener noreferrer" aria-label="Instagram" class="social-insta" title="Instagram @rahasya_daari"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/919632961606" target="_blank" rel="noopener noreferrer"
-                        aria-label="WhatsApp" class="social-whatsapp" title="WhatsApp Us"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <h4 class="footer-title">Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="trips.html">Trips & Treks</a></li>
-                    <li><a href="weekday.html">Weekday Treks</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4 class="footer-title">Popular Treks</h4>
-                <ul class="footer-links">
-                    <li><a href="#popular" onclick="navigateToTrek('kudremukh')">Kudremukha Trek</a></li>
-                    <li><a href="#popular" onclick="navigateToTrek('netravathi')">Netravathi Trek</a></li>
-                    <li><a href="#popular" onclick="navigateToTrek('bandaje-falls')">Bandaje Falls Trek</a></li>
-                    <li><a href="#popular" onclick="navigateToTrek('kodachadri')">Kodachadri Trek</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4 class="footer-title">Safety & Terms</h4>
-                <ul class="footer-links">
-                    <li><a href="about.html#safety">Safety Guidelines</a></li>
-                    <li><a href="about.html#gear">Gear Checklist</a></li>
-                    <li><a href="about.html#refund">Refund Policy</a></li>
-                    <li><a href="about.html#faq">FAQs</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Rahasyadaari. All rights reserved. Made with love for the mountains.</p>
-        </div>
-    </footer>
 
     <!-- Booking Wizard Modal -->
     <div class="modal" id="bookingWizardModal">
@@ -501,56 +387,62 @@
         </div>
     </div>
 
-    <!-- Floating Quick Inquiry Button -->
-    <button class="floating-inquiry-btn" id="floatingInquiryBtn" onclick="openModal('quickInquiryModal')">
-        <i class="fa-solid fa-circle-question"></i> <span>Enquire Now</span>
-    </button>
-
-    <!-- Quick Inquiry Modal -->
-    <div class="modal" id="quickInquiryModal">
-        <div class="modal-overlay" onclick="closeModal('quickInquiryModal')"></div>
-        <div class="modal-content modal-md">
-            <button class="modal-close" onclick="closeModal('quickInquiryModal')"><i
-                    class="fa-solid fa-xmark"></i></button>
-
-            <div class="wizard-header"
-                style="padding: 24px; border-bottom: 1px solid var(--border-color); text-align: left;">
-                <h3 style="margin: 0; color: var(--primary-green); display: flex; align-items: center; gap: 10px;">
-                    <i class="fa-solid fa-circle-question"></i> Quick Inquiry
-                </h3>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo-wrapper">
+                    <img src="images/Branding/logo.webp" alt="Rahasyadaari Logo" class="logo-img"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="logo-fallback" style="display:none;">RD</div>
+                    <span class="logo-text"><span class="logo-text-full">Rahasya Daari</span><span
+                            class="logo-text-short">Rahasya</span></span>
+                </a>
+                <p class="footer-tagline">Exploring the mystery trails, preserving the nature's soul.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/rahasya_daari" target="_blank"
+                        rel="noopener noreferrer" aria-label="Instagram" class="social-insta" title="Instagram @rahasya_daari"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/919632961606" target="_blank" rel="noopener noreferrer"
+                        aria-label="WhatsApp" class="social-whatsapp" title="WhatsApp Us"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
             </div>
 
-            <div class="wizard-body" style="padding: 24px;">
-                <form class="contact-form" id="quickInquiryForm" onsubmit="handleQuickInquirySubmit(event)">
-                    <div class="form-group">
-                        <label for="inquiryName">Your Name</label>
-                        <input type="text" id="inquiryName" placeholder="Enter your full name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="inquiryEmail">Email Address</label>
-                        <input type="email" id="inquiryEmail" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="inquiryMessage">Your Message</label>
-                        <textarea id="inquiryMessage" rows="4"
-                            placeholder="Ask us anything about our treks, dates, customization, or private group bookings..."
-                            required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block" style="margin-top: 10px;">
-                        SEND INQUIRY <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                </form>
+            <div class="footer-col">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="trips.html">Trips & Treks</a></li>
+                    <li><a href="weekday.html">Weekday Treks</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Weekday Treks</h4>
+                <ul class="footer-links">
+                    <li><a href="#oneday" onclick="navigateToTrek('bandaje-1day')">Bandaje Falls 1-Day</a></li>
+                    <li><a href="#oneday" onclick="navigateToTrek('netravathi-1day')">Netravathi 1-Day</a></li>
+                    <li><a href="#oneday" onclick="navigateToTrek('kudremukh-1day')">Kudremukha 1-Day</a></li>
+                    <li><a href="#twodays" onclick="navigateToTrek('bandaje-falls')">Bandaje 2-Days Trek</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Safety & Terms</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html#safety">Safety Standards</a></li>
+                    <li><a href="about.html#environmental">Leave No Trace</a></li>
+                    <li><a href="contact.html">Private Custom Batches</a></li>
+                </ul>
             </div>
         </div>
-    </div>
 
-    <!-- Floating Quick WhatsApp Action Button -->
-    <a href="https://wa.me/919632961606?text=Hi%20Rahasya%20Daari%20Team!%20I'm%20planning%20an%20upcoming%20trek%20expedition." target="_blank" rel="noopener noreferrer" class="whatsapp-floating-btn" aria-label="Chat on WhatsApp" title="Chat with a Pathfinder on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-        <span class="whatsapp-floating-tooltip">Chat with Pathfinder</span>
-    </a>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 RahasyaDaari Expeditions. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <!-- Image Constants, Trips Data & Main Script -->
     <script src="images.js?v=82"></script>
     <script src="trips-data.js?v=82"></script>
     <script src="reviews-data.js?v=82"></script>

@@ -15,7 +15,7 @@
     <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=48">
+    <link rel="stylesheet" href="styles.css?v=107">
 </head>
 
 <body>
@@ -27,35 +27,32 @@
                 <img src="images/Branding/logo.png" alt="Rahasyadaari Logo" class="logo-img"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <div class="logo-fallback" style="display:none;">RD</div>
-                <span class="logo-text"><span class="logo-text-full">Rahasya Daari</span><span
-                        class="logo-text-short">Rahasya</span></span>
+                <div class="logo-brand-block">
+                    <span class="logo-text">RahasyaDaari</span>
+                    <span class="logo-tagline">- The Mystery Trail</span>
+                </div>
             </a>
 
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html" class="nav-link">Home</a>
                 <div class="nav-dropdown" id="tripsDropdown">
                     <a href="trips.html" class="nav-link dropdown-toggle" id="dropdownToggleBtn">
-                        Our Trips <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                        Tours <i class="fa-solid fa-chevron-down dropdown-icon"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="trips.html#weekday" class="dropdown-item">Weekdays Trips</a>
+                        <a href="trips.html#weekday" class="dropdown-item">Weekday Trips</a>
                         <a href="trips.html#trips" class="dropdown-item">Weekend Treks</a>
-                        <a href="trips.html#sightseeing" class="dropdown-item">Sightseeing Tours</a>
+                        <a href="trips.html#sightseeing" class="dropdown-item">Weekend Trips</a>
                         <a href="trips.html#popular" class="dropdown-item">Popular Treks</a>
                     </div>
                 </div>
-                <a href="index.html#instagram" class="nav-link">Reels</a>
                 <a href="index.html#gallery" class="nav-link">Gallery</a>
                 <a href="index.html#reviews" class="nav-link">Reviews</a>
                 <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link active active-page">Contact Us</a>
             </nav>
 
             <div class="nav-actions">
-                <a href="contact.html" class="btn btn-primary btn-contact-top active-page">
-                    <span class="btn-contact-text-full">CONTACT US</span>
-                    <span class="btn-contact-text-short">CONTACT</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
                 <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu">
                     <i class="fa-solid fa-bars"></i>
                 </button>
@@ -66,12 +63,15 @@
     <!-- Main Content Container -->
     <main class="main-content">
 
-        <!-- Page Hero Banner -->
-        <section class="page-hero-banner">
-            <div class="container">
-                <span class="hero-tag-badge"><i class="fa-solid fa-headset"></i> We're Here To Help</span>
-                <h1 class="page-hero-title">GET IN TOUCH</h1>
-                <p class="page-hero-subtitle">Have questions about an upcoming trek or looking to customize a private group adventure? Our pathfinders are ready to guide you.</p>
+        <!-- Hero Section (Identical size and card style to Home Hero) -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-bg-slider">
+                    <div class="hero-bg-slide active" style="background-image: url('images/Hero/hero-bg-landscape.jpg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Netravathi/netravathi-cover.jpg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Bandaje/bandaje-waterfall-view.jpeg');"></div>
+                </div>
+                <div class="hero-overlay"></div>
             </div>
         </section>
 
@@ -170,15 +170,9 @@
                     </div>
 
                     <div class="feature-box">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-van-shuttle"></i></div>
-                        <h3 class="feature-title">Doorstep Pickups</h3>
-                        <p class="feature-desc">Exclusive private Tempo Travelers and AC mini-buses picking up directly from your tech park, office campus, or college.</p>
-                    </div>
-
-                    <div class="feature-box">
-                        <div class="feature-icon-wrapper"><i class="fa-solid fa-utensils"></i></div>
-                        <h3 class="feature-title">Custom Menus & Stays</h3>
-                        <p class="feature-desc">Tailor-made meal preferences (Jain, vegetarian, traditional feasts, BBQ) and premium private homestay bookings.</p>
+                        <div class="feature-icon-wrapper"><i class="fa-solid fa-sliders"></i></div>
+                        <h3 class="feature-title">Customised Packages</h3>
+                        <p class="feature-desc">Bespoke itineraries tailored around your group size, preferred dates, private stays, and budget.</p>
                     </div>
                 </div>
             </div>
@@ -201,10 +195,6 @@
                 <div class="social-links">
                     <a href="https://www.instagram.com/rahasya_daari" target="_blank"
                         rel="noopener noreferrer" aria-label="Instagram" class="social-insta" title="Instagram @rahasya_daari"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/@RahasyaDaari" target="_blank"
-                        rel="noopener noreferrer" aria-label="YouTube Channel" class="social-youtube" title="YouTube @RahasyaDaari"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://share.google/bbgCWOk5W1FMGlcRw" target="_blank"
-                        rel="noopener noreferrer" aria-label="Google Maps & Ratings" class="social-maps" title="Google Maps & Reviews"><i class="fa-solid fa-map-location-dot"></i></a>
                     <a href="https://wa.me/919632961606" target="_blank" rel="noopener noreferrer"
                         aria-label="WhatsApp" class="social-whatsapp" title="WhatsApp Us"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
@@ -215,6 +205,7 @@
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="trips.html">Trips & Treks</a></li>
+                    <li><a href="weekday.html">Weekday Treks</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
@@ -253,9 +244,9 @@
     </a>
 
     <!-- Image Constants, Trips Data & Main Script -->
-    <script src="images.js"></script>
-    <script src="trips-data.js"></script>
-    <script src="script.js"></script>
+    <script src="images.js?v=82"></script>
+    <script src="trips-data.js?v=82"></script>
+    <script src="script.js?v=83"></script>
 </body>
 
 </html>

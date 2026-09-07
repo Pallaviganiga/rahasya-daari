@@ -15,7 +15,7 @@
     <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=48">
+    <link rel="stylesheet" href="styles.css?v=107">
 </head>
 
 <body>
@@ -27,35 +27,32 @@
                 <img src="images/Branding/logo.png" alt="Rahasyadaari Logo" class="logo-img"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <div class="logo-fallback" style="display:none;">RD</div>
-                <span class="logo-text"><span class="logo-text-full">Rahasya Daari</span><span
-                        class="logo-text-short">Rahasya</span></span>
+                <div class="logo-brand-block">
+                    <span class="logo-text">RahasyaDaari</span>
+                    <span class="logo-tagline">- The Mystery Trail</span>
+                </div>
             </a>
 
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html" class="nav-link">Home</a>
                 <div class="nav-dropdown" id="tripsDropdown">
                     <a href="trips.html" class="nav-link dropdown-toggle" id="dropdownToggleBtn">
-                        Our Trips <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                        Tours <i class="fa-solid fa-chevron-down dropdown-icon"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="trips.html#weekday" class="dropdown-item">Weekdays Trips</a>
+                        <a href="trips.html#weekday" class="dropdown-item">Weekday Trips</a>
                         <a href="trips.html#trips" class="dropdown-item">Weekend Treks</a>
-                        <a href="trips.html#sightseeing" class="dropdown-item">Sightseeing Tours</a>
+                        <a href="trips.html#sightseeing" class="dropdown-item">Weekend Trips</a>
                         <a href="trips.html#popular" class="dropdown-item">Popular Treks</a>
                     </div>
                 </div>
-                <a href="index.html#instagram" class="nav-link">Reels</a>
                 <a href="index.html#gallery" class="nav-link">Gallery</a>
                 <a href="index.html#reviews" class="nav-link">Reviews</a>
                 <a href="about.html" class="nav-link active active-page">About Us</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
             </nav>
 
             <div class="nav-actions">
-                <a href="contact.html" class="btn btn-primary btn-contact-top">
-                    <span class="btn-contact-text-full">CONTACT US</span>
-                    <span class="btn-contact-text-short">CONTACT</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
                 <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu">
                     <i class="fa-solid fa-bars"></i>
                 </button>
@@ -66,71 +63,48 @@
     <!-- Main Content Container -->
     <main class="main-content">
 
-        <!-- Page Hero Banner (Luxury Wilderness Style) -->
-        <section class="about-hero-banner page-hero-banner">
-            <div class="container text-center">
-                <span class="hero-tag-badge" style="background: rgba(255,255,255,0.18); backdrop-filter: blur(10px); color: #ffffff; padding: 6px 18px; border-radius: 50px; font-weight: 800; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.25);">
-                    <i class="fa-solid fa-compass" style="color: #a3e635;"></i> NATURE'S MYSTERY TRAIL
-                </span>
-                <h1 class="page-hero-title">ABOUT RAHASYA DAARI</h1>
-                <p class="page-hero-subtitle">
-                    Reaffirming the sacred bond between mankind and nature by unraveling the knots of materialistic routine through authentic Western Ghats expeditions.
-                </p>
-
-                <!-- Quick Impact Stats -->
-                <div class="about-stat-grid">
-                    <div class="about-stat-item">
-                        <div class="about-stat-num" style="color: #a3e635;">5,000+</div>
-                        <div class="about-stat-label">Happy Trekkers</div>
-                    </div>
-                    <div class="about-stat-item">
-                        <div class="about-stat-num" style="color: #fbbf24;"><i class="fa-solid fa-star" style="font-size: 1.2rem;"></i> 4.9 / 5.0</div>
-                        <div class="about-stat-label">600+ Google Reviews</div>
-                    </div>
-                    <div class="about-stat-item">
-                        <div class="about-stat-num" style="color: #a3e635;">25+</div>
-                        <div class="about-stat-label">Western Ghats Trails</div>
-                    </div>
-                    <div class="about-stat-item">
-                        <div class="about-stat-num" style="color: #60a5fa;">100%</div>
-                        <div class="about-stat-label">Safety & Eco-Permits</div>
-                    </div>
+        <!-- Hero Section (Identical size and card style to Home Hero) -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-bg-slider">
+                    <div class="hero-bg-slide active" style="background-image: url('images/Hero/hero-bg-landscape.jpg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Kudremukha/kudremukha-trail-1.jpg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Kodachadri/kodachadri-cover.jpg');"></div>
                 </div>
+                <div class="hero-overlay"></div>
             </div>
         </section>
 
-        <!-- Our Story & Philosophy Narrative Section -->
-        <section class="about-section" style="background: #ffffff;">
+        <!-- About Us Main Card Section -->
+        <section class="about-section" style="padding: 24px 0 24px; margin-top: 0; background: transparent;">
             <div class="container">
-                <div class="about-card-grid">
-                    <!-- Visual Side -->
-                    <div style="position: relative;">
-                        <div class="about-story-img-wrap">
-                            <img src="images/Netravathi/netravathi-cover.jpg" alt="Rahasya Daari Expeditions" class="about-story-img" loading="lazy">
-                        </div>
-                        <div class="about-tribe-badge">
-                            <div style="font-size: 1.1rem; font-weight: 900; color: #a3e635;">#RahasyaDaariTribe</div>
-                            <div style="font-size: 0.78rem; opacity: 0.85;">Weekend Getaways From Bengaluru</div>
+                <div class="about-hero-card">
+                    <!-- Left Logo Badge -->
+                    <div class="about-logo-col">
+                        <div class="about-circular-logo-wrap">
+                            <img src="images/Branding/logo.png" alt="Rahasya Daari Logo" class="about-circular-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="about-circular-logo-fallback" style="display: none;">RD</div>
                         </div>
                     </div>
 
-                    <!-- Content Side -->
-                    <div class="about-card-info">
-                        <div class="section-heading-clean" style="text-align: left; margin-bottom: 16px;">
-                            <span class="sub-tag">The Story Behind the Trail</span>
-                            <h2>WHO WE ARE</h2>
+                    <!-- Right Text Content -->
+                    <div class="about-text-col">
+                        <div class="about-card-heading">
+                            <i class="fa-solid fa-users"></i>
+                            <h2>About Us</h2>
                         </div>
-                        <p class="about-paragraph" style="line-height: 1.65; margin-bottom: 14px;">
-                            <strong>Rahasya Daari</strong> (Kannada for <em>"The Mystery Trail"</em>) was founded with a single mission: to create a pathway back to nature for modern souls trapped in fast-paced city routines.
+                        <p class="about-card-desc">
+                            We are dedicated in organizing trips, treks, excursions, corporate packages, family trips, student trip packages across India.
                         </p>
-                        <p class="about-paragraph" style="line-height: 1.65; margin-bottom: 18px;">
-                            We curate weekend treks, weekday getaways, college adventures, and corporate expeditions across Karnataka's Western Ghats—from the rolling Shola ridges of <strong>Kudremukha</strong> and <strong>Netravathi</strong> to the roaring precipice of <strong>Bandaje Falls</strong> and ancient peaks of <strong>Kodachadri</strong>.
+                        <p class="about-card-desc">
+                            We also customize the trips, treks as per your requirements.
                         </p>
                         
-                        <div class="about-highlight-box" style="background: #f4fbf5; border-left: 4px solid #183e20; border-radius: 12px; padding: 16px;">
-                            <i class="fa-solid fa-quote-left" style="color: #183e20; font-size: 1.3rem; margin-bottom: 6px; display: block;"></i>
-                            <p style="color: #1f2937; font-size: 0.92rem; font-weight: 600; line-height: 1.55; margin: 0;">
-                                "Whether you join solo or with your closest friends, you arrive as a traveler and leave as family. Every journey is rooted in deep respect for the forest, zero-litter principles, and warm local hospitality."
+                        <!-- Highlight Callout Box -->
+                        <div class="about-callout-box">
+                            <i class="fa-solid fa-heart-pulse about-callout-icon"></i>
+                            <p class="about-callout-text">
+                                If you are solo, couple, family or friends, join our weekend treks and tours from Bengaluru which are organized every weekend to experience the best weekend of your life and be a part of the <strong>Rahasya Daari</strong> family.
                             </p>
                         </div>
                     </div>
@@ -138,56 +112,60 @@
             </div>
         </section>
 
-        <!-- Vision & Mission Pillars Section -->
-        <section class="about-pillars-section" style="background: #fbfcfb; border-top: 1px solid #f0f2f0; border-bottom: 1px solid #f0f2f0;">
-            <div class="container">
-                <div class="section-heading-clean text-center" style="margin-bottom: 36px;">
-                    <span class="sub-tag">Guiding Principles</span>
-                    <h2>OUR VISION & MISSION</h2>
-                    <p style="max-width: 600px; margin: 0 auto;">Building a sustainable, welcoming outdoor community across Karnataka and South India.</p>
-                </div>
-
-                <div class="about-pillars-grid">
-                    <!-- Vision Card -->
-                    <div class="about-pillar-card">
-                        <div>
-                            <div style="width: 48px; height: 48px; border-radius: 14px; background: #e8f5e9; color: #183e20; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 18px;">
-                                <i class="fa-solid fa-eye"></i>
-                            </div>
-                            <h3 style="font-size: 1.35rem; font-weight: 900; color: #111827; margin-bottom: 14px;">Our Vision</h3>
-                            <ul class="about-purpose-list" style="padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px;">
-                                <li style="display: flex; gap: 10px; align-items: flex-start;">
-                                    <i class="fa-solid fa-circle-check" style="color: #183e20; margin-top: 3px; font-size: 1rem;"></i>
-                                    <p style="margin: 0; color: #4b5563; font-size: 0.92rem; line-height: 1.55;">To reconnect urban travelers with the restorative peace, floating monsoon clouds, and pristine trails of Mother Nature.</p>
-                                </li>
-                                <li style="display: flex; gap: 10px; align-items: flex-start;">
-                                    <i class="fa-solid fa-circle-check" style="color: #183e20; margin-top: 3px; font-size: 1rem;"></i>
-                                    <p style="margin: 0; color: #4b5563; font-size: 0.92rem; line-height: 1.55;">To become South India’s most trusted pathfinder community, known for authentic experiences and safety.</p>
-                                </li>
-                            </ul>
-                        </div>
+        <!-- Vision & Mission Section -->
+        <section class="vision-mission-section" style="padding: 0 0 60px; background: transparent;">
+            <div class="container" style="display: flex; flex-direction: column; gap: 24px;">
+                
+                <!-- Vision Card -->
+                <div class="vm-card">
+                    <div class="vm-header">
+                        <i class="fa-solid fa-eye"></i>
+                        <h3>Vision</h3>
                     </div>
-
-                    <!-- Mission Card -->
-                    <div class="about-pillar-card">
-                        <div>
-                            <div style="width: 48px; height: 48px; border-radius: 14px; background: #e8f5e9; color: #183e20; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 18px;">
-                                <i class="fa-solid fa-bullseye"></i>
+                    <div class="vm-list">
+                        <div class="vm-item">
+                            <div class="vm-badge">
+                                <i class="fa-solid fa-seedling"></i>
                             </div>
-                            <h3 style="font-size: 1.35rem; font-weight: 900; color: #111827; margin-bottom: 14px;">Our Mission</h3>
-                            <ul class="about-purpose-list" style="padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px;">
-                                <li style="display: flex; gap: 10px; align-items: flex-start;">
-                                    <i class="fa-solid fa-circle-check" style="color: #183e20; margin-top: 3px; font-size: 1rem;"></i>
-                                    <p style="margin: 0; color: #4b5563; font-size: 0.92rem; line-height: 1.55;">To provide safe, pocket-friendly, and meticulously planned weekend getaways with zero hidden costs.</p>
-                                </li>
-                                <li style="display: flex; gap: 10px; align-items: flex-start;">
-                                    <i class="fa-solid fa-circle-check" style="color: #183e20; margin-top: 3px; font-size: 1rem;"></i>
-                                    <p style="margin: 0; color: #4b5563; font-size: 0.92rem; line-height: 1.55;">To practice strict eco-conservation, support local Malnad homestays, and foster lifelong friendships.</p>
-                                </li>
-                            </ul>
+                            <p class="vm-text">To reaffirm the bond between the Nature and mankind by unravelling the knots of materialistic routine.</p>
+                        </div>
+                        <div class="vm-item">
+                            <div class="vm-badge">
+                                <i class="fa-solid fa-compass"></i>
+                            </div>
+                            <p class="vm-text">Let us be your guide to help you embrace the serenity of mother Nature.</p>
+                        </div>
+                        <div class="vm-item">
+                            <div class="vm-badge">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <p class="vm-text">To be able to connect the beautiful nature from different part of the world to you.</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- Mission Card -->
+                <div class="vm-card">
+                    <div class="vm-header">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <h3>Mission</h3>
+                    </div>
+                    <div class="vm-list">
+                        <div class="vm-item">
+                            <div class="vm-badge">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <p class="vm-text">To make all possible ways to make Nature close to people's heart and present memories for a lifetime.</p>
+                        </div>
+                        <div class="vm-item">
+                            <div class="vm-badge">
+                                <i class="fa-solid fa-shield-heart"></i>
+                            </div>
+                            <p class="vm-text">To lead community in protecting and promoting the divinity of Nature and Bio-diversity.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -351,7 +329,7 @@
                             <i class="fa-solid fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            Standard Bangalore pickup points include Majestic (Shantala Silk House), Navarang Circle, Yeshwanthpur Metro Station, and Goraguntepalya. Exact timings and driver contact are shared in the WhatsApp batch group 24 hours prior to departure.
+                            Standard Bangalore pickup points include Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, and KLE Dental College Goraguntepalya. Exact timings and driver contact are shared in the WhatsApp batch group 24 hours prior to departure.
                         </div>
                     </div>
 
@@ -403,10 +381,6 @@
                 <div class="social-links">
                     <a href="https://www.instagram.com/rahasya_daari" target="_blank"
                         rel="noopener noreferrer" aria-label="Instagram" class="social-insta" title="Instagram @rahasya_daari"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/@RahasyaDaari" target="_blank"
-                        rel="noopener noreferrer" aria-label="YouTube Channel" class="social-youtube" title="YouTube @RahasyaDaari"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://share.google/bbgCWOk5W1FMGlcRw" target="_blank"
-                        rel="noopener noreferrer" aria-label="Google Maps & Ratings" class="social-maps" title="Google Maps & Reviews"><i class="fa-solid fa-map-location-dot"></i></a>
                     <a href="https://wa.me/919632961606" target="_blank" rel="noopener noreferrer"
                         aria-label="WhatsApp" class="social-whatsapp" title="WhatsApp Us"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
@@ -417,6 +391,7 @@
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="trips.html">Trips & Treks</a></li>
+                    <li><a href="weekday.html">Weekday Treks</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
@@ -498,9 +473,9 @@
     </a>
 
     <!-- Image Constants, Trips Data & Main Script -->
-    <script src="images.js"></script>
-    <script src="trips-data.js"></script>
-    <script src="script.js"></script>
+    <script src="images.js?v=82"></script>
+    <script src="trips-data.js?v=82"></script>
+    <script src="script.js?v=83"></script>
 </body>
 
 </html>
