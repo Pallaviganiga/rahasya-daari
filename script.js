@@ -175,9 +175,8 @@ function renderLandingFeaturedTrails() {
             </div>
             <div class="trek-card-content">
                 <h3 class="trek-card-title">${trek.title}</h3>
-                <p class="trek-card-pickup">
-                    <strong>PICKUP LOCATION</strong>
-                    ${trek.pickup || 'Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya'}
+                <p class="trek-card-location">
+                    <i class="fa-solid fa-location-dot"></i> ${trek.location || 'Western Ghats, Karnataka'}
                 </p>
                 <hr class="card-divider">
                 <div class="trek-card-footer">
@@ -552,9 +551,8 @@ function renderWeekday1DayPackages() {
             </div>
             <div class="trek-card-content">
                 <h3 class="trek-card-title">${trek.title}</h3>
-                <p class="trek-card-pickup">
-                    <strong>PICKUP LOCATION</strong>
-                    ${trek.pickup || 'Majestic, Bangalore'}
+                <p class="trek-card-location">
+                    <i class="fa-solid fa-location-dot"></i> ${trek.location || 'Western Ghats, Karnataka'}
                 </p>
                 <hr class="card-divider">
                 <div class="trek-card-footer">
@@ -602,9 +600,8 @@ function renderWeekday2DaysPackages() {
             </div>
             <div class="trek-card-content">
                 <h3 class="trek-card-title">${trek.title}</h3>
-                <p class="trek-card-pickup">
-                    <strong>PICKUP LOCATION</strong>
-                    ${trek.pickup || 'Majestic, Bangalore'}
+                <p class="trek-card-location">
+                    <i class="fa-solid fa-location-dot"></i> ${trek.location || 'Western Ghats, Karnataka'}
                 </p>
                 <hr class="card-divider">
                 <div class="trek-card-footer">
@@ -653,9 +650,8 @@ function renderWeekdayTrips() {
             </div>
             <div class="trek-card-content">
                 <h3 class="trek-card-title">${trek.title}</h3>
-                <p class="trek-card-pickup">
-                    <strong>PICKUP LOCATION</strong>
-                    ${trek.pickup || 'Majestic, Bangalore'}
+                <p class="trek-card-location">
+                    <i class="fa-solid fa-location-dot"></i> ${trek.location || 'Western Ghats, Karnataka'}
                 </p>
                 <hr class="card-divider">
                 <div class="trek-card-footer">
@@ -703,9 +699,8 @@ function renderWeekendTreks() {
             </div>
             <div class="trek-card-content">
                 <h3 class="trek-card-title">${trek.title}</h3>
-                <p class="trek-card-pickup">
-                    <strong>PICKUP LOCATION</strong>
-                    ${trek.pickup || 'Majestic, Bangalore'}
+                <p class="trek-card-location">
+                    <i class="fa-solid fa-location-dot"></i> ${trek.location || 'Western Ghats, Karnataka'}
                 </p>
                 <hr class="card-divider">
                 <div class="trek-card-footer">
@@ -753,9 +748,8 @@ function renderSightseeingTrips() {
             </div>
             <div class="trek-card-content">
                 <h3 class="trek-card-title">${trip.title}</h3>
-                <p class="trek-card-pickup">
-                    <strong>PICKUP LOCATION</strong>
-                    ${trip.pickup || 'Majestic, Bangalore'}
+                <p class="trek-card-location">
+                    <i class="fa-solid fa-location-dot"></i> ${trip.location || 'Western Ghats, Karnataka'}
                 </p>
                 <hr class="card-divider">
                 <div class="trek-card-footer">
@@ -798,9 +792,8 @@ function renderPopularTreks() {
             </div>
             <div class="trek-card-content">
                 <h3 class="trek-card-title">${trek.title}</h3>
-                <p class="trek-card-pickup">
-                    <strong>PICKUP LOCATION</strong>
-                    ${trek.pickup || 'Majestic, Bangalore'}
+                <p class="trek-card-location">
+                    <i class="fa-solid fa-location-dot"></i> ${trek.location || 'Western Ghats, Karnataka'}
                 </p>
                 <hr class="card-divider">
                 <div class="trek-card-footer">
