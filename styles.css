@@ -1,4 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Kaushan+Script&family=Courgette&family=Marck+Script&family=Nunito:wght@300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Gochi+Hand&family=Kalam:wght@700&family=Patrick+Hand&family=Caveat:wght@700&family=Satisfy&family=Kaushan+Script&family=Courgette&family=Marck+Script&family=Nunito:wght@300;400;600;700;800;900&display=swap');
+
+/* Custom Web Fonts - ITC Bradley Hand Regular & Segoe Print Regular */
+@font-face {
+    font-family: 'Bradley Hand ITC';
+    src: url('fonts/BRADHITC.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Segoe Print';
+    src: url('fonts/segoepr.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 /* Custom Variables & Design Tokens */
 :root {
@@ -13,6 +30,8 @@
     --text-secondary: #4B5563;       /* Medium gray */
     --font-main: 'Nunito', sans-serif;
     --font-handwriting: 'Satisfy', 'Kaushan Script', 'Courgette', cursive;
+    --font-bradley: 'Bradley Hand ITC', 'Bradley Hand', 'Architects Daughter', cursive;
+    --font-segoe: 'Segoe Print', 'Patrick Hand', cursive;
     
     /* Box Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -276,8 +295,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-img {
-    width: 92px;
-    height: 92px;
+    width: 104px;
+    height: 104px;
     object-fit: contain;
     border-radius: 50%;
     background-color: #ffffff;
@@ -310,10 +329,24 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.12;
 }
 
+.logo-brand-text-img {
+    height: 28px;
+    width: auto;
+    max-width: 210px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));
+    transition: transform 0.3s ease;
+}
+
+.logo-wrapper:hover .logo-brand-text-img {
+    transform: scale(1.02);
+}
+
 .logo-text {
-    font-family: 'Bradley Hand ITC', 'Bradley Hand', 'Segoe Print', 'Comic Sans MS', cursive;
-    font-size: 1.72rem;
-    font-weight: 900;
+    font-family: var(--font-bradley);
+    font-size: 2.15rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     color: var(--primary-green);
@@ -323,13 +356,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-tagline {
-    font-family: var(--font-main);
-    font-size: 0.8rem;
-    font-weight: 800;
+    font-family: var(--font-segoe);
+    font-size: 0.95rem;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 1.6px;
+    letter-spacing: 1.5px;
     color: #27522d;
-    margin-top: 3px;
+    margin-top: 2px;
     white-space: nowrap;
     display: block;
     text-align: right;
@@ -638,7 +671,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title {
-    font-family: 'Bradley Hand ITC', 'Bradley Hand', 'Segoe Print', 'Comic Sans MS', cursive;
+    font-family: var(--font-brand);
     font-size: 3.4rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -650,7 +683,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-subtitle {
-    font-family: 'Bradley Hand ITC', 'Bradley Hand', 'Segoe Print', 'Comic Sans MS', cursive;
+    font-family: var(--font-brand);
     font-size: 1.85rem;
     font-weight: 900;
     text-transform: uppercase;
@@ -2616,13 +2649,18 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .logo-img, .logo-fallback {
-        width: 50px !important;
-        height: 50px !important;
+        width: 68px !important;
+        height: 68px !important;
     }
     
     .logo-text {
         display: block !important;
-        font-size: 1.15rem !important;
+        font-size: 1.5rem !important;
+    }
+
+    .logo-tagline {
+        display: block !important;
+        font-size: 0.78rem !important;
     }
     
     .header-container {
@@ -2708,13 +2746,18 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .logo-img, .logo-fallback {
-        width: 48px !important;
-        height: 48px !important;
+        width: 62px !important;
+        height: 62px !important;
     }
 
     .logo-text {
         display: block !important;
-        font-size: 1.05rem !important;
+        font-size: 1.38rem !important;
+    }
+
+    .logo-tagline {
+        display: block !important;
+        font-size: 0.72rem !important;
     }
     
     .nav-menu {
@@ -2797,12 +2840,16 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 480px) {
     .logo-img, .logo-fallback {
-        width: 38px !important;
-        height: 38px !important;
+        width: 54px !important;
+        height: 54px !important;
     }
     .logo-text {
         display: block !important;
-        font-size: 0.95rem !important;
+        font-size: 1.25rem !important;
+    }
+    .logo-tagline {
+        display: block !important;
+        font-size: 0.68rem !important;
     }
     .logo-text-full {
         display: inline !important;

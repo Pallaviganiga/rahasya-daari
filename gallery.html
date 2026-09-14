@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery - Rahasyadaari | Moments From The Trails</title>
+    <meta name="description"
+        content="Explore stunning photographs and visual moments captured across Western Ghats treks, waterfalls, peaks, and community adventures with Rahasyadaari.">
+    <!-- Google Fonts: Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Gochi+Hand&family=Kalam:wght@700&family=Patrick+Hand&family=Caveat:wght@700&family=Nunito:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="styles.css?v=107">
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo-wrapper">
+                <img src="images/Branding/logo.png" alt="Rahasyadaari Logo" class="logo-img"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="logo-fallback" style="display:none;">RD</div>
+                <div class="logo-brand-block">
+                    <span class="logo-text">RahasyaDaari</span>
+                    <span class="logo-tagline">- The Mystery Trail</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown" id="tripsDropdown">
+                    <a href="trips.html" class="nav-link dropdown-toggle" id="dropdownToggleBtn">
+                        Tours <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="trips.html#weekday" class="dropdown-item">Weekday Trips</a>
+                        <a href="trips.html#trips" class="dropdown-item">Weekend Treks</a>
+                        <a href="trips.html#sightseeing" class="dropdown-item">Weekend Trips</a>
+                        <a href="trips.html#popular" class="dropdown-item">Popular Treks</a>
+                    </div>
+                </div>
+                <a href="gallery.html" class="nav-link active active-page">Gallery</a>
+                <a href="index.html#reviews" class="nav-link">Reviews</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <a href="index.html" class="hero-back-btn" aria-label="Back to Home" title="Back to Home">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </a>
+                <div class="hero-bg-slider">
+                    <div class="hero-bg-slide active" style="background-image: url('images/Hero/hero-bg-landscape.jpg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Bandaje/bandaje-cliff-edge.png');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Netravathi/netravathi-cover.jpg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Kodachadri/kodachadri-cover.jpg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Dudhsagar Falls & Dandeli/dudhsagar-falls-view.png');"></div>
+                </div>
+                <div class="hero-overlay"></div>
+            </div>
+        </section>
+
+        <!-- Interactive Adventure Photo Gallery Section -->
+        <section class="gallery-section" id="gallery" style="padding-top: 40px;">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Visual Showcase</span>
+                    <h2 class="section-title brand-section-title">MOMENTS FROM THE TRAILS</h2>
+                    <p style="max-width: 680px; margin: 0 auto 24px; color: var(--text-secondary); font-size: 0.98rem; line-height: 1.6;">
+                        A glimpse into pristine summits, floating monsoon clouds, hidden jungle droplets, and unforgettable moments shared with fellow travelers.
+                    </p>
+                </div>
+
+                <!-- Category Filter Pills -->
+                <div class="gallery-filters">
+                    <button class="gallery-filter-btn active" onclick="filterGallery('all', this)">
+                        <i class="fa-solid fa-border-all"></i> All Photos
+                    </button>
+                    <button class="gallery-filter-btn" onclick="filterGallery('peaks', this)">
+                        <i class="fa-solid fa-mountain"></i> Mountain Peaks
+                    </button>
+                    <button class="gallery-filter-btn" onclick="filterGallery('waterfalls', this)">
+                        <i class="fa-solid fa-water"></i> Waterfalls
+                    </button>
+                    <button class="gallery-filter-btn" onclick="filterGallery('valleys', this)">
+                        <i class="fa-solid fa-tree"></i> Valleys & Estates
+                    </button>
+                    <button class="gallery-filter-btn" onclick="filterGallery('ghats', this)">
+                        <i class="fa-solid fa-cloud-sun"></i> Western Ghats
+                    </button>
+                    <button class="gallery-filter-btn" onclick="filterGallery('coastal', this)">
+                        <i class="fa-solid fa-umbrella-beach"></i> Coastal
+                    </button>
+                    <button class="gallery-filter-btn" onclick="filterGallery('community', this)">
+                        <i class="fa-solid fa-people-group"></i> Tribe & Action
+                    </button>
+                </div>
+
+                <!-- Photo Gallery Grid -->
+                <div class="photo-gallery-grid" id="photoGalleryGrid">
+                    <!-- Populated dynamically by script.js -->
+                </div>
+
+                <!-- Action Link to Instagram -->
+                <div class="gallery-more-wrap text-center" style="margin-top: 40px;">
+                    <a href="https://instagram.com/rahasya_daari" target="_blank" rel="noopener noreferrer" class="btn-gallery-more" title="View more photos on Instagram @rahasya_daari">
+                        <span>For More</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Banner -->
+        <section class="cta-banner-section">
+            <div class="container">
+                <div class="cta-banner-card">
+                    <h2 class="cta-banner-title">READY FOR YOUR NEXT MYSTERY TRAIL?</h2>
+                    <p class="cta-banner-desc">Whether you are a solo adventurer, traveling with friends, or planning a custom corporate getaway, we have a trail waiting for you every weekend.</p>
+                    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://wa.me/919632961606" target="_blank" rel="noopener noreferrer" class="btn btn-hero-secondary" style="border-radius: 50px; background: #25D366; border-color: #25D366; color: #ffffff; padding: 14px 36px; font-size: 1.02rem; font-weight: 800;">
+                            <i class="fa-brands fa-whatsapp"></i> CHAT WITH A GUIDE
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col footer-brand">
+                <a href="index.html" class="logo-wrapper footer-logo">
+                    <img src="images/Branding/logo.png" alt="Rahasyadaari Logo" class="logo-img"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="logo-fallback" style="display:none;">RD</div>
+                    <div class="logo-brand-block">
+                        <span class="logo-text">RahasyaDaari</span>
+                        <span class="logo-tagline">- The Mystery Trail</span>
+                    </div>
+                </a>
+                <p class="footer-tagline">Connecting passion with nature. We organize curated weekend & weekday treks, eco-tours, and custom wilderness expeditions across South India.</p>
+
+                <div class="footer-socials">
+                    <a href="https://instagram.com/rahasya_daari" target="_blank"
+                        rel="noopener noreferrer" aria-label="Instagram" class="social-insta" title="Instagram @rahasya_daari"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/919632961606" target="_blank" rel="noopener noreferrer"
+                        aria-label="WhatsApp" class="social-whatsapp" title="WhatsApp Us"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="trips.html">Trips & Treks</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Popular Destinations</h4>
+                <ul class="footer-links">
+                    <li><a href="trips.html#trek-kudremukh">Kudremukha Peak</a></li>
+                    <li><a href="trips.html#trek-netravathi">Netravathi Peak</a></li>
+                    <li><a href="trips.html#trek-bandaje-falls">Bandaje Falls</a></li>
+                    <li><a href="trips.html#trek-kodachadri">Kodachadri Peak</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Safety & Terms</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html#safety">Safety Guidelines</a></li>
+                    <li><a href="about.html#gear">Gear Checklist</a></li>
+                    <li><a href="about.html#refund">Refund Policy</a></li>
+                    <li><a href="about.html#faq">FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Rahasyadaari. All rights reserved. Made with love for the mountains.</p>
+        </div>
+    </footer>
+
+    <!-- Full-Screen Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal" onclick="if(event.target === this) closeLightbox()">
+        <div class="lightbox-content-wrapper">
+            <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close Lightbox">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <button class="lightbox-nav lightbox-prev" onclick="prevLightboxImage()" aria-label="Previous Image">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="lightbox-img-container">
+                <img id="lightboxImg" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E" alt="Gallery Image">
+            </div>
+            <button class="lightbox-nav lightbox-next" onclick="nextLightboxImage()" aria-label="Next Image">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <div class="lightbox-info">
+                <div>
+                    <div class="lightbox-title" id="lightboxTitle">Photo Title</div>
+                    <div class="lightbox-place" id="lightboxPlace"><i class="fa-solid fa-location-dot"></i> Location</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Quick Inquiry Button -->
+    <button class="floating-inquiry-btn" id="floatingInquiryBtn" onclick="openModal('quickInquiryModal')">
+        <i class="fa-solid fa-circle-question"></i> <span>Enquire Now</span>
+    </button>
+
+    <!-- Quick Inquiry Modal -->
+    <div class="modal" id="quickInquiryModal">
+        <div class="modal-overlay" onclick="closeModal('quickInquiryModal')"></div>
+        <div class="modal-content modal-md">
+            <button class="modal-close" onclick="closeModal('quickInquiryModal')"><i
+                    class="fa-solid fa-xmark"></i></button>
+
+            <div class="wizard-header"
+                style="padding: 24px; border-bottom: 1px solid var(--border-color); text-align: left;">
+                <h3 style="margin: 0; color: var(--primary-green); display: flex; align-items: center; gap: 10px;">
+                    <i class="fa-solid fa-circle-question"></i> Quick Inquiry
+                </h3>
+            </div>
+
+            <div class="wizard-body" style="padding: 24px;">
+                <form class="contact-form" id="quickInquiryForm" onsubmit="handleQuickInquirySubmit(event)">
+                    <div class="form-group">
+                        <label for="inquiryName">Your Name</label>
+                        <input type="text" id="inquiryName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiryEmail">Email Address</label>
+                        <input type="email" id="inquiryEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiryMessage">Your Message</label>
+                        <textarea id="inquiryMessage" rows="4"
+                            placeholder="Ask us anything about our upcoming weekend treks, customized family packages, or corporate outings..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" style="margin-top: 10px;">
+                        SEND INQUIRY ON WHATSAPP <i class="fa-brands fa-whatsapp"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Quick WhatsApp Action Button -->
+    <a href="https://wa.me/919632961606?text=Hi%20Rahasya%20Daari%20Team!%20I'm%20planning%20an%20upcoming%20trek%20expedition." target="_blank" rel="noopener noreferrer" class="whatsapp-floating-btn" aria-label="Chat on WhatsApp" title="Chat with a Pathfinder on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-floating-tooltip">Chat with Pathfinder</span>
+    </a>
+
+    <!-- Image Constants, Trips Data, Reviews Data & Main Script -->
+    <script src="images.js?v=82"></script>
+    <script src="trips-data.js?v=82"></script>
+    <script src="reviews-data.js?v=82"></script>
+    <script src="script.js?v=83"></script>
+</body>
+
+</html>
