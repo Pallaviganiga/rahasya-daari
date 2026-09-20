@@ -14,8 +14,10 @@
         rel="stylesheet">
     <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Preload custom Bradley Hand font to prevent font flash on refresh -->
+    <link rel="preload" href="fonts/BRADHITC.TTF" as="font" type="font/ttf" crossorigin>
     <!-- Custom stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=107">
+    <link rel="stylesheet" href="styles.css?v=122">
 </head>
 
 <body>
@@ -24,11 +26,9 @@
     <header class="header">
         <div class="header-container">
             <a href="index.html" class="logo-wrapper">
-                <img src="images/Branding/logo.png" alt="Rahasyadaari Logo" class="logo-img"
-                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div class="logo-fallback" style="display:none;">RD</div>
+                <img src="images/Branding/logo.png" alt="Rahasya Daari Logo" class="logo-img">
                 <div class="logo-brand-block">
-                    <span class="logo-text">RahasyaDaari</span>
+                    <span class="logo-text">RAHASYA DAARI</span>
                     <span class="logo-tagline">- The Mystery Trail</span>
                 </div>
             </a>
@@ -40,10 +40,10 @@
                         Tours <i class="fa-solid fa-chevron-down dropdown-icon"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="#weekday" class="dropdown-item">Weekday Trips</a>
-                        <a href="#trips" class="dropdown-item">Weekend Treks</a>
-                        <a href="#sightseeing" class="dropdown-item">Weekend Trips</a>
-                        <a href="#popular" class="dropdown-item">Popular Treks</a>
+                        <a href="trips.html#popular" class="dropdown-item">Top Rated Trips & Treks</a>
+                        <a href="trips.html#sightseeing" class="dropdown-item">Weekend Trips</a>
+                        <a href="trips.html#trips" class="dropdown-item">Weekend Treks</a>
+                        <a href="trips.html#weekday" class="dropdown-item">Weekday Treks</a>
                     </div>
                 </div>
                 <a href="gallery.html" class="nav-link">Gallery</a>
@@ -70,72 +70,48 @@
                     <i class="fa-solid fa-arrow-left"></i> Back
                 </a>
                 <div class="hero-bg-slider">
-                    <div class="hero-bg-slide active" style="background-image: url('images/Hero/hero-bg-landscape.jpg');"></div>
-                    <div class="hero-bg-slide" style="background-image: url('images/Netravathi/netravathi-cover.jpg');"></div>
-                    <div class="hero-bg-slide" style="background-image: url('images/Kudremukha/kudremukha-trail-1.jpg');"></div>
-                    <div class="hero-bg-slide" style="background-image: url('images/Kodachadri/kodachadri-cover.jpg');"></div>
-                    <div class="hero-bg-slide" style="background-image: url('images/Bandaje/bandaje-waterfall-view.jpeg');"></div>
-                    <div class="hero-bg-slide" style="background-image: url('images/Etthina Bhuja/ethina2-landscape.jpg');"></div>
+                    <div class="hero-bg-slide active" style="background-image: url('images/Branding/hero2.jpeg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Branding/hero1.jpeg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Branding/hero3.jpeg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Branding/hero4.jpeg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Branding/home5.jpeg');"></div>
                 </div>
                 <div class="hero-overlay"></div>
             </div>
         </section>
 
-        <!-- Quick Category Section Jump & Booking Selector -->
+        <!-- Quick Category Section Jump Bar -->
         <section class="trip-nav-section" id="tripNavSection">
             <div class="container">
-                <div class="trip-nav-card">
-                    <div class="trip-nav-header">
-                        <span class="trip-nav-badge"><i class="fa-solid fa-compass"></i> Quick Category Jump</span>
-                        <h3 class="trip-nav-title">Select Category to Explore & Book</h3>
-                    </div>
-
-                    <!-- Category Radio Buttons & Pills (Desktop & Tablet) -->
+                <div class="trip-nav-card text-center">
+                    <!-- Category Pills: 4 Tour Categories -->
                     <div class="trip-radio-group" role="radiogroup" aria-label="Trip Categories">
-                        <label class="trip-radio-pill active" data-target="weekday">
-                            <input type="radio" name="tripSection" value="weekday" checked onchange="scrollToTripSection('weekday')">
-                            <span class="pill-icon"><i class="fa-solid fa-person-hiking"></i></span>
-                            <span class="pill-text">Weekday Trips</span>
-                        </label>
-                        <label class="trip-radio-pill" data-target="trips">
-                            <input type="radio" name="tripSection" value="trips" onchange="scrollToTripSection('trips')">
-                            <span class="pill-icon"><i class="fa-solid fa-mountain"></i></span>
-                            <span class="pill-text">Weekend Treks</span>
+                        <label class="trip-radio-pill active" data-target="popular">
+                            <input type="radio" name="tripSection" value="popular" checked onchange="scrollToTripSection('popular')">
+                            <span class="pill-text">Top Rated Trips & Treks</span>
                         </label>
                         <label class="trip-radio-pill" data-target="sightseeing">
                             <input type="radio" name="tripSection" value="sightseeing" onchange="scrollToTripSection('sightseeing')">
-                            <span class="pill-icon"><i class="fa-solid fa-van-shuttle"></i></span>
                             <span class="pill-text">Weekend Trips</span>
                         </label>
-                        <label class="trip-radio-pill" data-target="popular">
-                            <input type="radio" name="tripSection" value="popular" onchange="scrollToTripSection('popular')">
-                            <span class="pill-icon"><i class="fa-solid fa-fire"></i></span>
-                            <span class="pill-text">Popular Treks</span>
+                        <label class="trip-radio-pill" data-target="trips">
+                            <input type="radio" name="tripSection" value="trips" onchange="scrollToTripSection('trips')">
+                            <span class="pill-text">Weekend Treks</span>
                         </label>
-                    </div>
-
-                    <!-- Dropdown for Mobile / Quick Selection -->
-                    <div class="trip-dropdown-wrapper">
-                        <div class="custom-select-container">
-                            <select id="tripCategorySelect" onchange="scrollToTripSection(this.value)" aria-label="Select trip category">
-                                <option value="" disabled selected>✨ Select category (Weekday Trips, Weekend Treks, Weekend Trips, Popular Treks)...</option>
-                                <option value="weekday">🏃 Weekday Trips</option>
-                                <option value="trips">🎒 Weekend Treks</option>
-                                <option value="sightseeing">🚐 Weekend Trips</option>
-                                <option value="popular">⭐ Popular Treks</option>
-                            </select>
-                            <i class="fa-solid fa-chevron-down select-chevron"></i>
-                        </div>
+                        <label class="trip-radio-pill" data-target="weekday">
+                            <input type="radio" name="tripSection" value="weekday" onchange="scrollToTripSection('weekday')">
+                            <span class="pill-text">Weekday Treks</span>
+                        </label>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Weekdays Trips Section -->
-        <section class="filter-section" id="weekday" style="background-color: var(--light-neutral);">
+        <!-- Section 1: Top Rated Trips & Treks -->
+        <section class="filter-section" id="popular" style="background-color: var(--light-neutral);">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-title brand-section-title">WEEKDAY TRIPS</h2>
+                    <h2 class="section-title brand-section-title">TOP RATED TRIPS & TREKS</h2>
                 </div>
 
                 <!-- Active Filter Banner (hidden by default) -->
@@ -145,45 +121,23 @@
                             class="fa-solid fa-xmark"></i></button>
                 </div>
 
-                <!-- Carousel Container for Weekday Trips -->
+                <!-- Carousel Container for Popular Treks -->
                 <div class="carousel-container">
-                    <button class="carousel-nav prev-btn" id="weekdayPrevBtn" aria-label="Previous trip"><i
+                    <button class="carousel-nav prev-btn" id="popularPrevBtn" aria-label="Previous popular trek"><i
                             class="fa-solid fa-chevron-left"></i></button>
                     <div class="carousel-viewport">
-                        <div class="trek-grid" id="weekdayGrid">
-                            <!-- Cards populated dynamically by script.js with prices -->
+                        <div class="trek-grid" id="popularGrid">
+                            <!-- Cards populated dynamically by script.js -->
                         </div>
                     </div>
-                    <button class="carousel-nav next-btn" id="weekdayNextBtn" aria-label="Next trip"><i
+                    <button class="carousel-nav next-btn" id="popularNextBtn" aria-label="Next popular trek"><i
                             class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
         </section>
 
-        <!-- Weekend Trips (Treks) Section -->
-        <section class="filter-section" id="trips">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-title brand-section-title">WEEKEND TREKS</h2>
-                </div>
-
-                <!-- Carousel Container for Treks -->
-                <div class="carousel-container">
-                    <button class="carousel-nav prev-btn" id="weekendPrevBtn" aria-label="Previous trip"><i
-                            class="fa-solid fa-chevron-left"></i></button>
-                    <div class="carousel-viewport">
-                        <div class="trek-grid" id="weekendGrid">
-                            <!-- Cards populated dynamically by script.js with prices -->
-                        </div>
-                    </div>
-                    <button class="carousel-nav next-btn" id="weekendNextBtn" aria-label="Next trip"><i
-                            class="fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Weekend Trips Section (previously Sightseeing) -->
-        <section class="filter-section" id="sightseeing" style="background-color: var(--light-neutral);">
+        <!-- Section 2: Weekend Trips -->
+        <section class="filter-section" id="sightseeing">
             <div class="container">
                 <div class="section-header text-center">
                     <h2 class="section-title brand-section-title">WEEKEND TRIPS</h2>
@@ -195,7 +149,7 @@
                             class="fa-solid fa-chevron-left"></i></button>
                     <div class="carousel-viewport">
                         <div class="trek-grid" id="sightseeingGrid">
-                            <!-- Cards populated dynamically by script.js with prices -->
+                            <!-- Cards populated dynamically by script.js -->
                         </div>
                     </div>
                     <button class="carousel-nav next-btn" id="sightseeingNextBtn" aria-label="Next trip"><i
@@ -204,25 +158,81 @@
             </div>
         </section>
 
-        <!-- Popular Treks Section -->
-        <section class="filter-section" id="popular">
+        <!-- Section 3: Weekend Treks -->
+        <section class="filter-section" id="trips" style="background-color: var(--light-neutral);">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-title brand-section-title">POPULAR TREKS</h2>
+                    <h2 class="section-title brand-section-title">WEEKEND TREKS</h2>
                 </div>
 
-                <!-- Carousel Container for Popular Treks -->
+                <!-- Carousel Container for Weekend Treks -->
                 <div class="carousel-container">
-                    <button class="carousel-nav prev-btn" id="popularPrevBtn" aria-label="Previous popular trek"><i
+                    <button class="carousel-nav prev-btn" id="weekendPrevBtn" aria-label="Previous trek"><i
                             class="fa-solid fa-chevron-left"></i></button>
                     <div class="carousel-viewport">
-                        <div class="trek-grid" id="popularGrid">
-                            <!-- Cards populated dynamically by script.js with prices -->
+                        <div class="trek-grid" id="weekendGrid">
+                            <!-- Cards populated dynamically by script.js -->
                         </div>
                     </div>
-                    <button class="carousel-nav next-btn" id="popularNextBtn" aria-label="Next popular trek"><i
+                    <button class="carousel-nav next-btn" id="weekendNextBtn" aria-label="Next trek"><i
                             class="fa-solid fa-chevron-right"></i></button>
                 </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Weekday Treks -->
+        <section class="filter-section" id="weekday">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title brand-section-title">WEEKDAY TREKS</h2>
+                </div>
+
+                <!-- Sub-tabs Jump Bar for 1-DAY PACKAGES and 2-DAYS PACKAGES -->
+                <div class="weekday-subtabs" style="margin-top: 12px; margin-bottom: 32px;">
+                    <div class="trip-radio-group" role="radiogroup" aria-label="Weekday Package Duration" style="max-width: 480px; margin: 0 auto;">
+                        <label class="trip-radio-pill weekday-subtab-pill active" data-target="oneday" onclick="switchWeekdayTab('oneday')">
+                            <input type="radio" name="weekdaySubTab" value="oneday" checked>
+                            <span class="pill-text">1-DAY PACKAGES</span>
+                        </label>
+                        <label class="trip-radio-pill weekday-subtab-pill" data-target="twodays" onclick="switchWeekdayTab('twodays')">
+                            <input type="radio" name="weekdaySubTab" value="twodays">
+                            <span class="pill-text">2-DAYS PACKAGES</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 1-DAY PACKAGES Container (Row 1) -->
+                <div id="weekday1DayContainer" class="weekday-package-view" style="margin-bottom: 48px;">
+                    <div class="section-header text-center" style="margin-bottom: 20px;">
+                        <h3 style="font-size: 1.25rem; font-weight: 850; color: var(--primary-green); text-transform: uppercase; letter-spacing: 0.5px;">1-DAY PACKAGES</h3>
+                    </div>
+                    <div class="carousel-container">
+                        <button class="carousel-nav prev-btn" id="weekday1DayPrevBtn" aria-label="Previous trip"><i class="fa-solid fa-chevron-left"></i></button>
+                        <div class="carousel-viewport">
+                            <div class="trek-grid" id="weekday1DayGrid">
+                                <!-- Cards populated dynamically by script.js -->
+                            </div>
+                        </div>
+                        <button class="carousel-nav next-btn" id="weekday1DayNextBtn" aria-label="Next trip"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- 2-DAYS PACKAGES Container (Down Row) -->
+                <div id="weekday2DaysContainer" class="weekday-package-view" style="margin-top: 24px;">
+                    <div class="section-header text-center" style="margin-bottom: 20px;">
+                        <h3 style="font-size: 1.25rem; font-weight: 850; color: var(--primary-green); text-transform: uppercase; letter-spacing: 0.5px;">2-DAYS PACKAGES</h3>
+                    </div>
+                    <div class="carousel-container">
+                        <button class="carousel-nav prev-btn" id="weekday2DaysPrevBtn" aria-label="Previous trip"><i class="fa-solid fa-chevron-left"></i></button>
+                        <div class="carousel-viewport">
+                            <div class="trek-grid" id="weekday2DaysGrid">
+                                <!-- Cards populated dynamically by script.js -->
+                            </div>
+                        </div>
+                        <button class="carousel-nav next-btn" id="weekday2DaysNextBtn" aria-label="Next trip"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -297,7 +307,7 @@
                         </div>
                         <div class="stat-row">
                             <span><i class="fa-solid fa-indian-rupee-sign"></i> Price:</span>
-                            <strong id="detailsPrice" style="color: var(--primary-green);">₹4,200 /person</strong>
+                            <strong id="detailsPrice" style="color: var(--primary-green);"><span class="price-strikethrough">₹4,500</span> <span class="price-current">₹4,200</span> /person</strong>
                         </div>
                         <div class="stat-row" id="rowAdvance" style="display: none;">
                             <span><i class="fa-solid fa-wallet"></i> Booking Advance:</span>
@@ -356,13 +366,11 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <a href="index.html" class="logo-wrapper">
-                    <img src="images/Branding/logo.webp" alt="Rahasyadaari Logo" class="logo-img"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="logo-fallback" style="display:none;">RD</div>
-                <div class="logo-brand-block">
-                    <span class="logo-text">RahasyaDaari</span>
-                    <span class="logo-tagline">- The Mystery Trail</span>
-                </div>
+                    <img src="images/Branding/logo.png" alt="Rahasya Daari Logo" class="logo-img">
+                    <div class="logo-brand-block">
+                        <span class="logo-text">RAHASYA DAARI</span>
+                        <span class="logo-tagline">- The Mystery Trail</span>
+                    </div>
                 </a>
                 <p class="footer-tagline">Exploring the mystery trails, preserving the nature's soul.</p>
                 <div class="social-links">
@@ -385,14 +393,23 @@
                 </ul>
             </div>
 
-            <div class="footer-col">
-                <h4 class="footer-title">Popular Treks</h4>
-                <ul class="footer-links">
-                    <li><a href="#popular" onclick="navigateToTrek('kudremukh')">Kudremukha Trek</a></li>
-                    <li><a href="#popular" onclick="navigateToTrek('netravathi')">Netravathi Trek</a></li>
-                    <li><a href="#popular" onclick="navigateToTrek('bandaje-falls')">Bandaje Falls Trek</a></li>
-                    <li><a href="#popular" onclick="navigateToTrek('kodachadri')">Kodachadri Trek</a></li>
-                </ul>
+            <div class="footer-col footer-destinations-col">
+                <h4 class="footer-title">Popular Destinations</h4>
+                <div class="destinations-grid">
+                    <span>Kashmir</span>
+                    <span>Chikmagalur</span>
+                    <span>Coorg</span>
+                    <span>Udupi</span>
+                    <span>Shivamogga</span>
+                    <span>Gokarna</span>
+                    <span>Dandeli</span>
+                    <span>Munnar</span>
+                    <span>Ooty</span>
+                    <span>Wayanad</span>
+                    <span>Kodaikanal</span>
+                    <span>Valparai</span>
+                    <span>Varkala</span>
+                </div>
             </div>
 
             <div class="footer-col">

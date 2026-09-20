@@ -14,6 +14,8 @@
         rel="stylesheet">
     <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Preload custom Bradley Hand font to prevent font flash on refresh -->
+    <link rel="preload" href="fonts/BRADHITC.TTF" as="font" type="font/ttf" crossorigin>
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="styles.css?v=107">
 </head>
@@ -24,11 +26,9 @@
     <header class="header">
         <div class="header-container">
             <a href="index.html" class="logo-wrapper">
-                <img src="images/Branding/logo.png" alt="Rahasyadaari Logo" class="logo-img"
-                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div class="logo-fallback" style="display:none;">RD</div>
+                <img src="images/Branding/logo.png" alt="Rahasya Daari Logo" class="logo-img">
                 <div class="logo-brand-block">
-                    <span class="logo-text">RahasyaDaari</span>
+                    <span class="logo-text">RAHASYA DAARI</span>
                     <span class="logo-tagline">- The Mystery Trail</span>
                 </div>
             </a>
@@ -40,10 +40,10 @@
                         Tours <i class="fa-solid fa-chevron-down dropdown-icon"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="trips.html#weekday" class="dropdown-item">Weekday Trips</a>
-                        <a href="trips.html#trips" class="dropdown-item">Weekend Treks</a>
+                        <a href="trips.html#popular" class="dropdown-item">Top Rated Trips & Treks</a>
                         <a href="trips.html#sightseeing" class="dropdown-item">Weekend Trips</a>
-                        <a href="trips.html#popular" class="dropdown-item">Popular Treks</a>
+                        <a href="trips.html#trips" class="dropdown-item">Weekend Treks</a>
+                        <a href="trips.html#weekday" class="dropdown-item">Weekday Treks</a>
                     </div>
                 </div>
                 <a href="gallery.html" class="nav-link">Gallery</a>
@@ -67,9 +67,11 @@
         <section class="hero-section">
             <div class="hero-container">
                 <div class="hero-bg-slider">
-                    <div class="hero-bg-slide active" style="background-image: url('images/Hero/hero-bg-landscape.jpg');"></div>
-                    <div class="hero-bg-slide" style="background-image: url('images/Kudremukha/kudremukha-trail-1.jpg');"></div>
-                    <div class="hero-bg-slide" style="background-image: url('images/Kodachadri/kodachadri-cover.jpg');"></div>
+                    <div class="hero-bg-slide active" style="background-image: url('images/Branding/hero2.jpeg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Branding/hero1.jpeg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Branding/hero3.jpeg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Branding/hero4.jpeg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Branding/home5.jpeg');"></div>
                 </div>
                 <div class="hero-overlay"></div>
             </div>
@@ -371,13 +373,11 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <a href="index.html" class="logo-wrapper">
-                    <img src="images/Branding/logo.webp" alt="Rahasyadaari Logo" class="logo-img"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="logo-fallback" style="display:none;">RD</div>
-                <div class="logo-brand-block">
-                    <span class="logo-text">RahasyaDaari</span>
-                    <span class="logo-tagline">- The Mystery Trail</span>
-                </div>
+                    <img src="images/Branding/logo.png" alt="Rahasya Daari Logo" class="logo-img">
+                    <div class="logo-brand-block">
+                        <span class="logo-text">RAHASYA DAARI</span>
+                        <span class="logo-tagline">- The Mystery Trail</span>
+                    </div>
                 </a>
                 <p class="footer-tagline">Exploring the mystery trails, preserving the nature's soul.</p>
                 <div class="social-links">
@@ -400,14 +400,23 @@
                 </ul>
             </div>
 
-            <div class="footer-col">
+            <div class="footer-col footer-destinations-col">
                 <h4 class="footer-title">Popular Destinations</h4>
-                <ul class="footer-links">
-                    <li><a href="trips.html#trek-kudremukh">Kudremukha Peak</a></li>
-                    <li><a href="trips.html#trek-netravathi">Netravathi Peak</a></li>
-                    <li><a href="trips.html#trek-bandaje-falls">Bandaje Falls</a></li>
-                    <li><a href="trips.html#trek-kodachadri">Kodachadri Peak</a></li>
-                </ul>
+                <div class="destinations-grid">
+                    <span>Kashmir</span>
+                    <span>Chikmagalur</span>
+                    <span>Coorg</span>
+                    <span>Udupi</span>
+                    <span>Shivamogga</span>
+                    <span>Gokarna</span>
+                    <span>Dandeli</span>
+                    <span>Munnar</span>
+                    <span>Ooty</span>
+                    <span>Wayanad</span>
+                    <span>Kodaikanal</span>
+                    <span>Valparai</span>
+                    <span>Varkala</span>
+                </div>
             </div>
 
             <div class="footer-col">

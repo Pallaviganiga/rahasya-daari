@@ -90,7 +90,7 @@ const FEATURED_TRAILS_LANDING = [
         duration: "2 Days",
         distance: "Tour / Sightseeing",
         altitude: "1,930 m",
-        image: "images/Chikmagalur/chikmagalur-cover.jpg",
+        image: "images/Chikamangalore/chikamnglr1.jpg",
         desc: "Explore Mullayanagiri Peak, Baba Budangiri, majestic Hebbe Falls, and lush coffee plantations in the coffee land of Karnataka."
     },
     {
@@ -113,8 +113,7 @@ const TREKS_DATA = [
     {
         id: "bandaje-1day",
         category: "weekday-1day",
-        popular: true,
-        title: "Bandaje Falls 1-Day Trek",
+        title: "Bandaje Falls Trek",
         location: "Chikmagalur / Charmadi Ghats, Karnataka",
         difficulty: "moderate",
         difficultyLabel: "Moderate",
@@ -154,8 +153,7 @@ const TREKS_DATA = [
     {
         id: "netravathi-1day",
         category: "weekday-1day",
-        popular: true,
-        title: "Netravathi 1-Day Trek",
+        title: "Netravathi Peak Trek",
         location: "Kalasa, Chikmagalur, Karnataka",
         difficulty: "moderate",
         difficultyLabel: "Easy to Moderate",
@@ -164,12 +162,12 @@ const TREKS_DATA = [
         altitude: "1,520 m",
         price: 2699,
         pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
-        image: "images/Netravathi/netravathi-cover.jpg",
+        image: "images/Netravathi/netravathi-panorama-hd.jpg",
         slides: [
+            "images/Netravathi/netravathi-panorama-hd.jpg",
             "images/Netravathi/netravathi-cover.jpg",
             "images/Netravathi/netravathi-peak-view.jpeg",
-            "images/Netravathi/netravathi-clouds-valley.jpeg",
-            "images/Netravathi/netravathi-shola-ridge.jpeg",
+            "images/Netravathi/netravathi-clouds-peak.jpg",
             "images/Netravathi/netravathi-mist-meadows.jpg"
         ],
         description: "Ascend to the breathtaking Netravathi Peak on a peaceful weekday hike. Walk across undulating emerald meadows, bubbling freshwater streams, and steep Shola ridges without the weekend crowd, returning back to Bangalore by Sunday night.",
@@ -194,8 +192,7 @@ const TREKS_DATA = [
     {
         id: "kudremukh-1day",
         category: "weekday-1day",
-        popular: true,
-        title: "Kudremukha 1-Day Trek",
+        title: "Kudremukha Peak Trek",
         location: "Kalasa, Chikmagalur, Karnataka",
         difficulty: "moderate",
         difficultyLabel: "Moderate",
@@ -234,7 +231,7 @@ const TREKS_DATA = [
     {
         id: "etthina-bhuja-1day",
         category: "weekday-1day",
-        title: "Etthina Bhuja 1-Day Trek",
+        title: "Etthina Bhuja Trek",
         location: "Mudigere, Chikmagalur, Karnataka",
         difficulty: "easy",
         difficultyLabel: "Easy",
@@ -270,7 +267,7 @@ const TREKS_DATA = [
     {
         id: "kurinjal-1day",
         category: "weekday-1day",
-        title: "Kurinjal 1-Day Trek",
+        title: "Kurinjal Peak Trek",
         location: "Kudremukh Range, Karnataka",
         difficulty: "moderate",
         difficultyLabel: "Moderate",
@@ -308,7 +305,7 @@ const TREKS_DATA = [
     {
         id: "kodachadri-1day",
         category: "weekday-1day",
-        title: "Kodachadri 1-Day Trek",
+        title: "Kodachadri Peak Trek",
         location: "Shimoga, Karnataka",
         difficulty: "moderate",
         difficultyLabel: "Moderate",
@@ -356,6 +353,7 @@ const TREKS_DATA = [
         duration: "2 Days",
         distance: "12-14 km",
         altitude: "1,050 m",
+        originalPrice: 4500,
         price: 4200,
         pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
         image: "images/Bandaje/bandaje-waterfall-view.jpeg",
@@ -368,22 +366,24 @@ const TREKS_DATA = [
         ],
         description: "The Bandaje Falls is located in the Chikmagalur district of Karnataka, about 250 km from Bangalore. This beautiful waterfall, situated in the Western Ghats, has a total height of around 200 feet (60 meters). The Bandaje Falls Trek is moderately challenging and takes about 4 to 6 hours to complete, depending on the pace and route. The trail winds through Shola grassland, forests and rolling hills, offering spectacular views of the lush landscape and a chance to experience the rich biodiversity of the region.",
         highlights: [
-            "Bandaje Falls Trek (6-7 km one way)",
-            "Ballalarayana Durga Fort Ruins",
-            "Rani Jhari Viewpoint",
-            "Kodige Falls / Soormane Falls",
-            "Kelaguru Tea Estate Walk",
-            "Belur Hoysala UNESCO World Heritage Temple",
-            "Shola Grasslands & Western Ghats Vistas"
+            "Trek 6+6 kms",
+            "Bandaje waterfall",
+            "Western ghat landscape",
+            "Kodige waterfall",
+            "Jeep ride",
+            "Kelaguru tea estate",
+            "Shola grassland",
+            "Unesco heritage temple",
+            "Trip guide"
         ],
         pickupLocationList: DEFAULT_BANGALORE_PICKUPS,
         ownTransportPrice: 3200,
         advanceAmount: 1500,
         cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
         itinerary: [
-            { day: "Day 00", title: "Overnight Journey", desc: "Overnight journey from Bangalore (~250 km) towards the Charmadi Ghats / Chikmagalur region." },
-            { day: "Day 01", title: "Bandaje Falls Trek, Ballalarayana Durga Fort & Rani Jhari", desc: "<ul><li>Arrive at the homestay and freshen up after your journey.</li><li>Enjoy a hearty local breakfast.</li><li>Jeep ride to trail base and begin the 6-7 km trek through Shola grasslands and dense forest.</li><li>Reach Ballalarayana Durga Fort ruins overlooking the rolling Western Ghats.</li><li>Climb down to the edge of Bandaje Falls where water drops 200 feet into the valley.</li><li>Trek back down and visit nearby Rani Jhari Viewpoint for sweeping valley views.</li><li>Return to homestay, evening tea, campfire, dinner, and overnight stay.</li></ul>" },
-            { day: "Day 02", title: "Kodige Waterfalls, Tea Estate & Belur UNESCO Temple", desc: "<ul><li>Wake up, freshen up, and enjoy breakfast.</li><li>Check out from the homestay.</li><li>Off-road jeep ride to explore the serene Kodige Waterfall.</li><li>Visit Kelaguru Tea Estate to walk through tea gardens and learn about tea culture.</li><li>En route to Bangalore, visit the magnificent UNESCO World Heritage Belur Hoysala Temple.</li><li>Self-sponsored lunch en route.</li><li>Begin return journey to Bangalore, arriving by ~10:00 PM.</li></ul>" }
+            { day: "Day 00", title: "Overnight journey from Bangalore", desc: "Overnight journey from Bangalore" },
+            { day: "Day 01", title: "Into the Heart of the Western Ghats", desc: "<ul><li>Arrive at the homestay and freshen up after your journey.</li><li>Enjoy a hearty breakfast to fuel up for the day ahead.</li><li>Pack your essentials and gear up for an adventurous day in the wild!</li><li>Hop into a jeep for a scenic ride to the base of the Bandaje Falls trail.</li><li>Begin your trek through the lush forest trail, immersing yourself in the serene surroundings.</li><li>Pause for a short break and a group photo as you emerge into the stunning Shola grasslands.</li><li>Continue your journey through the majestic Western Ghats—with panoramic views of the coastal plains unfolding on your right.</li><li>Arrive at the dramatic edge of Bandaje Falls, where the water plunges over 200 feet—a truly awe-inspiring sight.</li><li>Relax by the falls and enjoy a packed lunch amid nature's grandeur.</li><li>Trek back down to the base.</li><li>Visit the nearby Rani Jhari Viewpoint for one last sweeping view of the landscape.</li><li>Take the jeep back to the homestay and freshen up.</li><li>Sip on evening tea or coffee as the sun sets.</li><li>Wind down with a cozy campfire and music (If weather permits), followed by a delicious dinner and overnight stay.</li></ul>" },
+            { day: "Day 02", title: "Waterfalls, Heritage & Homeward Journey", desc: "<ul><li>Wake up to a refreshing morning in the hills.</li><li>Head out on a jeep ride to explore the hidden gem of Kodige Waterfalls.</li><li>Spend some quality time at the falls—soak in the serenity and snap a fun group photo!</li><li>Ride back to the homestay and freshen up.</li><li>Relish a wholesome breakfast.</li><li>Check out from the homestay.</li><li>Make a stop at the scenic Kelaguru Tea Estate—a perfect spot to learn about local tea culture and snap some Insta-worthy pictures.</li><li>Continue your journey toward Belur Town.</li><li>On route, stop for a self-sponsored lunch at a local eatery.</li><li>Visit the magnificent UNESCO World Heritage Site—the Hoysala Temple at Belur, known for its intricate carvings and historic charm.</li><li>Begin your return journey to Bangalore.</li><li>Arrive back in the city by 10:00 PM (subject to traffic conditions).</li></ul>" }
         ],
         inclusions: DEFAULT_INCLUSIONS,
         exclusions: DEFAULT_EXCLUSIONS
@@ -399,37 +399,39 @@ const TREKS_DATA = [
         duration: "2 Days",
         distance: "12 km (6+6 km)",
         altitude: "1,520 m",
+        originalPrice: 4500,
         price: 4200,
         pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
-        image: "images/Netravathi/netravathi-cover.jpg",
+        image: "images/Netravathi/netravathi-panorama-hd.jpg",
         slides: [
+            "images/Netravathi/netravathi-panorama-hd.jpg",
             "images/Netravathi/netravathi-cover.jpg",
             "images/Netravathi/netravathi-peak-view.jpeg",
-            "images/Netravathi/netravathi-clouds-valley.jpeg",
-            "images/Netravathi/netravathi-shola-ridge.jpeg",
+            "images/Netravathi/netravathi-clouds-peak.jpg",
             "images/Netravathi/netravathi-lush-hills.jpg",
             "images/Netravathi/netravathi-mist-meadows.jpg",
-            "images/Netravathi/netravathi-mountain-range.jpg",
-            "images/Netravathi/netravathi-panorama-hd.jpg"
+            "images/Netravathi/netravathi-mountain-range.jpg"
         ],
         description: "The Netravathi Trek, located near Kalasa in the Chikmagalur district of Karnataka, is approximately 300 km from Bangalore. The trek is renowned for its picturesque landscapes, dense forests, and the Netravathi River, which originates in the Western Ghats. The trail offers a moderately challenging hike, taking around 6 to 8 hours to complete, depending on the pace and route. The trek is a great blend of adventure, natural beauty, and the chance to experience the rich flora and fauna of the Western Ghats.",
         highlights: [
-            "Netravathi Peak Trek (6+6 km)",
-            "Kodige Falls / Soormane Falls",
-            "Historic Kalaseshwara Temple",
-            "Lush Samse Tea Estate Walk",
-            "Belur Hoysala UNESCO World Heritage Temple",
-            "Netravathi River Origin & Shola Meadows",
-            "Scenic Off-road Jeep Ride"
+            "Trek 6+6 kms",
+            "Western ghat landscape",
+            "Water streams",
+            "Kodige falls",
+            "Jeep ride",
+            "Samse tea estate",
+            "Shola grassland",
+            "Unesco heritage temple",
+            "Trip guide"
         ],
         pickupLocationList: DEFAULT_BANGALORE_PICKUPS,
-        ownTransportPrice: 3200,
+        ownTransportPrice: 3000,
         advanceAmount: 1500,
         cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
         itinerary: [
-            { day: "Day 00", title: "Overnight Journey", desc: "Overnight journey from Bangalore (~300 km) to Kalasa, Chikmagalur in the Western Ghats." },
-            { day: "Day 01", title: "Netravathi Peak Trek (6+6 km) & Soormane Waterfalls", desc: "<ul><li>Arrive at the homestay in Samse/Kalasa, freshen up, and enjoy breakfast.</li><li>Off-road jeep ride to the base of Netravathi Peak trail.</li><li>Begin the 6+6 km trek (approx 6-8 hours) through Shola forests, streams, and rolling grasslands.</li><li>Reach the Netravathi Peak summit for 360° views of Western Ghats.</li><li>Descend back to base and visit the refreshing Soormane Waterfall.</li><li>Return to homestay, evening tea/coffee, campfire, dinner, and overnight stay.</li></ul>" },
-            { day: "Day 02", title: "Kalaseshwara Temple, Samse Tea Estate & Belur UNESCO Temple", desc: "<ul><li>Wake up early, freshen up, and enjoy breakfast.</li><li>Check out from the homestay.</li><li>Pay respects at the ancient Kalaseshwara Temple in Kalasa.</li><li>Take a pleasant walk through the lush Samse Tea Estate gardens.</li><li>En route to Bangalore, visit the magnificent UNESCO World Heritage Belur Hoysala Temple.</li><li>Self-sponsored lunch en route.</li><li>Begin return journey to Bangalore, reaching by ~10:00 PM.</li></ul>" }
+            { day: "Day 00", title: "Overnight journey from Bangalore.", desc: "Overnight journey from Bangalore." },
+            { day: "Day 01", title: "Trek to the Tranquil Heights of Netravathi", desc: "<ul><li>Arrive at your charming homestay in the peaceful village of Samse, Kalasa.</li><li>Freshen up and enjoy a hearty local breakfast to kick-start your day.</li><li>Pack your essentials and gear up for an unforgettable adventure.</li><li>Set off on an exciting jeep ride through rugged terrain to the base of Netravathi Peak.</li><li>Begin your scenic trek, surrounded by lush forests, gentle streams, and cascading waterfalls.</li><li>Enjoy the trail's natural beauty, stopping to admire the sounds and sights of the wild.</li><li>Continue your ascent through the serene Western Ghats.</li><li>Reach the summit of Netravathi Peak—take in the breathtaking 360° views.</li><li>Capture the moment with a group photo at the top.</li><li>Enjoy your packed lunch amidst the clouds and greenery.</li><li>Unwind, breathe in the mountain air, and soak up the peaceful surroundings.</li><li>Begin your descent back to the base as the day cools.</li><li>Return to the homestay, freshen up, and relax.</li><li>Sip on a warm cup of tea or coffee while enjoying the evening breeze.</li><li>Gather around the campfire for fun, conversations, and music under the stars.</li><li>End the day with a delicious dinner and a restful overnight stay.</li></ul>" },
+            { day: "Day 02", title: "Tea Trails, Waterfalls & Heritage Wonders", desc: "<ul><li>Rise early, freshen up, and enjoy a fulfilling breakfast.</li><li>Check out from the homestay and head out for more exploration.</li><li>Take a leisurely walk through the picturesque Samse tea estate.</li><li>Visit the beautiful Kodige Falls—feel the mist, enjoy the view and take a refreshing splash!</li><li>Spend some quiet time relaxing by the falls.</li><li>Enjoy a self-sponsored lunch on the way at a local spot.</li><li>Proceed to the historical town of Belur.</li><li>Explore the awe-inspiring UNESCO World Heritage Hoysala Temple, a masterpiece of ancient Indian architecture.</li><li>Begin the return journey to Bangalore, filled with stories and memories.</li><li>Reach Bangalore by approximately 9:30–10:00 PM (subject to traffic).</li></ul>" }
         ],
         inclusions: DEFAULT_INCLUSIONS,
         exclusions: DEFAULT_EXCLUSIONS
@@ -445,6 +447,7 @@ const TREKS_DATA = [
         duration: "2 Days",
         distance: "18 km (9+9 km)",
         altitude: "1,894 m",
+        originalPrice: 4500,
         price: 4200,
         pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
         image: "images/Kudremukha/kudremukha-cover.jpg",
@@ -457,22 +460,24 @@ const TREKS_DATA = [
         ],
         description: "The Kudremukh Trek is located in Kalasa, Chikmagalur district of Karnataka, about 300 km from Bangalore. Kudremukh, at an elevation of 1,894 meters (6,214 feet), is the 3rd highest peak in Karnataka, and the trek to its summit is both scenic and adventurous. The trail is moderately challenging, typically taking around 6 to 8 hours to complete. It winds through lush forests, rolling grasslands, and several streams, offering stunning panoramic views of the surrounding valleys and hills. The trek is situated within the Kudremukh National Park, home to a variety of wildlife, including tigers, leopards, and many species of birds.",
         highlights: [
-            "Kudremukha Peak Trek (9+9 km)",
-            "Vast Shola Grasslands & Valleys",
-            "Kodige Falls / Soormane Falls",
-            "Lush Samse Tea Estate Walk",
-            "Belur Hoysala UNESCO World Heritage Temple",
-            "Horse-Faced Ridge Summit (1,894 m)",
-            "Off-road 4x4 Jeep Ride & Kudremukh National Park"
+            "Trek 9+9 kms",
+            "Western ghat landscape",
+            "Water streams",
+            "Kodige falls",
+            "Jeep ride",
+            "Samse tea estate",
+            "Shola grassland",
+            "Unesco heritage temple",
+            "Trip guide"
         ],
         pickupLocationList: DEFAULT_BANGALORE_PICKUPS,
         ownTransportPrice: 3200,
-        advanceAmount: 1600,
+        advanceAmount: 1500,
         cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
         itinerary: [
-            { day: "Day 00", title: "Overnight Journey", desc: "Overnight journey from Bangalore (~300 km) to Kalasa / Samse village in Chikmagalur." },
-            { day: "Day 01", title: "Kudremukha Peak Trek (9+9 km) & Mullodi / Soormane Waterfall", desc: "<ul><li>Arrive at the cozy homestay in Samse/Kalasa, freshen up, and enjoy a local breakfast.</li><li>Hop into a rugged 4x4 Jeep for a scenic ride to the Mullodi trek base.</li><li>Begin the 9+9 km trek (approx 6-8 hours) through Kudremukh National Park, lush Shola forests, and streams.</li><li>Reach Onti Mara and ascend to the horse-faced Kudremukha Peak (1,894 m).</li><li>Soak in 360-degree views of the Western Ghats and enjoy packed lunch.</li><li>Descend back to Mullodi base and visit Mullodi / Soormane Waterfall.</li><li>Return to homestay, evening tea/coffee, campfire, dinner, and overnight stay.</li></ul>" },
-            { day: "Day 02", title: "Samse Tea Estate & Belur UNESCO World Heritage Temple", desc: "<ul><li>Wake up, freshen up, and relish a wholesome breakfast.</li><li>Check out from the homestay.</li><li>Take a peaceful stroll through the picturesque Samse Tea Estate gardens.</li><li>En route to Bangalore, visit the magnificent UNESCO World Heritage Site — Belur Hoysala Temple.</li><li>Self-sponsored lunch en route.</li><li>Begin return journey back to Bangalore, reaching by ~10:00 PM.</li></ul>" }
+            { day: "Day 00", title: "Overnight Journey from Bangalore.", desc: "Overnight Journey from Bangalore." },
+            { day: "Day 01", title: "Into the Heart of Kudremukha", desc: "<ul><li>Arrive at your cozy homestay nestled in the serene Samse village, Kalasa.</li><li>Refresh yourself and enjoy a delicious local breakfast.</li><li>Gear up for the day's adventure—pack your essentials and get ready to explore!</li><li>Hop into a rugged jeep for a thrilling ride to the base of Kudremukha Peak.</li><li>Begin your scenic trek through lush greenery and misty trails.</li><li>Pause at Onti Mara for a short break and a fun group photo session.</li><li>Continue your journey through the wild beauty of the Western Ghats.</li><li>Reach the majestic Kudremukha Peak—soak in the panoramic views and cool mountain breeze.</li><li>Enjoy packed lunch surrounded by nature's splendor.</li><li>Start the descent back to the base.</li><li>Return to the homestay, unwind, and freshen up.</li><li>Sip on some hot tea or coffee as the evening sets in.</li><li>Gather around a cozy campfire for stories and laughter. (Subjected to weather conditions)</li><li>Relish a hearty dinner and rest well for the next day's adventure.</li></ul>" },
+            { day: "Day 02", title: "Nature, Heritage & Homeward Bound", desc: "<ul><li>Wake up to a refreshing morning and get ready for the day.</li><li>Savor a wholesome breakfast before checking out from the homestay.</li><li>Take a peaceful stroll through the lush Samse tea estate.</li><li>Head to the enchanting Kodige Falls—dip your feet or enjoy a splash!</li><li>Spend some relaxed moments at the falls, surrounded by tranquil nature.</li><li>Grab a self-sponsored lunch en route at a local eatery of your choice.</li><li>Journey onward to the historic town of Belur.</li><li>Explore the architectural marvel of the UNESCO World Heritage Hoysala Temple—an artistic treasure of ancient India.</li><li>Begin your return trip to Bangalore, carrying memories of nature, adventure, and heritage.</li><li>Arrive in Bangalore by approximately 9:30–10:00 PM (depending on traffic conditions).</li></ul>" }
         ],
         inclusions: DEFAULT_INCLUSIONS,
         exclusions: DEFAULT_EXCLUSIONS
@@ -526,6 +531,7 @@ const TREKS_DATA = [
         duration: "2 Days",
         distance: "14 km",
         altitude: "1,159 m",
+        originalPrice: 4500,
         price: 4200,
         pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
         image: "images/Kurinjal/kuri4.jpeg",
@@ -540,7 +546,7 @@ const TREKS_DATA = [
             "Trek 7+7 kms",
             "Western ghat landscape",
             "Kudremukha national park",
-            "Kodige Falls / Soormane Falls",
+            "Kodige falls",
             "Jeep ride",
             "Samse tea estate",
             "Shola grassland",
@@ -552,9 +558,9 @@ const TREKS_DATA = [
         advanceAmount: 1500,
         cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
         itinerary: [
-            { day: "Day 00", title: "Overnight Journey", desc: "Overnight journey from Bangalore." },
-            { day: "Day 01", title: "Into the Heart of the Western Ghats", desc: "<ul><li>Arrive at the cozy homestay nestled in the serene village of Samse. Freshen up and enjoy breakfast.</li><li>Drive through Kudremukha National Park to the trek base.</li><li>Begin your 7 km trek to Kurinjal Peak, winding through lush green forests and vibrant flora.</li><li>Arrive at Kurinjal Peak for panoramic views of rolling hills and deep valleys.</li><li>Enjoy packed lunch amidst nature and descend back to base.</li><li>Return to homestay, evening tea/coffee, campfire, dinner, and overnight stay.</li></ul>" },
-            { day: "Day 02", title: "Tea Trails, Waterfalls & Heritage Wonders", desc: "<ul><li>Rise early, freshen up, and enjoy breakfast.</li><li>Check out from the homestay and stroll through Samse tea estate.</li><li>Visit beautiful Kodige Falls and relax by the water.</li><li>Proceed to the historical town of Belur to explore the UNESCO World Heritage Hoysala Temple.</li><li>Return journey to Bangalore, reaching by ~10:00 PM.</li></ul>" }
+            { day: "Day 00", title: "Overnight journey from Bangalore.", desc: "Overnight journey from Bangalore." },
+            { day: "Day 01", title: "Into the Heart of the Western Ghats", desc: "<ul><li>Arrive at the cozy homestay nestled in the serene village of Samse. Take a moment to freshen up and soak in the peaceful surroundings.</li><li>Enjoy a hearty breakfast to fuel up for the day's adventure.</li><li>Pack your essentials, lace up your trekking shoes, and get ready to dive into nature!</li><li>Drive through the enchanting Kudremukha National Park, a journey surrounded by dense forests and scenic views, on your way to the trek base.</li><li>Begin your 7 km trek to Kurinjal Peak, winding through lush green forests, vibrant flora, and the sounds of chirping birds.</li><li>Pause at a scenic viewpoint to catch your breath, click some unforgettable group pictures, and take in the magic around you.</li><li>Continue your ascent through the beautiful trails as the peak draws closer with every step.</li><li>Arrive at the Kurinjal Peak, where panoramic views of rolling hills and deep valleys await—it's time to relax, unwind, and just be in the moment.</li><li>Enjoy your packed lunch amidst nature, a meal with a view like no other.</li><li>Begin your descent back to the base, carrying memories of a thrilling climb and breathtaking views.</li><li>Return to the homestay, where you can refresh and relax after an adventurous day.</li><li>Sip on some evening tea or coffee, share stories, and unwind by the campfire under a starlit sky. (Subjected to weather conditions)</li><li>End the day with a delicious dinner and a peaceful overnight stay.</li></ul>" },
+            { day: "Day 02", title: "Tea Trails, Waterfalls & Heritage Wonders", desc: "<ul><li>Rise early, freshen up, and enjoy a fulfilling breakfast.</li><li>Check out from the homestay and head out for more exploration.</li><li>Take a leisurely walk through the picturesque Samse tea estate.</li><li>Visit the beautiful Kodige Falls—dip your feet or take a refreshing splash!</li><li>Spend some quiet time relaxing by the falls.</li><li>Enjoy a self-sponsored lunch on the way at a local spot.</li><li>Proceed to the historical town of Belur.</li><li>Explore the awe-inspiring UNESCO World Heritage Hoysala Temple, a masterpiece of ancient Indian architecture.</li><li>Begin the return journey to Bangalore, filled with stories and memories.</li><li>Reach Bangalore by approximately 9:30–10:00 PM (subject to traffic).</li></ul>" }
         ],
         inclusions: DEFAULT_INCLUSIONS,
         exclusions: DEFAULT_EXCLUSIONS
@@ -569,6 +575,7 @@ const TREKS_DATA = [
         duration: "2 Days",
         distance: "10 km",
         altitude: "1,455 m",
+        originalPrice: 4500,
         price: 4200,
         pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
         image: "images/Gangadikallu/gangadikallu-cover.jpg",
@@ -612,6 +619,7 @@ const TREKS_DATA = [
         duration: "2 Days",
         distance: "11-12 km",
         altitude: "1,343 m",
+        originalPrice: 4500,
         price: 4200,
         pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
         image: "images/Kodachadri/kodachadri-cover.jpg",
@@ -695,34 +703,32 @@ const TREKS_DATA = [
         duration: "2 Days",
         distance: "N/A",
         altitude: "1,930 m",
-        price: 3800,
+        originalPrice: 5400,
+        price: 4900,
         pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
-        image: "images/Chikmagalur/chikmagalur-cover.jpg",
+        image: "images/Chikamangalore/chikamnglr1.jpg",
         slides: [
-            "images/Chikmagalur/chikmagalur-cover.jpg",
-            "images/Chikmagalur/mullayanagiri-peak-vista.jpg",
-            "images/Chikmagalur/hebbe-falls-cascade.jpeg",
-            "images/Chikmagalur/chikmagalur-tea-plantation.jpeg"
+            "images/Chikamangalore/chikamnglr1.jpg",
+            "images/Chikamangalore/chikamnglr2.jpg"
         ],
         description: "Chikmagalur, located about 250 km northwest of Bangalore in Karnataka, is a serene hill station known for its lush coffee plantations, scenic landscapes, and pleasant climate. Nestled in the Western Ghats, it offers attractions like Mullayanagiri (the highest peak in Karnataka), Baba Budangiri, and Hebbe Falls.",
         highlights: [
-            "Mullayyanagiri Peak (Highest peak of Karnataka)",
-            "Hebbe Falls & Hebbe Falls Jeep Ride",
-            "Z Point Trek & Kemmannugundi",
-            "Dattha Peeta / Baba Budan Giri",
-            "Jhari Falls & Kallatthigiri Falls",
-            "Deviramma Betta & Manikyadhara",
-            "Belur Hoysala UNESCO World Heritage Site",
-            "Lush Coffee Plantation Walk"
+            "Mullayyanagiri Peak",
+            "Hebbe Falls",
+            "Bababudan Giri / Datthapeeta",
+            "Kemmannugundi",
+            "Z Point Trek (2 km)",
+            "Jeep Ride",
+            "UNESCO Heritage Temple",
+            "Trip Guide"
         ],
         pickupLocationList: DEFAULT_BANGALORE_PICKUPS,
-        ownTransportPrice: 2800,
-        advanceAmount: 1500,
+        ownTransportPrice: 3900,
+        advanceAmount: 2000,
         cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
         itinerary: [
-            { day: "Day 00", title: "Overnight Journey", desc: "Overnight journey from Bangalore (~250 km) towards the lush hills of Chikmagalur." },
-            { day: "Day 01", title: "Mullayanagiri, Baba Budangiri & Waterfalls", desc: "<ul><li>Arrive at homestay/hotel, freshen up, and enjoy breakfast.</li><li>Visit Mullayyanagiri Peak for panoramic valley views.</li><li>Proceed to Dattha Peeta / Baba Budan Giri and Manikyadhara Falls.</li><li>Explore Jhari Falls and stroll through serene coffee estates.</li><li>Campfire, music, dinner, and overnight stay.</li></ul>" },
-            { day: "Day 02", title: "Kemmannugundi, Hebbe Falls & Belur Heritage", desc: "<ul><li>Wake up early, breakfast, and check out.</li><li>Go on the scenic Z Point Trek at Kemmannugundi.</li><li>4x4 Jeep ride to Hebbe Falls & visit Kallatthigiri Falls.</li><li>Visit Belur Hoysala UNESCO Temple and return to Bangalore (~10:00 PM).</li></ul>" }
+            { day: "Day 01", title: "PEAKS, FALLS & FOREST TRAILS", desc: "<ul><li>Begin the day with an early morning visit to Mullayyanagiri Peak—the highest peak in Karnataka.</li><li>Take in the breathtaking panoramic views from the top of Karnataka.</li><li>Head back and check in at your cozy homestay in Chikmagalur.</li><li>Freshen up and enjoy a wholesome breakfast to energize your day.</li><li>Pack your essentials and get ready for a full day of exploration.</li><li>Travel to the scenic Kemmannugundi Hills, surrounded by lush greenery.</li><li>Start the Z Point Trek (2 km), an easy and enjoyable trail ideal for beginners.</li><li>Reach Z Point and soak in the serene, misty views of the Kemmannugundi region.</li><li>Trek back and proceed to the Hebbe Falls jeep point.</li><li>Embark on a thrilling jeep ride through the Bhadra Tiger Reserve to reach the mesmerizing Hebbe Falls.</li><li>Walk for about 15 minutes through forest trails to reach the base of the falls.</li><li>Enjoy the spectacular sight of Hebbe Falls nestled deep within the reserve.</li><li>Capture group photos amid the beauty of nature.</li><li>Return by jeep to the base.</li><li>Relish a packed lunch surrounded by nature.</li><li>Begin your journey back to the homestay.</li><li>Arrive at the homestay, freshen up, and unwind.</li><li>Enjoy evening tea or coffee with the cool mountain breeze.</li><li>Gather around a campfire with music and good company.</li><li>End the day with a delicious dinner and a restful overnight stay.</li></ul>" },
+            { day: "Day 02", title: "SPIRITUAL PEAKS & WATERFALL WONDERS", desc: "<ul><li>Wake up to a refreshing morning and get ready for the day.</li><li>Enjoy a hearty breakfast and check out from the homestay.</li><li>Travel to Jhari Falls.</li><li>Visit Jhari Falls by adventure jeep ride and spend sometime.</li><li>Return by jeep ride.</li><li>Head to Datta Peeta / Bababudangiri Hills, known for their spiritual and natural charm.</li><li>Visit the sacred cave temple at Bababudangiri.</li><li>Travel back to Chikmagalur town.</li><li>Stop for a self-sponsored lunch at a local eatery.</li><li>Continue to Belur, a town steeped in history and culture.</li><li>Explore the magnificent UNESCO World Heritage Hoysala Temple, an architectural gem.</li><li>Begin your return journey to Bangalore.</li><li>Arrive back in Bangalore around 9:30–10:00 PM (subject to traffic conditions).</li></ul>" }
         ],
         inclusions: DEFAULT_INCLUSIONS,
         exclusions: DEFAULT_EXCLUSIONS
@@ -738,13 +744,17 @@ const TREKS_DATA = [
         duration: "2 Days",
         distance: "10 km",
         altitude: "500 m",
-        price: 3900,
+        originalPrice: 4500,
+        price: 4300,
         pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
-        image: "images/Belthangadi/belthangadi-cover.jpg",
+        image: "images/Belthanagdi/belthanagdi1.jpg",
         slides: [
-            "images/Belthangadi/belthangadi-cover.jpg",
-            "images/Belthangadi/didupe-falls-pool.jpeg",
-            "images/Belthangadi/ermaayi-falls-tiered.jpeg"
+            "images/Belthanagdi/belthanagdi1.jpg",
+            "images/Belthanagdi/belthanagdi4.jpg",
+            "images/Belthanagdi/belthangadi2.jpg",
+            "images/Belthanagdi/belthangadi3.jpg",
+            "images/Belthanagdi/belthangadi5.PNG",
+            "images/Belthanagdi/belthangadi6.jpg"
         ],
         description: "Belthangadi, located in the Dakshina Kannada district of Karnataka, is a picturesque town surrounded by dense forests, hills, and rivers. Home to beautiful waterfalls like Didupe Falls and Ermaayi Falls, and the famous Gadaikallu monolithic peak trek.",
         highlights: [
@@ -771,20 +781,23 @@ const TREKS_DATA = [
         id: "mangalore-trip",
         category: "trip",
         popular: true,
-        title: "Agumbe, Udupi & Coastal Trip",
+        title: "Explore Agumbe & Udupi Trip",
         location: "Agumbe & Udupi, Karnataka",
         difficulty: "easy",
         difficultyLabel: "Easy / Sightseeing",
         duration: "2 Days",
         distance: "N/A",
         altitude: "825 m",
-        price: 4200,
+        originalPrice: 4500,
+        price: 4300,
         pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
-        image: "images/Agumbe & Udupi/agumbe-udupi-cover.jpg",
+        image: "images/Coastal/coastal-beach-cliff.png",
         slides: [
-            "images/Agumbe & Udupi/agumbe-udupi-cover.jpg",
-            "images/Agumbe & Udupi/malpe-beach-sunset.jpeg",
-            "images/Agumbe & Udupi/kundadri-hilltop-jain-temple.jpeg"
+            "images/Coastal/coastal-beach-cliff.png",
+            "images/Coastal/udupi14.jpg",
+            "images/Coastal/udupi3.jpg",
+            "images/Coastal/udupi4.jpg",
+            "images/Coastal/udupi5.jpg"
         ],
         description: "Agumbe and Udupi offer a blend of natural beauty, adventure, and cultural significance. Agumbe, the 'Cherrapunji of the South,' is famous for lush forests, stunning sunsets, and Kudlutheertha falls, while Udupi features temple culture and scenic Malpe beach kayaking.",
         highlights: [
@@ -819,7 +832,8 @@ const TREKS_DATA = [
         duration: "2 Days",
         distance: "N/A",
         altitude: "1,150 m",
-        price: 3700,
+        originalPrice: 4500,
+        price: 4200,
         pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
         image: "images/Coorg/coorg-cover.jpg",
         slides: [
@@ -860,13 +874,15 @@ const TREKS_DATA = [
         duration: "2 Days",
         distance: "N/A",
         altitude: "340 m",
-        price: 3600,
+        originalPrice: 5000,
+        price: 4500,
         pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
-        image: "images/Hampi/hampi-cover.jpg",
+        image: "images/Hampi/hampi1.jpeg",
         slides: [
-            "images/Hampi/hampi-cover.jpg",
-            "images/Hampi/vittala-stone-chariot.jpeg",
-            "images/Hampi/virupaksha-temple-gopuram.jpeg"
+            "images/Hampi/hampi1.jpeg",
+            "images/Hampi/hampi2.jpeg",
+            "images/Hampi/hampi3.jpg",
+            "images/Hampi/hampi4.jpg"
         ],
         description: "Hampi is a UNESCO World Heritage Site renowned for ancient temples, historical ruins, and boulder-strewn landscapes. Explore Virupaksha Temple, the Stone Chariot at Vittala Temple, cliff jumping at Sanapur Lake, and coracle rides.",
         highlights: [
@@ -902,13 +918,17 @@ const TREKS_DATA = [
         duration: "2 Days",
         distance: "10 km",
         altitude: "120 m",
-        price: 3499,
+        originalPrice: 5200,
+        price: 4800,
         pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
-        image: "images/Gokarna/gokarna-cover.jpg",
+        image: "images/Gokarana/gokarana3.jpg",
         slides: [
-            "images/Gokarna/gokarna-cover.jpg",
-            "images/Gokarna/om-beach-coastline.jpeg",
-            "images/Gokarna/paradise-beach-camp.jpeg"
+            "images/Gokarana/gokarana3.jpg",
+            "images/Gokarana/gokarana1.jpg",
+            "images/Gokarana/gokarana4.jpg",
+            "images/Gokarana/gokarana14.jpg",
+            "images/Gokarana/gokarana15.jpg",
+            "images/Gokarana/gokarana24.jpeg"
         ],
         description: "Hike along the beach cliffs connecting Gokarna's five famous beaches: Kudle, Om, Half Moon, Paradise, and Belekan. Camp in oceanfront dome tents with a beach bonfire.",
         highlights: [
@@ -929,5 +949,179 @@ const TREKS_DATA = [
         ],
         inclusions: DEFAULT_INCLUSIONS,
         exclusions: DEFAULT_EXCLUSIONS
+    },
+    {
+        id: "kodaikanal-trip",
+        category: "trip",
+        popular: true,
+        title: "Kodaikanal Weekend Trip",
+        location: "Kodaikanal, Dindigul, Tamil Nadu",
+        difficulty: "easy",
+        difficultyLabel: "Easy / Sightseeing",
+        duration: "2 Days / 1 Night",
+        distance: "Tour / Sightseeing",
+        altitude: "2,133 m",
+        originalPrice: 5800,
+        price: 5500,
+        pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
+        image: "images/Kodaikanal/kodaikanal-cover.jpg",
+        slides: [
+            "images/Kodaikanal/kodaikanal-cover.jpg",
+            "images/Kodaikanal/kodakainal1.jpeg",
+            "images/Kodaikanal/kodakainal2.jpeg",
+            "images/Kodaikanal/kodakianal3.jpeg"
+        ],
+        description: "Escape to the 'Princess of Hill Stations' on an unforgettable 2D/1N weekend getaway from Bangalore. Nestled amidst rolling green hills, dense pine forests, and misty valleys of Tamil Nadu, Kodaikanal offers magnificent viewpoints like Dolphin's Nose and Coaker's Walk, cascading waterfalls, Guna Caves, serene Kodai Lake boating, and warm campfire evenings.",
+        highlights: [
+            "Pine Forest Walk",
+            "Guna Caves (Devil's Kitchen)",
+            "Silver Cascade & Vattakanal Waterfalls",
+            "Kodaikanal Lake Boating & Leisure",
+            "Dolphin’s Nose & Upper Lake Viewpoint",
+            "Coaker’s Walk Valley Vistas",
+            "Pillar Rocks Monoliths",
+            "Campfire Stay & Chill Vibes"
+        ],
+        pickupLocationList: DEFAULT_BANGALORE_PICKUPS,
+        ownTransportPrice: 3200,
+        advanceAmount: 1500,
+        cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
+        itinerary: [
+            { day: "Day 00", title: "Friday Night Departure from Bangalore", desc: "Departure from Bangalore (Overnight Journey) with pickup points across the city. Overnight travel to Kodaikanal." },
+            { day: "Day 01", title: "Kodaikanal Sightseeing, Waterfalls & Campfire", desc: "<ul><li>Reach Kodaikanal in the morning, check in, freshen up, and enjoy a wholesome breakfast.</li><li>Visit the tumbling <strong>Silver Cascade Falls</strong>.</li><li>Explore the majestic <strong>Pillar Rocks</strong> monoliths and historic <strong>Guna Caves</strong>.</li><li>Stroll through the misty, serene <strong>Pine Forest</strong>.</li><li>Head to <strong>Kodaikanal Lake</strong> for optional boating & leisure time at the lake.</li><li>Return to stay for evening tea/snacks and a cozy <strong>campfire & chill vibes</strong>.</li><li>Relish a delicious dinner and restful overnight stay.</li></ul>" },
+            { day: "Day 02", title: "Misty Viewpoints, Vattakanal & Return Journey", desc: "<ul><li>Early morning freshen up & enjoy breakfast.</li><li>Take a morning walk along <strong>Coaker’s Walk</strong> with panoramic valley views.</li><li>Visit lush <strong>Vattakanal Falls</strong>.</li><li>Trek/walk to the famous <strong>Dolphin’s Nose Viewpoint</strong> and <strong>Upper Lake View</strong> for sweeping views of misty hills.</li><li>Enjoy scenic valley views and stop for self-sponsored lunch.</li><li>Start return journey to Bangalore.</li><li>Reach Bangalore by late night / early morning with wonderful memories.</li></ul>" }
+        ],
+        inclusions: [
+            "Stay / Accommodation in Kodaikanal",
+            "Transportation from Bangalore and back (Non-AC Tempo Traveler / Bus)",
+            "Sightseeing as per itinerary",
+            "2 Breakfasts + 1 Dinner",
+            "Campfire Stay & Evening Chill Vibes",
+            "Certified Trip Lead & Coordinator Support",
+            "Tolls, Parking & Driver Allowances"
+        ],
+        exclusions: [
+            "Self-sponsored lunches",
+            "Optional boating & personal entry ticket fees",
+            "Anything not mentioned under inclusions"
+        ]
+    },
+    {
+        id: "ooty-trip",
+        category: "trip",
+        popular: true,
+        title: "Ooty & Coonoor Getaway",
+        location: "Ooty & Coonoor, Nilgiris, Tamil Nadu",
+        difficulty: "easy",
+        difficultyLabel: "Easy / Sightseeing",
+        duration: "2 Days / 1 Night",
+        distance: "Tour / Sightseeing",
+        altitude: "2,240 m",
+        originalPrice: 5500,
+        price: 5200,
+        pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
+        image: "images/Ooty/ooty-hills-vista.jpg",
+        slides: [
+            "images/Ooty/ooty-hills-vista.jpg",
+            "images/Ooty/ooty1.jpg",
+            "images/Ooty/ooty2.jpg",
+            "images/Ooty/ooty3.jpg",
+            "images/Ooty/ooty5.jpg"
+        ],
+        description: "Escape to the 'Queen of Hill Stations' on an enchanting 2D/1N weekend getaway from Bangalore. Experience sunrise at Kodanad Viewpoint, stroll through lush Coonoor tea estates, visit tea & homemade chocolate factories, admire views from Doddabetta Peak & Needle Rock, explore Pykara Lake & Pine Forest, and enjoy a scenic Bandipur forest drive with a chance of wildlife spotting.",
+        highlights: [
+            "Sunrise at Kodanaadu View Point",
+            "Coonoor Tea Estate Walk",
+            "Tea Factory Experience & Homemade Chocolate Factory Visit",
+            "Doddabetta Peak & Ooty Town Market Visit",
+            "Pine Forest & Shooting Point",
+            "Pykara Lake",
+            "Needle Rock View Point (subject to time)",
+            "Scenic Drive through Bandipur Forest (Wildlife Spotting)",
+            "Bonfire, Dinner & Stay"
+        ],
+        pickupLocationList: DEFAULT_BANGALORE_PICKUPS,
+        ownTransportPrice: 4199,
+        advanceAmount: 2000,
+        cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
+        itinerary: [
+            { day: "Day 00", title: "Friday Night Departure from Bangalore", desc: "Departure from Bangalore (Night Journey) with pickup points across the city. Overnight travel towards Ooty & Nilgiris." },
+            { day: "Day 01", title: "Sunrise, Coonoor Tea Estates, Factories & Doddabetta Peak", desc: "<ul><li>Witness a breathtaking <strong>Sunrise at Kodanaadu View Point</strong>.</li><li>Check-in to Stay, freshen up, and enjoy breakfast at the stay.</li><li>Stroll through serene <strong>Coonoor Tea Estates</strong>.</li><li>Self-sponsored lunch en route.</li><li>Guided <strong>Tea Factory Experience</strong> & <strong>Homemade Chocolate Factory Visit</strong>.</li><li>Explore <strong>Doddabetta Peak</strong> — the highest summit in the Nilgiri Mountains.</li><li>Explore <strong>Ooty Town & Local Market Visit</strong>.</li><li>Return to stay, enjoy evening Tea/Coffee.</li><li>Relax with a cozy <strong>Bonfire, Dinner & Overnight Stay</strong>.</li></ul>" },
+            { day: "Day 02", title: "Pine Forest, Lakes, Bandipur Safari Drive & Return Journey", desc: "<ul><li>Wake up, freshen up, and enjoy breakfast at the stay.</li><li>Visit the iconic <strong>Pine Forest</strong> and famous <strong>Shooting Point</strong>.</li><li>Explore <strong>Pykara Lake</strong> & surrounding scenic beauty.</li><li>Visit <strong>Needle Rock View Point</strong> (if time permits).</li><li>Self-sponsored lunch en route.</li><li>Enjoy a scenic drive through <strong>Bandipur National Park Forest</strong> with a chance of wildlife spotting.</li><li>Begin return journey to Bangalore, reaching by late night with wonderful memories.</li></ul>" }
+        ],
+        inclusions: [
+            "Transportation (Non-AC Tempo Traveler / Bus from Bangalore & back)",
+            "Accommodation Stay (Sharing Basis)",
+            "2 Breakfasts",
+            "1 Dinner",
+            "Tea / Coffee",
+            "Bonfire Night (Subject to weather)",
+            "Certified Trip Coordinator Support",
+            "Tolls, Parking & Driver Allowances"
+        ],
+        exclusions: [
+            "Lunch",
+            "Personal Expenses",
+            "Anything not mentioned above"
+        ]
+    },
+    {
+        id: "wayanad-adventure",
+        category: "trip",
+        popular: true,
+        title: "Explore Wayanad Trip",
+        location: "Wayanad, Kerala",
+        difficulty: "easy",
+        difficultyLabel: "Easy / Sightseeing",
+        duration: "2 Days / 1 Night",
+        distance: "Tour / Sightseeing",
+        altitude: "700 m",
+        originalPrice: 5200,
+        price: 4900,
+        pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
+        image: "images/Wayanad/wayanadu2.jpeg",
+        slides: [
+            "images/Wayanad/wayanad-tea-estate.jpg",
+            "images/Wayanad/wayanad-chembra-peak.jpg",
+            "images/Wayanad/wayanad-misty-hills.jpg",
+            "images/Wayanad/wayanadu1.jpeg",
+            "images/Wayanad/wayanadu2.jpeg",
+            "images/Wayanad/wayanadu4.jpeg",
+            "images/Wayanad/wayanadu6.jpeg",
+            "images/Wayanad/wayandu3.jpeg"
+        ],
+        description: "Experience the pristine beauty of Wayanad on an unforgettable weekend trip from Bangalore. Nestled amidst rolling tea plantations, misty hills, and lush green valleys of Kerala, Wayanad offers scenic vistas, waterfalls, lakes, and rich nature.",
+        highlights: [
+            "Lush Tea Estate Walk",
+            "Chembra Peak Viewpoint",
+            "Banasura Sagar Dam",
+            "Soochipara Waterfalls",
+            "Edakkal Caves Exploration",
+            "Campfire, Dinner & Stay"
+        ],
+        pickupLocationList: DEFAULT_BANGALORE_PICKUPS,
+        ownTransportPrice: 3900,
+        advanceAmount: 2000,
+        cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
+        itinerary: [
+            { day: "Day 00", title: "Friday Night Departure from Bangalore", desc: "Overnight journey from Bangalore (~280 km) to Wayanad." },
+            { day: "Day 01", title: "Wayanad Tea Estates, Waterfalls & Campfire", desc: "<ul><li>Arrive in Wayanad, check-in, freshen up, and enjoy breakfast at the stay.</li><li>Stroll through serene <strong>Wayanad Tea Estates</strong> & mist-covered hills.</li><li>Visit cascading <strong>Soochipara Waterfalls</strong> inside the lush forest.</li><li>Return to stay, enjoy evening Tea/Coffee.</li><li>Relax around a cozy <strong>Campfire, Dinner & Overnight Stay</strong>.</li></ul>" },
+            { day: "Day 02", title: "Banasura Sagar Dam, Viewpoints & Return Journey", desc: "<ul><li>Wake up, freshen up, and enjoy breakfast.</li><li>Visit <strong>Banasura Sagar Dam</strong> — the largest earthen dam in India.</li><li>Explore <strong>Chembra Peak Viewpoint</strong> & surrounding valleys.</li><li>Self-sponsored lunch en route.</li><li>Begin return journey back to Bangalore, arriving by late night.</li></ul>" }
+        ],
+        inclusions: [
+            "Transportation (Non-AC Tempo Traveler / Bus from Bangalore & back)",
+            "Accommodation Stay (Sharing Basis)",
+            "2 Breakfasts",
+            "1 Dinner",
+            "Tea / Coffee",
+            "Bonfire Night (Subject to weather)",
+            "Certified Trip Coordinator Support",
+            "Tolls, Parking & Driver Allowances"
+        ],
+        exclusions: [
+            "Lunch",
+            "Personal Expenses",
+            "Anything not mentioned above"
+        ]
     }
 ];

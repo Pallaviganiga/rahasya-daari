@@ -14,8 +14,10 @@
         rel="stylesheet">
     <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Preload custom Bradley Hand font to prevent font flash on refresh -->
+    <link rel="preload" href="fonts/BRADHITC.TTF" as="font" type="font/ttf" crossorigin>
     <!-- Custom stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=107">
+    <link rel="stylesheet" href="styles.css?v=124">
 </head>
 
 <body>
@@ -24,11 +26,9 @@
     <header class="header">
         <div class="header-container">
             <a href="index.html" class="logo-wrapper">
-                <img src="images/Branding/logo.png" alt="Rahasyadaari Logo" class="logo-img"
-                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div class="logo-fallback" style="display:none;">RD</div>
+                <img src="images/Branding/logo.png" alt="Rahasya Daari Logo" class="logo-img">
                 <div class="logo-brand-block">
-                    <span class="logo-text">RahasyaDaari</span>
+                    <span class="logo-text">RAHASYA DAARI</span>
                     <span class="logo-tagline">- The Mystery Trail</span>
                 </div>
             </a>
@@ -40,10 +40,10 @@
                         Tours <i class="fa-solid fa-chevron-down dropdown-icon"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="trips.html#weekday" class="dropdown-item">Weekday Trips</a>
-                        <a href="trips.html#trips" class="dropdown-item">Weekend Treks</a>
+                        <a href="trips.html#popular" class="dropdown-item">Top Rated Trips & Treks</a>
                         <a href="trips.html#sightseeing" class="dropdown-item">Weekend Trips</a>
-                        <a href="trips.html#popular" class="dropdown-item">Popular Treks</a>
+                        <a href="trips.html#trips" class="dropdown-item">Weekend Treks</a>
+                        <a href="trips.html#weekday" class="dropdown-item">Weekday Treks</a>
                     </div>
                 </div>
                 <a href="gallery.html" class="nav-link">Gallery</a>
@@ -67,7 +67,7 @@
         <section class="hero-section">
             <div class="hero-container">
                 <div class="hero-bg-slider">
-                    <div class="hero-bg-slide active" style="background-image: url('images/Hero/hero-bg-landscape.jpg');"></div>
+                    <div class="hero-bg-slide active" style="background-image: url('images/Netravathi/netravathi-panorama-hd.jpg');"></div>
                     <div class="hero-bg-slide" style="background-image: url('images/Netravathi/netravathi-cover.jpg');"></div>
                     <div class="hero-bg-slide" style="background-image: url('images/Kudremukha/kudremukha-trail-1.jpg');"></div>
                     <div class="hero-bg-slide" style="background-image: url('images/Kodachadri/kodachadri-cover.jpg');"></div>
@@ -77,8 +77,8 @@
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <div class="hero-text-block">
-                        <h1 class="hero-title">GET INTO NATURE'S SOUL</h1>
-                        <p class="hero-subtitle">Through our eyes</p>
+                        <h1 class="hero-title" style="font-family: 'Segoe Print', 'Patrick Hand', cursive !important; font-weight: 400 !important;">GET INTO NATURE'S SOUL</h1>
+                        <p class="hero-subtitle" style="font-family: 'Segoe Print', 'Patrick Hand', cursive !important; font-weight: 400 !important;">THROUGH OUR EYES</p>
                     </div>
                     <div class="hero-cta-group">
                         <a href="trips.html" class="btn btn-hero-cta">EXPLORE <i class="fa-solid fa-arrow-right"></i></a>
@@ -101,7 +101,7 @@
                     </div>
 
                     <div class="text-center" style="margin-top: 36px;">
-                        <a href="trips.html" class="btn btn-primary" style="padding: 14px 36px; font-size: 1rem; border-radius: 50px;">
+                        <a href="trips-and-treks.html" class="btn btn-primary" style="padding: 14px 36px; font-size: 1rem; border-radius: 50px;">
                             EXPLORE MORE TREKS AND TRIPS <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -118,33 +118,25 @@
                     </div>
                     <div class="home-category-grid">
                         <a href="trips.html#popular" class="home-cat-card">
-                            <div class="cat-icon-wrap"><i class="fa-solid fa-fire"></i></div>
                             <div class="cat-info">
-                                <span class="cat-badge">Trending</span>
-                                <h3 class="cat-title">POPULAR DESTINATIONS</h3>
-                                <span class="cat-action">Explore Trails <i class="fa-solid fa-arrow-right"></i></span>
-                            </div>
-                        </a>
-                        <a href="trips.html#popular" class="home-cat-card">
-                            <div class="cat-icon-wrap"><i class="fa-solid fa-star"></i></div>
-                            <div class="cat-info">
-                                <span class="cat-badge">Top Rated</span>
                                 <h3 class="cat-title">TOP RATED TRIPS & TREKS</h3>
                                 <span class="cat-action">Explore Trails <i class="fa-solid fa-arrow-right"></i></span>
                             </div>
                         </a>
-                        <a href="trips.html#trips" class="home-cat-card">
-                            <div class="cat-icon-wrap"><i class="fa-solid fa-mountain-sun"></i></div>
+                        <a href="trips.html#sightseeing" class="home-cat-card">
                             <div class="cat-info">
-                                <span class="cat-badge">Weekend Getaways</span>
-                                <h3 class="cat-title">WEEKEND TRIPS & TREKS</h3>
+                                <h3 class="cat-title">WEEKEND TRIPS</h3>
                                 <span class="cat-action">Explore Trails <i class="fa-solid fa-arrow-right"></i></span>
                             </div>
                         </a>
-                        <a href="weekday.html" class="home-cat-card">
-                            <div class="cat-icon-wrap"><i class="fa-solid fa-person-hiking"></i></div>
+                        <a href="trips.html#trips" class="home-cat-card">
                             <div class="cat-info">
-                                <span class="cat-badge">Mon - Fri Expeditions</span>
+                                <h3 class="cat-title">WEEKEND TREKS</h3>
+                                <span class="cat-action">Explore Trails <i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </a>
+                        <a href="trips.html#weekday" class="home-cat-card">
+                            <div class="cat-info">
                                 <h3 class="cat-title">WEEKDAY TREKS</h3>
                                 <span class="cat-action">Explore Trails <i class="fa-solid fa-arrow-right"></i></span>
                             </div>
@@ -158,27 +150,12 @@
         <section class="why-choose-section" id="whyChooseRahasya">
             <div class="container">
                 <div class="why-choose-poster-card">
-                    <!-- Poster Header with Mountain Badge & Title -->
+                    <!-- Poster Header with Title -->
                     <div class="why-poster-header">
-                        <div class="why-badge-top">
-                            <span class="why-badge-tag"><i class="fa-solid fa-mountain"></i> THE MYSTERY TRAIL</span>
-                            <div class="why-brand-mini-logo">
-                                <img src="images/Branding/logo.png" alt="Rahasya Daari Logo" class="why-logo-img">
-                            </div>
-                        </div>
-
                         <div class="why-title-wrap text-center">
-                            <div class="why-mountain-art">
-                                <i class="fa-solid fa-mountain-sun"></i>
-                            </div>
                             <h2 class="why-main-title">
                                 WHY CHOOSE <span class="why-brand-accent">RAHASYA DAARI?</span>
                             </h2>
-                            <div class="why-mountain-divider">
-                                <span></span>
-                                <i class="fa-solid fa-person-hiking"></i>
-                                <span></span>
-                            </div>
                         </div>
                     </div>
 
@@ -190,103 +167,64 @@
                         </p>
                     </div>
 
-                    <!-- Why Choose Points List -->
-                    <div class="why-points-list">
-                        <div class="why-point-item">
-                            <div class="why-point-check"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="why-point-content">
-                                <strong>Expertly planned itineraries</strong> with years of travel experience.
-                            </div>
+                    <!-- Why Choose 3-Column Feature Boxes Grid -->
+                    <div class="why-boxes-grid">
+                        <div class="why-feature-box">
+                            <div class="why-box-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="why-box-title">Expertly Planned Itineraries</span>
                         </div>
-
-                        <div class="why-point-item">
-                            <div class="why-point-check"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="why-point-content">
-                                <strong>Handpicked treks/trips, hidden gems, and unique destinations</strong> curated exclusively by our organizers.
-                            </div>
+                        <div class="why-feature-box">
+                            <div class="why-box-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="why-box-title">Handpicked Treks & Hidden Gems</span>
                         </div>
-
-                        <div class="why-point-item">
-                            <div class="why-point-check"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="why-point-content">
-                                <strong>Well-planned schedules</strong> covering all the major attractions without rushing the experience.
-                            </div>
+                        <div class="why-feature-box">
+                            <div class="why-box-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="why-box-title">Well-Planned Schedules</span>
                         </div>
-
-                        <div class="why-point-item">
-                            <div class="why-point-check"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="why-point-content">
-                                <strong>Budget-friendly trips</strong> with absolutely no hidden charges.
-                            </div>
+                        <div class="why-feature-box">
+                            <div class="why-box-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="why-box-title">Budget-Friendly Trips</span>
                         </div>
-
-                        <div class="why-point-item">
-                            <div class="why-point-check"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="why-point-content">
-                                <strong>Hygienic homestays, quality food, safe transportation,</strong> and reliable service standards.
-                            </div>
+                        <div class="why-feature-box">
+                            <div class="why-box-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="why-box-title">Hygienic Homestays & Food</span>
                         </div>
-
-                        <div class="why-point-item">
-                            <div class="why-point-check"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="why-point-content">
-                                <strong>Experienced, friendly, and supportive trek leaders</strong> throughout the journey.
-                            </div>
+                        <div class="why-feature-box">
+                            <div class="why-box-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="why-box-title">Experienced Trek Leaders</span>
                         </div>
-
-                        <div class="why-point-item">
-                            <div class="why-point-check"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="why-point-content">
-                                <strong>Hassle-free travel arrangements</strong> — just pack your bags and join us.
-                            </div>
+                        <div class="why-feature-box">
+                            <div class="why-box-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="why-box-title">Hassle-Free Travel</span>
                         </div>
-
-                        <div class="why-point-item">
-                            <div class="why-point-check"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="why-point-content">
-                                <strong>A fun, interactive, and like-minded travel community</strong> that turns strangers into friends.
-                            </div>
+                        <div class="why-feature-box">
+                            <div class="why-box-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="why-box-title">Like-Minded Community</span>
                         </div>
-
-                        <div class="why-point-item">
-                            <div class="why-point-check"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="why-point-content">
-                                <strong>Photography opportunities</strong> and countless memorable moments along the way.
-                            </div>
+                        <div class="why-feature-box">
+                            <div class="why-box-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="why-box-title">Photography Opportunities</span>
                         </div>
-
-                        <div class="why-point-item">
-                            <div class="why-point-check"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="why-point-content">
-                                <strong>Flexible options</strong> including Weekend Treks, Weekday Treks, Backpacking Trips, and One-Day Adventures.
-                            </div>
+                        <div class="why-feature-box">
+                            <div class="why-box-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="why-box-title">Flexible Trip Options</span>
                         </div>
-
-                        <div class="why-point-item">
-                            <div class="why-point-check"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="why-point-content">
-                                <strong>Transparent pricing policy</strong> — what you see is what you pay.
-                            </div>
+                        <div class="why-feature-box">
+                            <div class="why-box-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="why-box-title">Transparent Pricing Policy</span>
                         </div>
-
-                        <div class="why-point-item">
-                            <div class="why-point-check"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="why-point-content">
-                                <strong>Trusted by 5000+ Happy Travelers</strong> and growing every season.
-                            </div>
+                        <div class="why-feature-box">
+                            <div class="why-box-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <span class="why-box-title">5000+ Happy Travelers</span>
                         </div>
-
-                        <div class="why-point-item">
-                            <div class="why-point-check"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="why-point-content">
-                                <strong>4.9 ratings in Google.</strong>
-                            </div>
+                        <div class="why-feature-box span-full-center">
+                            <div class="why-box-icon" style="background-color: #FEF3C7; color: #D97706;"><i class="fa-solid fa-star"></i></div>
+                            <span class="why-box-title">4.9 Rating on Google</span>
                         </div>
                     </div>
 
                     <!-- Highlight Green Message Box -->
-                    <div class="why-promise-card">
-                        <div class="why-promise-heart"><i class="fa-solid fa-heart"></i></div>
+                    <div class="why-promise-card text-center">
                         <p class="why-promise-text">
                             Whether you're a solo traveler, a first-time trekker, or a seasoned explorer, <strong>Rahasya Daari promises an unforgettable experience</strong> filled with adventure, nature, fun, and new friendships.
                         </p>
@@ -378,8 +316,8 @@
                 <div class="cta-banner-card">
                     <h2 class="cta-banner-title">READY FOR YOUR NEXT MYSTERY TRAIL?</h2>
                     <p class="cta-banner-desc">Whether you are a solo adventurer, traveling with friends, or planning a custom corporate getaway, we have a trail waiting for you every weekend.</p>
-                    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                        <a href="https://wa.me/919632961606" target="_blank" rel="noopener noreferrer" class="btn btn-hero-secondary" style="border-radius: 50px; background: #25D366; border-color: #25D366; color: #ffffff; padding: 14px 36px; font-size: 1.02rem; font-weight: 800;">
+                    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://wa.me/919632961606" target="_blank" rel="noopener noreferrer" class="btn btn-hero-secondary" style="border-radius: 50px; background: #25D366; border-color: #25D366; color: #ffffff; padding: 10px 24px; font-size: 0.88rem; font-weight: 800;">
                             <i class="fa-brands fa-whatsapp"></i> CHAT WITH A GUIDE
                         </a>
                     </div>
@@ -394,13 +332,11 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <a href="index.html" class="logo-wrapper">
-                    <img src="images/Branding/logo.webp" alt="Rahasyadaari Logo" class="logo-img"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="logo-fallback" style="display:none;">RD</div>
-                <div class="logo-brand-block">
-                    <span class="logo-text">RahasyaDaari</span>
-                    <span class="logo-tagline">- The Mystery Trail</span>
-                </div>
+                    <img src="images/Branding/logo.png" alt="Rahasya Daari Logo" class="logo-img">
+                    <div class="logo-brand-block">
+                        <span class="logo-text">RAHASYA DAARI</span>
+                        <span class="logo-tagline">- The Mystery Trail</span>
+                    </div>
                 </a>
                 <p class="footer-tagline">Exploring the mystery trails, preserving the nature's soul.</p>
                 <div class="social-links">
@@ -422,14 +358,23 @@
                 </ul>
             </div>
 
-            <div class="footer-col">
+            <div class="footer-col footer-destinations-col">
                 <h4 class="footer-title">Popular Destinations</h4>
-                <ul class="footer-links">
-                    <li><a href="trips.html#trek-kudremukh">Kudremukha Peak</a></li>
-                    <li><a href="trips.html#trek-netravathi">Netravathi Peak</a></li>
-                    <li><a href="trips.html#trek-bandaje-falls">Bandaje Falls</a></li>
-                    <li><a href="trips.html#trek-kodachadri">Kodachadri Peak</a></li>
-                </ul>
+                <div class="destinations-grid">
+                    <span>Kashmir</span>
+                    <span>Chikmagalur</span>
+                    <span>Coorg</span>
+                    <span>Udupi</span>
+                    <span>Shivamogga</span>
+                    <span>Gokarna</span>
+                    <span>Dandeli</span>
+                    <span>Munnar</span>
+                    <span>Ooty</span>
+                    <span>Wayanad</span>
+                    <span>Kodaikanal</span>
+                    <span>Valparai</span>
+                    <span>Varkala</span>
+                </div>
             </div>
 
             <div class="footer-col">

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekend Trips - Rahasyadaari</title>
+    <meta name="description"
+        content="Explore curated weekend sightseeing trips and getaways from Bangalore with Rahasyadaari. Experience serene nature, hill stations, and scenic road trips.">
+    <!-- Google Fonts: Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Gochi+Hand&family=Kalam:wght@700&family=Patrick+Hand&family=Caveat:wght@700&family=Nunito:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Preload custom Bradley Hand font to prevent font flash on refresh -->
+    <link rel="preload" href="fonts/BRADHITC.TTF" as="font" type="font/ttf" crossorigin>
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="styles.css?v=107">
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo-wrapper">
+                <img src="images/Branding/logo.png" alt="Rahasyadaari Logo" class="logo-img"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="logo-fallback" style="display:none;">RD</div>
+                <div class="logo-brand-block">
+                    <span class="logo-text">RAHASYA DAARI</span>
+                    <span class="logo-tagline">- The Mystery Trail</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown active-page" id="tripsDropdown">
+                    <a href="trips.html" class="nav-link dropdown-toggle active" id="dropdownToggleBtn">
+                        Tours <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="popular.html" class="dropdown-item">Top Rated Trips & Treks</a>
+                        <a href="weekend-trips.html" class="dropdown-item active">Weekend Trips</a>
+                        <a href="weekend-treks.html" class="dropdown-item">Weekend Treks</a>
+                        <a href="weekday.html" class="dropdown-item">Weekday Treks</a>
+                    </div>
+                </div>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="index.html#reviews" class="nav-link">Reviews</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-content" id="homePage">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <a href="index.html" class="hero-back-btn" aria-label="Back to Home" title="Back to Home">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </a>
+                <div class="hero-bg-slider">
+                    <div class="hero-bg-slide active" style="background-image: url('images/Branding/hero2.jpeg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Branding/hero1.jpeg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Branding/hero3.jpeg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Branding/hero4.jpeg');"></div>
+                    <div class="hero-bg-slide" style="background-image: url('images/Branding/home5.jpeg');"></div>
+                </div>
+                <div class="hero-overlay"></div>
+            </div>
+        </section>
+
+        <!-- Quick Category Section Jump Bar -->
+        <section class="trip-nav-section" id="tripNavSection">
+            <div class="container">
+                <div class="trip-nav-card text-center">
+                    <div class="trip-radio-group" role="radiogroup" aria-label="Trip Categories">
+                        <a href="popular.html" class="trip-radio-pill">
+                            <span class="pill-text">Top Rated Trips & Treks</span>
+                        </a>
+                        <a href="weekend-trips.html" class="trip-radio-pill active">
+                            <span class="pill-text">Weekend Trips</span>
+                        </a>
+                        <a href="weekend-treks.html" class="trip-radio-pill">
+                            <span class="pill-text">Weekend Treks</span>
+                        </a>
+                        <a href="weekday.html" class="trip-radio-pill">
+                            <span class="pill-text">Weekday Treks</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weekend Trips Catalog Section -->
+        <section class="filter-section" id="trips" style="padding-top: 40px; background-color: var(--light-neutral);">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title brand-section-title">WEEKEND TRIPS</h2>
+                </div>
+
+                <!-- Active Filter Banner (hidden by default) -->
+                <div id="filterBanner" class="filter-banner" style="display: none;">
+                    <span>Showing treks and tours in <strong id="filterStateName">Karnataka</strong></span>
+                    <button class="btn-clear-filter" onclick="clearStateFilter()">Show All <i
+                            class="fa-solid fa-xmark"></i></button>
+                </div>
+
+                <!-- Carousel Container for Trips -->
+                <div class="carousel-container">
+                    <button class="carousel-nav prev-btn" id="tripsPrevBtn" aria-label="Previous trip"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <div class="carousel-viewport">
+                        <div class="trek-grid" id="tripsGrid">
+                            <!-- Cards populated dynamically by script.js -->
+                        </div>
+                    </div>
+                    <button class="carousel-nav next-btn" id="tripsNextBtn" aria-label="Next trip"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Details Page Container (Shows when URL hash is #trek-[id]) -->
+    <main class="details-page-content" id="detailsPage" style="display: none;">
+        <section class="details-hero">
+            <div class="details-hero-container">
+                <div class="details-hero-bg" id="detailsHeroBg"></div>
+                <div class="details-hero-overlay"></div>
+                <div class="details-hero-content-wrapper">
+                    <button class="btn-back-home" id="btnBackHome" onclick="goHome()" aria-label="Go back to trips">
+                        <i class="fa-solid fa-arrow-left"></i> BACK TO TRIPS
+                    </button>
+                    <div class="details-hero-text">
+                        <span class="badge" id="detailsCategoryBadge">Trip</span>
+                        <h2 class="details-trek-title" id="detailsTitle">Trip Title</h2>
+                        <p class="details-trek-location" id="detailsSubtitle"><i class="fa-solid fa-location-dot"></i> Location</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container details-container" style="padding-top: 30px; padding-bottom: 60px;">
+            <div class="details-layout-grid">
+                <div class="details-main">
+                    <div class="details-card">
+                        <h3 class="details-card-heading"><i class="fa-solid fa-circle-info"></i> About The Experience</h3>
+                        <p class="details-trek-description" id="detailsDescription">Detailed description goes here...</p>
+
+                        <div id="detailsHighlightsContainer" style="display: none; margin-top: 32px; margin-bottom: 32px;">
+                            <h4 class="details-subheading"><i class="fa-solid fa-star"></i> Key Highlights</h4>
+                            <div class="highlights-grid" id="detailsHighlights"></div>
+                        </div>
+
+                        <div class="itinerary-wrapper" style="margin-top: 36px;">
+                            <h3 class="details-card-heading"><i class="fa-solid fa-route"></i> Detailed Itinerary</h3>
+                            <div class="itinerary-timeline" id="detailsItinerary"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details-sidebar">
+                    <div class="details-card sidebar-card">
+                        <h3 class="sidebar-card-title"><i class="fa-solid fa-ticket"></i> Tour Summary</h3>
+                        <div class="stat-row">
+                            <span>Duration</span>
+                            <strong id="detailsDuration">2 Days</strong>
+                        </div>
+                        <div class="stat-row">
+                            <span>Max Altitude</span>
+                            <strong id="detailsAltitude">1,712 m</strong>
+                        </div>
+                        <div class="stat-row">
+                            <span>Trek Distance</span>
+                            <strong id="detailsDistance">22 km</strong>
+                        </div>
+                        <div class="stat-row">
+                            <span>Price</span>
+                            <strong id="detailsPrice" style="color: var(--primary-green);"><span class="price-strikethrough">₹4,500</span> <span class="price-current">₹4,200</span> /person</strong>
+                        </div>
+                        <div class="stat-row" id="rowAdvance" style="display: none;">
+                            <span>Advance Amount</span>
+                            <strong id="detailsAdvance">₹1,500 /person</strong>
+                        </div>
+
+                        <button class="btn btn-primary btn-block btn-book-now" id="detailsBookBtn" style="margin-top: 24px; padding: 14px; font-size: 1rem; border-radius: 50px;">
+                            CHECK THE AVAILABILITY <i class="fa-solid fa-calendar-check"></i>
+                        </button>
+                    </div>
+
+                    <div class="includes-card" style="margin-top: 24px;">
+                        <h4 class="includes-heading"><i class="fa-solid fa-circle-check"></i> What's Included</h4>
+                        <ul class="includes-list" id="detailsInclusions"></ul>
+                    </div>
+
+                    <div class="includes-card excludes-card" style="margin-top: 24px;">
+                        <h4 class="includes-heading excludes-heading"><i class="fa-solid fa-circle-xmark"></i> What's Excluded</h4>
+                        <ul class="includes-list excludes-list" id="detailsExclusions"></ul>
+                    </div>
+
+                    <div class="includes-card" id="detailsPickupCard" style="display: none; margin-top: 24px;">
+                        <h4 class="includes-heading"><i class="fa-solid fa-bus"></i> Bangalore Pickups</h4>
+                        <ul class="pickup-list" id="detailsPickupLocations"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/Branding/logo.png" alt="Rahasya Daari Logo" class="footer-logo-img">
+                    <span>RahasyaDaari</span>
+                </div>
+                <p class="footer-tagline">Crafting unforgettable mountain trails, serene weekend getaways, and eco-conscious travel experiences across India.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="trips.html">Trips & Treks</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Connect With Us</h4>
+                <p><i class="fa-solid fa-phone"></i> +91 93539 88523</p>
+                <p><i class="fa-solid fa-envelope"></i> info@rahasyadaari.in</p>
+                <div class="social-links" style="margin-top: 14px; display: flex; gap: 14px;">
+                    <a href="https://www.instagram.com/rahasyadaari/" target="_blank" rel="noopener noreferrer" style="color: var(--primary-green); font-size: 1.3rem;"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/919353988523" target="_blank" rel="noopener noreferrer" style="color: var(--primary-green); font-size: 1.3rem;"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 RahasyaDaari - The Mystery Trail. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="images.js"></script>
+    <script src="trips-data.js"></script>
+    <script src="reviews-data.js"></script>
+    <script src="youtube-data.js"></script>
+    <script src="reels-data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

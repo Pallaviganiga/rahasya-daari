@@ -154,6 +154,39 @@ const GALLERY_DATA = [
 let currentLightboxIndex = 0;
 let currentFilteredGallery = GALLERY_DATA;
 
+// Helper to format trek price with strikethrough original price if available
+function formatPriceHtml(trek, suffix = "") {
+    if (!trek) return "";
+    const price = typeof trek === "object" ? trek.price : trek;
+    let origPrice = (typeof trek === "object" && trek.originalPrice) ? trek.originalPrice : null;
+    
+    if (!origPrice && price) {
+        if (price === 4300) origPrice = 4500;
+        else if (price === 4200) origPrice = 4500;
+        else if (price === 4500) origPrice = 5000;
+        else if (price === 5500) origPrice = 5800;
+        else if (price === 4800) origPrice = 5200;
+        else if (price === 5200) origPrice = 5500;
+        else if (price === 4900) origPrice = 5400;
+        else if (price === 3700) origPrice = 4100;
+        else if (price === 3900) origPrice = 4300;
+        else if (price === 3600) origPrice = 3999;
+        else if (price === 3499) origPrice = 3899;
+        else if (price === 3599) origPrice = 3999;
+        else if (price === 4400) origPrice = 4800;
+        else if (price === 5199) origPrice = 5699;
+        else if (price === 2699) origPrice = 2999;
+        else if (price === 2799) origPrice = 3199;
+        else if (price === 2499) origPrice = 2799;
+        else origPrice = Math.round((price * 1.12) / 100) * 100;
+    }
+    
+    if (origPrice && origPrice > price) {
+        return `<span class="price-strikethrough">₹${origPrice.toLocaleString('en-IN')}</span><span class="price-current">₹${price.toLocaleString('en-IN')}</span>${suffix}`;
+    }
+    return `<span class="price-current">₹${price.toLocaleString('en-IN')}</span>${suffix}`;
+}
+
 // Render Landing Page Featured Trails (Same trek-card frontend as Tours page)
 function renderLandingFeaturedTrails() {
     const grid = document.getElementById("landingTrailsGrid");
@@ -183,7 +216,7 @@ function renderLandingFeaturedTrails() {
                     <span class="trek-card-duration">
                         <i class="fa-regular fa-clock"></i> ${trek.duration}
                     </span>
-                    <span class="trek-card-price">₹${trek.price.toLocaleString('en-IN')}</span>
+                    <span class="trek-card-price">${formatPriceHtml(trek)}</span>
                 </div>
             </div>
         `;
@@ -292,17 +325,17 @@ document.addEventListener("DOMContentLoaded", () => {
         renderPhotoGallery('all');
     }
 
-    // 2. Trips Catalog components (if present)
-    if (document.getElementById("weekendGrid")) {
-        renderWeekdayTrips();
-        renderWeekendTreks();
-        renderSightseeingTrips();
+    // 2. Trips Catalog Page components (if present)
+    if (document.getElementById("popularGrid") || document.getElementById("sightseeingGrid") || document.getElementById("weekendGrid") || document.getElementById("weekdayGrid")) {
         renderPopularTreks();
+        renderSightseeingTrips();
+        renderWeekendTreks();
+        renderWeekdayTrips();
 
-        setupCarouselControls("weekdayGrid", "weekdayPrevBtn", "weekdayNextBtn");
-        setupCarouselControls("weekendGrid", "weekendPrevBtn", "weekendNextBtn");
-        setupCarouselControls("sightseeingGrid", "sightseeingPrevBtn", "sightseeingNextBtn");
         setupCarouselControls("popularGrid", "popularPrevBtn", "popularNextBtn");
+        setupCarouselControls("sightseeingGrid", "sightseeingPrevBtn", "sightseeingNextBtn");
+        setupCarouselControls("weekendGrid", "weekendPrevBtn", "weekendNextBtn");
+        setupCarouselControls("weekdayGrid", "weekdayPrevBtn", "weekdayNextBtn");
     }
 
     // 2b. Weekday Dedicated Page components (if present)
@@ -559,7 +592,7 @@ function renderWeekday1DayPackages() {
                     <span class="trek-card-duration">
                         <i class="fa-regular fa-clock"></i> ${trek.duration}
                     </span>
-                    <span class="trek-card-price">₹${trek.price.toLocaleString('en-IN')}</span>
+                    <span class="trek-card-price">${formatPriceHtml(trek)}</span>
                 </div>
             </div>
         `;
@@ -573,7 +606,8 @@ function renderWeekday2DaysPackages() {
     if (!grid) return;
     grid.innerHTML = "";
 
-    let treks = TREKS_DATA.filter(item => item.category === "trek" || item.category === "trip");
+    const targetIds = ["bandaje-falls", "netravathi", "kudremukh", "etthina-bhuja", "kurinjal", "kodachadri"];
+    let treks = TREKS_DATA.filter(item => targetIds.includes(item.id) || item.category === "weekday-2days");
 
     // Apply state filter if set
     if (selectedStateFilter) {
@@ -608,7 +642,7 @@ function renderWeekday2DaysPackages() {
                     <span class="trek-card-duration">
                         <i class="fa-regular fa-clock"></i> ${trek.duration}
                     </span>
-                    <span class="trek-card-price">₹${trek.price.toLocaleString('en-IN')}</span>
+                    <span class="trek-card-price">${formatPriceHtml(trek)}</span>
                 </div>
             </div>
         `;
@@ -616,31 +650,22 @@ function renderWeekday2DaysPackages() {
     });
 }
 
-// Render Weekday Trips
-function renderWeekdayTrips() {
-    const grid = document.getElementById("weekdayGrid");
+// Render Popular Treks (popular flag set to true or top rated)
+function renderPopularTreks() {
+    const grid = document.getElementById("popularGrid");
     if (!grid) return;
     grid.innerHTML = "";
 
-    // Show the exact same trek packages as Weekend Trips
-    let treks = TREKS_DATA.filter(item => item.category === "trek");
+    let popularTreks = TREKS_DATA.filter(item => (item.popular === true || item.rating >= 4.8) && item.category !== "weekday-1day");
+    if (popularTreks.length === 0) {
+        popularTreks = TREKS_DATA.slice(0, 6);
+    }
 
-    // Apply state filter if set
     if (selectedStateFilter) {
-        treks = treks.filter(trek => trek.location.toLowerCase().includes(selectedStateFilter.toLowerCase()));
+        popularTreks = popularTreks.filter(trek => trek.location.toLowerCase().includes(selectedStateFilter.toLowerCase()));
     }
 
-    if (treks.length === 0) {
-        grid.innerHTML = `
-            <div class="no-trips-message">
-                <i class="fa-solid fa-mountain-sun"></i>
-                <p>No weekdays trips available in <strong>${selectedStateFilter}</strong> currently. We are exploring new trails!</p>
-            </div>
-        `;
-        return;
-    }
-
-    treks.forEach(trek => {
+    popularTreks.forEach(trek => {
         const card = document.createElement("div");
         card.className = "trek-card";
         card.setAttribute("onclick", `navigateToTrek('${trek.id}')`);
@@ -658,7 +683,7 @@ function renderWeekdayTrips() {
                     <span class="trek-card-duration">
                         <i class="fa-regular fa-clock"></i> ${trek.duration}
                     </span>
-                    <span class="trek-card-price">₹${trek.price.toLocaleString('en-IN')}</span>
+                    <span class="trek-card-price">${formatPriceHtml(trek)}</span>
                 </div>
             </div>
         `;
@@ -666,56 +691,7 @@ function renderWeekdayTrips() {
     });
 }
 
-// Render Weekend Trips (Treks category)
-function renderWeekendTreks() {
-    const grid = document.getElementById("weekendGrid");
-    if (!grid) return;
-    grid.innerHTML = "";
-
-    let treks = TREKS_DATA.filter(item => item.category === "trek");
-
-    // Apply state filter if set
-    if (selectedStateFilter) {
-        treks = treks.filter(trek => trek.location.toLowerCase().includes(selectedStateFilter.toLowerCase()));
-    }
-
-    if (treks.length === 0) {
-        grid.innerHTML = `
-            <div class="no-trips-message">
-                <i class="fa-solid fa-mountain-sun"></i>
-                <p>No treks available in <strong>${selectedStateFilter}</strong> currently. We are exploring new trails!</p>
-            </div>
-        `;
-        return;
-    }
-
-    treks.forEach(trek => {
-        const card = document.createElement("div");
-        card.className = "trek-card";
-        card.setAttribute("onclick", `navigateToTrek('${trek.id}')`);
-        card.innerHTML = `
-            <div class="trek-card-img-wrapper skeleton">
-                <img src="${trek.image}" alt="${trek.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src=(window.IMAGES?.fallback?.cardDefault || 'images/Hero/hero-bg-landscape.jpg'); this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
-            </div>
-            <div class="trek-card-content">
-                <h3 class="trek-card-title">${trek.title}</h3>
-                <p class="trek-card-location">
-                    <i class="fa-solid fa-location-dot"></i> ${trek.location || 'Western Ghats, Karnataka'}
-                </p>
-                <hr class="card-divider">
-                <div class="trek-card-footer">
-                    <span class="trek-card-duration">
-                        <i class="fa-regular fa-clock"></i> ${trek.duration}
-                    </span>
-                    <span class="trek-card-price">₹${trek.price.toLocaleString('en-IN')}</span>
-                </div>
-            </div>
-        `;
-        grid.appendChild(card);
-    });
-}
-
-// Render Sightseeing Trips (Trip category)
+// Render Sightseeing / Weekend Trips (Trip category)
 function renderSightseeingTrips() {
     const grid = document.getElementById("sightseeingGrid");
     if (!grid) return;
@@ -723,7 +699,6 @@ function renderSightseeingTrips() {
 
     let trips = TREKS_DATA.filter(item => item.category === "trip");
 
-    // Apply state filter if set
     if (selectedStateFilter) {
         trips = trips.filter(trip => trip.location.toLowerCase().includes(selectedStateFilter.toLowerCase()));
     }
@@ -732,7 +707,7 @@ function renderSightseeingTrips() {
         grid.innerHTML = `
             <div class="no-trips-message">
                 <i class="fa-solid fa-mountain-sun"></i>
-                <p>No sightseeing trips available in <strong>${selectedStateFilter}</strong> currently. We are exploring new locations!</p>
+                <p>No trips available in <strong>${selectedStateFilter}</strong> currently.</p>
             </div>
         `;
         return;
@@ -756,7 +731,7 @@ function renderSightseeingTrips() {
                     <span class="trek-card-duration">
                         <i class="fa-regular fa-clock"></i> ${trip.duration}
                     </span>
-                    <span class="trek-card-price">₹${trip.price.toLocaleString('en-IN')}</span>
+                    <span class="trek-card-price">${formatPriceHtml(trip)}</span>
                 </div>
             </div>
         `;
@@ -764,25 +739,29 @@ function renderSightseeingTrips() {
     });
 }
 
-// Render Popular Treks (popular flag set to true)
-function renderPopularTreks() {
-    const grid = document.getElementById("popularGrid");
+// Render Weekend Treks (Trek category)
+function renderWeekendTreks() {
+    const grid = document.getElementById("weekendGrid");
     if (!grid) return;
     grid.innerHTML = "";
 
-    let popularTreks = TREKS_DATA.filter(item => item.popular === true);
+    let treks = TREKS_DATA.filter(item => item.category === "trek");
 
-    if (popularTreks.length === 0) {
+    if (selectedStateFilter) {
+        treks = treks.filter(trek => trek.location.toLowerCase().includes(selectedStateFilter.toLowerCase()));
+    }
+
+    if (treks.length === 0) {
         grid.innerHTML = `
             <div class="no-trips-message">
                 <i class="fa-solid fa-mountain-sun"></i>
-                <p>No popular treks currently listed. Check back soon!</p>
+                <p>No treks available in <strong>${selectedStateFilter}</strong> currently.</p>
             </div>
         `;
         return;
     }
 
-    popularTreks.forEach(trek => {
+    treks.forEach(trek => {
         const card = document.createElement("div");
         card.className = "trek-card";
         card.setAttribute("onclick", `navigateToTrek('${trek.id}')`);
@@ -800,7 +779,55 @@ function renderPopularTreks() {
                     <span class="trek-card-duration">
                         <i class="fa-regular fa-clock"></i> ${trek.duration}
                     </span>
-                    <span class="trek-card-price">₹${trek.price.toLocaleString('en-IN')}</span>
+                    <span class="trek-card-price">${formatPriceHtml(trek)}</span>
+                </div>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+// Render Weekday Trips
+function renderWeekdayTrips() {
+    const grid = document.getElementById("weekdayGrid");
+    if (!grid) return;
+    grid.innerHTML = "";
+
+    let treks = TREKS_DATA.filter(item => item.category && item.category.startsWith("weekday"));
+
+    if (selectedStateFilter) {
+        treks = treks.filter(trek => trek.location.toLowerCase().includes(selectedStateFilter.toLowerCase()));
+    }
+
+    if (treks.length === 0) {
+        grid.innerHTML = `
+            <div class="no-trips-message">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <p>No weekday trips available in <strong>${selectedStateFilter}</strong> currently.</p>
+            </div>
+        `;
+        return;
+    }
+
+    treks.forEach(trek => {
+        const card = document.createElement("div");
+        card.className = "trek-card";
+        card.setAttribute("onclick", `navigateToTrek('${trek.id}')`);
+        card.innerHTML = `
+            <div class="trek-card-img-wrapper skeleton">
+                <img src="${trek.image}" alt="${trek.title}" class="trek-card-img" onload="this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');" onerror="this.src=(window.IMAGES?.fallback?.cardDefault || 'images/Hero/hero-bg-landscape.jpg'); this.classList.add('loaded'); this.parentElement.classList.remove('skeleton');">
+            </div>
+            <div class="trek-card-content">
+                <h3 class="trek-card-title">${trek.title}</h3>
+                <p class="trek-card-location">
+                    <i class="fa-solid fa-location-dot"></i> ${trek.location || 'Western Ghats, Karnataka'}
+                </p>
+                <hr class="card-divider">
+                <div class="trek-card-footer">
+                    <span class="trek-card-duration">
+                        <i class="fa-regular fa-clock"></i> ${trek.duration}
+                    </span>
+                    <span class="trek-card-price">${formatPriceHtml(trek)}</span>
                 </div>
             </div>
         `;
@@ -878,9 +905,10 @@ function filterByState(state) {
         location.hash = '';
     } else {
         // Just re-render categories to reflect filter
-        renderWeekdayTrips();
-        renderWeekendTreks();
+        renderPopularTreks();
         renderSightseeingTrips();
+        renderWeekendTreks();
+        renderWeekdayTrips();
     }
 
     // Close mobile nav menu
@@ -891,9 +919,9 @@ function filterByState(state) {
         mobileNavToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
     }
 
-    // Scroll to #weekday section
+    // Scroll to section
     setTimeout(() => {
-        const tripsSec = document.getElementById("weekday") || document.getElementById("trips");
+        const tripsSec = document.getElementById("popular") || document.getElementById("sightseeing") || document.getElementById("trips");
         if (tripsSec) {
             tripsSec.scrollIntoView({ behavior: 'smooth' });
         }
@@ -911,10 +939,10 @@ function clearStateFilter() {
     }
 
     // Re-render categories to show all
-    renderWeekdayTrips();
-    renderWeekendTreks();
-    renderSightseeingTrips();
     renderPopularTreks();
+    renderSightseeingTrips();
+    renderWeekendTreks();
+    renderWeekdayTrips();
     renderWeekday1DayPackages();
     renderWeekday2DaysPackages();
 }
@@ -961,7 +989,7 @@ function handleRouting() {
             document.getElementById("detailsDuration").innerText = trek.duration;
             document.getElementById("detailsAltitude").innerText = trek.altitude;
             document.getElementById("detailsDistance").innerText = trek.distance;
-            document.getElementById("detailsPrice").innerText = `₹${trek.price.toLocaleString('en-IN')} /person`;
+            document.getElementById("detailsPrice").innerHTML = formatPriceHtml(trek, " /person");
 
             // Load Highlights
             const highlightsContainer = document.getElementById("detailsHighlightsContainer");
@@ -1088,6 +1116,15 @@ function handleRouting() {
                     const slideDiv = document.createElement("div");
                     slideDiv.className = `details-hero-bg-slide ${idx === 0 ? 'active' : ''}`;
                     slideDiv.style.backgroundImage = `url('${imgSrc}')`;
+
+                    // Preload check to ensure slide background never goes blank on missing image
+                    const testImg = new Image();
+                    testImg.src = imgSrc;
+                    testImg.onerror = () => {
+                        const fallbackUrl = (trek.image && trek.image !== imgSrc) ? trek.image : "images/Netravathi/netravathi-panorama-hd.jpg";
+                        slideDiv.style.backgroundImage = `url('${fallbackUrl}')`;
+                    };
+
                     heroBg.appendChild(slideDiv);
                 });
 
@@ -1476,9 +1513,20 @@ function startHeroSlideshow() {
     window.heroSlideshowStarted = true;
 
     const sliderContainer = document.querySelector(".hero-bg-slider");
-    if (sliderContainer && window.IMAGES && Array.isArray(window.IMAGES.heroSlides) && window.IMAGES.heroSlides.length > 0) {
+    if (!sliderContainer) return;
+
+    const isHomePage = document.querySelector(".hero-content") !== null ||
+                       window.location.pathname.toLowerCase().endsWith("index.html") || 
+                       window.location.pathname === "/" || 
+                       window.location.pathname.toLowerCase().endsWith("/");
+
+    const slidesList = isHomePage 
+        ? (window.IMAGES && Array.isArray(window.IMAGES.heroSlides) && window.IMAGES.heroSlides.length > 0 ? window.IMAGES.heroSlides : null)
+        : (window.IMAGES && Array.isArray(window.IMAGES.subpageHeroSlides) && window.IMAGES.subpageHeroSlides.length > 0 ? window.IMAGES.subpageHeroSlides : null);
+
+    if (slidesList && slidesList.length > 0) {
         sliderContainer.innerHTML = "";
-        window.IMAGES.heroSlides.forEach((imgUrl, idx) => {
+        slidesList.forEach((imgUrl, idx) => {
             const slide = document.createElement("div");
             slide.className = `hero-bg-slide ${idx === 0 ? 'active' : ''}`;
             slide.style.backgroundImage = `url('${imgUrl}')`;
@@ -1804,8 +1852,7 @@ function renderDynamicGoogleReviews() {
                         <div class="reviewer-identity">
                             <div class="reviewer-avatar" style="background: ${r.avatarBg || '#183e20'};">${r.avatarLetter || r.name.charAt(0)}</div>
                             <div class="reviewer-details">
-                                <h4>${r.name}</h4>
-                                <p><span class="guide-tag"><svg viewBox="0 0 24 24" width="12" height="12"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.93 6.72-4.93z"/></svg> ${r.badge || "Verified Trekker"}</span></p>
+                                <h4 style="margin: 0; font-size: 1rem; font-weight: 800;">${r.name}</h4>
                             </div>
                         </div>
                         <svg viewBox="0 0 24 24" width="20" height="20">
@@ -1818,11 +1865,7 @@ function renderDynamicGoogleReviews() {
                     <div class="google-stars-row" style="font-size: 0.9rem; margin: 10px 0 12px;">
                         ${Array(r.stars || 5).fill('<i class="fa-solid fa-star"></i>').join('')}
                     </div>
-                    <p class="google-review-text">"${r.text}"</p>
-                </div>
-                <div class="review-card-footer">
-                    <span class="review-trail-pill"><i class="fa-solid fa-location-dot"></i> ${r.trek || "Western Ghats"}</span>
-                    <span class="review-verified-text"><i class="fa-solid fa-shield-check"></i> ${r.timeAgo || "Verified Trekker"}</span>
+                    <p class="google-review-text" style="margin-bottom: 0;">"${r.text}"</p>
                 </div>
             </div>
         `;
@@ -2048,3 +2091,31 @@ function scrollToTripSection(sectionId) {
     }
 }
 window.scrollToTripSection = scrollToTripSection;
+
+// Switch Sub-tabs between 1-DAY PACKAGES and 2-DAYS PACKAGES (Smooth Scroll to Row)
+function switchWeekdayTab(tabName) {
+    const targetId = tabName === "oneday" ? "weekday1DayContainer" : "weekday2DaysContainer";
+    const targetElement = document.getElementById(targetId);
+    const pills = document.querySelectorAll(".weekday-subtab-pill");
+
+    pills.forEach(pill => {
+        if (pill.getAttribute("data-target") === tabName) {
+            pill.classList.add("active");
+            const radio = pill.querySelector('input[type="radio"]');
+            if (radio) radio.checked = true;
+        } else {
+            pill.classList.remove("active");
+        }
+    });
+
+    if (targetElement) {
+        const headerOffset = 90;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
+}
+window.switchWeekdayTab = switchWeekdayTab;

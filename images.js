@@ -11,7 +11,7 @@ const IMAGES = {
     // -------------------------------------------------------------
     branding: {
         logoPng: "images/Branding/logo.png",
-        logoWebp: "images/Branding/logo.webp",
+        logoWebp: "images/Branding/logo.png",
         watermark: "images/Branding/watermark.webp"
     },
 
@@ -27,12 +27,27 @@ const IMAGES = {
     // 3. HOMEPAGE HERO BACKGROUND SLIDESHOW (16:9 Landscape)
     // -------------------------------------------------------------
     heroSlides: [
-        "images/Hero/hero-bg-landscape.jpg",
+        "images/Netravathi/netravathi-panorama-hd.jpg",
         "images/Netravathi/netravathi-cover.jpg",
+        "images/Hampi/hampi1.jpeg",
+        "images/Belthanagdi/belthanagdi1.jpg",
+        "images/Chikamangalore/chikamnglr1.jpg",
+        "images/Chikamangalore/chikamnglr2.jpg",
         "images/Kodachadri/kodachadri-cover.jpg",
         "images/Etthina Bhuja/ethina2-landscape.jpg",
         "images/Bandaje/bandaje-valley-trek.jpeg",
         "images/Dudhsagar Falls & Dandeli/dandeli-rafting-rapids.jpeg"
+    ],
+
+    // -------------------------------------------------------------
+    // 3b. SUBPAGE HERO BACKGROUND SLIDESHOW (Explore, Tours, About Us, etc.)
+    // -------------------------------------------------------------
+    subpageHeroSlides: [
+        "images/Branding/hero2.jpeg",
+        "images/Branding/hero1.jpeg",
+        "images/Branding/hero3.jpeg",
+        "images/Branding/hero4.jpeg",
+        "images/Branding/home5.jpeg"
     ],
 
     // -------------------------------------------------------------
@@ -140,25 +155,31 @@ const IMAGES = {
     // -------------------------------------------------------------
     trips: {
         "chikmagalur": {
-            cover: "images/Bandaje/bandaje-peak-vistas.jpg",
+            cover: "images/Chikamangalore/chikamnglr1.jpg",
             slides: [
-                "images/Bandaje/bandaje-peak-vistas.jpg",
-                "images/Bandaje/bandaje-waterfall-view.jpeg",
-                "images/Bandaje/bandaje-valley-trek.jpeg"
+                "images/Chikamangalore/chikamnglr1.jpg",
+                "images/Chikamangalore/chikamnglr2.jpg"
             ]
         },
         "belthangadi-trip": {
-            cover: "images/Bandaje/bandaje-waterfall-view.jpeg",
+            cover: "images/Belthanagdi/belthanagdi1.jpg",
             slides: [
-                "images/Bandaje/bandaje-waterfall-view.jpeg",
-                "images/Bandaje/bandaje-stream-crossing.jpg",
-                "images/Bandaje/bandaje-mist-summit.jpg"
+                "images/Belthanagdi/belthanagdi1.jpg",
+                "images/Belthanagdi/belthanagdi4.jpg",
+                "images/Belthanagdi/belthangadi2.jpg",
+                "images/Belthanagdi/belthangadi3.jpg",
+                "images/Belthanagdi/belthangadi5.PNG",
+                "images/Belthanagdi/belthangadi6.jpg"
             ]
         },
         "mangalore-trip": {
             cover: "images/Coastal/coastal-beach-cliff.png",
             slides: [
-                "images/Coastal/coastal-beach-cliff.png"
+                "images/Coastal/coastal-beach-cliff.png",
+                "images/Coastal/udupi14.jpg",
+                "images/Coastal/udupi3.jpg",
+                "images/Coastal/udupi4.jpg",
+                "images/Coastal/udupi5.jpg"
             ]
         },
         "coorg-exploration": {
@@ -168,28 +189,54 @@ const IMAGES = {
             ]
         },
         "wayanad-adventure": {
-            cover: "images/Wayanad/wayanad-tea-estate.jpg",
+            cover: "images/Wayanad/wayanadu2.jpeg",
             slides: [
                 "images/Wayanad/wayanad-tea-estate.jpg",
                 "images/Wayanad/wayanad-chembra-peak.jpg",
-                "images/Wayanad/wayanad-misty-hills.jpg"
+                "images/Wayanad/wayanad-misty-hills.jpg",
+                "images/Wayanad/wayanadu1.jpeg",
+                "images/Wayanad/wayanadu2.jpeg",
+                "images/Wayanad/wayanadu4.jpeg",
+                "images/Wayanad/wayanadu6.jpeg",
+                "images/Wayanad/wayandu3.jpeg"
+            ]
+        },
+        "ooty-trip": {
+            cover: "images/Ooty/ooty-hills-vista.jpg",
+            slides: [
+                "images/Ooty/ooty-hills-vista.jpg",
+                "images/Ooty/ooty1.jpg",
+                "images/Ooty/ooty2.jpg",
+                "images/Ooty/ooty3.jpg",
+                "images/Ooty/ooty5.jpg"
             ]
         },
         "ooty-sightseeing": {
             cover: "images/Ooty/ooty-hills-vista.jpg",
             slides: [
                 "images/Ooty/ooty-hills-vista.jpg",
-                "images/Ooty/ooty-pine-forest.jpeg",
-                "images/Ooty/ooty-tea-gardens.jpeg",
-                "images/Ooty/ooty-viewpoint.jpeg"
+                "images/Ooty/ooty1.jpg",
+                "images/Ooty/ooty2.jpg",
+                "images/Ooty/ooty3.jpg",
+                "images/Ooty/ooty5.jpg"
+            ]
+        },
+        "kodaikanal-trip": {
+            cover: "images/Kodaikanal/kodaikanal-cover.jpg",
+            slides: [
+                "images/Kodaikanal/kodaikanal-cover.jpg",
+                "images/Kodaikanal/kodakainal1.jpeg",
+                "images/Kodaikanal/kodakainal2.jpeg",
+                "images/Kodaikanal/kodakianal3.jpeg"
             ]
         },
         "kodaikanal-escape": {
-            cover: "images/Kodachadri/kodachadri-cover.jpg",
+            cover: "images/Kodaikanal/kodaikanal-cover.jpg",
             slides: [
-                "images/Kodachadri/kodachadri-cover.jpg",
-                "images/Kodachadri/kodachadri-jeep-trail.jpg",
-                "images/Kodachadri/kodachadri-sunset-ridge.jpg"
+                "images/Kodaikanal/kodaikanal-cover.jpg",
+                "images/Kodaikanal/kodakainal1.jpeg",
+                "images/Kodaikanal/kodakainal2.jpeg",
+                "images/Kodaikanal/kodakianal3.jpeg"
             ]
         },
         "munnar-trip": {
@@ -200,16 +247,23 @@ const IMAGES = {
             ]
         },
         "hampi-explore": {
-            cover: "images/Netravathi/netravathi-trek-badge.jpeg",
+            cover: "images/Hampi/hampi1.jpeg",
             slides: [
-                "images/Netravathi/netravathi-trek-badge.jpeg",
-                "images/Hero/hero-bg-landscape.jpg"
+                "images/Hampi/hampi1.jpeg",
+                "images/Hampi/hampi2.jpeg",
+                "images/Hampi/hampi3.jpg",
+                "images/Hampi/hampi4.jpg"
             ]
         },
         "gokarna": {
-            cover: "images/Coastal/coastal-beach-cliff.png",
+            cover: "images/Gokarana/gokarana3.jpg",
             slides: [
-                "images/Coastal/coastal-beach-cliff.png"
+                "images/Gokarana/gokarana3.jpg",
+                "images/Gokarana/gokarana1.jpg",
+                "images/Gokarana/gokarana4.jpg",
+                "images/Gokarana/gokarana14.jpg",
+                "images/Gokarana/gokarana15.jpg",
+                "images/Gokarana/gokarana24.jpeg"
             ]
         }
     }

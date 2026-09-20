@@ -28,84 +28,84 @@ const RAHASYA_GOOGLE_REVIEWS_CONFIG = {
     // Authentic Verified Google Reviews Database
     reviews: [
         {
-            name: "Adarsh Kumar",
+            name: "eswar varun",
+            avatarBg: "#7c3aed",
+            avatarLetter: "E",
+            badge: "1 review",
+            stars: 5,
+            timeAgo: "2 months ago",
+            trek: "Gangadikallu, Chikmagalur",
+            text: "We had an amazing experience at Gangadikallu, Chikmagalur! Everything was well planned and perfectly organized from start to finish. A special shoutout to our guides, Sharan and Prakruthi, they were incredibly friendly, energetic, and made the trip so memorable."
+        },
+        {
+            name: "Meghana G",
+            avatarBg: "#2563eb",
+            avatarLetter: "M",
+            badge: "1 review",
+            stars: 5,
+            timeAgo: "2 months ago",
+            trek: "Chikmagalur Trip",
+            text: "It was very nicely organised trip with Rahasya_Daari and thankful for it. As a female solo traveller, I just felt so homely atmosphere at every steps and it was completely safe journey. ಅದ್ಭುತ ✨"
+        },
+        {
+            name: "Afra S A",
+            avatarBg: "#d97706",
+            avatarLetter: "A",
+            badge: "6 reviews • 4 photos",
+            stars: 5,
+            timeAgo: "2 months ago",
+            trek: "Western Ghats Trek",
+            text: "Overall a wonderful experience with the team. The trek leaders were willing to help us out in all situations (from clicking us good pictures to carrying down trekkers when some of us were tired). They ensured that we had enough food, rest and fun! Definetly a memorable trip."
+        },
+        {
+            name: "Atif Ansari",
             avatarBg: "#183e20",
             avatarLetter: "A",
-            badge: "Local Guide • 42 reviews",
+            badge: "1 review • 3 photos",
             stars: 5,
-            timeAgo: "1 week ago",
-            trek: "Netravathi Peak",
-            text: "One of the best trekking teams in Bangalore! Tejas and the team managed our Netravathi trek flawlessly. From Bangalore pickup to the homestay hospitality and local Malnad food, everything was top-notch. Guides are very patient."
+            timeAgo: "a month ago",
+            trek: "Chikmagalur Trip",
+            text: "Had an amazing experience on the Chikmagalur trip organized by Rahasya Daari from Bangalore! 🌿⛰️ The homestay was awesome, comfortable, and had a great vibe. The food was delicious and really added to the overall experience. The trek was excellent—beautiful views, great adventure, and definitely worth it! 🥾✨ A special mention to our trek guide, who was very humble, friendly, and energetic throughout the trek. His enthusiasm made the experience even more enjoyable. 👏 Overall, it was a wonderful and memorable trip. Highly recommended for anyone looking for a fun and well-organized Chikmagalur adventure! ❤️🌄"
         },
         {
-            name: "Sneha Hegde",
-            avatarBg: "#2563eb",
-            avatarLetter: "S",
-            badge: "Local Guide • 19 reviews",
-            stars: 5,
-            timeAgo: "2 weeks ago",
-            trek: "Bandaje Falls",
-            text: "Went solo for the Bandaje Falls trek and felt 100% safe and welcomed throughout. The coordinators are extremely responsible, patient, and knowledgeable about the trails. Bonfire night was pure bliss!"
-        },
-        {
-            name: "Karthik R",
-            avatarBg: "#059669",
-            avatarLetter: "K",
-            badge: "Verified Trekker • 8 reviews",
-            stars: 5,
-            timeAgo: "3 weeks ago",
-            trek: "Kudremukha Summit",
-            text: "Kudremukh with Rahasya Daari was a magical experience. Perfect timing for forest department permits, zero hassle, and delicious hot food after the 22km trek. 10/10 recommended for beginners and pros alike."
-        },
-        {
-            name: "Pooja Dixit",
-            avatarBg: "#d97706",
-            avatarLetter: "P",
-            badge: "Local Guide • 31 reviews",
-            stars: 5,
-            timeAgo: "1 month ago",
-            trek: "Kodachadri Peak",
-            text: "Unbelievable energy and mountain hospitality! The jeep ride, Hidlumane falls dip, and the sunset at Kodachadri summit were unforgettable. Rahasya Daari leaders take care of you like family."
-        },
-        {
-            name: "Naveen Gowda",
-            avatarBg: "#7c3aed",
-            avatarLetter: "N",
-            badge: "Verified Trekker • 14 reviews",
-            stars: 5,
-            timeAgo: "1 month ago",
-            trek: "Dudhsagar & Gokarna",
-            text: "The monsoon Dudhsagar railway trek + Gokarna beach camp was the most well-organized weekend trip ever. Punctual transport, hygienic stays, and non-stop fun vibe. Can't wait for the next trail!"
-        },
-        {
-            name: "Meghana Sharma",
+            name: "Rachana Manjunath",
             avatarBg: "#db2777",
-            avatarLetter: "M",
-            badge: "Local Guide • 27 reviews",
-            stars: 5,
-            timeAgo: "2 months ago",
-            trek: "Ettina Bhuja",
-            text: "Safety first and eco-friendly trekking philosophy is what sets Rahasya Daari apart. Zero trash on trail policy, certified first-aid ready team, and the most wholesome fellow trekkers!"
-        },
-        {
-            name: "Rohit Varma",
-            avatarBg: "#0284c7",
             avatarLetter: "R",
-            badge: "Verified Trekker • 6 reviews",
+            badge: "3 reviews",
             stars: 5,
-            timeAgo: "2 months ago",
-            trek: "Kumara Parvatha",
-            text: "Conquering KP with this crew was a dream come true. When the terrain got steep and tiring, the trek leads kept boosting everyone's morale. Amazing photos and lifelong memories!"
+            timeAgo: "a month ago",
+            trek: "Chikmagalur Adventure",
+            text: "It’s was a amazing experience with rahasyadaari nd Pawan was best trek lead. We enjoyed a lot ❤️"
         },
         {
-            name: "Ananya Deshmukh",
-            avatarBg: "#16a34a",
-            avatarLetter: "A",
-            badge: "Local Guide • 53 reviews",
+            name: "Vaishnavi Ghiradkar",
+            avatarBg: "#0284c7",
+            avatarLetter: "V",
+            badge: "1 review",
             stars: 5,
-            timeAgo: "3 months ago",
-            trek: "Netravathi Ridge",
-            text: "Best weekend escape from IT corporate burnout. Waking up above the cloud bed in Western Ghats homestay is unbeatable. If you want authentic nature trails, Rahasya Daari is the only choice."
+            timeAgo: "a month ago",
+            trek: "First Mountain Trek",
+            text: "My very first trek, and Rahasya Daari made it unforgettable! Incredibly well-organized trip, and a huge shoutout to our trek lead, Pawan, for keeping the energy high and making everyone feel right at home. 10/10 experience—totally worth it!"
+        },
+        {
+            name: "chandralekha gopinath",
+            avatarBg: "#458b43",
+            avatarLetter: "C",
+            badge: "4 reviews • 6 photos",
+            stars: 5,
+            timeAgo: "a month ago",
+            trek: "Western Ghats Trail",
+            text: "Had an amazing experience. From the bottom of the heart, I thank the Rahasyadaari team and our tour guide Mr. Pavan kalyan. The trip was really fun and adventurous from the start to the end. And I personally enjoyed the whole journey."
+        },
+        {
+            name: "M L",
+            avatarBg: "#7c3aed",
+            avatarLetter: "M",
+            badge: "4 reviews • 1 photo",
+            stars: 5,
+            timeAgo: "a month ago",
+            trek: "Chikmagalur Homestay & Trek",
+            text: "It was a great experience going from being surrounded by a bunch of unknown people to creating such a lovely and memorable experience together. I absolutely loved the food at the homestay, but what I loved most was the nature of Chikmagalur and its deeply rooted local culture. Our tour guide explained so much about the local people and their traditions. Spending the night around a bonfire, with lots of laughter, great food, music, beautiful nature, and such a lovely culture, made the whole experience truly special. If someone asks me how the trip was, I would say it in one sentence. What a great experience!"
         }
     ]
 };
