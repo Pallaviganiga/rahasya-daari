@@ -279,7 +279,7 @@ h1, h2, h3, h4, h5, h6 {
 .header-container {
     max-width: 1240px;
     margin: 0 auto;
-    padding: 8px 24px;
+    padding: 10px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -290,19 +290,19 @@ h1, h2, h3, h4, h5, h6 {
 .logo-wrapper {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     text-decoration: none;
     color: var(--text-primary);
 }
 
 .logo-img {
-    height: 65px !important;
-    width: 65px !important;
+    height: 88px !important;
+    width: 88px !important;
     object-fit: contain;
     display: block !important;
     background-color: #ffffff !important;
     border-radius: 50% !important;
-    padding: 2px !important;
+    padding: 3px !important;
     border: 1.5px solid rgba(0, 0, 0, 0.22) !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
     transition: transform 0.3s ease;
@@ -337,9 +337,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-brand-text-img {
-    height: 24px;
+    height: 26px;
     width: auto;
-    max-width: 180px;
+    max-width: 195px;
     object-fit: contain;
     display: block;
     filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));
@@ -352,7 +352,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo-text {
     font-family: var(--font-bradley);
-    font-size: 1.85rem;
+    font-size: 2.15rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -364,10 +364,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo-tagline {
     font-family: var(--font-segoe);
-    font-size: 0.72rem;
+    font-size: 0.82rem;
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.3px;
     color: #27522d;
     margin-top: 1px;
     white-space: nowrap;
@@ -593,7 +593,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero Section (Inset Card Style) */
 .hero-section {
-    padding: 108px 20px 0 20px; /* Leaves clear space after slim header */
+    padding: 132px 20px 0 20px; /* Leaves clear space after header */
     background-color: var(--light-neutral);
     transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -6004,13 +6004,13 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .logo-img {
-        width: 48px !important;
-        height: 48px !important;
+        width: 58px !important;
+        height: 58px !important;
         display: block !important;
     }
 
     .logo-text {
-        font-size: 1.3rem !important;
+        font-size: 1.4rem !important;
         white-space: nowrap !important;
     }
 
@@ -6040,7 +6040,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .hero-section {
-        padding: 80px 12px 14px 12px !important;
+        padding: 90px 12px 14px 12px !important;
     }
 
     .hero-container {
