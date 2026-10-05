@@ -12,141 +12,384 @@ let selectedTrekId = '';
 let selectedStateFilter = '';
 let selectedPopularFilter = false;
 
-// Curated Gallery Data for the Landing Page Visual Showcase
+// Curated Gallery Data loading images from images/Gallery folder
 const GALLERY_DATA = [
     {
         id: "g1",
-        src: "images/Bandaje/bandaje-cliff-edge.png",
-        title: "Edge of the 200-ft Cascade",
-        location: "Bandaje Falls, Charmadi Ghats",
-        category: "waterfalls",
-        tag: "Waterfall",
+        src: "images/Gallery/gokarana2.jpg",
+        title: "Golden Hour Ocean Vista",
+        location: "Gokarna Coast",
+        category: "coastal",
+        tag: "Beach Sunset",
         tall: true
     },
     {
         id: "g2",
-        src: "images/Netravathi/netravathi-cover.jpg",
-        title: "The Green Spine Ridge",
-        location: "Netravathi Peak, Kalasa",
-        category: "peaks",
-        tag: "Summit Ridge",
+        src: "images/Gallery/bel8.jpg",
+        title: "Hidden Cascade Droplets",
+        location: "Belthangadi Waterfalls",
+        category: "waterfalls",
+        tag: "Waterfalls",
         tall: false
     },
     {
         id: "g3",
-        src: "images/Kudremukha/kudremukha-cover.jpg",
-        title: "Horse-Faced Mountain Wonder",
-        location: "Kudremukha National Park",
-        category: "peaks",
-        tag: "1,894m Peak",
+        src: "images/Gallery/wayanadu2.jpeg",
+        title: "Misty Tea Plantation Walk",
+        location: "Wayanad Highlands",
+        category: "valleys",
+        tag: "Tea Estate",
         tall: false
     },
     {
         id: "g4",
-        src: "images/Dudhsagar Falls & Dandeli/dudhsagar-falls-view.png",
-        title: "Sea of Milk Railway Cascade",
-        location: "Dudhsagar, Goa-Karnataka Border",
-        category: "waterfalls",
-        tag: "Iconic Falls",
+        src: "images/Gallery/gokarana15.jpg",
+        title: "Ocean Cliff Sunset Panorama",
+        location: "Gokarna Cliff Trek",
+        category: "coastal",
+        tag: "Cliff View",
         tall: true
     },
     {
         id: "g5",
-        src: "images/Kodachadri/kodachadri-sunset-ridge.jpg",
-        title: "Golden Hour on Western Ridge",
-        location: "Kodachadri Peak, Shimoga",
-        category: "peaks",
-        tag: "Sunset Vista",
+        src: "images/Gallery/udupi3.jpg",
+        title: "Coastal Kayaking & Blue Waters",
+        location: "Udupi Coast & Malpe",
+        category: "coastal",
+        tag: "Water Sports",
         tall: false
     },
     {
         id: "g6",
-        src: "images/Kurinjal/kuri2.jpeg",
-        title: "Windy Shola Summit",
-        location: "Kurinjal Peak, Kudremukh",
-        category: "peaks",
-        tag: "Offbeat Trail",
+        src: "images/Gallery/bel9.jpg",
+        title: "Ermaayi Multi-Tiered Waterfall",
+        location: "Belthangadi Rainforest",
+        category: "waterfalls",
+        tag: "Jungle Falls",
         tall: false
     },
     {
         id: "g7",
-        src: "images/Netravathi/netravathi-clouds-peak.jpg",
-        title: "Ocean of Monsoon Clouds",
-        location: "Netravathi Valley",
-        category: "ghats",
-        tag: "Cloud Bed",
+        src: "images/Gallery/chikamnglr2.jpg",
+        title: "Highest Peak Horizon",
+        location: "Mullayanagiri, Chikmagalur",
+        category: "peaks",
+        tag: "Summit View",
         tall: false
     },
     {
         id: "g8",
-        src: "images/Bandaje/bandaje-waterfall-view.jpeg",
-        title: "Hidden Jungle Droplet",
-        location: "Charmadi Rainforest",
-        category: "waterfalls",
-        tag: "Secret Falls",
+        src: "images/Gallery/home1.jpeg",
+        title: "Trail Companions & Peak Vistas",
+        location: "Western Ghats Trail",
+        category: "community",
+        tag: "Tribe Moments",
         tall: false
     },
     {
         id: "g9",
-        src: "images/Ooty/ooty-hills-vista.jpg",
-        title: "Rolling Nilgiri Tea Horizons",
-        location: "Ooty Highlands, Tamil Nadu",
-        category: "valleys",
-        tag: "Tea Slopes",
+        src: "images/Gallery/gokarana14.jpg",
+        title: "Paradise Beach Oceanfront",
+        location: "Gokarna Beach Camping",
+        category: "coastal",
+        tag: "Coastal Vistas",
         tall: false
     },
     {
         id: "g10",
-        src: "images/Wayanad/wayanad-tea-estate.jpg",
-        title: "Mist Floating Over Tea Trails",
-        location: "Chembra Foothills, Wayanad",
+        src: "images/Gallery/wayanadu4.jpeg",
+        title: "Chembra Peak Valley Clouds",
+        location: "Wayanad Valleys",
         category: "valleys",
-        tag: "Plantation Walk",
+        tag: "Cloud Valleys",
         tall: false
     },
     {
         id: "g11",
-        src: "images/Dudhsagar Falls & Dandeli/dandeli-rafting-rapids.jpeg",
-        title: "Whitewater Rapids Adventure",
-        location: "Kali River, Dandeli",
-        category: "community",
-        tag: "Rafting",
+        src: "images/Gallery/bel10.jpg",
+        title: "Didupe Cascading Streams",
+        location: "Belthangadi Foothills",
+        category: "waterfalls",
+        tag: "Freshwater Stream",
         tall: false
     },
     {
         id: "g12",
-        src: "images/Netravathi/netravathi-trek-badge.jpeg",
-        title: "Summit Glory & Tribe Badge",
-        location: "Rahasya Daari Community",
-        category: "community",
-        tag: "Trail Moments",
+        src: "images/Gallery/udupi14.jpg",
+        title: "Serene Backwaters & Mangrove Rail",
+        location: "Udupi Backwaters",
+        category: "coastal",
+        tag: "Backwaters",
         tall: false
     },
     {
         id: "g13",
-        src: "images/Coastal/coastal-beach-cliff.png",
-        title: "Golden Shoreline & Cliff Walk",
-        location: "Gokarna & Mangalore Coast",
+        src: "images/Gallery/gokarana4.jpg",
+        title: "Half Moon Bay Kayaking",
+        location: "Gokarna Waters",
         category: "coastal",
-        tag: "Coastal Escape",
+        tag: "Kayaking",
         tall: false
     },
     {
         id: "g14",
-        src: "images/Coorg/coorg-estate-hills.jpeg",
-        title: "Misty Coffee Hills Horizon",
-        location: "Tadiandamol & Coorg",
-        category: "valleys",
-        tag: "Highlands",
+        src: "images/Gallery/home2.jpeg",
+        title: "Western Ghats Ridge Walkers",
+        location: "Rahasya Daari Tribe",
+        category: "community",
+        tag: "Community",
         tall: false
     },
     {
         id: "g15",
-        src: "images/Netravathi/netravathi-panorama-hd.jpg",
-        title: "Endless Shola Grassland Panorama",
-        location: "Kalasa Range, Western Ghats",
+        src: "images/Gallery/bel11.jpg",
+        title: "Rainforest Canopy Walk",
+        location: "Charmadi Ghats",
         category: "ghats",
-        tag: "Landscape",
+        tag: "Western Ghats",
+        tall: false
+    },
+    {
+        id: "g16",
+        src: "images/Gallery/gokarana5.jpeg",
+        title: "Sunset Over Om Beach",
+        location: "Gokarna Coast",
+        category: "coastal",
+        tag: "Sunset",
+        tall: true
+    },
+    {
+        id: "g17",
+        src: "images/Gallery/wayandu3.jpeg",
+        title: "Soochipara Forest Trails",
+        location: "Wayanad Forest",
+        category: "valleys",
+        tag: "Forest Trail",
+        tall: false
+    },
+    {
+        id: "g18",
+        src: "images/Gallery/udupi6.jpg",
+        title: "St. Mary's Rock Formations",
+        location: "Udupi Coast",
+        category: "coastal",
+        tag: "Geological Wonder",
+        tall: false
+    },
+    {
+        id: "g19",
+        src: "images/Gallery/bel14.jpg",
+        title: "Hidden Ravine Water Pools",
+        location: "Belthangadi Valley",
+        category: "waterfalls",
+        tag: "Natural Pool",
+        tall: false
+    },
+    {
+        id: "g20",
+        src: "images/Gallery/gokarana7.jpeg",
+        title: "Cliff Edge Stargazing Spot",
+        location: "Kudle Beach Cliffs",
+        category: "coastal",
+        tag: "Cliff Vista",
+        tall: false
+    },
+    {
+        id: "g21",
+        src: "images/Gallery/home3.jpeg",
+        title: "Group Summit Celebration",
+        location: "Mountain Summit",
+        category: "community",
+        tag: "Summit Victory",
+        tall: false
+    },
+    {
+        id: "g22",
+        src: "images/Gallery/gokarana9.jpeg",
+        title: "Calm Ocean Tides at Dusk",
+        location: "Gokarna Shoreline",
+        category: "coastal",
+        tag: "Twilight Tides",
+        tall: false
+    },
+    {
+        id: "g23",
+        src: "images/Gallery/wayanadu7.jpeg",
+        title: "Banasura Lake & Earthen Dam",
+        location: "Wayanad Waters",
+        category: "valleys",
+        tag: "Lake Vista",
+        tall: false
+    },
+    {
+        id: "g24",
+        src: "images/Gallery/udupi11.jpg",
+        title: "Golden Hour Delta Sunset",
+        location: "Udupi Delta Beach",
+        category: "coastal",
+        tag: "Delta Sunset",
+        tall: true
+    },
+    {
+        id: "g25",
+        src: "images/Gallery/bel15.jpg",
+        title: "Monsoon Mist over Waterfall Crest",
+        location: "Belthangadi Ghats",
+        category: "waterfalls",
+        tag: "Monsoon Cascade",
+        tall: false
+    },
+    {
+        id: "g26",
+        src: "images/Gallery/gokarana10.jpeg",
+        title: "Beachside Campfire Night",
+        location: "Gokarna Campsite",
+        category: "coastal",
+        tag: "Beach Campfire",
+        tall: false
+    },
+    {
+        id: "g27",
+        src: "images/Gallery/home4.jpeg",
+        title: "Jungle Trekking Expedition",
+        location: "Shola Rainforest",
+        category: "ghats",
+        tag: "Trek Leader",
+        tall: false
+    },
+    {
+        id: "g28",
+        src: "images/Gallery/gokarana11.jpeg",
+        title: "Ocean Wave Reflections",
+        location: "Belekan Beach",
+        category: "coastal",
+        tag: "Shoreline",
+        tall: false
+    },
+    {
+        id: "g29",
+        src: "images/Gallery/wayanadu8.jpeg",
+        title: "Rolling Hills & Cloud Shadows",
+        location: "Wayanad Peak",
+        category: "peaks",
+        tag: "Cloud Shadows",
+        tall: false
+    },
+    {
+        id: "g30",
+        src: "images/Gallery/udupi12.jpg",
+        title: "Pristine White Sand Beaches",
+        location: "Malpe Beach, Udupi",
+        category: "coastal",
+        tag: "White Sands",
+        tall: false
+    },
+    {
+        id: "g31",
+        src: "images/Gallery/gokarana13.jpg",
+        title: "Rocky Cliff Shoreline Walk",
+        location: "Gokarna Trail",
+        category: "coastal",
+        tag: "Cliff Walk",
+        tall: false
+    },
+    {
+        id: "g32",
+        src: "images/Gallery/home5.jpeg",
+        title: "Monsoon Stream Crossing",
+        location: "Western Ghats Stream",
+        category: "ghats",
+        tag: "Stream Crossing",
+        tall: false
+    },
+    {
+        id: "g33",
+        src: "images/Gallery/gokarana16.jpg",
+        title: "Tropical Palm Shoreline",
+        location: "Nirvana Beach, Kumta",
+        category: "coastal",
+        tag: "Tropical Palms",
+        tall: false
+    },
+    {
+        id: "g34",
+        src: "images/Gallery/wayanadu9.jpeg",
+        title: "Edakkal Cave Rainforest Overlook",
+        location: "Wayanad Caves",
+        category: "valleys",
+        tag: "Heritage Overlook",
+        tall: false
+    },
+    {
+        id: "g35",
+        src: "images/Gallery/gokarana17.jpg",
+        title: "Sunset Glow on Ocean Waters",
+        location: "Gokarna Horizon",
+        category: "coastal",
+        tag: "Sunset Glow",
+        tall: true
+    },
+    {
+        id: "g36",
+        src: "images/Gallery/gokarana18.jpg",
+        title: "Morning Tide & Sand Ripples",
+        location: "Om Beach Gokarna",
+        category: "coastal",
+        tag: "Morning Tide",
+        tall: false
+    },
+    {
+        id: "g37",
+        src: "images/Gallery/wayanadu10.jpeg",
+        title: "Emerald Tea Valley Ridge",
+        location: "Wayanad Tea Estate",
+        category: "valleys",
+        tag: "Emerald Valleys",
+        tall: false
+    },
+    {
+        id: "g38",
+        src: "images/Gallery/gokarana19.jpg",
+        title: "Secret Ocean Cave Viewpoint",
+        location: "Gokarna Cliff Cave",
+        category: "coastal",
+        tag: "Sea Cave",
+        tall: false
+    },
+    {
+        id: "g39",
+        src: "images/Gallery/IMG_2092.jpg",
+        title: "Wilderness Explorer Trail",
+        location: "Western Ghats Trailhead",
+        category: "community",
+        tag: "Trail Explorer",
+        tall: false
+    },
+    {
+        id: "g40",
+        src: "images/Gallery/gokarana20.jpg",
+        title: "Coastal Sunset Silhouette",
+        location: "Gokarna Headland",
+        category: "coastal",
+        tag: "Silhouette",
+        tall: false
+    },
+    {
+        id: "g41",
+        src: "images/Gallery/gokarana21.jpg",
+        title: "Surfers & Sea Waves",
+        location: "Kudle Beach",
+        category: "coastal",
+        tag: "Surfing Tides",
+        tall: false
+    },
+    {
+        id: "g42",
+        src: "images/Gallery/gokarana22.jpg",
+        title: "Endless Blue Ocean Horizons",
+        location: "Gokarna Panorama",
+        category: "coastal",
+        tag: "Ocean Panorama",
         tall: false
     }
 ];
@@ -241,12 +484,7 @@ function renderPhotoGallery(category = 'all') {
         card.className = `gallery-card ${item.tall ? 'featured-tall' : ''}`;
         card.setAttribute("onclick", `openLightboxByIndex(${index})`);
         card.innerHTML = `
-            <img src="${item.src}" alt="${item.title}" class="gallery-card-img" loading="lazy" onerror="this.src='images/Hero/hero-bg-landscape.jpg';">
-            <div class="gallery-card-overlay">
-                <span class="gallery-tag"><i class="fa-solid fa-camera"></i> ${item.tag}</span>
-                <h4 class="gallery-card-title">${item.title}</h4>
-                <span class="gallery-card-location"><i class="fa-solid fa-location-dot"></i> ${item.location}</span>
-            </div>
+            <img src="${item.src}" alt="Gallery Photo" class="gallery-card-img" loading="lazy" onerror="this.src='images/Hero/hero-bg-landscape.jpg';">
             <div class="gallery-card-view-btn"><i class="fa-solid fa-expand"></i></div>
         `;
         grid.appendChild(card);
@@ -274,10 +512,10 @@ function openLightboxByIndex(index) {
     const title = document.getElementById("lightboxTitle");
     const place = document.getElementById("lightboxPlace");
 
-    if (modal && img && title && place) {
+    if (modal && img) {
         img.src = item.src;
-        title.innerText = item.title;
-        place.innerText = item.location;
+        if (title) title.innerText = item.title;
+        if (place) place.innerText = item.location;
         modal.classList.add("active");
         document.body.style.overflow = "hidden";
     }
@@ -317,6 +555,10 @@ function toggleFaq(el) {
 
 // DOM Elements Initialization
 document.addEventListener("DOMContentLoaded", () => {
+    // Reset any locked body overflow on fresh page load
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+
     // 1. Landing Page components (if present)
     if (document.getElementById("landingTrailsGrid")) {
         renderLandingFeaturedTrails();

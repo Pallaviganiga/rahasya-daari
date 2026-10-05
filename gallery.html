@@ -61,86 +61,14 @@
     </header>
 
     <!-- Main Content Container -->
-    <main class="main-content">
+    <main class="main-content" style="padding-top: 130px !important; min-height: 100vh;">
 
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-container">
-                <a href="index.html" class="hero-back-btn" aria-label="Back to Home" title="Back to Home">
-                    <i class="fa-solid fa-arrow-left"></i> Back
-                </a>
-                <div class="hero-bg-slider">
-                    <div class="hero-bg-slide active" style="background-image: url('images/Branding/hero2.jpeg');"></div>
-                    <div class="hero-bg-slide" style="background-image: url('images/Branding/hero1.jpeg');"></div>
-                    <div class="hero-bg-slide" style="background-image: url('images/Branding/hero3.jpeg');"></div>
-                    <div class="hero-bg-slide" style="background-image: url('images/Branding/hero4.jpeg');"></div>
-                    <div class="hero-bg-slide" style="background-image: url('images/Branding/home5.jpeg');"></div>
-                </div>
-                <div class="hero-overlay"></div>
-            </div>
-        </section>
-
-        <!-- Interactive Adventure Photo Gallery Section -->
-        <section class="gallery-section" id="gallery" style="padding-top: 40px;">
+        <!-- Photo Gallery Section -->
+        <section class="gallery-section" id="gallery" style="padding-top: 10px !important; padding-bottom: 40px;">
             <div class="container">
-                <div class="section-header text-center">
-                    <span class="section-tag">Visual Showcase</span>
-                    <h2 class="section-title brand-section-title">MOMENTS FROM THE TRAILS</h2>
-                    <p style="max-width: 680px; margin: 0 auto 24px; color: var(--text-secondary); font-size: 0.98rem; line-height: 1.6;">
-                        A glimpse into pristine summits, floating monsoon clouds, hidden jungle droplets, and unforgettable moments shared with fellow travelers.
-                    </p>
-                </div>
-
-                <!-- Category Filter Pills -->
-                <div class="gallery-filters">
-                    <button class="gallery-filter-btn active" onclick="filterGallery('all', this)">
-                        <i class="fa-solid fa-border-all"></i> All Photos
-                    </button>
-                    <button class="gallery-filter-btn" onclick="filterGallery('peaks', this)">
-                        <i class="fa-solid fa-mountain"></i> Mountain Peaks
-                    </button>
-                    <button class="gallery-filter-btn" onclick="filterGallery('waterfalls', this)">
-                        <i class="fa-solid fa-water"></i> Waterfalls
-                    </button>
-                    <button class="gallery-filter-btn" onclick="filterGallery('valleys', this)">
-                        <i class="fa-solid fa-tree"></i> Valleys & Estates
-                    </button>
-                    <button class="gallery-filter-btn" onclick="filterGallery('ghats', this)">
-                        <i class="fa-solid fa-cloud-sun"></i> Western Ghats
-                    </button>
-                    <button class="gallery-filter-btn" onclick="filterGallery('coastal', this)">
-                        <i class="fa-solid fa-umbrella-beach"></i> Coastal
-                    </button>
-                    <button class="gallery-filter-btn" onclick="filterGallery('community', this)">
-                        <i class="fa-solid fa-people-group"></i> Tribe & Action
-                    </button>
-                </div>
 
                 <!-- Photo Gallery Grid -->
                 <div class="photo-gallery-grid" id="photoGalleryGrid">
-                    <!-- Populated dynamically by script.js -->
-                </div>
-
-                <!-- Action Link to Instagram -->
-                <div class="gallery-more-wrap text-center" style="margin-top: 40px;">
-                    <a href="https://instagram.com/rahasya_daari" target="_blank" rel="noopener noreferrer" class="btn-gallery-more" title="View more photos on Instagram @rahasya_daari">
-                        <span>For More</span> <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action Banner -->
-        <section class="cta-banner-section">
-            <div class="container">
-                <div class="cta-banner-card">
-                    <h2 class="cta-banner-title">READY FOR YOUR NEXT MYSTERY TRAIL?</h2>
-                    <p class="cta-banner-desc">Whether you are a solo adventurer, traveling with friends, or planning a custom corporate getaway, we have a trail waiting for you every weekend.</p>
-                    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                        <a href="https://wa.me/919632961606" target="_blank" rel="noopener noreferrer" class="btn btn-hero-secondary" style="border-radius: 50px; background: #25D366; border-color: #25D366; color: #ffffff; padding: 10px 24px; font-size: 0.88rem; font-weight: 800;">
-                            <i class="fa-brands fa-whatsapp"></i> CHAT WITH A GUIDE
-                        </a>
-                    </div>
                 </div>
             </div>
         </section>
@@ -229,12 +157,6 @@
             <button class="lightbox-nav lightbox-next" onclick="nextLightboxImage()" aria-label="Next Image">
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
-            <div class="lightbox-info">
-                <div>
-                    <div class="lightbox-title" id="lightboxTitle">Photo Title</div>
-                    <div class="lightbox-place" id="lightboxPlace"><i class="fa-solid fa-location-dot"></i> Location</div>
-                </div>
-            </div>
         </div>
     </div>
 

@@ -911,16 +911,16 @@ const TREKS_DATA = [
         id: "gokarna",
         category: "trip",
         popular: true,
-        title: "Gokarna Beach Trek & Camping",
+        title: "Gokarna Trip - Two Days Endless Memories",
         location: "Gokarna, Karnataka",
         difficulty: "easy",
         difficultyLabel: "Easy",
         duration: "2 Days",
-        distance: "10 km",
+        distance: "1 km Trek & Sightseeing",
         altitude: "120 m",
         originalPrice: 5200,
-        price: 4800,
-        pickup: "Shantala Silk (Majestic), Navarang (Opp. Sagar Hotel), Yashwanthpur Govardhana Theater, KLE Dental College Goraguntepalya",
+        price: 4900,
+        pickup: "Majestic, Bangalore, Navarang Circle, Goraguntepalya",
         image: "images/Gokarana/gokarana3.jpg",
         slides: [
             "images/Gokarana/gokarana3.jpg",
@@ -930,25 +930,59 @@ const TREKS_DATA = [
             "images/Gokarana/gokarana15.jpg",
             "images/Gokarana/gokarana24.jpeg"
         ],
-        description: "Hike along the beach cliffs connecting Gokarna's five famous beaches: Kudle, Om, Half Moon, Paradise, and Belekan. Camp in oceanfront dome tents with a beach bonfire.",
+        description: "Escape to coastal bliss on a 2-day Gokarna getaway. Experience Nirvana Beach in Kumta, Aghanashini Ferry boat rides, water activities at Half Moon Beach, scenic trek to Om Beach, historic Mirjan Fort, Honnavara Sharavathi backwaters boat ride, Murudeshwara Temple, Sharavathi Hanging Bridge, and the grand Jog Falls.",
         highlights: [
-            "5-Beach Ocean Cliff Trek",
-            "Beachfront Tent Camping",
-            "Beach Bonfire & Stargazing",
-            "Mirjan Fort Exploration",
-            "Mahabaleshwar Temple Visit"
+            "Nirvana Beach Homestay & Tent Stay (Sharing Basis)",
+            "Aghanashini Ferry Scenic Boat Ride",
+            "Water Activities at Half Moon Beach (Kayaking, River Swimming & Snorkeling)",
+            "1 km Trek from Half Moon Beach to Om Beach",
+            "Historic Mirjan Fort Visit",
+            "Honnavara Sharavathi Backwaters Boat Ride",
+            "Iconic Murudeshwara Temple Visit",
+            "Sharavathi Hanging Bridge & Mangrove Forest Walk",
+            "Grandeur of Jog Falls Sightseeing",
+            "Stunning Beach Sunset, Campfire & Night Dinner"
         ],
-        pickupLocationList: DEFAULT_BANGALORE_PICKUPS,
-        ownTransportPrice: 2500,
-        advanceAmount: 1500,
-        cancellationPolicy: "Advance amount is non refundable, if trip gets cancelled from our side then complete amount will be refunded.",
+        pickupLocationList: [
+            {
+                name: "Majestic, Bangalore",
+                mapUrl: "https://maps.google.com/?q=Majestic+Bengaluru"
+            },
+            {
+                name: "Navarang Circle",
+                mapUrl: "https://maps.app.goo.gl/EGRNHLapWTUEH4758?g_st=ipc"
+            },
+            {
+                name: "Goraguntepalya",
+                mapUrl: "https://maps.app.goo.gl/aNuSCTgJLTWLcTDJ6?g_st=ipc"
+            }
+        ],
+        ownTransportPrice: 2900,
+        advanceAmount: 2000,
+        cancellationPolicy: "Advance amount is non refundable. If trip gets cancelled from our side then complete amount will be refunded.",
         itinerary: [
-            { day: "Day 00", title: "Overnight Journey", desc: "Overnight journey from Bangalore (~480 km) to Gokarna coast." },
-            { day: "Day 01", title: "Ocean Cliff Hike to Paradise Beach", desc: "<ul><li>Cross rocky cliffs connecting Kudle, Om, Half Moon, and Paradise Beach.</li><li>Swim at Half Moon beach and setup camps at Paradise Beach.</li><li>Bonfire night by the ocean.</li></ul>" },
-            { day: "Day 02", title: "Temple Visit & Mirjan Fort exploration", desc: "<ul><li>Visit Mahabaleshwar temple and explore Mirjan Fort stone walls.</li><li>Return journey to Bangalore (~10:30 PM).</li></ul>" }
+            { day: "Day 00", title: "Overnight Journey", desc: "Overnight journey from Bangalore via Majestic, Navarang Circle, and Goraguntepalya to Kumta / Gokarna coast." },
+            { day: "Day 01", title: "Beaches, Boats & Forts", desc: "<ul><li>Reach the homestay at Nirvana Beach, Kumta.</li><li>Freshen up and enjoy a delicious breakfast.</li><li>Head to Aghanashini Ferry.</li><li>Enjoy a scenic boat ride.</li><li>Explore beautiful spots during boat sightseeing.</li><li>Water activities at Half Moon Beach – Kayaking, River Swimming & Snorkeling.</li><li>Begin a short 1 km trek from Half Moon Beach to Om Beach.</li><li>Reach Om Beach.</li><li>Visit the historic Mirjan Fort.</li><li>Arrive at the campsite.</li><li>Evening tea/coffee.</li><li>Witness a stunning sunset at the beach.</li><li>Enjoy a cozy campfire.</li><li>Night dinner and stay in comfortable tents.</li></ul>" },
+            { day: "Day 02", title: "Water, Temples & Majestic Falls", desc: "<ul><li>Get up, freshen up, and be ready by 7:30 AM.</li><li>Have breakfast.</li><li>Head to Honnavara for a serene boat ride in the Sharavathi backwaters.</li><li>Visit the iconic Murudeshwara Temple.</li><li>Lunch (self-sponsored).</li><li>Walk through the peaceful Mangrove Forest (if time permits).</li><li>Visit the beautiful Sharavathi Hanging Bridge.</li><li>Witness the grandeur of Jog Falls.</li><li>Dinner at Shimoga (self-sponsored).</li><li>Depart back to Bangalore — expected arrival by 5:00 AM.</li></ul>" }
         ],
-        inclusions: DEFAULT_INCLUSIONS,
-        exclusions: DEFAULT_EXCLUSIONS
+        inclusions: [
+            "Transportation",
+            "Accommodation (Tent stay- sharing basis)",
+            "2 Breakfast",
+            "1 Dinner (veg & Non veg)",
+            "Boating charges",
+            "Sightseeing charges",
+            "Water activity charges",
+            "Other entry fee & charges",
+            "Parking / Toll charges",
+            "Basic First-Aid Support",
+            "Guide charges"
+        ],
+        exclusions: [
+            "Lunch (self-sponsored)",
+            "Dinner at Shimoga on Day 2 (self-sponsored)",
+            "Anything not mentioned under inclusions"
+        ]
     },
     {
         id: "kodaikanal-trip",
